@@ -1,9 +1,7 @@
 ---
-title: 2015.004 Little Rascal
+title: Spynnaker version 2015.004 (Little-Rascal)
 layout: default
 ---
-
-# Spynnaker version 2015.004 (Little-Rascal)
 
 [Licence Agreement](http://github.com/SpiNNakerManchester/spinnakermanchester.github.io/wiki/2015.004%3a-Little-Rascal-%3a-0.3-Licence-Agreement)
 
