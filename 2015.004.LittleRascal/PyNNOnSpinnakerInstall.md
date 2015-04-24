@@ -303,11 +303,14 @@ If you get the output above, you have successfully installed your system.
 ## <a name="Trouble"></a> Trouble Shooting Section
 
 1. **UnicodeDecodeError**: if you experience the error **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)** Then to solve it follow these instuctions:
-Edit C:\Python27\Lib\mimetypes.py this file:
-Add these codes
-if sys.getdefaultencoding() != 'gbk':
-reload(sys)
-sys.setdefaultencoding('gbk')
-before the following line
-default_encoding = sys.getdefaultencoding()
+
+ 1. Edit C:\Python27\Lib\mimetypes.py and add these codes:
+ 
+```if sys.getdefaultencoding() != 'gbk':
+   reload(sys)
+   sys.setdefaultencoding('gbk')```
+   
+before the following line:
+
+```default_encoding = sys.getdefaultencoding()```
 
