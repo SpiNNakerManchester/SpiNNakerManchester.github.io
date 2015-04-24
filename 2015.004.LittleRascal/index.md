@@ -1,5 +1,6 @@
 ---
 title: 2015.004 Little Rascal
+layout: default
 ---
 
 # Spynnaker version 2015.004 (Little-Rascal)

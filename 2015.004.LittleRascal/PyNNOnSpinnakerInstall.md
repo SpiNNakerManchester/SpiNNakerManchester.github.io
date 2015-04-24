@@ -1,6 +1,6 @@
 ---
 title: PyNN on SpiNNaker Installation Guide
-published: true
+layout: default
 ---
 
 ## Contents
