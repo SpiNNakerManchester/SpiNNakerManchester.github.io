@@ -135,6 +135,7 @@ You can now [configure](#Configuration) your environment.
 These instructions will install the required packages only in a virtualenv.  Like the user-only installation, this can help when you don't have root access or are on a shared machine.  Additionally, it will help when you have several packages with conflicting dependencies, or those that occupy the same namespace (such as pyNN.spiNNaker if you have an older version of the toolchain).
 
 The installation of virtualenv and the linking to the external libraries is platform dependent.
+
 * [Ubuntu Virtualenv Installation](#UbuntuVirtualenv)
 * [32-bit Fedora Virtualenv Installation](#Fedora32Virtualenv)
 * [64-bit Fedora Virtualenv Installation](#Fedora64Virtualenv)
