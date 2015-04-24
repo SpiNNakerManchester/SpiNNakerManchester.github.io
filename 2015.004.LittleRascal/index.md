@@ -4,11 +4,9 @@ title: 2015.004 Little Rascal
 
 # Spynnaker version 2015.004 (Little-Rascal)
 
-[PyNN on SpiNNaker Pre release Installation Guide](PyNNOnSpinnakerInstall.html)
+[PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)
 
-[2015.004: Little-Rascal : 0.2 PyNN on SpiNNaker Installation Guide](../wiki/2015.004%3a-Little-Rascal-%3a-0.2-PyNN-on-SpiNNaker-Installation-Guide)
-
-[2015.004: Little-Rascal : 0.3 Licence Agreement](../wiki/2015.004%3a-Little-Rascal-%3a-0.3-Licence-Agreement)
+[2015.004: Little-Rascal : 0.3 Licence Agreement](http://github.com/SpiNNakerManchester/spinnakermanchester.github.io/wiki/2015.004%3a-Little-Rascal-%3a-0.3-Licence-Agreement)
 
 [2015.004: Little-Rascal : 1.1 Configuring the sPyNNaker front end, and its limitations](../wiki/2015.004%3a-Little-Rascal-%3a-1.1-Configuring-the-sPyNNaker-front-end,-and-its-limitations)
 
