@@ -4,7 +4,7 @@ title: 2015.004 Little Rascal
 
 # Spynnaker version 2015.004 (Little-Rascal)
 
-[PyNN on SpiNNaker Pre release Installation Guide] (../wiki/2015.004%3a-Little-Rascal-%3a-0.1-PyNN-on-SpiNNaker-Pre-release-Installation-Guide)
+[PyNN on SpiNNaker Pre release Installation Guide] (PyNNOnSpinnakerInstall.html)
 
 [2015.004: Little-Rascal : 0.2 PyNN on SpiNNaker Installation Guide](2015.004%3a-Little-Rascal-%3a-0.2-PyNN-on-SpiNNaker-Installation-Guide)
 
