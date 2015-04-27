@@ -1,5 +1,5 @@
 ---
-Example Visualisation Framework
+title: Example Visualisation Framework
 ---
 
 # Page Contents
