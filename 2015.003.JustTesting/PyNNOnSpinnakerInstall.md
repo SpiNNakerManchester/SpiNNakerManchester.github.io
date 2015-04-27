@@ -26,8 +26,6 @@ This guide will detail how to install the release versions of the tools required
 ```sudo apt-get install python-numpy```
 1. Install scipy  
 ```sudo apt-get install python-scipy```
-1. Install lxml  
-```sudo apt-get install python-lxml```
 1. Install pip  
 ```sudo apt-get install python-pip```
 1. *Optional:* Install matplotlib (often used in PyNN scripts for plotting graphs)  
@@ -42,8 +40,6 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 ```sudo yum install numpy```
 1. Install scipy  
 ```sudo yum install scipy```
-1. Install lxml
-```sudo yum install python-lxml```
 1. Install pip  
 ```sudo yum install python-pip```
 1. *Optional:* Install matplotlib (often used in PyNN scripts for plotting graphs)  
@@ -60,8 +56,6 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 ```sudo port install py27-numpy```
 1. Install scipy  
 ```sudo port install py27-scipy```
-1. Install lxml  
-```sudo port install py27-lxml```
 1. Install pip  
 ```sudo port install py27-pip```  
 ```sudo port select --set pip pip27```
@@ -74,7 +68,6 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 1. Download and install [Python](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/python-2.7.6.msi)
 1. Download and install [numpy](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/numpy-MKL-1.9.1.win32-py2.7.exe)
 1. Download and install [scipy](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/scipy-0.14.1rc1.win32-py2.7.exe)
-1. Download and install [lxml](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/lxml-3.4.1.win32-py2.7.exe)
 1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/setuptools-5.8.win32-py2.7.exe) and [pip] (https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/pip-1.5.6.win32-py2.7.exe)
 1. *Optional:* Download and install matplotlib (often used in PyNN scripts for plotting graphs)
     1. Download and install 
@@ -89,7 +82,6 @@ Continue to [edit your PATH](#WindowsPath), before installing the remaining requ
 1. Download and install [Python](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/python-2.7.6.amd64.msi)
 1. Download and install [numpy](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/numpy-MKL-1.9.1.win-amd64-py2.7.exe)
 1. Download and install [scipy](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/scipy-0.14.1rc1.win-amd64-py2.7.exe)
-1. Download and install [lxml](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/lxml-3.4.1.win-amd64-py2.7.exe)
 1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/setuptools-5.8.win-amd64-py2.7.exe) and [pip] (https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/pip-1.5.6.win-amd64-py2.7.exe)
 1. *Optional:* Download and install matplotlib (often used in PyNN scripts for plotting graphs)
     1. Download and install
@@ -155,8 +147,6 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```ln -s /usr/lib/python2.7/dist-packages/numpy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Link scipy to the virtualenv  
 ```ln -s /usr/lib/python2.7/dist-packages/scipy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. Link lxml to the virtualenv  
-```ln -s /usr/lib/python2.7/dist-packages/lxml* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
 ```pip install pyparsing```  
@@ -181,8 +171,6 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /usr/lib/python2.7/site-packages/numpy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Link scipy to the virtualenv  
 ```ln -s /usr/lib/python2.7/site-packages/scipy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. Link lxml to the virtualenv
-```ln -s /usr/lib/python2.7/site-packages/lxml* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
 ```pip install pyparsing```  
@@ -207,8 +195,6 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /usr/lib64/python2.7/site-packages/numpy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Link scipy to the virtualenv  
 ```ln -s /usr/lib64/python2.7/site-packages/scipy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. Link lxml to the virtualenv
-```ln -s /usr/lib64/python2.7/site-packages/lxml* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
 ```pip install pyparsing```  
@@ -233,8 +219,6 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/numpy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Link scipy to the virtualenv  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/scipy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. Link lxml to the virtualenv  
-```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/lxml* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
 ```pip install pyparsing```  
@@ -263,9 +247,6 @@ You can now [configure](#Configuration) your environment.
 1. Link scipy to the virtualenv  
 ```mklink /D %VIRTUAL_ENV%\Lib\site-packages\scipy C:\Python27\Lib\site-packages\scipy```  
 ```mklink %VIRTUAL_ENV%\Lib\site-packages\scipy-0.14.1rc1-py2.7.egg-info C:\Python27\site-packages\scipy-0.14.1rc1-py2.7.egg-info```
-1. Link lxml to the virtualenv  
-```mklink /D %VIRTUAL_ENV%\Lib\site-packages\lxml C:\Python27\Lib\site-packages\lxml```  
-```mklink /D %VIRTUAL_ENV%\Lib\site-packages\lxml-3.4.1-py2.7.egg-info C:\Python27\site-packages\lxml-3.4.1-py2.7.egg-info```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
 ```pip install pyparsing```  
@@ -295,7 +276,7 @@ version = None
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
 # <a name="Examples"></a> Running some examples
-1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.002.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.002.tar.gz) (tar.gz)
+1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.001.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.001.tar.gz) (tar.gz)
 1. Extract the archive
 1. Go to the "examples" folder
 1. Run:  
@@ -305,7 +286,7 @@ Within the file, you should set ```machineName``` to the IP address or hostname 
 ![VABenchmarkSpikes](va_benchmark.png)
 If you get the output above, you have successfully installed your system.
 
-# <a name="Trouble"></a> Trouble Shooting Section
+## <a name="Trouble"></a> Trouble Shooting Section
 
 1. **UnicodeDecodeError**: if you experience the error **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)** Then to solve it follow these instuctions:
 
