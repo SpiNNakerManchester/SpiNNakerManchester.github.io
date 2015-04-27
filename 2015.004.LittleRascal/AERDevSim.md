@@ -1,5 +1,5 @@
 ---
-title: AER_dev_sim: An external device simulator for EIEIO interfacing
+title: AER_dev_sim - An external device simulator for EIEIO interfacing
 ---
 
 # Introduction
