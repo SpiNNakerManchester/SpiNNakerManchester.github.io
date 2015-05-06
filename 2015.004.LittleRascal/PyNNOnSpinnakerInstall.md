@@ -1,6 +1,7 @@
 ---
 title: PyNN on SpiNNaker Installation Guide
 layout: default
+published: true
 ---
 
 This guide will detail how to install the release versions of the tools required to run simulations on SpiNNaker using the PyNN scripting language. This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Windows 8.1 64-bit, and Mac OS X Mavericks, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7 and 8, and Mac OS X.
@@ -116,20 +117,36 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 # <a name="Central"></a> Standard Central Installation
 These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo ```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator").
 
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003```
+1. install pacman
+```pip install spinnaker_pacman=2015.003```
+1. install spinnman
+```pip install spinnman=2015.003```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.004```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.004```
 
 You can now [configure](#Configuration) your environment.
 
 # <a name="User"></a> User-only Installation
 These instructions will install the required packages only for the current user (in your home directory).  This can avoid issues where you don't have root access to the machine you are installing on, or on a shared machine where the dependencies might otherwise conflict with those of other users.
 
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003 --user```
+1. install pacman
+```pip install spinnaker_pacman=2015.003 --user```
+1. install spinnman
+```pip install spinnman=2015.003 --user```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003 --user```
 1. Install sPyNNaker  
-```pip install sPyNNaker --user```
+```pip install sPyNNaker=2015.004 --user```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --user```
+```pip install pyNN-SpiNNaker=2015.004 --user```
 
 You can now [configure](#Configuration) your environment.
 
@@ -163,10 +180,18 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```pip install six```  
 ```ln -s /usr/lib/pymodules/python2.7/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/pymodules/python2.7/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003```
+1. install pacman
+```pip install spinnaker_pacman=2015.003```
+1. install spinnman
+```pip install spinnman=2015.003```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.004```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.004```
 
 You can now [configure](#Configuration) your environment.
 
@@ -189,10 +214,18 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003```
+1. install pacman
+```pip install spinnaker_pacman=2015.003```
+1. install spinnman
+```pip install spinnman=2015.003```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.004```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.004```
 
 You can now [configure](#Configuration) your environment.
 
@@ -215,10 +248,18 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib64/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib64/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003```
+1. install pacman
+```pip install spinnaker_pacman=2015.003```
+1. install spinnman
+```pip install spinnman=2015.003```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.004```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.004```
 
 You can now [configure](#Configuration) your environment.
 
@@ -241,10 +282,18 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003```
+1. install pacman
+```pip install spinnaker_pacman=2015.003```
+1. install spinnman
+```pip install spinnman=2015.003```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.004```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.004```
 
 You can now [configure](#Configuration) your environment.
 
@@ -275,10 +324,18 @@ You can now [configure](#Configuration) your environment.
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:  
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
 ```TK_LIBRARY: C:\Python27\tcl\tk8.5```
+1. install spinnMachine
+```pip install SpiNNMachine=2015.003```
+1. install pacman
+```pip install spinnaker_pacman=2015.003```
+1. install spinnman
+```pip install spinnman=2015.003```
+1. install data specification
+```pip install Spinnaker_DataSpecification=2015.003```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.004```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.004```
 
 You can now [configure](#Configuration) your environment.
 
