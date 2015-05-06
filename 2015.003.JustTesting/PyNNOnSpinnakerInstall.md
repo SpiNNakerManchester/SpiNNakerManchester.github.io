@@ -118,9 +118,9 @@ These instructions will install the required packages in a central location.  If
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.003```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.003```
 
 You can now [configure](#Configuration) your environment.
 
@@ -136,9 +136,9 @@ These instructions will install the required packages only for the current user 
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002 --user```
 1. Install sPyNNaker  
-```pip install sPyNNaker --user```
+```pip install sPyNNaker=2015.003 --user```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --user```
+```pip install pyNN-SpiNNaker=2015.003 --user```
 
 You can now [configure](#Configuration) your environment.
 
@@ -179,9 +179,9 @@ The installation of virtualenv and the linking to the external libraries is plat
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.003```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.003```
 
 You can now [configure](#Configuration) your environment.
 
@@ -211,9 +211,9 @@ You can now [configure](#Configuration) your environment.
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.003```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.003```
 
 You can now [configure](#Configuration) your environment.
 
@@ -243,9 +243,9 @@ You can now [configure](#Configuration) your environment.
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.003```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.003```
 
 You can now [configure](#Configuration) your environment.
 
@@ -275,9 +275,9 @@ You can now [configure](#Configuration) your environment.
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.003```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.003```
 
 You can now [configure](#Configuration) your environment.
 
@@ -314,9 +314,9 @@ You can now [configure](#Configuration) your environment.
 1. install data specification
 ```pip install Spinnaker_DataSpecification=2015.002```
 1. Install sPyNNaker  
-```pip install sPyNNaker```
+```pip install sPyNNaker=2015.003```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker```
+```pip install pyNN-SpiNNaker=2015.003```
 
 You can now [configure](#Configuration) your environment.
 
