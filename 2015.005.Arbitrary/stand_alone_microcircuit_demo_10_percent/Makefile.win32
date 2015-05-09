@@ -1,0 +1,13 @@
+OBJECTS = visualiser.o
+   
+OBJS=$(OBJECTS:%=build/%)
+
+vis.exe: $(OBJS)
+	g++ -o $@ $^ -lfreeglut_static -lopengl32 -lwinmm -lgdi32 -lglu32 -lpthread -lws2_32 -lsqlite3
+
+build/%.o: %.cpp
+	-mkdir -p $(dir $@)
+	g++ -D FREEGLUT_STATIC -D WINVER=0x501 -D WIN32_LEAN_AND_MEAN -fpermissive -o $@ -c $<
+
+clean:
+	rm -rf build vis.exe

@@ -1,0 +1,13 @@
+OBJECTS = visualiser.o
+   
+OBJS=$(OBJECTS:%=build/%)
+
+vis: $(OBJS)
+	g++ -o $@ $^ -lGL -lGLU -lglut -lpthread
+
+build/%.o: %.cpp
+	-mkdir -p $(dir $@)
+	g++ -o $@ -c $<
+
+clean:
+	rm -rf build vis
