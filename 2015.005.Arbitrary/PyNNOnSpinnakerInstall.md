@@ -4,7 +4,7 @@ layout: default
 published: true
 ---
 
-This guide will detail how to install the 2015.005 "Arbitirary" release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
+This guide will detail how to install the 2015.005 "Arbitrary" release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
 
 This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Windows 8.1 64-bit, and Mac OS X Mavericks, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7 and 8, and Mac OS X.
 
@@ -20,7 +20,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 * [Virtualenv Installation](#Virtualenv)
 * [Configuration](#Configuration)
 * [Running some examples](#Examples)
-* [Trouble shooting](#Trouble)
+* [Troubleshooting](#Trouble)
 
 # <a name="Ubuntu"></a> Ubuntu Linux Requirements
 1. Install Python  
@@ -119,6 +119,10 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 # <a name="Central"></a> Standard Central Installation
 These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo ```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator").
 
+If you already have installed sPyNNaker previously, you will need to uninstall it:  
+```pip uninstall pyNN-SpiNNaker```  
+```pip uninstall sPyNNaker```
+
 1. Install sPyNNaker  
 ```pip install sPyNNaker --pre```
 1. Install pyNN-SpiNNaker  
@@ -129,6 +133,10 @@ You can now [configure](#Configuration) your environment.
 # <a name="User"></a> User-only Installation
 These instructions will install the required packages only for the current user (in your home directory).  This can avoid issues where you don't have root access to the machine you are installing on, or on a shared machine where the dependencies might otherwise conflict with those of other users.
 
+If you already have installed sPyNNaker previously, you will need to uninstall it:  
+```pip uninstall pyNN-SpiNNaker```  
+```pip uninstall sPyNNaker```
+
 1. Install sPyNNaker  
 ```pip install sPyNNaker --user --pre```
 1. Install pyNN-SpiNNaker  
@@ -138,6 +146,14 @@ You can now [configure](#Configuration) your environment.
 
 # <a name="Virtualenv"></a> Virtualenv Installation
 These instructions will install the required packages only in a virtualenv.  Like the user-only installation, this can help when you don't have root access or are on a shared machine.  Additionally, it will help when you have several packages with conflicting dependencies, or those that occupy the same namespace (such as pyNN.spiNNaker if you have an older version of the toolchain).
+
+If you already have installed sPyNNaker previously, you will need to uninstall it:
+
+1. Activate your virtualenv, ```<name>```  
+```source <name>/bin/activate```
+1. Uninstall the existing tools  
+```pip uninstall pyNN-SpiNNaker```  
+```pip uninstall sPyNNaker```
 
 The installation of virtualenv and the linking to the external libraries is platform dependent.
 
@@ -150,7 +166,7 @@ The installation of virtualenv and the linking to the external libraries is plat
 ## <a name="UbuntuVirtualenv"></a> Ubuntu Virtualenv Installation
 1. Install virtualenv  
 ```sudo pip install virtualenv```
-1. Create a virtualenv; <name> in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
 ```virtualenv <name>```
 1. Activate the virtualenv  
 ```source <name>/bin/activate```
@@ -308,7 +324,7 @@ Within the file, you should set ```machineName``` to the IP address or hostname 
 ![VABenchmarkSpikes](va_benchmark.png)
 If you get the output above, you have successfully installed your system.
 
-# <a name="Trouble"></a> Trouble Shooting Section
+# <a name="Trouble"></a> Troubleshooting
 
 1. **UnicodeDecodeError**: if you experience the error **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)** Then to solve it follow these instuctions:
 
