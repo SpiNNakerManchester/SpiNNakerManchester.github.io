@@ -133,7 +133,7 @@ where ```<ip-or-host>``` is the ip address or hostname of your SpiNNaker board.
 **Windows**
  follows these [instructions](http://www.stack.nl/~dimitri/doxygen/manual/install.html)
 
-# <a name="BuildUsage"></a> `spinnaker_tools` Build System Usage
+# <a name="BuildUsage"></a> Build System Usage
 
 When using the makefiles supplied in this repository, you must set up a number
 of environment variables using:
