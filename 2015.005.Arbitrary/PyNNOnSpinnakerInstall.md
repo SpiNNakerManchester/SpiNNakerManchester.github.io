@@ -117,43 +117,57 @@ Continue to [edit your PATH](#WindowsPath), before installing the remaining requ
 Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements.
 
 # <a name="Central"></a> Standard Central Installation
-These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo ```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator").
+These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator" - without the ```sudo```).
 
-If you already have installed sPyNNaker previously, you will need to uninstall it:  
-```pip uninstall pyNN-SpiNNaker```  
-```pip uninstall sPyNNaker```
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExtraDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:  
+```[sudo] pip uninstall pyNN-SpiNNaker```  
+```[sudo] pip uninstall sPyNNaker```  
+```[sudo] pip uninstall sPyNNakerExternalDevicesPlugin```  
+```[sudo] pip uninstall sPyNNakerExtraModelsPlugin```
 
 1. Install sPyNNaker  
-```pip install sPyNNaker --pre```
+```[sudo] pip install sPyNNaker```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --pre```
+```[sudo] pip install pyNN-SpiNNaker```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```[sudo] pip install sPyNNakerExternalDevicesPlugin```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```[sudo] pip install sPyNNakerExtraModelsPlugin```
 
 You can now [configure](#Configuration) your environment.
 
 # <a name="User"></a> User-only Installation
 These instructions will install the required packages only for the current user (in your home directory).  This can avoid issues where you don't have root access to the machine you are installing on, or on a shared machine where the dependencies might otherwise conflict with those of other users.
 
-If you already have installed sPyNNaker previously, you will need to uninstall it:  
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExtraDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:  
 ```pip uninstall pyNN-SpiNNaker```  
-```pip uninstall sPyNNaker```
+```pip uninstall sPyNNaker```  
+```pip uninstall sPyNNakerExternalDevicesPlugin```  
+```pip uninstall sPyNNakerExtraModelsPlugin```
 
 1. Install sPyNNaker  
-```pip install sPyNNaker --user --pre```
+```pip install sPyNNaker --user```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --user --pre```
+```pip install pyNN-SpiNNaker --user```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```pip install sPyNNakerExternalDevicesPlugin --user```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```pip install sPyNNakerExtraModelsPlugin --user```
 
 You can now [configure](#Configuration) your environment.
 
 # <a name="Virtualenv"></a> Virtualenv Installation
 These instructions will install the required packages only in a virtualenv.  Like the user-only installation, this can help when you don't have root access or are on a shared machine.  Additionally, it will help when you have several packages with conflicting dependencies, or those that occupy the same namespace (such as pyNN.spiNNaker if you have an older version of the toolchain).
 
-If you already have installed sPyNNaker previously, you will need to uninstall it:
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExtraDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
 
 1. Activate your virtualenv, ```<name>```  
 ```source <name>/bin/activate```
 1. Uninstall the existing tools  
 ```pip uninstall pyNN-SpiNNaker```  
-```pip uninstall sPyNNaker```
+```pip uninstall sPyNNaker```  
+```pip uninstall sPyNNakerExternalDevicesPlugin```  
+```pip uninstall sPyNNakerExtraModelsPlugin```
 
 The installation of virtualenv and the linking to the external libraries is platform dependent.
 
@@ -183,9 +197,13 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```ln -s /usr/lib/pymodules/python2.7/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/pymodules/python2.7/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Install sPyNNaker  
-```pip install sPyNNaker --pre```
+```pip install sPyNNaker```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --pre```
+```pip install pyNN-SpiNNaker```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```pip install sPyNNakerExternalDevicesPlugin```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```pip install sPyNNakerExtraModelsPlugin```
 
 You can now [configure](#Configuration) your environment.
 
@@ -209,9 +227,13 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /usr/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Install sPyNNaker  
-```pip install sPyNNaker --pre```
+```pip install sPyNNaker```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --pre```
+```pip install pyNN-SpiNNaker```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```pip install sPyNNakerExternalDevicesPlugin```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```pip install sPyNNakerExtraModelsPlugin```
 
 You can now [configure](#Configuration) your environment.
 
@@ -235,9 +257,13 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /usr/lib64/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib64/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Install sPyNNaker  
-```pip install sPyNNaker --pre```
+```pip install sPyNNaker```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --pre```
+```pip install pyNN-SpiNNaker```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```pip install sPyNNakerExternalDevicesPlugin```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```pip install sPyNNakerExtraModelsPlugin```
 
 You can now [configure](#Configuration) your environment.
 
@@ -261,9 +287,13 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Install sPyNNaker  
-```pip install sPyNNaker --pre```
+```pip install sPyNNaker```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --pre```
+```pip install pyNN-SpiNNaker```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```pip install sPyNNakerExternalDevicesPlugin```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```pip install sPyNNakerExtraModelsPlugin```
 
 You can now [configure](#Configuration) your environment.
 
@@ -295,9 +325,13 @@ You can now [configure](#Configuration) your environment.
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
 ```TK_LIBRARY: C:\Python27\tcl\tk8.5```
 1. Install sPyNNaker  
-```pip install sPyNNaker --pre```
+```pip install sPyNNaker```
 1. Install pyNN-SpiNNaker  
-```pip install pyNN-SpiNNaker --pre```
+```pip install pyNN-SpiNNaker```
+1. *Optional* Install sPyNNakerExternalDevicesPlugin (used for live input and output)  
+```pip install sPyNNakerExternalDevicesPlugin```
+1. *Optional* Install sPyNNakerExtraModelsPlugin (provides some non-standard PyNN models)  
+```pip install sPyNNakerExtraModelsPlugin```
 
 You can now [configure](#Configuration) your environment.
 
