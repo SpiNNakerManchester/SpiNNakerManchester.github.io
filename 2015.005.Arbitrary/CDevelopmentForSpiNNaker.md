@@ -79,7 +79,7 @@ where ```<install-location>``` is the place where you extracted the file.
 You can now use the msys.bat to start up an environment from in which you can compile C code for SpiNNaker.
 
 # <a name="SpinnakerTools"></a> SpiNNakerTools Installation
-1. Download the current version of SpiNNaker Tools [as a zip](https://github.com/SpiNNakerManchester/spinnaker_tools/archive/2015.003-rc-01.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/spinnaker_tools/archive/2015.003-rc-01.tar.gz)
+1. Download the current version of SpiNNaker Tools [as a zip](https://github.com/SpiNNakerManchester/spinnaker_tools/archive/2015.003.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/spinnaker_tools/archive/2015.003.tar.gz)
 1. Extract the archive to the location of your choice.
 1. Create an environment variable ```SPINN_DIRS``` that points at the location of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to C:\SpiNNaker-Tools\, you should set the environment variable to /c/SpiNNaker-Tools).
 1. Run ```make``` in the root directory of the extracted archive.
@@ -87,7 +87,7 @@ You can now use the msys.bat to start up an environment from in which you can co
 # <a name="spinn_common"></a> spinn_common Library Installation
 The spinn_common library will be installed into the SpiNNaker Tools installation directory, as set up above.
 
-1. Download the current version of spinn_common [as a zip](https://github.com/SpiNNakerManchester/spinn_common/archive/2015.003-rc-01.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/spinn_common/archive/2015.003-rc-01.tar.gz).
+1. Download the current version of spinn_common [as a zip](https://github.com/SpiNNakerManchester/spinn_common/archive/2015.003.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/spinn_common/archive/2015.003.tar.gz).
 1. Extract the archive to the location of your choice.
 1. In the directory of the extracted archive, run ```make```.
 1. Run ```make install```.
@@ -95,7 +95,7 @@ The spinn_common library will be installed into the SpiNNaker Tools installation
 # <a name="SpinnFrontEndCommon"></a> SpiNNFrontEndCommon Library Installation
 The SpiNNFrontEndCommon library will be installed into the SpiNNaker Tools installation directory, as set up above.
 
-1. Download the current version of SpiNNFrontEndCommon [as a zip](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/2015.002-rc-01.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/2015.002-rc-01.tar.gz).
+1. Download the current version of SpiNNFrontEndCommon [as a zip](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/2015.002.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/2015.002.tar.gz).
 1. Extract the archive to the location of your choice.
 1. In the ```c_common``` directory of the extracted archive, run ```make```.
 1. Run ```make install```.

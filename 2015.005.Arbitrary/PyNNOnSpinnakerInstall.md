@@ -348,7 +348,7 @@ version = None
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
 # <a name="Examples"></a> Running some examples
-1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.002.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.002.tar.gz) (tar.gz)
+1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.tar.gz) (tar.gz)
 1. Extract the archive
 1. Go to the "examples" folder
 1. Run:  
