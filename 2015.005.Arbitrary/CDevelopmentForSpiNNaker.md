@@ -8,7 +8,7 @@ To set up your development environment:
 
 1. [Install Development Dependencies](#DevelopmentDependencies)
 1. [Install Spinnaker Tools](#SpinnakerTools)
-1. *Optional*: [Install spinn_common Library](#SpinnCommon) (for additional utility, mathematical and efficiency library functions)
+1. *Optional*: [Install spinn_common Library](#spinn_common) (for additional utility, mathematical and efficiency library functions)
 1. *Optional*: [Install ybug](#Ybug) (for command-line debugging)
 1. *Optional: for compiling the documentation of c* [Install Doxygen](#doxygen) 
 
