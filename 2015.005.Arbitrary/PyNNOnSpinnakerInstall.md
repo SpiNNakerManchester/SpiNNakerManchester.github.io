@@ -218,7 +218,7 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /usr/lib/python2.7/site-packages/numpy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Link scipy to the virtualenv  
 ```ln -s /usr/lib/python2.7/site-packages/scipy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. Link lxml to the virtualenv
+1. Link lxml to the virtualenv  
 ```ln -s /usr/lib/python2.7/site-packages/lxml* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
@@ -248,7 +248,7 @@ You can now [configure](#Configuration) your environment.
 ```ln -s /usr/lib64/python2.7/site-packages/numpy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. Link scipy to the virtualenv  
 ```ln -s /usr/lib64/python2.7/site-packages/scipy* $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. Link lxml to the virtualenv
+1. Link lxml to the virtualenv  
 ```ln -s /usr/lib64/python2.7/site-packages/lxml* $VIRTUAL_ENV/lib/python2.7/site-packages/```
 1. *Optional:* link matplotlib to the virtualenv and install dependencies (only if you chose to install matplotlib)  
 ```pip install python-dateutil```  
