@@ -112,7 +112,7 @@ Continue to [edit your PATH](#WindowsPath), before installing the remaining requ
     1. Select the "Path" in the "System Variables" box at the bottom
     1. Click on "Edit"
     1. Add the new directory by putting it before the existing string, followed by a single semi-colon; if you installed the dependencies to the default/recommended locations, prepend Path with:  
-```C:\Python27;C:\Python27\Scripts;C:\gtk\bin; ```
+```C:\Python27;C:\Python27\Scripts;```
 
 Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements.
 
@@ -210,7 +210,7 @@ You can now [configure](#Configuration) your environment.
 ## <a name="Fedora32Virtualenv"></a> 32-bit Fedora Virtualenv Installation
 1. Install virtualenv  
 ```sudo pip install virtualenv```
-1. Create a virtualenv; <name> in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
 ```virtualenv <name>```
 1. Activate the virtualenv  
 ```source <name>/bin/activate```
@@ -240,7 +240,7 @@ You can now [configure](#Configuration) your environment.
 ## <a name="Fedora64Virtualenv"></a> 64-bit Fedora Virtualenv Installation
 1. Install virtualenv  
 ```sudo pip install virtualenv```
-1. Create a virtualenv; <name> in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
 ```virtualenv <name>```
 1. Activate the virtualenv  
 ```source <name>/bin/activate```
@@ -270,7 +270,7 @@ You can now [configure](#Configuration) your environment.
 ## <a name="MacOSXVirtualenv"></a> Mac OS X Virtualenv Installation
 1. Install virtualenv  
 ```sudo pip install virtualenv```
-1. Create a virtualenv; <name> in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
 ```virtualenv <name>```
 1. Activate the virtualenv  
 ```source <name>/bin/activate```
@@ -302,7 +302,7 @@ You can now [configure](#Configuration) your environment.
 ```cd %HOMEPATH%```
 1. Install virtualenv  
 ```pip install virtualenv```
-1. Create a virtualenv; <name> in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
 ```virtualenv <name>```
 1. Activate the virtualenv  
 ```<name>\Scripts\activate.bat ```
