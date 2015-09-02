@@ -365,8 +365,8 @@ If you get the output above, you have successfully installed your system.
  1. Edit C:\Python27\Lib\mimetypes.py and add these codes:
  
   ```
-  if sys.getdefaultencoding() != 'gbk':
-      reload(sys)
+  if sys.getdefaultencoding() != 'gbk':  
+      reload(sys)  
       sys.setdefaultencoding('gbk')
   ```
   
