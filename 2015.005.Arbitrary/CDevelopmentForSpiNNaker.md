@@ -10,7 +10,6 @@ To set up your development environment:
 1. [Install Spinnaker Tools](#SpinnakerTools)
 1. *Optional*: [Install spinn_common Library](#spinn_common) (for additional utility, mathematical and efficiency library functions)
 1. *Optional*: [Install ybug](#Ybug) (for command-line debugging)
-1. *Optional: for compiling the documentation of c* [Install Doxygen](#doxygen) 
 
 
 Once you've got a working development environment:
@@ -118,20 +117,6 @@ To run ybug:
 ```ybug <ip-or-host>```  
 where ```<ip-or-host>``` is the ip address or hostname of your SpiNNaker board.
 1. Type ```help``` to get further usage instructions.
-
-# <a name="doxygen"></a> Doxygen Installation
-
- **Ubuntu Linux**
-``` sudo apt-get install doxygen ```
-
-**Fedora Linux**
-``` sudo yum install doxygen ```
-
-**Mac OS X**
-``` sudo port install doxygen ```
-
-**Windows**
- follows these [instructions](http://www.stack.nl/~dimitri/doxygen/manual/install.html)
 
 # <a name="BuildUsage"></a> Build System Usage
 
