@@ -45,7 +45,7 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 ```sudo yum install numpy```
 1. Install scipy  
 ```sudo yum install scipy```
-1. Install lxml
+1. Install lxml  
 ```sudo yum install python-lxml```
 1. Install pip  
 ```sudo yum install python-pip```
