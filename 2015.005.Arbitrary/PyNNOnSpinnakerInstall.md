@@ -112,7 +112,7 @@ Continue to [edit your PATH](#WindowsPath), before installing the remaining requ
     1. Select the "Path" in the "System Variables" box at the bottom
     1. Click on "Edit"
     1. Add the new directory by putting it before the existing string, followed by a single semi-colon; if you installed the dependencies to the default/recommended locations, prepend Path with:  
-```C:\Python27;C:\Python27\Scripts;```
+```C:\Python27;C:\Python27\Scripts; ```
 
 Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements.
 
@@ -339,11 +339,10 @@ You can now [configure](#Configuration) your environment.
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:  
 ```python -c "import pyNN.spiNNaker"```
 
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
-  
-```[Machine]```  
-```machineName = None```  
-```version = None```
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
+```[Machine] ```  
+```machineName = None ```  
+```version = None ```
 
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
@@ -360,14 +359,16 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="Trouble"></a> Troubleshooting
 
-1. **UnicodeDecodeError**: if you experience the error **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)** Then to solve it follow these instuctions:
+1. If you experience the error:
 
- 1. Edit C:\Python27\Lib\mimetypes.py and add these codes:
+```**UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)**``` 
+
+Then to solve it, edit C:\Python27\Lib\mimetypes.py and add these codes:
+
+    if sys.getdefaultencoding() != 'gbk':  
+        reload(sys)
+        sys.setdefaultencoding('gbk')
  
-  ```if sys.getdefaultencoding() != 'gbk':```  
-  ```    reload(sys)```  
-  ```    sys.setdefaultencoding('gbk')```
-  
-  before the following line:
+before the following line:
 
-   ```default_encoding = sys.getdefaultencoding()```
+    default_encoding = sys.getdefaultencoding()
