@@ -1,12 +1,8 @@
 ---
-title: Spynnaker version 2015.005 (Arbitrary) September 2015 workshop proceedings
+title: Spynnaker version 2015.005 (Arbitrary) September 2015 workshop presentations
 layout: default
 ---
 
-##  Full Proceedings
-* [Full](proceedings.pdf)
-
-## presentation scope 
 * [SpiNNaker Hardware & Tools Overview](slides/SpiNNaker_hardware_and_software_overview_Sept_15.pdf)
 * [Running PyNN simulations on Spinnaker](slides/Running_PyNN_Simulations_On_SpiNNaker.pdf)
 * [Synaptic plasticity using PyNN](slides/basic_plastic.pdf)
@@ -15,7 +11,7 @@ layout: default
 * [Simple data I/O and visualisation: c vis color_map](simple_io_demos/spike_io.colour_map)
 * [SpiNNaker architecture, chip resources and limitations](slides/spin-chip-resources-1.pdf)
 * [Adding new neuron models](slides/NewNeuronModels.pdf)
-* [SpiNNaker system software (SARK)](spin-system-software.pdf)
+* [SpiNNaker system software (SARK)](spin-system-software-1.pdf)
 * [SpiNNaker API](slides/SpiNNaker_API_2015_09.pdf)
 * [Event-driven neural simulation](slides/SpiNNakerWorkshop2015AutumnEventDriven.pdf)
 * [Maths and fixed point libraries](slides/SpiNNaker_workshop_sept_2015_Fixed_Point_Maths_&_LibrariesODE.pdf)

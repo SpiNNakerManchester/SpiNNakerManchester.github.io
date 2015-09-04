@@ -3,10 +3,6 @@ title: Spynnaker version 2015.005 (Arbitrary) September 2015 workshop lab manual
 layout: default
 ---
 
-##  Full Manual
-* [Full](manuals.pdf)
-
-## individual manuals 
 * [Running PyNN simulations on Spinnaker](RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
 * [Synaptic plasticity using PyNN](Synaptic_plasticity_lab_book.pdf)
 * [Simple data I/O and visualisation](SimpleIOLabManual.pdf)
