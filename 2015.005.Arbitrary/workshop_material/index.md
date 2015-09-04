@@ -4,6 +4,6 @@ layout: default
 ---
 
 * [Proceedings](proceedings)
-* [Examples](examples)
+* [Examples](../examples)
 * [Lab_manuals](lab_manuals)
 * [Lab_manual_solutions](lab_manual_solutions)
