@@ -1,5 +1,5 @@
 ---
-title: Spynnaker version 2015.005 (Arbitrary) September 2015 workshop: proceedings
+title: Spynnaker version 2015.005 (Arbitrary) September 2015 workshop proceedings
 layout: default
 ---
 
