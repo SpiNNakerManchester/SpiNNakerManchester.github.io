@@ -4,10 +4,10 @@ layout: default
 ---
 
 Running PyNN Simulations on SpiNNaker
-* [Task 1.1](pynn_simulations_task1.1.py)
-* [Task 1.2](pynn_simulations_task1.2.py)
-* [Task 2.1](pynn_simulations_task2.1.py)
-* [Task 3.1](pynn_simulations_task3.1.py)
+* [Task_1.1](pynn_simulations_task1.1.py)
+* [Task_1.2](pynn_simulations_task1.2.py)
+* [Task_2.1](pynn_simulations_task2.1.py)
+* [Task_3.1](pynn_simulations_task3.1.py)
 
 Synaptic Plasticity on SpiNNaker with PyNN
 * [Task 1](plasticity_task_1.py)
