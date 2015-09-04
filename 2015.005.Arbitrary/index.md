@@ -17,8 +17,5 @@ layout: default
 * [AER_dev_sim: An external device simulator for EIEIO interfacing](AERDevSim.html)
 
 ## September 2015 workshop supplementry material
-* [External devices examples](examples)
-* [Proceedings](
-* [Lab Manuals]
-* [Lab Manuals Solutions]
+* [September 2015 workshop supplementry material](workshop_material)
 -->
