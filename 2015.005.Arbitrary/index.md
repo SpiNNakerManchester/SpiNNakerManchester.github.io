@@ -15,4 +15,10 @@ layout: default
 * [External Internal Event Input Output (EIEIO) Protocol](EIEIOProtocolProposal.pdf)
 * [Example Visualiser framework](VisualiserFramework.html)
 * [AER_dev_sim: An external device simulator for EIEIO interfacing](AERDevSim.html)
+
+## September 2015 workshop supplementry material
+* [External devices examples](examples)
+* [Proceedings](
+* [Lab Manuals]
+* [Lab Manuals Solutions]
 -->
