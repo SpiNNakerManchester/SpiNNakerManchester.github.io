@@ -9,7 +9,7 @@ If you are writing new neural models, synapse models or plasticity models, it is
 
 1. Download the sPyNNaker source code as a [zip](https://github.com/SpiNNakerManchester/sPyNNaker/archive/2015.005.zip) or [tar.gz](https://github.com/SpiNNakerManchester/sPyNNaker/archive/2015.005.tar.gz)
 1. Extract the code to the location of your choice.
-1. Create a new environment variable ```NEURAL_MODELLING_DIRS``` which is set to the path of the ```neural_modelling``` subfolder of the extracted archive.
+1. Create a new environment variable ```NEURAL_MODELLING_DIRS``` which is set to the path of the ```neural_modelling``` subfolder of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to C:\sPyNNaker\, you should set the environment variable to /c/sPyNNaker/neural_modelling).
 
 # sPyNNaker Python Development Environment
 In addition to the C code, you will also likely need to write Python code which enables the use of the new models from within PyNN.  Other extensions to sPyNNaker might also only require python code changes, such as the development of new connector types.  The only requirements for the Python development, is a [working sPyNNaker install](PyNNOnSpinnakerInstall.html).
