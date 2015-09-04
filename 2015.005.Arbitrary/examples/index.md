@@ -1,5 +1,5 @@
 ---
-title: Spynnaker version 2015.005 (Arbitrary)
+title: Spynnaker version 2015.005 (Arbitrary) Examples for the external devices lab manual
 layout: default
 ---
 
