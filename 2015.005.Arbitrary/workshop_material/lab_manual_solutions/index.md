@@ -26,6 +26,12 @@ layout: default
 * [Task 1.6 vis colour_map_vis_1](simple_IO_vis_color_data/first_synfire)
 * [Task 1.6 vis colour_map_vis_2](simple_IO_vis_color_data/second_synfire)
 
+### Visualiser pre-built
+* [Windows](vis-win.zip)
+* [Mac](vis-mac.zip)
+* [Ubuntu](vis-ubuntu.zip)
+* [Fedora](vis-fedora.zip)
+
 ## Creating New Neuron Models for Spinnaker
 * [Task 1](new_models_task_1.zip)
 * [Task 2](new_models_task_2.zip)
