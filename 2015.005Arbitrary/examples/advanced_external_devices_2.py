@@ -48,7 +48,7 @@ def receive_callback(packet):
     try:
         count = struct.unpack_from("B", packet, 0)[0]
         for i in range(count):
-            key = struct.unpack_from("<H", packet, 2 + (i * 2))[0]
+            key = struct.unpack_from("<H", packet, 2 + (i * 2))[0] & 0x3
             print_condition.acquire()
             direction = directions[key]
             print direction[0]
