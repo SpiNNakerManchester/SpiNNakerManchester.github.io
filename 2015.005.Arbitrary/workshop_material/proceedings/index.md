@@ -11,7 +11,7 @@ layout: default
 * [Simple data I/O and visualisation: c vis color_map](simple_io_demos/spike_io.colour_map)
 * [SpiNNaker architecture, chip resources and limitations](slides/spin-chip-resources-1.pdf)
 * [Adding new neuron models](slides/NewNeuronModels.pdf)
-* [SpiNNaker system software (SARK)](spin-system-software-1.pdf)
+* [SpiNNaker system software (SARK)](slides/spin-system-software-1.pdf)
 * [SpiNNaker API](slides/SpiNNaker_API_2015_09.pdf)
 * [Event-driven neural simulation](slides/SpiNNakerWorkshop2015AutumnEventDriven.pdf)
 * [Maths and fixed point libraries](slides/SpiNNaker_workshop_sept_2015_Fixed_Point_Maths_&_LibrariesODE.pdf)
