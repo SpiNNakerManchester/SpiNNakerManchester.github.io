@@ -13,8 +13,8 @@ layout: default
 * [Extracting data from a simulation on a SpiNNaker machine in real time](workshop_material/lab_manuals/SimpleIOLabManual.pdf)
 * [Adding new neural models to the SpyNNaker tool chain](workshop_material/lab_manuals/NewNeuronModels-LabManual.pdf)
 * [Adding new Plasticity models to the SpiNNaker tool chain](workshop_material/lab_manuals/adding_synapses_lab_manual.pdf)
-* [External Internal Event Input Output (EIEIO) Protocol](EIEIOProtocolProposal.pdf)
-* [Example Visualiser framework](VisualiserFramework.html)
+* [External Internal Event Input Output (EIEIO) Protocol](workshop_material/lab_manuals/External_devices_lab_book.pdf)
+* [Example Visualiser framework](workshop_material/lab_manuals/SimpleIOLabManual.pdf)
 
 ## September 2015 workshop supplementry material
 * [September 2015 workshop supplementry material](workshop_material)
