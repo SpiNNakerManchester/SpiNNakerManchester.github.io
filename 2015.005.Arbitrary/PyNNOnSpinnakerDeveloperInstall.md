@@ -250,7 +250,7 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```pip install six```  
 ```ln -s /usr/lib/pymodules/python2.7/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/pymodules/python2.7/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -273,7 +273,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -296,7 +296,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib64/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib64/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -319,7 +319,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -350,9 +350,55 @@ You can now [configure](#Configuration) your environment.
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:  
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
 ```TK_LIBRARY: C:\Python27\tcl\tk8.5```
-1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
+
+# <a name="virutal_git_clone"></a> Virutal git clone
+
+1. You now need to clone the github resposorities for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
+    1. cd sPyNNaker
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. cd sPyNNakerExtraModelsPlugin
+    1. python setup.py develop --no-deps 
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
+    1. cd SpiNNFrontEndCommon
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/PACMAN.git
+    1. cd PACMAN
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
+    1. cd SpiNNMan
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
+    1. cd sPyNNakerExternalDevicesPlugin
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/DataSpecification.git
+    1. cd DataSpecification
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
+    1. cd SpiNNMachine
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
+    1. cd SpiNNakerGraphFrontEnd
+    1. python setup.py develop --no-deps
+    1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
+    1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
+    1. git clone https://github.com/SpiNNakerManchester/ybug.git
+    1. git clone https://github.com/SpiNNakerManchester/Visualiser.git
+    1. git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
+1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
 # <a name="CCOMPILE"></a> C Compiler Install
 1. Primarily, you will need to install a C compiler that is compatible with SpiNNaker.  At present, we recommend using gcc for this.  Instructions for installing this on your system are below, depending on which platform you are using, as well as instructions for installing Perl, which is used by the development tools to modify the generated binaries to run on SpiNNaker:
