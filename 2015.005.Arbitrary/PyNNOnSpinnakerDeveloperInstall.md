@@ -122,39 +122,39 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 1. You now need to clone the github resposorities for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
     1. cd sPyNNaker
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
-    1. python setup.py develop --no-deps 
+    1. sudo python setup.py develop --no-deps 
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
     1. cd SpiNNFrontEndCommon
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/PACMAN.git
     1. cd PACMAN
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
     1. cd SpiNNMan
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
     1. cd sPyNNakerExternalDevicesPlugin
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/DataSpecification.git
     1. cd DataSpecification
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
     1. cd SpiNNMachine
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
     1. cd SpiNNakerGraphFrontEnd
-    1. python setup.py develop --no-deps
+    1. sudo python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
     1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
@@ -209,7 +209,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
  
-# <a name="virutalGit"></a> Virtualenv gitClone
+# <a name="virutalGit"></a> Virtualenv git clone
 
 These instructions will install the required packages only in a virtualenv.  Like the user-only installation, this can help when you don't have root access or are on a shared machine.  Additionally, it will help when you have several packages with conflicting dependencies, or those that occupy the same namespace (such as pyNN.spiNNaker if you have an older version of the toolchain).
 
@@ -250,7 +250,7 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```pip install six```  
 ```ln -s /usr/lib/pymodules/python2.7/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/pymodules/python2.7/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central gitClone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -273,7 +273,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central gitClone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -296,7 +296,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib64/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib64/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central gitClone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -319,7 +319,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Central gitClone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -350,7 +350,7 @@ You can now [configure](#Configuration) your environment.
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:  
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
 ```TK_LIBRARY: C:\Python27\tcl\tk8.5```
-1. go to [Central gitClone](#centeralGit) to compelte the cloning of the git reposorities
+1. go to [Central git clone](#centeralGit) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -514,6 +514,15 @@ Note that if you have previously installed a version of the spiNNaker software, 
 ```version = None ```
 
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
+
+The default ipaddress for a spinn-3 board is 192.168.240.253 and the default ipaddress for a spinn-5 board is 192.168.240.1
+
+# <a name="Network Configuration"></a> Network Configuration
+
+1. Go to your network settings and add a IPv4 entry with the following address to your wired settings:  
+    1. ipaddress = 192.168.240.253
+    2. submask = 255.255.0.0
+    3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples
 1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.01.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.01.tar.gz) (tar.gz)
