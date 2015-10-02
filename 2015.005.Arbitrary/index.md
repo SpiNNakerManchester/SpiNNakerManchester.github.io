@@ -9,12 +9,10 @@ layout: default
 * [PyNN on SpiNNaker Extension Development Guide](PyNNOnSpiNNakerExtensions.html)
 * [C Development for SpiNNaker](CDevelopmentForSpiNNaker.html)
 * [PyNN on SpiNNaker Developer Installation Guide](PyNNOnSpinnakerDeveloperInstall.html)
-* [Injecting Data into a simulation on a SpiNNaker Machine in real-time](workshop_material/lab_manuals/SimpleIOLabManual.pdf)
-* [Extracting data from a simulation on a SpiNNaker machine in real time](workshop_material/lab_manuals/SimpleIOLabManual.pdf)
+* [Simple Input/output and Visualisation using sPyNNaker](workshop_material/lab_manuals/SimpleIOLabManual.pdf)
 * [Adding new neural models to the SpyNNaker tool chain](workshop_material/lab_manuals/NewNeuronModels-LabManual.pdf)
 * [Adding new Plasticity models to the SpiNNaker tool chain](workshop_material/lab_manuals/adding_synapses_lab_manual.pdf)
-* [External Internal Event Input Output (EIEIO) Protocol](workshop_material/lab_manuals/External_devices_lab_book.pdf)
-* [Example Visualiser framework](workshop_material/lab_manuals/SimpleIOLabManual.pdf)
+* [More complex Input/Output from using sPyNNaker, including connected devices](workshop_material/lab_manuals/External_devices_lab_book.pdf)
 
-## September 2015 workshop supplementry material
-* [September 2015 workshop supplementry material](workshop_material)
+## September 2015 workshop supplementary material
+* [September 2015 workshop supplementary material](workshop_material)
