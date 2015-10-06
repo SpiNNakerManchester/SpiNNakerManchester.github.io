@@ -12,6 +12,7 @@ title: PyNN on SpiNNaker Developer Install Guide
 * [Standard Central Installation](#Central)
 * [User-Only Installation](#User)
 * [Virtualenv Installation](#Virtualenv)
+* [Binary Compilation](#CCOMPILEBINARIES)
 * [Configuration](#Configuration)
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
