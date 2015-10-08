@@ -162,6 +162,9 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
     1. git clone https://github.com/SpiNNakerManchester/Visualiser.git
     1. git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
+    1. sudo pip install enum34
+    1. sudo pip install six
+    1. sudo pip install pyNN
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
 # <a name="userGit"></a> User-Only gitclone
@@ -208,6 +211,9 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
     1. git clone https://github.com/SpiNNakerManchester/Visualiser.git
     1. git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
+    1. pip install enum34 --user
+    1. pip install six --user
+    1. pip install pyNN --user
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
  
 # <a name="virutalGit"></a> Virtualenv git clone
@@ -399,6 +405,9 @@ You can now [configure](#Configuration) your environment.
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
     1. git clone https://github.com/SpiNNakerManchester/Visualiser.git
     1. git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
+    1. pip install enum34
+    1. pip install six
+    1. pip install pyNN
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
 # <a name="CCOMPILE"></a> C Compiler Install
