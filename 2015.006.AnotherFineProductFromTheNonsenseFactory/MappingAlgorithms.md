@@ -210,7 +210,7 @@ The tool chain expects to be able to extract a umber of PACMAN objects at the en
 
 # <a name="Json"></a> Json File Format
 
-we refer you to the documentation on the Json File Format found (here)[https://github.com/mossblaser/place-and-route-interchange-format]
+we refer you to the documentation on the Json File Format found [here](https://github.com/mossblaser/place-and-route-interchange-format)
 
 # <a name="Configuration"></a> Configuration
 
