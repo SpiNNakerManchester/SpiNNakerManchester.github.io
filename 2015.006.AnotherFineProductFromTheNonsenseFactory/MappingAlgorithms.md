@@ -145,6 +145,7 @@ The BasicPartitioner takes 2 parameters as its inputs, which are defined by the 
 1. and a python represnetation of the SpiNNaker machine which has been extended to represent external devices as virtual chips, which has a type of MemoryExtendedMachine for clarity.
  
 The BasicPartitioner generates 2 outputs, which are defined by the parameters encapulated within the <produces_outputs>, <param_name> and <param_type> tags. These are:
+
 1. The partitioned graph where each vertex is a core sized chunk of a  vertex in the partitionable graph which has a type of MemoryPartitionedGraph for clarity, 
 1. and a mapping between the partitionable and partitioned graph, known as a graph mapper whcih has a type of MemorygraphMapper for clarity. 
  
@@ -183,19 +184,19 @@ The tool chain also provides a collection of converters which switch between jso
 
 |Name|Definition|Inputs|Outputs|Currently Implimented?|
 |-----------------|------------------|-------------|-------------|--------|
-|ConvertToFilePlacement|MemoryPlacements, FilePlacementFilePath| FilePlacements| True|
-|ConvertToFilePartitionedGraph|MemoryPartitionedGraph, FilePartitionedGraphFilePath| FilePartitionedGraph| True|
-|ConvertToFileCoreAllocation|MemoryPlacements, FileCoreAllocationsFilePath| FileCoreAllocations| True|
-|ConvertToFileMachine|MemoryMachine, FileMachineFilePath|FileMachine| True|
-|CreateToFileConstraints|MemoryExtendedMachine, MemoryPartitionedGraph, FileConstraintsFilePath| FileConstraints| True|
-|ConvertToFilePartitionableGraph|MemoryPartitionableGraph, FilePartitionableGraphFilePath|FilePartitionableGraph| False|
-|ConvertToFileRoutingTables|MemoryRoutingTables, FileRoutingTablesFilePath|FileRoutingTables| False|
-|ConvertToMemoryPlacements|MemoryExtendedMachine, FilePlacements, MemoryPartitionedGraph, FileCoreAllocations, FileConstraints| MemoryPlacements| True|
-|ConvertToMemoryMultiCastRoutingPaths|FileRoutingPaths, MemoryPartitionedGraph, MemoryPlacements, MemoryExtendedMachine| MemoryRoutingPaths| True|
-|ConvertToMemoryRoutingTables|FileRoutingtables|MemoryRoutingTables|False|
-|ConvertToMemoryPartitionedGraph|FilePartitionedGraph|MemoryPartitionedGraph| False|
+|ConvertToFilePlacement|Converts from PACMAN placements to Json Placements| MemoryPlacements, FilePlacementFilePath| FilePlacements| True|
+|ConvertToFilePartitionedGraph|Converts from PACMAN partitioned graph to Json partitioned graph| MemoryPartitionedGraph, FilePartitionedGraphFilePath| FilePartitionedGraph| True|
+|ConvertToFileCoreAllocation|Converts PACMAN placements to the Json core_allocations| MemoryPlacements, FileCoreAllocationsFilePath| FileCoreAllocations| True|
+|ConvertToFileMachine|Converts from the PACMAN machine object to the Json Machine| MemoryMachine, FileMachineFilePath|FileMachine| True|
+|CreateToFileConstraints|Creates the Json constraints file from PACMAN machien with virutal chips and the PACMAN partitioned graph| MemoryExtendedMachine, MemoryPartitionedGraph, FileConstraintsFilePath| FileConstraints| True|
+|ConvertToFilePartitionableGraph|Converts from PACMAN partitionable graph to Json partitionable graph| MemoryPartitionableGraph, FilePartitionableGraphFilePath|FilePartitionableGraph| False|
+|ConvertToFileRoutingTables|Converts PACMAN routing tables into Json routing tables| MemoryRoutingTables, FileRoutingTablesFilePath|FileRoutingTables| False|
+|ConvertToMemoryPlacements|Converts from the Json placement, core_allocation to the PACMAN placements, which requires PACMANS partitioned graph| MemoryExtendedMachine, FilePlacements, MemoryPartitionedGraph, FileCoreAllocations, FileConstraints| MemoryPlacements| True|
+|ConvertToMemoryMultiCastRoutingPaths|Converts Json routing_paths to PACMAN routing paths with the use of PACMAN's partitioned graph, placements, and machine with virutal chips| FileRoutingPaths, MemoryPartitionedGraph, MemoryPlacements, MemoryExtendedMachine| MemoryRoutingPaths| True|
+|ConvertToMemoryRoutingTables|Converts Json routing tables into PACMAN routing tables| FileRoutingtables|MemoryRoutingTables|False|
+|ConvertToMemoryPartitionedGraph|Converts Json partitioned graph into PACMAN partitioned graph| FilePartitionedGraph|MemoryPartitionedGraph| False|
 
-The tool chain expects to be produce the follows outputs from the collection of algorithms specified:
+The tool chain expects to be able to extract a umber of PACMAN objects at the end of the algortihm exeuction. This is aminly for transmitting the objects onto the SpiNNaker machine, and supporting data retrival lateron. These objects are as follows:
 
 |Name|Definition|
 |-----------------|------------------|
