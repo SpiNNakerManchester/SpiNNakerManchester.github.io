@@ -220,10 +220,7 @@ To configure the sPyNNaker front end to use your algorithms, you must first have
 [Mapping]
 # format is <algorithum_name>,<>
 # pacman algorithms are:
-# Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,
-# BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,
-# BasicRoutingInfoAllocator, BasicDijkstraRouting,
-# MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
+# Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,BasicRoutingInfoAllocator, BasicDijkstraRouting,MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
 algorithms = MallocBasedChipIDAllocator,BasicDijkstraRouting,RadialPlacer,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
 # format is <path1>,<path2>
 extra_xmls_paths = None
