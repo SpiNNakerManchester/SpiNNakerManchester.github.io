@@ -139,29 +139,29 @@ Any new algorithm needs to have a XMl file which states how to execute the algor
 
 This example xml shows 2 algorithms descriptions (the BasicPartitioner which is an internal algorithm for PACMAN and an external placing algorithm known as RigCommandLineSAPlacer) All algorithms defined in this file must reside between the <algorithms> tag, and each algorthm needs to be encapsulated between <algorithm> tags. Each Algorithm has a name (referred to by the <algorithm name=> tag) which is used during configuration to identify what algorithums to run. Below is a breakdown of how this xml file describes the two algorithms.
 
-The BasicPartitioner takes 2 parameters as its inputs, which are defined by the parameters encapsulated within the <required_inputs>, <param_name> and <param_type> tags. These are:
+The BasicPartitioner takes 2 parameters as its inputs, which are defined by the parameters encapsulated within the ```<required_inputs>, <param_name> and <param_type>``` tags. These are:
 
 1. The partitionable graph which has a type of MemoryPartitionableGraph for clarity,
 1. and a python represnetation of the SpiNNaker machine which has been extended to represent external devices as virtual chips, which has a type of MemoryExtendedMachine for clarity.
  
-The BasicPartitioner generates 2 outputs, which are defined by the parameters encapulated within the <produces_outputs>, <param_name> and <param_type> tags. These are:
+The BasicPartitioner generates 2 outputs, which are defined by the parameters encapulated within the ```<produces_outputs>, <param_name> and <param_type>``` tags. These are:
 
 1. The partitioned graph where each vertex is a core sized chunk of a  vertex in the partitionable graph which has a type of MemoryPartitionedGraph for clarity, 
 1. and a mapping between the partitionable and partitioned graph, known as a graph mapper whcih has a type of MemorygraphMapper for clarity. 
  
-Because the BasicPartitioner is a internal algorthm of PACMAN and therefore uses the PACMAN data structures, it can be ran directly as a imported python module. Therefore the tool chain needs to know where the module lives (in relation to the PACMAN insall) and what class to instansiate and call. These pieces of data can be found in the <python_module> and <python_class> tags. 
+Because the BasicPartitioner is a internal algorthm of PACMAN and therefore uses the PACMAN data structures, it can be ran directly as a imported python module. Therefore the tool chain needs to know where the module lives (in relation to the PACMAN insall) and what class to instansiate and call. These pieces of data can be found in the ```<python_module> and <python_class>``` tags. 
 
-The RigCommandLineSAPlacer on the otherhand is a external algorthim to PACMAN and therefore has to be ran as a command runnable from the command line. The RigCommandLineSAPlacer takes 5 parameters as its command line inputs, and requires 2 commands to run. These are encapsulated within the <command_line_args> and <arg> tags. These arguments are as follows:
+The RigCommandLineSAPlacer on the otherhand is a external algorthim to PACMAN and therefore has to be ran as a command runnable from the command line. The RigCommandLineSAPlacer takes 5 parameters as its command line inputs, and requires 2 commands to run. These are encapsulated within the ```<command_line_args> and <arg> ``` tags. These arguments are as follows:
 
-The first and second arguments state that its a python class to run, and the path requried to make the script run from the command line. Here we have assumed that the script can be ran direclty from anywhere. The rest of the arguments corraspond to inputs to the algorithm and are tied to the <required_inputs> tags. These are described below:
+The first and second arguments state that its a python class to run, and the path requried to make the script run from the command line. Here we have assumed that the script can be ran direclty from anywhere. The rest of the arguments corraspond to inputs to the algorithm and are tied to the ```<required_inputs>``` tags. These are described below:
 
-1. The algorithm to use. This algorithm is a interface for a collection of placers and because the tool chain can only process each algorithm individually, this means in this case, that it is hard coded and therefore is not needed in the <required_inputs> tags.
+1. The algorithm to use. This algorithm is a interface for a collection of placers and because the tool chain can only process each algorithm individually, this means in this case, that it is hard coded and therefore is not needed in the ```<required_inputs>``` tags.
 1. A file representation of the PACMAN's partitioned_graph is required under the parameter --graph. This is deduced from the required input which has the parameter_name of graph and type of FilePartitionedGraph.  
 1. A file representation of the SpiNNaker machine is required under the parameter --machine. This is deduced from the required input which has the parameter_name of machine and type FileMachine. 
 1. A file that contains contraints on vertices within the partitioned graph is required under the parameter --constraints. This is deduced from the required input which has the parameter_name of constraints and type FileConstraints. 
 1. A filepath for where to write the output json file for its FilePlacements is required under the parameter --placements. This is deduced from the required input which has the name placements_path and has the type FilePlacementFilePath.
 
-The RigCommandLineSAPlacer also produces one output, which is the json file which conatains placement infoformation. This is deduced from the <produces_outputs> tags. Note that the param_name is the same as the input type for the placements_path. This allows the PACMAN algorithm to deduce what type of data your outputting, whilst supporting general naming of output files. 
+The RigCommandLineSAPlacer also produces one output, which is the json file which conatains placement infoformation. This is deduced from the ```<produces_outputs>``` tags. Note that the param_name is the same as the input type for the placements_path. This allows the PACMAN algorithm to deduce what type of data your outputting, whilst supporting general naming of output files. 
 
 The tool chain currently supplies a collection of inputs into the PACMAN infranstrucutre. These are defined below and can be found from lines 194 to 206 of [spinnaker.py](https://github.com/SpiNNakerManchester/sPyNNaker/blob/mapping_work_flow/spynnaker/pyNN/spinnaker.py):
 
@@ -232,7 +232,7 @@ extra_xmls_paths = None
 At this point, you need to :
 
 1. Remove the PACMAN specific algorithm that you'r algorithm replaces.
-1. Add your algorithms name (as specified in the <algorithm name=""> tag) to the list.
+1. Add your algorithms name (as specified in the ```<algorithm name="">``` tag) to the list.
 1. add a path to your XML file containing its input and output data in the "extra_xml_paths"
 1. run a pynn script.
 
