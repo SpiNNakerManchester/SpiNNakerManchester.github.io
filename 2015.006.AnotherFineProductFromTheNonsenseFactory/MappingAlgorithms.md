@@ -230,6 +230,7 @@ extra_xmls_paths = None
 ```
 
 At this point, you need to :
+
 1. Remove the PACMAN specific algorithm that you'r algorithm replaces.
 1. Add your algorithms name (as specified in the <algorithm name=""> tag) to the list.
 1. add a path to your XML file containing its input and output data in the "extra_xml_paths"
@@ -238,6 +239,7 @@ At this point, you need to :
 # <a name="RigPlacer"></a> Running Example
 
 To run a simple example of using external and internal algorithms in situ, please follow these instructions:
+
 1. install rig (this can be done via the command pip install rig)
 1. git clone https://github.com/mossblaser/place-and-route-interchange-format.git
 1. create a xml file with the following data:
