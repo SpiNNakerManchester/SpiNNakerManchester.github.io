@@ -196,7 +196,9 @@ The tool chain also provides a collection of converters which switch between jso
 |ConvertToMemoryRoutingTables|Converts Json routing tables into PACMAN routing tables| FileRoutingtables|MemoryRoutingTables|False|
 |ConvertToMemoryPartitionedGraph|Converts Json partitioned graph into PACMAN partitioned graph| FilePartitionedGraph|MemoryPartitionedGraph| False|
 
-The tool chain expects to be able to extract a umber of PACMAN objects at the end of the algortihm exeuction. This is aminly for transmitting the objects onto the SpiNNaker machine, and supporting data retrival lateron. These objects are as follows:
+These extra algorithms are only used when required, and are not needed to be explicitly defined in your algorithm listings. 
+
+The tool chain expects to be able to extract a umber of PACMAN objects at the end of the algortihm exeuction. This is aminly for transmitting the objects onto the SpiNNaker machine, and supporting data retrival later-on. These objects are as follows:
 
 |Name|Definition|
 |-----------------|------------------|
