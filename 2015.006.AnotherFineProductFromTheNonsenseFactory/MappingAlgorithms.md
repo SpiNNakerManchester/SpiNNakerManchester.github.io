@@ -241,8 +241,8 @@ At this point, you need to :
 To run a simple example of using external and internal algorithms in situ, please follow these instructions:
 
 1. install rig (this can be done via the command pip install rig)
-1. git clone https://github.com/mossblaser/place-and-route-interchange-format.git
-1. create a xml file with the following data:
+2. git clone https://github.com/mossblaser/place-and-route-interchange-format.git
+3. create a xml file with the following data:
 
 ```
 <algorithms>
@@ -420,8 +420,8 @@ To run a simple example of using external and internal algorithms in situ, pleas
 </algorithms>
 ```
 
-1. Replace PATH_TO_GIT_CLONE in the xml file with the absolute path to the git clone from before.
-1. modify your .spynnaker.cfg file to include the following lines:
+4. Replace PATH_TO_GIT_CLONE in the xml file with the absolute path to the git clone from before.
+5. modify your .spynnaker.cfg file to include the following lines:
 
 ```
 [Mapping]
@@ -438,9 +438,9 @@ extra_xmls_paths = PATH_TO_XML_FILE
 
 ```
 
-1. replace PATH_TO_XML_FILE with a absolute path to the xml file you just wrote.
-1.  (PyNNExamples)[https://github.com/SpiNNakerManchester/PyNNExamples]
-1. run python PyNNExamples/examples/synfire_if_curr_exp.py
+6. replace PATH_TO_XML_FILE with a absolute path to the xml file you just wrote.
+7.  (PyNNExamples)[https://github.com/SpiNNakerManchester/PyNNExamples]
+8. run python PyNNExamples/examples/synfire_if_curr_exp.py
 
 You should see output like the one below:
 
