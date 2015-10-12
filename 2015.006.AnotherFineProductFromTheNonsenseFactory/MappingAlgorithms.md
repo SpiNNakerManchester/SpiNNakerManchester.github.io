@@ -183,7 +183,7 @@ The tool chain currently supplies a collection of inputs into the PACMAN infrans
 The tool chain also provides a collection of converters which switch between json file formats and PACMANS data objects. These can be found in the (pacman/utilities/file_format_converters)[https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters]. The XML file describing their inputs and outputs can be found in the same folder under (converter_algorithms_metadata.xml)[https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters/converter_algorithms_metadata.xml]. These are summerised below:
 
 |Name|Definition|Inputs|Outputs|Currently Implimented?|
-|-----------------|------------------|-------------|-------------|--------|
+|-----------|-----------------------------|-------------|-------------|--------|
 |ConvertToFilePlacement|Converts from PACMAN placements to Json Placements| MemoryPlacements, FilePlacementFilePath| FilePlacements| True|
 |ConvertToFilePartitionedGraph|Converts from PACMAN partitioned graph to Json partitioned graph| MemoryPartitionedGraph, FilePartitionedGraphFilePath| FilePartitionedGraph| True|
 |ConvertToFileCoreAllocation|Converts PACMAN placements to the Json core_allocations| MemoryPlacements, FileCoreAllocationsFilePath| FileCoreAllocations| True|
