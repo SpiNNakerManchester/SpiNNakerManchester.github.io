@@ -11,8 +11,9 @@ title: PyNN on SpiNNaker Developer Install Guide
 * [Windows PATH settings](#WindowsPath)
 * [Standard Central Installation](#Central)
 * [User-Only Installation](#User)
-* [Virtualenv Installation](#Virtualenv)
-* [Binary Compilation](#CCOMPILEBINARIES)
+* [Virtualenv Installation](#VirtualEnv)
+* [C Development Environment] (#CDevelopment)
+* [Binary Compilation](#CompileBinaries)
 * [Configuration](#Configuration)
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
@@ -113,7 +114,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
 # <a name="GITCLONE"></a> Git Cloning Requirements
 
-* [Central gitClone](#centeralGit)
+ * [Central gitClone](#centeralGit)
  * [User-Only gitclone](#userGit)
  * [Virtualenv gitclone](#virutalGit)
  
@@ -165,7 +166,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. sudo pip install enum34
     1. sudo pip install six
     1. sudo pip install pyNN
-1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
+1. Continue to the [C Compiler Install](#CDevelopment) to install the remaining c compiler dependency
 
 # <a name="userGit"></a> User-Only gitclone
 
@@ -214,7 +215,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. pip install enum34 --user
     1. pip install six --user
     1. pip install pyNN --user
-1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
+1. Continue to the [C Compiler Install](#CDevelopment) to install the remaining c compiler dependency
  
 # <a name="virutalGit"></a> Virtualenv git clone
 
@@ -408,12 +409,12 @@ You can now [configure](#Configuration) your environment.
     1. pip install enum34
     1. pip install six
     1. pip install pyNN
-1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
+1. Continue to the [C Compiler Install](#CDevelopment) to install the remaining c compiler dependency
 
-# <a name="CCOMPILE"></a> C Compiler Install
+# <a name="CDevelopment"></a> C Development Environment
 1. Primarily, you will need to install a C compiler that is compatible with SpiNNaker.  At present, we recommend using gcc for this.  Instructions for installing this on your system are below, depending on which platform you are using, as well as instructions for installing Perl, which is used by the development tools to modify the generated binaries to run on SpiNNaker:
 
-* [Development Dependencies for 64-bit Ubuntu Linux](#Ubuntu64Dev)
+ * [Development Dependencies for 64-bit Ubuntu Linux](#Ubuntu64Dev)
  * [Development Dependencies for 64-bit Fedora Linux](#Fedora64Dev)
  * [Development Dependencies for 32-bit Ubuntu Linux](#Ubuntu32Dev)
  * [Development Dependencies for 32-bit Fedora Linux](#Fedora32Dev)
@@ -499,39 +500,12 @@ To run ybug:
 where ```<ip-or-host>``` is the ip address or hostname of your SpiNNaker board.
 1. Type ```help``` to get further usage instructions.
 
-# <a name="BuildUsage"></a> Build System Usage
+1. Continue to the [Compile Binaries](#CompileBinaries) to compelte the installation by compiling the binaries of the c code used by the tool chain.
 
-When using the makefiles supplied in this repository, you must set up a number
-of environment variables using:
+## <a name="CompileBinaries"></a>Compile Binaries
 
-	$ cd spinnaker_tools  # You must be in the spinnaker_tools directory!
-	$ source setup
+To compile the c code used by the tool chain, run the following instructions from the base folder where all the software is installed:
 
-You should also ensure you have compiled the SpiNNaker libraries as described
-above otherwise application compilation will fail.
-
-## <a name="Compilation"></a> Basic Application Compilation
-
-To quickly compile a simple single-file application for SpiNNaker, you can use the following command:
-
-	$ make -f $SPINN_DIRS/Makefile.app APP=example
-
-This will compile the application in `example.c` and produce a SpiNNaker binary called `example.aplx` in the current directory.
-
-## <a name="Makefile"></a> Example Makefile
-
-Though the above is suitable while prototyping applications, real-world applications may contain many source files and should be compiled using their own makefile.
-
-`Makefile.example` in the root of the `spinnaker_tools` repository provides an annotated Makefile template which compiles simple C programs for SpiNNaker using these tools. Once your makefile is set up, your application can then be compiled by calling:
-
-	$ make
-
-
-1. Continue to the [Compile Binaries](#CCOMPILEBINARIES) to compelte the installation by compiling the binaries of the c code used by the tool chain.
-
-## <a name="CCOMPILEBINARIES"></a> Compile Binaries
-
-1. to compile the c code used by the tool chain, run the following instructions from the base folder where all the software is installed:
     1. cd spinnaker_tools
     1. source setup
     1. cd ..
@@ -558,7 +532,7 @@ Though the above is suitable while prototyping applications, real-world applicat
     1. make clean
     1. make 
     
-1. Continue to [configure](#Configuration) your environment.
+Continue to [configure](#Configuration) your environment.
 
 # <a name="Configuration"></a> Configuration
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:  
@@ -575,7 +549,7 @@ The default ipaddress for a spinn-3 board is 192.168.240.253 and the default ipa
 
 # <a name="Network Configuration"></a> Network Configuration
 
-1. Go to your network settings and add a IPv4 entry with the following address to your wired settings:  
+Go to your network settings and set up your network adapter with the following settings:  
     1. ipaddress = 192.168.240.254
     2. submask = 255.255.0.0
     3. default gateway = 0.0.0.0
