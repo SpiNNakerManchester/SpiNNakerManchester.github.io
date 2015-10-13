@@ -1,6 +1,8 @@
 ---
-title: Adding new mapping algorithms to the SpiNNaker toolchain  
+title: Adding new mapping algorithms to the SpiNNaker toolchain
+published: true
 ---
+
 
 # Contents
 * [Usage](#Usage)
@@ -166,7 +168,7 @@ The RigCommandLineSAPlacer also produces one output, which is the json file whic
 The tool chain currently supplies a collection of inputs into the PACMAN infranstrucutre. These are defined below and can be found from lines 194 to 206 of [spinnaker.py](https://github.com/SpiNNakerManchester/sPyNNaker/blob/mapping_work_flow/spynnaker/pyNN/spinnaker.py):
 
 |Name|Definition|
-|-----------------|------------------|
+|:----------------|:-----------------|
 |MemoryPartitionableGraph|python object for the partitionable graph|
 |MemoryMachine|python object of the spiNNaker machine|
 |ReportFolder|the filepath for where to write reports|
@@ -218,15 +220,13 @@ we refer you to the documentation on the Json File Format found [here](https://g
 
 To configure the sPyNNaker front end to use your algorithms, you must first have the xml file mentioned in [Algorithm Metadata Xml File](#XMLMeta) for your algorithm and have added the Json converters to your algorthim's front end. Then you will need to open your .spynnaker.cfg file and add these extra regions and params.
 
-```
-[Mapping]
-# format is <algorithum_name>,<>
-# pacman algorithms are:
-# Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,BasicRoutingInfoAllocator, BasicDijkstraRouting,MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
-algorithms = MallocBasedChipIDAllocator,BasicDijkstraRouting,RadialPlacer,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
-# format is <path1>,<path2>
-extra_xmls_paths = None
-```
+    [Mapping]
+    # format is <algorithum_name>,<>
+    # pacman algorithms are:
+    # Basic_dijkstra_routing, RadialPlacer, BasicPlacer,  ConnectiveBasedPlacer,BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,BasicRoutingInfoAllocator, BasicDijkstraRouting,MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
+    algorithms = MallocBasedChipIDAllocator,BasicDijkstraRouting,RadialPlacer,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
+    # format is <path1>,<path2>
+    extra_xmls_paths = None
 
 At this point, you need to :
 
