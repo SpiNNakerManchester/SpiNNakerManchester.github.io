@@ -1,6 +1,8 @@
 ---
-title: Adding new mapping algorithms to the SpiNNaker tool-chain  
+title: Adding new mapping algorithms to the SpiNNaker tool-chain
+published: true
 ---
+
 
 # Contents
 * [Usage](#Usage)
@@ -166,10 +168,13 @@ The RigCommandLineSAPlacer also produces one output, which is the json file whic
 The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below and can be found from lines 194 to 206 of [spinnaker.py](https://github.com/SpiNNakerManchester/sPyNNaker/blob/mapping_work_flow/spynnaker/pyNN/spinnaker.py):
 
 |Name|Definition|
-|-----------------|------------------|
+|:----------------|:-----------------|
 |MemoryPartitionableGraph|python object for the partition able graph|
 |MemoryMachine|python object of the SpiNNaker machine|
 |ReportFolder|the file-path for where to write reports|
+|MemoryPartitionableGraph|python object for the partitionable graph|
+|MemoryMachine|python object of the spiNNaker machine|
+|ReportFolder|the filepath for where to write reports|
 |IPAddress|the ipaddress for the SpiNNaker machine|
 |Transciever| the python interface to the SpiNNaker machine|
 |FileCoreAllocationsFilePath|the file path for writing core allocations|
@@ -182,8 +187,8 @@ The tool chain currently supplies a collection of inputs into the PACMAN infrast
 
 The tool chain also provides a collection of converters which switch between json file formats and PACMANS data objects. These can be found in the (pacman/utilities/file_format_converters)[https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters]. The XML file describing their inputs and outputs can be found in the same folder under (converter_algorithms_metadata.xml)[https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters/converter_algorithms_metadata.xml]. These are summarised below:
 
-|Name|Definition|Inputs|Outputs|Currently Implemented?|
-|-----------|-----------------------------|-------------|-------------|--------|
+|Name|Definition|Inputs|Outputs|Currently Implimented?|
+|:----------|:----------------------------|:------------|:------------|:-------|
 |ConvertToFilePlacement|Converts from PACMAN placements to Json Placements| MemoryPlacements, FilePlacementFilePath| FilePlacements| True|
 |ConvertToFilePartitionedGraph|Converts from PACMAN partitioned graph to Json partitioned graph| MemoryPartitionedGraph, FilePartitionedGraphFilePath| FilePartitionedGraph| True|
 |ConvertToFileCoreAllocation|Converts PACMAN placements to the Json core_allocations| MemoryPlacements, FileCoreAllocationsFilePath| FileCoreAllocations| True|
@@ -201,7 +206,7 @@ These extra algorithms are only used when required, and are not needed to be exp
 The tool chain expects to be able to extract a umber of PACMAN objects at the end of the algorithm execution. This is mainly for transmitting the objects onto the SpiNNaker machine, and supporting data retrieval later-on. These objects are as follows:
 
 |Name|Definition|
-|-----------------|------------------|
+|:----------------|:-----------------|
 |MemoryPlacements| The PACMAN representation of the placements. |
 |MemoryRoutingTables| The PACMAN representation of the entries used on each routing table.|
 |MemoryRoutingInfos| The PACMAN representation of the keys and masks allocated to each edge in the partitioned graph.|
@@ -218,15 +223,13 @@ we refer you to the documentation on the Json File Format found [here](https://g
 
 To configure the sPyNNaker front end to use your algorithms, you must first have the XML file mentioned in [Algorithm Meta-data XML File](#XMLMeta) for your algorithm and have added the Json converters to your algorithm's front end. Then you will need to open your .spynnaker.cfg file and add these extra regions and params.
 
-```
-[Mapping]
-# format is <algorithum_name>,<>
-# pacman algorithms are:
-# Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,BasicRoutingInfoAllocator, BasicDijkstraRouting,MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
-algorithms = MallocBasedChipIDAllocator,BasicDijkstraRouting,RadialPlacer,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
-# format is <path1>,<path2>
-extra_xmls_paths = None
-```
+    [Mapping]
+    # format is <algorithum_name>,<>
+    # pacman algorithms are:
+    # Basic_dijkstra_routing, RadialPlacer, BasicPlacer,  ConnectiveBasedPlacer,BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,BasicRoutingInfoAllocator, BasicDijkstraRouting,MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
+    algorithms = MallocBasedChipIDAllocator,BasicDijkstraRouting,RadialPlacer,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
+    # format is <path1>,<path2>
+    extra_xmls_paths = None
 
 At this point, you need to :
 
@@ -242,184 +245,182 @@ To run a simple example of using external and internal algorithms in situ, pleas
 1. install rig (this can be done via the command pip install rig)
 2. git clone https://github.com/mossblaser/place-and-route-interchange-format.git
 3. create a XML file with the following data:
+	
+	<algorithms>
+	    <algorithm name="RigCommandLineSAPlacer">
+	        <command_line_args>
+	            <arg>python</arg>
+	            <arg>PATH_TO_GIT_CLONE/rig_place.py</arg>
+	            <arg>--algorithm=sa</arg>
+	            <arg>--graph={graph}</arg>
+	            <arg>--constraints={constraints}</arg>
+	            <arg>--machine={machine}</arg>
+	            <arg>--placements={placements_path}</arg>
+	
+	        </command_line_args>
+	         <required_inputs>
+	            <parameter>
+	                <param_name>graph</param_name>
+	                <param_type>FilePartitionedGraph</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>machine</param_name>
+	                <param_type>FileMachine</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>constraints</param_name>
+	                <param_type>FileConstraints</param_type>
+	            </parameter>
+	             <parameter>
+	                <param_name>placements_path</param_name>
+	                <param_type>FilePlacementFilePath</param_type>
+	            </parameter>
+	        </required_inputs>
+	        <parameters>
+	        </parameters>
+	        <produces_outputs>
+	            <parameter>
+	                <param_name>FilePlacementFilePath</param_name>
+	                <param_type>FilePlacements</param_type>
+	            </parameter>
+	        </produces_outputs>
+	    </algorithm>
+	    <algorithm name="RigCommandLineHilbertPlacer">
+	        <command_line_args>
+	            <arg>python</arg>
+	            <arg>PATH_TO_GIT_CLONE/rig_place.py</arg>
+	            <arg>--algorithm=hilbert</arg>
+	            <arg>--graph={graph}</arg>
+	            <arg>--constraints={constraints}</arg>
+	            <arg>--machine={machine}</arg>
+	            <arg>--placements={placements_path}</arg>
+	
+	        </command_line_args>
+	         <required_inputs>
+	            <parameter>
+	                <param_name>graph</param_name>
+	                <param_type>FilePartitionedGraph</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>machine</param_name>
+	                <param_type>FileMachine</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>constraints</param_name>
+	                <param_type>FileConstraints</param_type>
+	            </parameter>
+	             <parameter>
+	                <param_name>placements_path</param_name>
+	                <param_type>FilePlacementFilePath</param_type>
+	            </parameter>
+	        </required_inputs>
+	        <parameters>
+	        </parameters>
+	        <produces_outputs>
+	            <parameter>
+	                <param_name>FilePlacementFilePath</param_name>
+	                <param_type>FilePlacements</param_type>
+	            </parameter>
+	        </produces_outputs>
+	    </algorithm>
+	    <algorithm name="RigAllocator">
+	        <command_line_args>
+	            <arg>python</arg>
+	            <arg>PATH_TO_GIT_CLONE/rig_allocate.py</arg>
+	            <arg>--graph={graph}</arg>
+	            <arg>--constraints={constraints}</arg>
+	            <arg>--machine={machine}</arg>
+	            <arg>--placements={placements}</arg>
+	            <arg>--algorithm=greedy</arg>
+	            <arg>--allocations=cores:{core_allocation_path}</arg>
+	            <arg>--allocations=sdram:{sdram_allocation_path}</arg>
+	        </command_line_args>
+	         <required_inputs>
+	            <parameter>
+	                <param_name>graph</param_name>
+	                <param_type>FilePartitionedGraph</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>machine</param_name>
+	                <param_type>FileMachine</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>constraints</param_name>
+	                <param_type>FileConstraints</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>placements</param_name>
+	                <param_type>FilePlacements</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>core_allocation_path</param_name>
+	                <param_type>FileCoreAllocationsFilePath</param_type>
+	            </parameter>
+	             <parameter>
+	                <param_name>sdram_allocation_path</param_name>
+	                <param_type>FileSDRAMAllocationsFilePath</param_type>
+	            </parameter>
+	        </required_inputs>
+	        <parameters>
+	        </parameters>
+	        <produces_outputs>
+	            <parameter>
+	                <param_name>FileCoreAllocationsFilePath</param_name>
+	                <param_type>FileCoreAllocations</param_type>
+	            </parameter>
+	        </produces_outputs>
+	    </algorithm>
+	    <algorithm name="RigRouter">
+	        <command_line_args>
+	            <arg>python</arg>
+	            <arg>PATH_TO_GIT_CLONE/rig_route.py</arg>
+	            <arg>--graph={graph}</arg>
+	            <arg>--constraints={constraints}</arg>
+	            <arg>--machine={machine}</arg>
+	            <arg>--placements={placements}</arg>
+	            <arg>--allocations=cores:{allocations}</arg>
+	            <arg>--algorithm=ner</arg>
+	            <arg>--core-resource=cores</arg>
+	            <arg>--routes={routing_paths_file_path}</arg>
+	        </command_line_args>
+	         <required_inputs>
+	            <parameter>
+	                <param_name>graph</param_name>
+	                <param_type>FilePartitionedGraph</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>machine</param_name>
+	                <param_type>FileMachine</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>constraints</param_name>
+	                <param_type>FileConstraints</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>placements</param_name>
+	                <param_type>FilePlacements</param_type>
+	            </parameter>
+	            <parameter>
+	                <param_name>allocations</param_name>
+	                <param_type>FileCoreAllocations</param_type>
+	            </parameter>
+	             <parameter>
+	                <param_name>routing_paths_file_path</param_name>
+	                <param_type>FileRouingPathsFilePath</param_type>
+	            </parameter>
+	        </required_inputs>
+	        <parameters>
+	        </parameters>
+	        <produces_outputs>
+	            <parameter>
+	                <param_name>FileRouingPathsFilePath</param_name>
+	                <param_type>FileRoutingPaths</param_type>
+	            </parameter>
+	        </produces_outputs>
+	    </algorithm>
+	</algorithms>
 
-```
-<algorithms>
-    <algorithm name="RigCommandLineSAPlacer">
-        <command_line_args>
-            <arg>python</arg>
-            <arg>PATH_TO_GIT_CLONE/rig_place.py</arg>
-            <arg>--algorithm=sa</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements_path}</arg>
-
-        </command_line_args>
-         <required_inputs>
-            <parameter>
-                <param_name>graph</param_name>
-                <param_type>FilePartitionedGraph</param_type>
-            </parameter>
-            <parameter>
-                <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
-                <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-             <parameter>
-                <param_name>placements_path</param_name>
-                <param_type>FilePlacementFilePath</param_type>
-            </parameter>
-        </required_inputs>
-        <parameters>
-        </parameters>
-        <produces_outputs>
-            <parameter>
-                <param_name>FilePlacementFilePath</param_name>
-                <param_type>FilePlacements</param_type>
-            </parameter>
-        </produces_outputs>
-    </algorithm>
-    <algorithm name="RigCommandLineHilbertPlacer">
-        <command_line_args>
-            <arg>python</arg>
-            <arg>PATH_TO_GIT_CLONE/rig_place.py</arg>
-            <arg>--algorithm=hilbert</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements_path}</arg>
-
-        </command_line_args>
-         <required_inputs>
-            <parameter>
-                <param_name>graph</param_name>
-                <param_type>FilePartitionedGraph</param_type>
-            </parameter>
-            <parameter>
-                <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
-                <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-             <parameter>
-                <param_name>placements_path</param_name>
-                <param_type>FilePlacementFilePath</param_type>
-            </parameter>
-        </required_inputs>
-        <parameters>
-        </parameters>
-        <produces_outputs>
-            <parameter>
-                <param_name>FilePlacementFilePath</param_name>
-                <param_type>FilePlacements</param_type>
-            </parameter>
-        </produces_outputs>
-    </algorithm>
-    <algorithm name="RigAllocator">
-        <command_line_args>
-            <arg>python</arg>
-            <arg>PATH_TO_GIT_CLONE/rig_allocate.py</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements}</arg>
-            <arg>--algorithm=greedy</arg>
-            <arg>--allocations=cores:{core_allocation_path}</arg>
-            <arg>--allocations=sdram:{sdram_allocation_path}</arg>
-        </command_line_args>
-         <required_inputs>
-            <parameter>
-                <param_name>graph</param_name>
-                <param_type>FilePartitionedGraph</param_type>
-            </parameter>
-            <parameter>
-                <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
-                <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
-                <param_name>placements</param_name>
-                <param_type>FilePlacements</param_type>
-            </parameter>
-            <parameter>
-                <param_name>core_allocation_path</param_name>
-                <param_type>FileCoreAllocationsFilePath</param_type>
-            </parameter>
-             <parameter>
-                <param_name>sdram_allocation_path</param_name>
-                <param_type>FileSDRAMAllocationsFilePath</param_type>
-            </parameter>
-        </required_inputs>
-        <parameters>
-        </parameters>
-        <produces_outputs>
-            <parameter>
-                <param_name>FileCoreAllocationsFilePath</param_name>
-                <param_type>FileCoreAllocations</param_type>
-            </parameter>
-        </produces_outputs>
-    </algorithm>
-    <algorithm name="RigRouter">
-        <command_line_args>
-            <arg>python</arg>
-            <arg>PATH_TO_GIT_CLONE/rig_route.py</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements}</arg>
-            <arg>--allocations=cores:{allocations}</arg>
-            <arg>--algorithm=ner</arg>
-            <arg>--core-resource=cores</arg>
-            <arg>--routes={routing_paths_file_path}</arg>
-        </command_line_args>
-         <required_inputs>
-            <parameter>
-                <param_name>graph</param_name>
-                <param_type>FilePartitionedGraph</param_type>
-            </parameter>
-            <parameter>
-                <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
-                <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
-                <param_name>placements</param_name>
-                <param_type>FilePlacements</param_type>
-            </parameter>
-            <parameter>
-                <param_name>allocations</param_name>
-                <param_type>FileCoreAllocations</param_type>
-            </parameter>
-             <parameter>
-                <param_name>routing_paths_file_path</param_name>
-                <param_type>FileRouingPathsFilePath</param_type>
-            </parameter>
-        </required_inputs>
-        <parameters>
-        </parameters>
-        <produces_outputs>
-            <parameter>
-                <param_name>FileRouingPathsFilePath</param_name>
-                <param_type>FileRoutingPaths</param_type>
-            </parameter>
-        </produces_outputs>
-    </algorithm>
-</algorithms>
-```
-
-4. Replace PATH_TO_GIT_CLONE in the XML file with the absolute path to the git clone from before.
+4. Replace PATH_TO_GIT_CLONE in the xml file with the absolute path to the git clone from before.
 5. modify your .spynnaker.cfg file to include the following lines:
 
 ```
