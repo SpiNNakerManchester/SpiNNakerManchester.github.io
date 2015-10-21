@@ -110,6 +110,12 @@ If you want to avoid having to run "source setup" in the ybug folder every time 
 1. Add the extracted ybug folder to your ```PERL5LIB``` environment variable (or create this environment variable if it is not already set; note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to C:\ybug\, you should set the environment variable to /c/ybug)
 1. If you are going to boot your board using ybug, create a new environment variable ```YBUG_PATH``` and set this to the ```boot``` subdirectory of the extracted ybug folder.
 
+To allow history of commands ran in ybug using normal arrow keys on a mac. Follow the following instructions:
+
+1. sudo port install rlwrap
+
+then prepend rlwrap to the ybug commands described below to run correctly.
+
 To run ybug:
 
 1. If you haven't added the environment variables detailed above, go into the directory where you extracted the archive and run:  
