@@ -2,3 +2,5 @@
 .*.html
 /.settings/
 /Gemfile
+/_site/
+/Gemfile.lock
