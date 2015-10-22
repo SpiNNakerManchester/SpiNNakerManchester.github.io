@@ -206,6 +206,7 @@ The tool chain also provides a collection of converters which switch between jso
 These extra algorithms are only used when required, and are not needed to be explicitly defined in your algorithm listings.
 
 The tool chain also uses this workflow to control when a collection of support algorithms are executed. These algorithms are sumemrised below:
+
 |Name|Definition|Inputs|Outputs|Currently Implimented?|
 |:----------|:----------------------------|:------------|:------------|:-------|
 |FrontEndCommomPartitionableGraphDataSpecificationWriter |The compression of data from a partitionable graph via the data specification language| MemoryPlacements, MemoryGraphMapper, MemoryTags, ExecutableFinder, MemoryPartitionedGraph, MemoryPartitionableGraph, MemoryRoutingInfos, IPAddress, ReportFolder, WriteTextSpecsFlag, ApplicationDataFolder|DataSpecificationTargets, ExecutableTargets| True|
