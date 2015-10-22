@@ -225,7 +225,7 @@ The tool chain also uses this workflow to control when a collection of support a
 |FrontEndCommon MachineInterfacer |The creation of the python representation of the SpiNNaker Machine and the Python interface to the SpiNNaker Machine|IPAddress, BMPDetails, DownedChipsDetails, DownedCoresDetails, BoardVersion, NumberOfBoards, MachineWidth, MachineHeight, AutoDetectBMPFlag, EnableReinjectionFlag, ScampConnectionData, BootPortNum| MemoryMachine, MemoryTransciever| True|
 
 These algorithms use a collection of Tokens to define which functions depend upon each other. These tokens are usually the output from each function. But are summerised below for clarity:
-,
+
 |Name|Definition|
 |:----------------|:-----------------|
 |RanToken| states that the algorithm has ran the simulation on the SpiNNaker machine.|
