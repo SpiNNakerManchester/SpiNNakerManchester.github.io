@@ -125,7 +125,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd sPyNNaker
     1. sudo python setup.py develop --no-deps
     1. cd ..
-    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
     1. sudo python setup.py develop --no-deps 
     1. cd ..
@@ -174,7 +174,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd sPyNNaker
     1. python setup.py develop --no-deps --user
     1. cd ..
-    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
     1. python setup.py develop --no-deps --user
     1. cd ..
@@ -368,7 +368,7 @@ You can now [configure](#Configuration) your environment.
     1. cd sPyNNaker
     1. python setup.py develop --no-deps
     1. cd ..
-    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
     1. python setup.py develop --no-deps 
     1. cd ..

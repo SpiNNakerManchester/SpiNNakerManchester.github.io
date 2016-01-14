@@ -181,7 +181,7 @@ git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
 cd sPyNNaker
 python setup.py develop --no-deps --user
 cd ..
-git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
 cd sPyNNakerExtraModelsPlugin
 python setup.py develop --no-deps --user
 cd ..
@@ -379,7 +379,7 @@ git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
 cd sPyNNaker
 python setup.py develop --no-deps
 cd ..
-git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
 cd sPyNNakerExtraModelsPlugin
 python setup.py develop --no-deps 
 cd ..
