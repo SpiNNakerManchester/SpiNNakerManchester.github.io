@@ -565,7 +565,7 @@ The default ipaddress for a spinn-3 board is 192.168.240.253 and the default ipa
 
 Go to your network settings and set up your network adapter with the following settings:  
     1. ipaddress = 192.168.240.254
-    2. submask = 255.255.0.0
+    2. submask = 255.255.255.0
     3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples
