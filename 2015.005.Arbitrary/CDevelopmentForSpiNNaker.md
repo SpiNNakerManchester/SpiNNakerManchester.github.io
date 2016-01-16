@@ -41,9 +41,9 @@ Primarily, you will need to install a C compiler that is compatible with SpiNNak
 
 ## <a name="Fedora64Dev"></a> Development Dependencies for 64-bit Fedora
 1. Install 32-bit libc  
-```sudo yum install glibc.i686```
+```sudo dnf install glibc.i686```
 1. Install perl and dependencies  
-```sudo yum install perl perl-Tk perl-Term-ReadLine-Gnu```
+```sudo dnf install perl perl-Tk perl-Term-ReadLine-Gnu```
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="Ubuntu32Dev"></a> Development Dependencies for 32-bit Ubuntu
@@ -53,7 +53,7 @@ Primarily, you will need to install a C compiler that is compatible with SpiNNak
 
 ## <a name="Fedora32Dev"></a> Development Dependencies for 32-bit Fedora
 1. Install perl and dependencies  
-```sudo yum install perl perl-Tk perl-Term-ReadLine-Gnu```
+```sudo dnf install perl perl-Tk perl-Term-ReadLine-Gnu```
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="LinuxC"></a> Linux C Compiler

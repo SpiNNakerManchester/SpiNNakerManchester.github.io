@@ -40,17 +40,17 @@ Continue to the [Standard Central Installation](#Central), [User-only Installati
 
 # <a name="Fedora"></a> Fedora Linux Requirements
 1. Install Python  
-```sudo yum install python```
+```sudo dnf install python```
 1. Install numpy  
-```sudo yum install numpy```
+```sudo dnf install numpy```
 1. Install scipy  
-```sudo yum install scipy```
+```sudo dnf install scipy```
 1. Install lxml  
-```sudo yum install python-lxml```
+```sudo dnf install python-lxml```
 1. Install pip  
-```sudo yum install python-pip```
+```sudo dnf install python-pip```
 1. *Optional:* Install matplotlib (often used in PyNN scripts for plotting graphs)  
-```sudo yum install python-matplotlib```
+```sudo dnf install python-matplotlib```
 
 Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements.
 

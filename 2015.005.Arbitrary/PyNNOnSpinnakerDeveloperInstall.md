@@ -36,17 +36,17 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
 # <a name="Fedora"></a> Fedora Linux Requirements
 1. Install Python  
-```sudo yum install python```
+```sudo dnf install python```
 1. Install numpy  
-```sudo yum install numpy```
+```sudo dnf install numpy```
 1. Install scipy  
-```sudo yum install scipy```
+```sudo dnf install scipy```
 1. Install lxml  
-```sudo yum install python-lxml```
+```sudo dnf install python-lxml```
 1. Install pip  
-```sudo yum install python-pip```
+```sudo dnf install python-pip```
 1. *Optional:* Install matplotlib (often used in PyNN scripts for plotting graphs)  
-```sudo yum install python-matplotlib```
+```sudo dnf install python-matplotlib```
 
 Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
@@ -442,9 +442,9 @@ Continue to the [C Compiler Install](#CDevelopment) to install the remaining c c
 
 ## <a name="Fedora64Dev"></a> Development Dependencies for 64-bit Fedora
 1. Install 32-bit libc  
-```sudo yum install glibc.i686```
+```sudo dnf install glibc.i686```
 1. Install perl and dependencies  
-```sudo yum install perl perl-Tk perl-Term-ReadLine-Gnu```
+```sudo dnf install perl perl-Tk perl-Term-ReadLine-Gnu```
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="Ubuntu32Dev"></a> Development Dependencies for 32-bit Ubuntu
@@ -454,7 +454,7 @@ Continue to the [C Compiler Install](#CDevelopment) to install the remaining c c
 
 ## <a name="Fedora32Dev"></a> Development Dependencies for 32-bit Fedora
 1. Install perl and dependencies  
-```sudo yum install perl perl-Tk perl-Term-ReadLine-Gnu```
+```sudo dnf install perl perl-Tk perl-Term-ReadLine-Gnu```
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="LinuxC"></a> Linux C Compiler
