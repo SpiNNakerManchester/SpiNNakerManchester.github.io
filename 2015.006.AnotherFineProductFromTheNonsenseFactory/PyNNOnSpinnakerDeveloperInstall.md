@@ -35,17 +35,17 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
 # <a name="Fedora"></a> Fedora Linux Requirements
 1. Install Python  
-```sudo yum install python```
+```sudo dnf install python```
 1. Install numpy  
-```sudo yum install numpy```
+```sudo dnf install numpy```
 1. Install scipy  
-```sudo yum install scipy```
+```sudo dnf install scipy```
 1. Install lxml  
-```sudo yum install python-lxml```
+```sudo dnf install python-lxml```
 1. Install pip  
-```sudo yum install python-pip```
+```sudo dnf install python-pip```
 1. *Optional:* Install matplotlib (often used in PyNN scripts for plotting graphs)  
-```sudo yum install python-matplotlib```
+```sudo dnf install python-matplotlib```
 
 Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
@@ -125,7 +125,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd sPyNNaker
     1. sudo python setup.py develop --no-deps
     1. cd ..
-    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
     1. sudo python setup.py develop --no-deps 
     1. cd ..
@@ -174,7 +174,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd sPyNNaker
     1. python setup.py develop --no-deps --user
     1. cd ..
-    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
     1. python setup.py develop --no-deps --user
     1. cd ..
@@ -368,7 +368,7 @@ You can now [configure](#Configuration) your environment.
     1. cd sPyNNaker
     1. python setup.py develop --no-deps
     1. cd ..
-    1. git cline https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
+    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
     1. python setup.py develop --no-deps 
     1. cd ..
@@ -429,9 +429,9 @@ You can now [configure](#Configuration) your environment.
 
 ## <a name="Fedora64Dev"></a> Development Dependencies for 64-bit Fedora
 1. Install 32-bit libc  
-```sudo yum install glibc.i686```
+```sudo dnf install glibc.i686```
 1. Install perl and dependencies  
-```sudo yum install perl perl-Tk perl-Term-ReadLine-Gnu```
+```sudo dnf install perl perl-Tk perl-Term-ReadLine-Gnu```
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="Ubuntu32Dev"></a> Development Dependencies for 32-bit Ubuntu
@@ -441,7 +441,7 @@ You can now [configure](#Configuration) your environment.
 
 ## <a name="Fedora32Dev"></a> Development Dependencies for 32-bit Fedora
 1. Install perl and dependencies  
-```sudo yum install perl perl-Tk perl-Term-ReadLine-Gnu```
+```sudo dnf install perl perl-Tk perl-Term-ReadLine-Gnu```
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="LinuxC"></a> Linux C Compiler
@@ -577,7 +577,7 @@ The default ipaddress for a spinn-3 board is 192.168.240.253 and the default ipa
 
 1. Go to your network settings and add a IPv4 entry with the following address to your wired settings:  
     1. ipaddress = 192.168.240.254
-    2. submask = 255.255.0.0
+    2. submask = 255.255.255.0
     3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples
