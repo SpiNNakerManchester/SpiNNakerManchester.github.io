@@ -167,7 +167,7 @@ git clone https://github.com/SpiNNakerManchester/Visualiser.git
 git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
 sudo pip install enum34
 sudo pip install six
-sudo pip install pyNN
+sudo pip install pyNN==0.7.5
 ```
 
 Continue to the [C Compiler Install](#CDevelopment) to install the remaining c compiler dependency
@@ -220,7 +220,7 @@ git clone https://github.com/SpiNNakerManchester/Visualiser.git
 git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
 pip install enum34 --user
 pip install six --user
-pip install pyNN --user
+pip install pyNN==0.7.5 --user
 ```
 
 Continue to the [C Compiler Install](#CDevelopment) to install the remaining c compiler dependency
@@ -266,7 +266,7 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```pip install six```  
 ```ln -s /usr/lib/pymodules/python2.7/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/pymodules/python2.7/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virtual_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -289,7 +289,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virtual git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virtual_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -312,7 +312,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib64/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib64/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virtual git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virtual_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -335,7 +335,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virtual_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
@@ -366,11 +366,11 @@ You can now [configure](#Configuration) your environment.
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:  
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
 ```TK_LIBRARY: C:\Python27\tcl\tk8.5```
-1. go to [virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [virtual git clone](#virtual_git_clone) to compelte the cloning of the git reposorities
 
 You can now [configure](#Configuration) your environment.
 
-# <a name="virutal_git_clone"></a> Virutal git clone
+# <a name="virtual_git_clone"></a> Virtual git clone
 
 You now need to clone the github resposorities for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
 
@@ -418,7 +418,7 @@ git clone https://github.com/SpiNNakerManchester/Visualiser.git
 git clone https://github.com/SpiNNakerManchester/PyNNExamples.git
 pip install enum34
 pip install six
-pip install pyNN
+pip install pyNN==0.7.5
 ```
 
 Continue to the [C Compiler Install](#CDevelopment) to install the remaining c compiler dependency
