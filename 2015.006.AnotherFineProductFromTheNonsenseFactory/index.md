@@ -8,4 +8,5 @@ layout: default
 * [PyNN on SpiNNaker Limitations](SPyNNakerLimitations.html)
 * [PyNN on SpiNNaker Developer Installation Guide](PyNNOnSpinnakerDeveloperInstall.html)
 * [Using new mapping algorithms with SpiNNaker and Front ends](MappingAlgorithms.html)
+* [Using the sPyNNaker front end in virtual mode](VirtualMode.html)
 
