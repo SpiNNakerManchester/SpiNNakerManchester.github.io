@@ -1,13 +1,8 @@
 ---
-title: Spynnaker version 2015.006 (Another Fine Product From The Nonsense Factor)
+title: Another Fine Product From The Nonsense Factory Software Release
 layout: default
 ---
 
-* [License Agreement](LicenseAgreement.html)
-* [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)
-* [PyNN on SpiNNaker Limitations](SPyNNakerLimitations.html)
-* [PyNN on SpiNNaker Developer Installation Guide](PyNNOnSpinnakerDeveloperInstall.html)
-* [Using new mapping algorithms with SpiNNaker and Front ends](MappingAlgorithms.html)
-* [Instructions on how to use the sPyNNaker front end in virtual mode](VirtualMode.html)
-* [Instructions on how to us the Human Brain Project Portal for PyNN simulations](HBP_portal_instructions.html)
-
+* [Running PyNN Scripts on local SpiNNaker machines through the sPyNNaker Front End interface](spynnaker_index.html)
+* [Running Graph Based problems on local SpiNNaker machines through the SpiNNakerGraphFrontEnd front end interface](spinnaker_graph_index.html)
+* [Running Simulations through the Human Brain Project Portal](HBP_portal_instructions.html)
