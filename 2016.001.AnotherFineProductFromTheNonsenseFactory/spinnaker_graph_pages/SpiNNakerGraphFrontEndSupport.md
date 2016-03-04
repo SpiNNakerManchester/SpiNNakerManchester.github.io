@@ -48,7 +48,8 @@ To get a more detailed explanation of the these functions, please go to [ReadThe
 # SpiNNakerGraphFrontEnd examples
 
 The SpiNNakerGraphFrontEnd currently contains a number of runnable examples, these range from:
+
 1. [A heat diffusion simulation]().
-1. [A simulation of Conway's Game of Life]().]
-1. [A simulation of a graphical ray tracer]().|
-1. [A Key/value database]().|
+1. [A simulation of Conway's Game of Life]().
+1. [A simulation of a graphical ray tracer]().
+1. [A Key/value database]().
