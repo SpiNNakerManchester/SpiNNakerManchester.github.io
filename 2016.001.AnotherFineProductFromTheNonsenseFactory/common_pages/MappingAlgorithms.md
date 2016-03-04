@@ -204,15 +204,15 @@ These algorithms use a collection of Tokens to define which functions depend upo
 
 The tool chain expects to be able to extract a umber of PACMAN objects at the end of the algorithm execution. This is mainly for transmitting the objects onto the SpiNNaker machine, and supporting data retrieval later-on. These objects are as follows:
 
-|Name|Definition|
-|:----------------|:-----------------|
-|MemoryPlacements| The PACMAN representation of the placements. |
-|MemoryRoutingTables| The PACMAN representation of the entries used on each routing table.|
-|MemoryRoutingInfos| The PACMAN representation of the keys and masks allocated to each edge in the partitioned graph.|
-|MemoryTags| The PACMAN representation of the tags allocated to the sub-vertices of the partitioned graph.|
-|MemoryPartitionedGraph| The PACMAN representation of the partitioned graph.|
-|MemoryGraphMapper| The PACMAN representation of the mapping between partition able and partitioned graphs.|
-|RanToken| The Token that states that the simulation executed on the SpiNNaker machine|
+    |Name|Definition|
+    |:----------------|:-----------------|
+    |MemoryPlacements| The PACMAN representation of the placements. |
+    |MemoryRoutingTables| The PACMAN representation of the entries used on each routing table.|
+    |MemoryRoutingInfos| The PACMAN representation of the keys and masks allocated to each edge in the partitioned graph.|
+    |MemoryTags| The PACMAN representation of the tags allocated to the sub-vertices of the partitioned graph.|
+    |MemoryPartitionedGraph| The PACMAN representation of the partitioned graph.|
+    |MemoryGraphMapper| The PACMAN representation of the mapping between partition able and partitioned graphs.|
+    |RanToken| The Token that states that the simulation executed on the SpiNNaker machine|
 
 
 # <a name="Json"></a> Json File Format
