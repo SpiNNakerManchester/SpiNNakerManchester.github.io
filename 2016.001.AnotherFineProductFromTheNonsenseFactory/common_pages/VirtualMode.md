@@ -1,8 +1,8 @@
 ---
-title: Executing the sPyNNaker software stack in "virtual mode"
+title: Executing the SpiNNaker software stack in "virtual mode"
 ---
 
-This guide will detail how to operate the sPyNNaker front end in "virtual mode". This results in the end user not needing a board to test basic operation of their PyNN script.
+This guide will detail how to operate either front end to the SpiNNaker software stack in "virtual mode". This results in the end user not needing a board to test basic operation of their script.
 
 # Why Would you use Virtual mode?
 

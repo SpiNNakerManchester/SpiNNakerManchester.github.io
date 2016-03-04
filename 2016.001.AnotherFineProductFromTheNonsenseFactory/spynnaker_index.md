@@ -10,3 +10,4 @@ layout: default
 * [Using new mapping algorithms with different front ends](common_pages/MappingAlgorithms.html)
 * [Instructions on how to use the different front ends in virtual mode](common_pages/VirtualMode.html)
 * [Instructions on adding new Neural Models](workshop_material/lab_manuals/NewNeuronModels-LabManual.pdf)
+* [Instructions on using the sPyNNaker reload functionality](common_pages/ReloadFunctionality.html)

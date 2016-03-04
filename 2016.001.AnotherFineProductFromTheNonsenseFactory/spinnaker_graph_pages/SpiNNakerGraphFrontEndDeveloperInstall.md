@@ -544,6 +544,10 @@ The default ip address for a spinn-3 board is 192.168.240.253 and the default ip
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
 If you get the output above, you have successfully installed your system.
 
+# Helpful documents
+
+Depending upon what the developer is planning to work on, one or more pages covered in [Developer tutorial](../common_pages/developer_tutorial.html) may be usful to read. 
+
 # <a name="Trouble"></a> Troubleshooting
 
 1. If you experience the error:
