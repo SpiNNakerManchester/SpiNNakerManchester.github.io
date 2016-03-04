@@ -1,7 +1,4 @@
 1. MappingAlgorithms 132: Lines from spinnaker_main_interface.py where inputs are placed.
-1. MappingAlgorithms 183: needs to add a link to a description of the reload script.
-1. MappingAlgorithms 186: need link to notification protocol description.
-1. MappingAlgorithms 187: need link to buffer manager description.
 1. MappingAlgorithms 133 downwards: ensure that all inputs are covered.
 1. VirtualMode 25: need to put message that is produced from tools when at end of run in virtual mode. 
 1. PyNNOnSpinnakerDeveloperInstall: might need to put automatic_make.sh as a option.
