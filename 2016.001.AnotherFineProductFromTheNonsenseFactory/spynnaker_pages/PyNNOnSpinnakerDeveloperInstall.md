@@ -519,7 +519,11 @@ Though the above is suitable while prototyping applications, real-world applicat
 
 ## <a name="CCOMPILEBINARIES"></a> Compile Binaries
 
-1. to compile the c code used by the tool chain, run the following instructions from the base folder where all the software is installed:
+1. to compile the c code used by the tool chain, either:
+
+1. run this script [automatic_make_spynnaker](documents/automatic_make_spynnaker.sh)
+1. run the following instructions from the base folder where all the software is installed:
+
     1. cd spinnaker_tools
     1. source setup
     1. cd ..
