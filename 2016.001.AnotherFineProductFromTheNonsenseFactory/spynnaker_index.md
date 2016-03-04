@@ -1,5 +1,5 @@
 ---
-title: sPyNNaker version 2015.006 (Another Fine Product From The Nonsense Factory)
+title: sPyNNaker version 2016.001 (Another Fine Product From The Nonsense Factory)
 layout: default
 ---
 

@@ -574,7 +574,7 @@ The default ip address for a spinn-3 board is 192.168.240.253 and the default ip
     3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples
-1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.01.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.01.tar.gz) (tar.gz)
+1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2016.001.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2016.001.tar.gz) (tar.gz)
 1. Extract the archive
 1. Go to the "examples" folder
 1. Run:  

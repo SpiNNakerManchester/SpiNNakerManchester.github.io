@@ -4,7 +4,7 @@ layout: default
 published: true
 ---
 
-This guide will detail how to install the 2015.006 "Another Fine Product From The Nonsense Factory" release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
+This guide will detail how to install the 2016.001 "Another Fine Product From The Nonsense Factory" release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
 
 This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Windows 8.1 64-bit, and Mac OS X Mavericks, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7 and 8, and Mac OS X.
 
@@ -347,7 +347,7 @@ Note that if you have previously installed a version of the spiNNaker software, 
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
 # <a name="Examples"></a> Running some examples
-1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.006.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.006.tar.gz) (tar.gz)
+1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2016.001.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2016.001.tar.gz) (tar.gz)
 1. Extract the archive
 1. Go to the "examples" folder
 1. Run:  

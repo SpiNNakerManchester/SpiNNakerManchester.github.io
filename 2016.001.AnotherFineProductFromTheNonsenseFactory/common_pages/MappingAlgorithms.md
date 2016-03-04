@@ -452,7 +452,7 @@ You should see output like the one below:
 /usr/bin/python2.7 /home/S06/stokesa6/spinniker/alpha_package_103_git/PyNNExamples/examples/synfire_if_curr_exp.py
 2015-10-12 12:02:13 INFO: Read config files: /home/S06/stokesa6/.spynnaker.cfg, /home/S06/stokesa6/spinniker/alpha_package_103_git/sPyNNaker/spynnaker/spynnaker.cfg, /home/S06/stokesa6/spinniker/alpha_package_103_git/spinn-6_boards_from_base.cfg
 2015-10-12 12:02:14 INFO: sPyNNaker (c) 2015 APT Group, University of Manchester
-2015-10-12 12:02:14 INFO: Release version 2015.005(Arbitrary) - September 2015. Installed in folder /home/S06/stokesa6/spinniker/alpha_package_103_git/sPyNNaker
+2015-10-12 12:02:14 INFO: Release version 2016.001(Another-Fine-Product-From-The-Nonsense-Factory) - April 2016. Installed in folder /home/S06/stokesa6/spinniker/alpha_package_103_git/sPyNNaker
 2015-10-12 12:02:14 INFO: Setting time scale factor to 1.
 2015-10-12 12:02:14 INFO: Setting appID to 30.
 2015-10-12 12:02:14 INFO: Setting machine time step to 1000.0 micro-seconds.
