@@ -490,7 +490,7 @@ Though the above is suitable while prototyping applications, real-world applicat
 
 1. to compile the c code used by the tool chain, either:
 
-1. run this script [automatic_make_spynnaker](documents/automatic_make_spinnaker_graph_front_end.sh)
+1. run this script [automatic_make_spinnaker_graph_front_end.sh](../documents/automatic_make_spinnaker_graph_front_end.sh)
 1. run the following instructions from the base folder where all the software is installed:
 
     1. cd spinnaker_tools
