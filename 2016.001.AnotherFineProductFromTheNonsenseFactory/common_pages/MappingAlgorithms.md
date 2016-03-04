@@ -27,7 +27,7 @@ This functionality allows algorithms coded in any language to be used in conjunc
 To use this functionality, you must have installed one of the Front Ends supported by the 2016.001 (Another Fine Product From The Nonsense Factor)
 software stack. If you have not done so yet, please follow one of the following links:
 
-1. [The sPyNNaker Front end User installation page](../spynnaker_pages/PyNNOnSpiNNakerInstall.html)
+1. [The sPyNNaker Front end User installation page](../spynnaker_pages/PyNNOnSpinnakerInstall.html)
 1. [The sPyNNaker Front end Developer installation page](../spynnaker_pages/PyNNOnSpinnakerDeveloperInstall.html)
 1. [The SpiNNaker Graph Front End User installation page](../spinnaker_graph_pages/SpiNNakerGraphFrontEndInstall.html)
 1. [The SpiNNaker Graph Front End Developer installation page](../spinnaker_graph_pages/SpiNNakerGraphFrontEndDeveloperInstall.html)

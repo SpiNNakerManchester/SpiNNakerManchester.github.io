@@ -534,14 +534,10 @@ The default ip address for a spinn-3 board is 192.168.240.253 and the default ip
     3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples
-1. Download the examples from [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.01.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNNExamples/archive/2015.003.01.tar.gz) (tar.gz)
-1. Extract the archive
-1. Go to the "examples" folder
+1. Go to the "examples/heatdemo" folder
 1. Run:  
-```python va_benchmark.py```
+```python heatdemo.py```
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
-1. Once the example has finished, you should see a graph, that will look something like this:  
-![VABenchmarkSpikes](va_benchmark.png)
 If you get the output above, you have successfully installed your system.
 
 # <a name="Trouble"></a> Troubleshooting
