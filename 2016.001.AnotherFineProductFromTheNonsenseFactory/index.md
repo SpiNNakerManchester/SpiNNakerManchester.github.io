@@ -1,5 +1,5 @@
 ---
-title: Another Fine Product From The Nonsense Factory Software Release
+title: 2016.001 (Another Fine Product From The Nonsense Factory) SpiNNaker Software Release
 layout: default
 ---
 
