@@ -404,7 +404,7 @@ You can now [configure](#Configuration) your environment.
 ## <a name="LinuxC"></a> Linux C Compiler
 1. Download [CodeSourcery GCC ARM EABI Compiler](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-lin-dev/arm-2013.05.tgz)
 1. Extract the downloaded archive to the location of your choice
-1. Add the "bin" directory within the installed location to the PATH enviroment variable in .profile in your home directory e.g. append the following:  
+1. Add the "bin" directory within the installed location to the PATH environment variable in .profile in your home directory e.g. append the following:  
 ```export PATH=$PATH:<install-location>/bin```  
 where ```<install-location>``` is the place where you extracted the file.
 
@@ -458,7 +458,7 @@ where ```<ip-or-host>``` is the ip address or hostname of your SpiNNaker board.
 
 # <a name="BuildUsage"></a> Build System Usage
 
-When using the makefiles supplied in this repository, you must set up a number
+When using the make-files supplied in this repository, you must set up a number
 of environment variables using:
 
 	$ cd spinnaker_tools  # You must be in the spinnaker_tools directory!
@@ -484,7 +484,7 @@ Though the above is suitable while prototyping applications, real-world applicat
 	$ make
 
 
-1. Continue to the [Compile Binaries](#CCOMPILEBINARIES) to compelte the installation by compiling the binaries of the c code used by the tool chain.
+1. Continue to the [Compile Binaries](#CCOMPILEBINARIES) to complete the installation by compiling the binaries of the c code used by the tool chain.
 
 ## <a name="CCOMPILEBINARIES"></a> Compile Binaries
 
@@ -507,10 +507,6 @@ Though the above is suitable while prototyping applications, real-world applicat
     1. make 
     1. make install
     1. cd ../..
-    1. cd sPyNNaker/neural_modelling/
-    1. make clean
-    1. make 
-    1. source setup
     1. cd ../../SpiNNakerGraphFrontEnd/examples/
     1. make clean
     1. make 
@@ -518,23 +514,23 @@ Though the above is suitable while prototyping applications, real-world applicat
 1. Continue to [configure](#Configuration) your environment.
 
 # <a name="Configuration"></a> Configuration
-When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:  
+When the SpiNNakerGraphFrontEnd is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpiNNakerGraphFrontEnd to do this before you run your first simulation as follows:  
 ```python -c "import pyNN.spiNNaker"```
 
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its parameters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
 ```[Machine] ```  
 ```machineName = None ```  
 ```version = None ```
 
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
-The default ipaddress for a spinn-3 board is 192.168.240.253 and the default ipaddress for a spinn-5 board is 192.168.240.1
+The default ip address for a spinn-3 board is 192.168.240.253 and the default ip address for a spinn-5 board is 192.168.240.1
 
 # <a name="Network Configuration"></a> Network Configuration
 
 1. Go to your network settings and add a IPv4 entry with the following address to your wired settings:  
-    1. ipaddress = 192.168.240.254
-    2. submask = 255.255.255.0
+    1. ip address = 192.168.240.254
+    2. sub-mask = 255.255.255.0
     3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples

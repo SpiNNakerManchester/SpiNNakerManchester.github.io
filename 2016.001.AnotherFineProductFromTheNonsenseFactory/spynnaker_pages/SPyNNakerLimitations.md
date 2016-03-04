@@ -14,9 +14,9 @@ sPyNNaker implements a subset of the [PyNN 0.7 API](http://neuralensemble.org/tr
 
 sPyNNaker currently only supports the following model types:
 
-1. Leaky intergrate and fire current exponential [IFCurrExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/if_curr_exp.py)
-1. Leaky intergrate and fire conductive exponential [IFCondExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/if_cond_exp.py) 
-1. Leaky intergrate and fire duel current exponential [IFCurrDualExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/if_curr_dual_exp.py)
+1. Leaky integrate and fire current exponential [IFCurrExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/if_curr_exp.py)
+1. Leaky integrate and fire conductive exponential [IFCondExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/if_cond_exp.py) 
+1. Leaky integrate and fire duel current exponential [IFCurrDualExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/if_curr_dual_exp.py)
 1. Izhikevich Current Exponential Population [IZKCurrExp](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_models/izk_curr_exp.py)
 
 
@@ -56,6 +56,19 @@ and the following STDP weight dependence rules:
 
 1. Additive weight dependence [AdditiveWeightDependence](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_properties/synapse_dynamics/dependences/additive_weight_dependence.py)
 1. Multiplicative weight dependence [MultiplicativeWeightDependence](https://github.com/SpiNNakerManchester/sPyNNaker/tree/2015.005/spynnaker/pyNN/models/neural_properties/synapse_dynamics/dependences/multiplicative_weight_dependence.py)
+
+# sPyNNaker execution limitations
+
+1. sPyNNaker supports the ability to call run() multiple times with different combinations of runtime values. 
+1. sPyNNaker supports the ability to call reset() multiple times within the script with run() interleaved.
+1. sPyNNaker supports the addition of vertices and edges into the application space between a reset() and a run(). 
+1. sPyNNaker does not support the addition of vertices and edges between multiple calls to run().
+
+# PyNN missing functionality
+
+1. sPyNNaker does not support population views.
+1. sPyNNaker does not support assemblers.
+1. sPyNNaker does not support the changing of weights / delays / neuron parameters between the initial call to run() and a reset() call.
 
 
 # Other Limitations

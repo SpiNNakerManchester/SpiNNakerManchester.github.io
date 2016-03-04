@@ -118,9 +118,9 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
  * [Virtualenv gitclone](#virutalGit)
  
 
-# <a name="centeralGit"></a> Central gitClone
+# <a name="centralGit"></a> Central gitClone
 
-1. You now need to clone the github resposorities for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
+1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
     1. cd sPyNNaker
     1. sudo python setup.py develop --no-deps
@@ -153,10 +153,6 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd SpiNNMachine
     1. sudo python setup.py develop --no-deps
     1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-    1. cd SpiNNakerGraphFrontEnd
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
     1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
@@ -169,7 +165,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
 # <a name="userGit"></a> User-Only gitclone
 
-1. You now need to clone the github resposorities for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
+1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
     1. cd sPyNNaker
     1. python setup.py develop --no-deps --user
@@ -202,10 +198,6 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd SpiNNMachine
     1. python setup.py develop --no-deps --user
     1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-    1. cd SpiNNakerGraphFrontEnd
-    1. python setup.py develop --no-deps --user
-    1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
     1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
@@ -216,7 +208,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. pip install pyNN --user
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
  
-# <a name="virutalGit"></a> Virtualenv git clone
+# <a name="virtualGit"></a> Virtualenv git clone
 
 These instructions will install the required packages only in a virtualenv.  Like the user-only installation, this can help when you don't have root access or are on a shared machine.  Additionally, it will help when you have several packages with conflicting dependencies, or those that occupy the same namespace (such as pyNN.spiNNaker if you have an older version of the toolchain).
 
@@ -257,7 +249,7 @@ The installation of virtualenv and the linking to the external libraries is plat
 ```pip install six```  
 ```ln -s /usr/lib/pymodules/python2.7/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/pymodules/python2.7/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to complete the cloning of the git repositories
 
 You can now [configure](#Configuration) your environment.
 
@@ -280,7 +272,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virtual git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to complete the cloning of the git repositories
 
 You can now [configure](#Configuration) your environment.
 
@@ -303,7 +295,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /usr/lib64/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /usr/lib64/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virtual git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to complete the cloning of the git repositories
 
 You can now [configure](#Configuration) your environment.
 
@@ -326,7 +318,7 @@ You can now [configure](#Configuration) your environment.
 ```pip install six```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/matplotlib $VIRTUAL_ENV/lib/python2.7/site-packages/```  
 ```ln -s /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/pylab.py $VIRTUAL_ENV/lib/python2.7/site-packages/```
-1. go to [Virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to complete the cloning of the git repositories
 
 You can now [configure](#Configuration) your environment.
 
@@ -357,13 +349,13 @@ You can now [configure](#Configuration) your environment.
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:  
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
 ```TK_LIBRARY: C:\Python27\tcl\tk8.5```
-1. go to [virutal git clone](#virutal_git_clone) to compelte the cloning of the git reposorities
+1. go to [Virtual git clone](#virutal_git_clone) to complete the cloning of the git repositories
 
 You can now [configure](#Configuration) your environment.
 
-# <a name="virutal_git_clone"></a> Virutal git clone
+# <a name="virtual_git_clone"></a> Virtual git clone
 
-1. You now need to clone the github resposorities for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
+1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
     1. cd sPyNNaker
     1. python setup.py develop --no-deps
@@ -394,10 +386,6 @@ You can now [configure](#Configuration) your environment.
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
     1. cd SpiNNMachine
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-    1. cd SpiNNakerGraphFrontEnd
     1. python setup.py develop --no-deps
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
@@ -447,7 +435,7 @@ You can now [configure](#Configuration) your environment.
 ## <a name="LinuxC"></a> Linux C Compiler
 1. Download [CodeSourcery GCC ARM EABI Compiler](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-lin-dev/arm-2013.05.tgz)
 1. Extract the downloaded archive to the location of your choice
-1. Add the "bin" directory within the installed location to the PATH enviroment variable in .profile in your home directory e.g. append the following:  
+1. Add the "bin" directory within the installed location to the PATH environment variable in .profile in your home directory e.g. append the following:  
 ```export PATH=$PATH:<install-location>/bin```  
 where ```<install-location>``` is the place where you extracted the file.
 
@@ -501,7 +489,7 @@ where ```<ip-or-host>``` is the ip address or hostname of your SpiNNaker board.
 
 # <a name="BuildUsage"></a> Build System Usage
 
-When using the makefiles supplied in this repository, you must set up a number
+When using the make-files supplied in this repository, you must set up a number
 of environment variables using:
 
 	$ cd spinnaker_tools  # You must be in the spinnaker_tools directory!
@@ -527,7 +515,7 @@ Though the above is suitable while prototyping applications, real-world applicat
 	$ make
 
 
-1. Continue to the [Compile Binaries](#CCOMPILEBINARIES) to compelte the installation by compiling the binaries of the c code used by the tool chain.
+1. Continue to the [Compile Binaries](#CCOMPILEBINARIES) to complete the installation by compiling the binaries of the c code used by the tool chain.
 
 ## <a name="CCOMPILEBINARIES"></a> Compile Binaries
 
@@ -554,9 +542,10 @@ Though the above is suitable while prototyping applications, real-world applicat
     1. make clean
     1. make 
     1. source setup
-    1. cd ../../SpiNNakerGraphFrontEnd/examples/
+    1. cd sPyNNakerExternalDevicesPlugin/neural_modelling/
     1. make clean
     1. make 
+    
     
 1. Continue to [configure](#Configuration) your environment.
 
@@ -564,20 +553,20 @@ Though the above is suitable while prototyping applications, real-world applicat
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:  
 ```python -c "import pyNN.spiNNaker"```
 
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its parameters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
 ```[Machine] ```  
 ```machineName = None ```  
 ```version = None ```
 
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
-The default ipaddress for a spinn-3 board is 192.168.240.253 and the default ipaddress for a spinn-5 board is 192.168.240.1
+The default ip address for a spinn-3 board is 192.168.240.253 and the default ip address for a spinn-5 board is 192.168.240.1
 
 # <a name="Network Configuration"></a> Network Configuration
 
 1. Go to your network settings and add a IPv4 entry with the following address to your wired settings:  
-    1. ipaddress = 192.168.240.254
-    2. submask = 255.255.255.0
+    1. ip address = 192.168.240.254
+    2. sub mask = 255.255.255.0
     3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples

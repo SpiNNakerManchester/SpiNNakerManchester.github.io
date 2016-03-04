@@ -16,56 +16,20 @@ published: true
 # <a name="Usage"></a> Usage of this functionality
 
 The content of this page is to support end users whom wish to investigate the 
-use of new mapping algorithms when integrated into the SpiNNaker tool chain 
-under 2015.006 (Another Fine Product From The Nonsense Factor).
+use of new mapping algorithms to use with the SpiNNaker tool chain
+under 2016.001 (Another Fine Product From The Nonsense Factor).
 
 This functionality allows algorithms coded in any language to be used in conjunction with the tool chain through the use of XML and json files.
 
 
 # <a name="Requirements"></a> Requirements
 
-To use this functionality, follow the instructions below:
-
-1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
-1. cd sPyNNaker
-1. git checkout mapping_work_flow
-1. sudo python setup.py develop --no-deps
-1. cd ..
-1. git clone https://github.com/SpiNNakerManchester/PACMAN.git
-1. cd PACMAN
-1. git checkout mapping_work_flow
-1. sudo python setup.py develop --no-deps
-1. cd ..
-1. git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
-1. cd SpiNNFrontEndCommon
-1. git checkout mapping_work_flow
-1. sudo python setup.py develop --no-deps
-1. cd ..
-1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-1. cd SpiNNakerGraphFrontEnd
-1. git checkout mapping_work_flow
-1. sudo python setup.py develop --no-deps
-1. cd ..
-1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
-1. cd SpiNNMachine
-1. git checkout Mapping_Interface_changes
-1. sudo python setup.py develop --no-deps
-1. cd ..
-1. git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
-1. cd SpiNNMan
-1. git checkout Mapping_Interface_changes
-1. sudo python setup.py develop --no-deps
-1. cd ..
-1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
-1. cd sPyNNakerExternalDevicesPlugin
-1. git checkout Mapping_Interface_changes
-1. sudo python setup.py develop --no-deps
-1. cd ..
-
-This now gives you a updated version of the tool chain, which supports new 
-mapping algorithms. It is worth noting that when 2015.006 
-(Another Fine Product From The Nonsense Factor) is officially released, 
-these installation instructions will be no longer required.
+To use this functionality, you must have installed one of the Front Ends supported by the 2016.001 (Another Fine Product From The Nonsense Factor)
+software stack. If you have not done so yet, please follow one of the following links:
+1. [The sPyNNaker Front end User installation page](../spynnaker_pages/PyNNOnSpiNNakerInstall.html)
+1. [The sPyNNaker Front end Developer installation page](../spynnaker_pages/PyNNOnSpinnakerDeveloperInstall.html)
+1. [The SpiNNaker Graph Front End User installation page](../spinnaker_graph_pages/SpiNNakerGraphFrontEndInstall.html)
+1. [The SpiNNaker Graph Front End Developer installation page](../spinnaker_graph_pages/SpiNNakerGraphFrontEndDeveloperInstall.html)
 
 # <a name="XMLMeta"></a> Algorithm Meta-data XML File
 
@@ -165,7 +129,7 @@ The first and second arguments state that it's a python class to run, and the pa
 
 The RigCommandLineSAPlacer also produces one output, which is the json file which contains placement information. This is deduced from the ```<produces_outputs>``` tags. Note that the para_name is the same as the input type for the placements_path. This allows the PACMAN algorithm to deduce what type of data your outputting, whilst supporting general naming of output files. 
 
-The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below and can be found from lines 194 to 206 of [spinnaker.py](https://github.com/SpiNNakerManchester/sPyNNaker/blob/mapping_work_flow/spynnaker/pyNN/spinnaker.py):
+The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below and can be found from lines XXXX to XXXX of [spinnaker_main_interface.py](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/spinnaker_main_interface.py):
 
 |Name|Definition|
 |:----------------|:-----------------|
@@ -174,21 +138,21 @@ The tool chain currently supplies a collection of inputs into the PACMAN infrast
 |ReportFolder|the file-path for where to write reports|
 |MemoryPartitionableGraph|python object for the partitionable graph|
 |MemoryMachine|python object of the spiNNaker machine|
-|ReportFolder|the filepath for where to write reports|
-|IPAddress|the ipaddress for the SpiNNaker machine|
+|ReportFolder|the file path for where to write reports|
+|IPAddress|the ip address for the SpiNNaker machine|
 |Transciever| the python interface to the SpiNNaker machine|
 |FileCoreAllocationsFilePath|the file path for writing core allocations|
 |FileSDRAMAllocationsFilePath|the file path for writing sdram allocations|
 |FileMachineFilePath|the file path for writing the json representation of the SpiNNaker machine produced by PACMAN|
 |FilePartitionedGraphFilePath|the file path for writing the json representation of the partitioned graph produced by PACMAN| 
 |FilePlacementFilePath|the file path for writing the json representation of the placements produced by PACMAN|
-|FileRouingPathsFilePath|the filepath for writing the json representation of the routing paths|
+|FileRoutingPathsFilePath|the file path for writing the json representation of the routing paths|
 |FileConstraintsFilePath|the file path for writing the json representation of the constraints from the partitioned graph|
 
 
-The tool chain also provides a collection of converters which switch between json file formats and PACMANS data objects. These can be found in the [pacman/utilities/file_format_converters](https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters). The XML file describing their inputs and outputs can be found in the same folder under [converter_algorithms_metadata.xml](https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters/converter_algorithms_metadata.xml). These are summarised below:
+The tool chain also provides a collection of converters which switch between json file formats and PACMAN'S data objects. These can be found in the [pacman/utilities/file_format_converters](https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters). The XML file describing their inputs and outputs can be found in the same folder under [converter_algorithms_metadata.xml](https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters/converter_algorithms_metadata.xml). These are summarised below:
 
-|Name|Definition|Inputs|Outputs|Currently Implimented?|
+|Name|Definition|Inputs|Outputs|Currently Implemented?|
 |:----------|:----------------------------|:------------|:------------|:-------|
 |ConvertToFilePlacement|Converts from PACMAN placements to Json Placements| MemoryPlacements, FilePlacementFilePath| FilePlacements| True|
 |ConvertToFilePartitionedGraph|Converts from PACMAN partitioned graph to Json partitioned graph| MemoryPartitionedGraph, FilePartitionedGraphFilePath| FilePartitionedGraph| True|
@@ -197,40 +161,40 @@ The tool chain also provides a collection of converters which switch between jso
 |CreateToFileConstraints|Creates the Json constraints file from PACMAN machine with virtual chips and the PACMAN partitioned graph| MemoryExtendedMachine, MemoryPartitionedGraph, FileConstraintsFilePath| FileConstraints| True|
 |ConvertToFilePartitionableGraph|Converts from PACMAN partition able graph to Json partition able graph| MemoryPartitionableGraph, FilePartitionableGraphFilePath|FilePartitionableGraph| False|
 |ConvertToFileRoutingTables|Converts PACMAN routing tables into Json routing tables| MemoryRoutingTables, FileRoutingTablesFilePath|FileRoutingTables| False|
-|ConvertToMemoryPlacements|Converts from the Json placement, core_allocation to the PACMAN placements, which requires PACMANS partitioned graph| MemoryExtendedMachine, FilePlacements, MemoryPartitionedGraph, FileCoreAllocations, FileConstraints| MemoryPlacements| True|
+|ConvertToMemoryPlacements|Converts from the Json placement, core_allocation to the PACMAN placements, which requires PACMAN'S partitioned graph| MemoryExtendedMachine, FilePlacements, MemoryPartitionedGraph, FileCoreAllocations, FileConstraints| MemoryPlacements| True|
 |ConvertToMemoryMultiCastRoutingPaths|Converts Json routing_paths to PACMAN routing paths with the use of PACMAN's partitioned graph, placements, and machine with virtual chips| FileRoutingPaths, MemoryPartitionedGraph, MemoryPlacements, MemoryExtendedMachine| MemoryRoutingPaths| True|
-|ConvertToMemoryRoutingTables|Converts Json routing tables into PACMAN routing tables| FileRoutingtables|MemoryRoutingTables|False|
+|ConvertToMemoryRoutingTables|Converts Json routing tables into PACMAN routing tables| FileRoutingTables|MemoryRoutingTables|False|
 |ConvertToMemoryPartitionedGraph|Converts Json partitioned graph into PACMAN partitioned graph| FilePartitionedGraph|MemoryPartitionedGraph| False|
 
 
 These extra algorithms are only used when required, and are not needed to be explicitly defined in your algorithm listings.
 
-The tool chain also uses this workflow to control when a collection of support algorithms are executed. These algorithms are sumemrised below:
+The tool chain also uses this workflow to control when a collection of support algorithms are executed. These algorithms are summarised below:
 
-|Name|Definition|Inputs|Outputs|Currently Implimented?|
+|Name|Definition|Inputs|Outputs|Currently Implemented?|
 |:----------|:----------------------------|:------------|:------------|:-------|
-|FrontEndCommomPartitionableGraph DataSpecificationWriter |The compression of data from a partitionable graph via the data specification language| MemoryPlacements, MemoryGraphMapper, MemoryTags, ExecutableFinder, MemoryPartitionedGraph, MemoryPartitionableGraph, MemoryRoutingInfos, IPAddress, ReportFolder, WriteTextSpecsFlag, ApplicationDataFolder|DataSpecificationTargets, ExecutableTargets| True|
+|FrontEndCommonPartitionableGraph DataSpecificationWriter |The compression of data from a partitionable graph via the data specification language| MemoryPlacements, MemoryGraphMapper, MemoryTags, ExecutableFinder, MemoryPartitionedGraph, MemoryPartitionableGraph, MemoryRoutingInfos, IPAddress, ReportFolder, WriteTextSpecsFlag, ApplicationDataFolder|DataSpecificationTargets, ExecutableTargets| True|
 |FrontEndCommonPartitionable GraphHostExecuteDataSpecification|The decompression of data from a partitionable graph via the data specification language on host| IPAddress, MemoryPlacements, MemoryGraphMapper, ReportFolder, WriteTextSpecsFlag, ApplicationDataFolder, MemoryExtendedMachine, DataSpecificationTargets| ProcessorToAppDataBaseAddress, VertexToAppDataFilePaths| True|
-|FrontEndCommonChip ExecuteDataSpecification |The decompression of data via the data specification language on the SpiNNaker Machine itself| ?????| ????| False|
+|FrontEndCommonChipExecuteDataSpecification |The decompression of data via the data specification language on the SpiNNaker Machine itself| ?????| ????| True|
 |FrontEndCommonPartitionable GraphApplicationDataLoader|The loading of application data from host to a SpiNNaker machine|MemoryPlacements, MemoryGraphMapper, ProcessorToAppDataBaseAddress, VertexToAppDataFilePaths, MemoryTransciever, WriteCheckerFlag| LoadedApplicationDataToken|True|
-|FrontEndCommom LoadExecutableImages |The loading of exeuctable binary images| ExecutableTargets, APPID, MemoryTransciever|LoadBinariesToken| True|
-|FrontEndCommon RoutingTableLoader |The loading of routing_tables|MemoryRoutingTables, APPID, MemoryTransciever, MemoryExtendedMachine|LoadedRoutingTablesToken| True|
-|FrontEndCommon TagsLoader |The loading of tags (iptags and reverse_ip_tags)| MemoryTags, MemoryTransciever| LoadedIPTagsToken, LoadedReverseIPTagsToken|True|
-|FrontEndCommon ReloadScriptCreator |The generation of a Reload script for reloading a PyNN model. We refer the reader to XXXXXXX for more information on this functionality.| MemoryTags,ApplicationDataFolder, IPAddress, BoardVersion, BMPDetails, DownedChipsDetails, DownedCoresDetails, NumberOfBoards, MachineHeight, MachineWidth, AutoDetectBMPFlag, EnableReinjectionFlag, ProcessorToAppDataBaseAddress, MemoryPlacements, MemoryRoutingTables, MemoryExtendedMachine, ExecutableTargets, RunTime, TimeScaleFactor,DatabaseWaitOnConfirmationFlag, DatabaseSocketAddresses, VertexToAppDataFilePaths, BufferManager|ReloadToken|True|
+|FrontEndCommonLoadExecutableImages |The loading of executable binary images| ExecutableTargets, APPID, MemoryTransciever|LoadBinariesToken| True|
+|FrontEndCommonRoutingTableLoader |The loading of routing_tables|MemoryRoutingTables, APPID, MemoryTransciever, MemoryExtendedMachine|LoadedRoutingTablesToken| True|
+|FrontEndCommonTagsLoader |The loading of tags (iptags and reverse_ip_tags)| MemoryTags, MemoryTransciever| LoadedIPTagsToken, LoadedReverseIPTagsToken|True|
+|FrontEndCommonReloadScriptCreator |The generation of a Reload script for reloading an application. We refer the reader to XXXXXXX for more information on this functionality.| MemoryTags,ApplicationDataFolder, IPAddress, BoardVersion, BMPDetails, DownedChipsDetails, DownedCoresDetails, NumberOfBoards, MachineHeight, MachineWidth, AutoDetectBMPFlag, EnableReinjectionFlag, ProcessorToAppDataBaseAddress, MemoryPlacements, MemoryRoutingTables, MemoryExtendedMachine, ExecutableTargets, RunTime, TimeScaleFactor,DatabaseWaitOnConfirmationFlag, DatabaseSocketAddresses, VertexToAppDataFilePaths, BufferManager|ReloadToken|True|
 |FrontEndCommon ApplicationRunner |The execution of the applications on the SpiNNaker Machine|BufferManager, DatabaseWaitOnConfirmationFlag, SendStartNotifications, DatabaseInterface, ExecutableTargets, APPID, MemoryTransciever, RunTime, TimeScaleFactor, LoadedReverseIPTagsToken, LoadedIPTagsToken, LoadedRoutingTablesToken, LoadBinariesToken, LoadedApplicationDataToken| RanToken| True|
 | FrontEndCommon ProvenanceGatherer|The gathering of Provenance data from the SpiNNaker Machine|ProvenanceFilePath, MemoryTransciever, MemoryExtendedMachine, MemoryRoutingTables, MemoryPlacements| RanToken| True |
-|FrontEndCommon DatabaseWriter |The execution of the notifcation protocol used within Live input and Output. We refer the reader to XXXXXX for more information on this functionality.|MemoryPartitionedGraph, UserCreateDatabaseFlag, MemoryTags, DatabaseWaitOnConfirmationFlag, ApplicationDataFolder, RunTime, MemoryExtendedMachine, DatabaseSocketAddresses, TimeScaleFactor, MachineTimeStep, MemoryPartitionableGraph, MemoryGraphMapper, MemoryPlacements, MemoryRoutingInfos, MemoryRoutingTables, ExecuteMapping| DatabaseInterface| True|
-|FrontEndCommon BufferManagerCreater |The execution of the Buffered functionality used to support applications which require data to be sent to it from host during runtime. we refer the reader to XXXXXXX for more infomation on this functionality.|MemoryPartitionedGraph, MemoryPlacements, MemoryTags, MemoryTransciever, ReportStates, ApplicationDataFolder| BufferManager| True|
+|FrontEndCommonDatabaseWriter |The execution of the notification protocol used within Live input and Output. We refer the reader to XXXXXX for more information on this functionality.|MemoryPartitionedGraph, UserCreateDatabaseFlag, MemoryTags, DatabaseWaitOnConfirmationFlag, ApplicationDataFolder, RunTime, MemoryExtendedMachine, DatabaseSocketAddresses, TimeScaleFactor, MachineTimeStep, MemoryPartitionableGraph, MemoryGraphMapper, MemoryPlacements, MemoryRoutingInfos, MemoryRoutingTables, ExecuteMapping| DatabaseInterface| True|
+|FrontEndCommonBufferManagerCreator |The execution of the Buffered functionality used to support applications which require data to be sent to it from host during runtime. we refer the reader to XXXXXXX for more information on this functionality.|MemoryPartitionedGraph, MemoryPlacements, MemoryTags, MemoryTransciever, ReportStates, ApplicationDataFolder| BufferManager| True|
 |FrontEndCommon VirtualMachineInterfacer |The creation of the Python representation of the SpiNNaker Machine|MachineWidth, MachineHeight, MachineHasWrapAroundsFlag| MemoryMachine| True|
 |FrontEndCommon MachineInterfacer |The creation of the python representation of the SpiNNaker Machine and the Python interface to the SpiNNaker Machine|IPAddress, BMPDetails, DownedChipsDetails, DownedCoresDetails, BoardVersion, NumberOfBoards, MachineWidth, MachineHeight, AutoDetectBMPFlag, EnableReinjectionFlag, ScampConnectionData, BootPortNum| MemoryMachine, MemoryTransciever| True|
 
-These algorithms use a collection of Tokens to define which functions depend upon each other. These tokens are usually the output from each function. But are summerised below for clarity:
+These algorithms use a collection of Tokens to define which functions depend upon each other. These tokens are usually the output from each function. But are summarised below for clarity:
 
 |Name|Definition|
 |:----------------|:-----------------|
 |RanToken| states that the algorithm has ran the simulation on the SpiNNaker machine.|
 |LoadedApplicationDataToken| States that the algorithm has loaded the data needed by the application onto the SDRAM of the SpiNNaker Machine|
-|LoadBinariesToken| States that the algortihm has loaded the application binaries onto the SpiNNaker Machine|
+|LoadBinariesToken| States that the algorithm has loaded the application binaries onto the SpiNNaker Machine|
 |ReloadToken| States that the reload script has been built|
 |LoadedRoutingTablesToken| States that the routing tables have been loaded onto the chips of the SpiNNaker Machine|
 |LoadedReverseIPTagsToken| States that the reverse iptags have been loaded to the ethernet connected chips on the SpiNNaker Machine|
@@ -259,11 +223,11 @@ we refer you to the documentation on the Json File Format found [here](https://g
 To configure the sPyNNaker front end to use your algorithms, you must first have the XML file mentioned in [Algorithm Meta-data XML File](#XMLMeta) for your algorithm and have added the Json converters to your algorithm's front end. Then you will need to open your .spynnaker.cfg file and add these extra regions and params.
 
     [Mapping]
-    # format is <algorithum_name>,<>
+    # format is <algorithm_name>,<>
     # pacman algorithms are:
     # Basic_dijkstra_routing, RadialPlacer, BasicPlacer,  ConnectiveBasedPlacer,BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,BasicRoutingInfoAllocator, BasicDijkstraRouting,MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
     algorithms = MallocBasedChipIDAllocator,BasicDijkstraRouting,RadialPlacer,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
-    interface_algorithms = FrontEndCommonPartitionableGraphApplicationDataLoader,FrontEndCommonPartitionableGraphHostExecuteDataSpecification,FrontEndCommomLoadExecutableImages,FrontEndCommonRoutingTableLoader,FrontEndCommonTagsLoader,FrontEndCommomPartitionableGraphDataSpecificationWriter,FrontEndCommonBufferManagerCreater
+    interface_algorithms = FrontEndCommonPartitionableGraphApplicationDataLoader,FrontEndCommonPartitionableGraphHostExecuteDataSpecification,FrontEndCommonLoadExecutableImages,FrontEndCommonRoutingTableLoader,FrontEndCommonTagsLoader,FrontEndCommonPartitionableGraphDataSpecificationWriter,FrontEndCommonBufferManagerCreator
     
     # format is <path1>,<path2>
     extra_xmls_paths = None
@@ -273,7 +237,7 @@ At this point, you need to :
 1. Remove the PACMAN specific algorithm that you'r algorithm replaces.
 1. Add your algorithms name (as specified in the ```<algorithm name="">``` tag) to the list.
 1. add a path to your XML file containing its input and output data in the "extra_xml_paths"
-1. If the algorthim loads one of the objects onto the machine that the interface algorithms, you may be able to return one of the tokens described in # and therefore remove the corrapsonding interfce function from the interface_algortihms list.
+1. If the algorithm loads one of the objects onto the machine that the interface algorithms, you may be able to return one of the tokens described in # and therefore remove the corresponding interface function from the interface_algorithms list.
 1. run a pynn script.
 
 # <a name="RigPlacer"></a> Running Example
@@ -443,14 +407,14 @@ To run a simple example of using external and internal algorithms in situ, pleas
             </parameter>
              <parameter>
                 <param_name>routing_paths_file_path</param_name>
-                <param_type>FileRouingPathsFilePath</param_type>
+                <param_type>FileRoutingPathsFilePath</param_type>
             </parameter>
         </required_inputs>
         <parameters>
         </parameters>
         <produces_outputs>
             <parameter>
-                <param_name>FileRouingPathsFilePath</param_name>
+                <param_name>FileRoutingPathsFilePath</param_name>
                 <param_type>FileRoutingPaths</param_type>
             </parameter>
         </produces_outputs>
@@ -464,14 +428,14 @@ To run a simple example of using external and internal algorithms in situ, pleas
 ```
 [Mapping]
 
-# format is  <algorithum_name>,<>
+# format is  <algorithm_name>,<>
 # pacman algorithms are:
 # Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,
 # BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,
 # BasicRoutingInfoAllocator, BasicDijkstraRouting,
 # MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
 algorithms = MallocBasedChipIDAllocator,RigRouter,RigCommandLineHilbertPlacer,RigAllocator,BasicTagAllocator,PartitionAndPlacePartitioner,MallocBasedRoutingInfoAllocator,GraphEdgeFilter,EdgeToNKeysMapper
-interface_algorithms = FrontEndCommonPartitionableGraphApplicationDataLoader,FrontEndCommonPartitionableGraphHostExecuteDataSpecification,FrontEndCommomLoadExecutableImages,FrontEndCommonRoutingTableLoader,FrontEndCommonTagsLoader,FrontEndCommomPartitionableGraphDataSpecificationWriter,FrontEndCommonBufferManagerCreater
+interface_algorithms = FrontEndCommonPartitionableGraphApplicationDataLoader,FrontEndCommonPartitionableGraphHostExecuteDataSpecification,FrontEndCommonLoadExecutableImages,FrontEndCommonRoutingTableLoader,FrontEndCommonTagsLoader,FrontEndCommonPartitionableGraphDataSpecificationWriter,FrontEndCommonBufferManagerCreator
 
 # format is <path1>,<path2>
 extra_xmls_paths = PATH_TO_XML_FILE
@@ -491,10 +455,10 @@ You should see output like the one below:
 2015-10-12 12:02:14 INFO: Setting time scale factor to 1.
 2015-10-12 12:02:14 INFO: Setting appID to 30.
 2015-10-12 12:02:14 INFO: Setting machine time step to 1000.0 micro-seconds.
-2015-10-12 12:02:14 WARNING: You are trying to record the conductance from a model which does not contain conductance behaviour. You will recieve current measurements instead. Sorry
-2015-10-12 12:02:14 INFO: Creating transceiver for cspc276
+2015-10-12 12:02:14 WARNING: You are trying to record the conductance from a model which does not contain conductance behaviour. You will receive current measurements instead. Sorry
+2015-10-12 12:02:14 INFO: Creating transceiver for *********
 2015-10-12 12:02:14 INFO: going to try to boot the machine with scamp
-2015-10-12 12:02:14 INFO: Detected a machine on ip address 130.88.198.208 which has 5138 cores and 864 links
+2015-10-12 12:02:14 INFO: Detected a machine on ip address ******** which has 5138 cores and 864 links
 2015-10-12 12:02:14 INFO: successfully booted the machine with scamp
 2015-10-12 12:02:15 INFO: *** Running Mapper *** 
 Allocating virtual identifiers
