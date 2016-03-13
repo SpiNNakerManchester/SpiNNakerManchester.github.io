@@ -9,4 +9,6 @@ This page links to a collection of pages that cover separate aspects of the SpiN
 1. [How to use the reload functionality of the software stack](ReloadFunctionality.html)
 1. [How to programme in event based programming models](EventBasedC.html)
 1. [How to add applications into the python to utilise the software stack to its full potential](../spinnaker_graph_pages/SpiNNakerGraphFrontEndAddNewApplicationTutorial.html)
-[//]: #( 1. [How the software stack handles SDRAM storage problems through the usage of the buffers and pause and resume functionality](BufferManager))
+<!---
+ 1. [How the software stack handles SDRAM storage problems through the usage of the buffers and pause and resume functionality](BufferManager)
+-->
