@@ -113,12 +113,61 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
 # <a name="GITCLONE"></a> Git Cloning Requirements
 
-* [Central gitClone](#centeralGit)
- * [User-Only gitclone](#userGit)
- * [Virtualenv gitclone](#virutalGit)
+* [IDE gitclone](#IDEGitClone)
+* [Command Line Central gitClone](#centeralGit)
+ * [Command Line User-Only gitclone](#userGit)
+ * [Command Line Virtualenv gitclone](#virutalGit)
+ 
+ we recommend using a IDE to install the tools, as this avoids the issues with setup.py installs and supports you having multiple versions working in parallel. We currently use [Pycharm](https://www.jetbrains.com/pycharm/) (we currently use version 4.5.3) and [Eclipse]|(https://eclipse.org/downloads/) (currently tested on Luna 4.4.2)
+
+* [IDE Pycharm install](#Pycharm)
+* [IDE Eclipse install](#Eclipse)
+
+# <a name="Pycharm"></a> IDE Pycharm install.
+follow the following instructions for each repository:
+
+    1. go to VCS -> Checkout from Version Control -> github
+    1. in "Git Repository URL" enter the next repository defined below.
+    1. click clone.
+    
+|Name|URL|
+|:----------------|:-----------------|    
+|sPyNNaker | https://github.com/SpiNNakerManchester/sPyNNaker.git|
+|SpiNNFrontEndCommon | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|
+|PACMAN | https://github.com/SpiNNakerManchester/PACMAN.git|
+|SpiNNMan | https://github.com/SpiNNakerManchester/SpiNNMan.git|
+|DataSpecification | https://github.com/SpiNNakerManchester/DataSpecification.git|
+|SpiNNMachine | https://github.com/SpiNNakerManchester/SpiNNMachine.git|
+|SpiNNStorageHandlers | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|
+|spinnaker_tools | https://github.com/SpiNNakerManchester/spinnaker_tools.git|
+|spinn_common | https://github.com/SpiNNakerManchester/spinn_common.git|
+
+1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
+
+# <a name="Eclipse"></a> IDE Eclipse install.
+
+follow the following instructions for each repository:
+
+    1. go to file -> import -> git -> projects from git -> clone uri
+    1. in "URI"  enter the next repository defined below.
+    1. click finish
+    
+|Name|URL|
+|:----------------|:-----------------|    
+|sPyNNaker | https://github.com/SpiNNakerManchester/sPyNNaker.git|
+|SpiNNFrontEndCommon | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|
+|PACMAN | https://github.com/SpiNNakerManchester/PACMAN.git|
+|SpiNNMan | https://github.com/SpiNNakerManchester/SpiNNMan.git|
+|DataSpecification | https://github.com/SpiNNakerManchester/DataSpecification.git|
+|SpiNNMachine | https://github.com/SpiNNakerManchester/SpiNNMachine.git|
+|SpiNNStorageHandlers | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|
+|spinnaker_tools | https://github.com/SpiNNakerManchester/spinnaker_tools.git|
+|spinn_common | https://github.com/SpiNNakerManchester/spinn_common.git|
+
+1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
  
 
-# <a name="centralGit"></a> Central gitClone
+# <a name="centralGit"></a> Command Line Central gitClone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
@@ -153,6 +202,9 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd SpiNNMachine
     1. sudo python setup.py develop --no-deps
     1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
+    1. cd SpiNNStorageHandlers
+    1. sudo python setup.py develop --no-deps
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
     1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
@@ -163,7 +215,7 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. sudo pip install pyNN
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
-# <a name="userGit"></a> User-Only gitclone
+# <a name="userGit"></a> Command Line User-Only gitclone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
@@ -198,6 +250,9 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
     1. cd SpiNNMachine
     1. python setup.py develop --no-deps --user
     1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
+    1. cd SpiNNStorageHandlers
+    1. python setup.py develop --no-deps --user
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
     1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
@@ -353,7 +408,7 @@ You can now [configure](#Configuration) your environment.
 
 You can now [configure](#Configuration) your environment.
 
-# <a name="virtual_git_clone"></a> Virtual git clone
+# <a name="virtual_git_clone"></a> Command Line Virtual git clone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
     1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
@@ -388,6 +443,9 @@ You can now [configure](#Configuration) your environment.
     1. cd SpiNNMachine
     1. python setup.py develop --no-deps
     1. cd ..
+    1. git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
+    1. cd SpiNNStorageHandlers
+    1. python setup.py develop --no-deps
     1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
     1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
     1. git clone https://github.com/SpiNNakerManchester/ybug.git
