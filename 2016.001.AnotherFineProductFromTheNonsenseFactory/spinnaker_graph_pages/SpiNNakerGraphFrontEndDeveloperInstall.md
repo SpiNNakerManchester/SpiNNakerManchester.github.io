@@ -107,14 +107,14 @@ Continue to the [Git Clone](#GITCLONE) to install the remaining requirements.
 
 # <a name="GITCLONE"></a> Git Cloning Requirements
 
+we recommend using a IDE to install the tools, as this avoids the issues with setup.py installs and supports you having multiple versions working in parallel. We currently use [Pycharm](https://www.jetbrains.com/pycharm/) (we currently use version 4.5.3) and [Eclipse](https://eclipse.org/downloads/) (currently tested on Luna 4.4.2)
+
 * [IDE gitclone](#IDEGitClone)
 * [Command Line Central gitClone](#centeralGit)
  * [Command Line User-Only gitclone](#userGit)
  * [Command Line Virtualenv gitclone](#virutalGit)
  
 # <a name="IDEGitClone"></a> IDE cloning process.
-
-we recommend using a IDE to install the tools, as this avoids the issues with setup.py installs and supports you having multiple versions working in parallel. We currently use [Pycharm](https://www.jetbrains.com/pycharm/) (we currently use version 4.5.3) and [Eclipse]|(https://eclipse.org/downloads/) (currently tested on Luna 4.4.2)
 
 * [IDE Pycharm install](#Pycharm)
 * [IDE Eclipse install](#Eclipse)
