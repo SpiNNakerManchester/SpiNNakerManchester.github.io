@@ -197,7 +197,6 @@ follow the following instructions for each repository:
     1. ```git clone https://github.com/SpiNNakerManchester/ybug.git```
     1. ```sudo pip install enum34```
     1. ```sudo pip install six```
-    1. ```sudo pip install pyNN```
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
 # <a name="userGit"></a> Command Line User-Only gitclone
@@ -239,7 +238,6 @@ follow the following instructions for each repository:
     1. ```git clone https://github.com/SpiNNakerManchester/ybug.git```
     1. ```pip install enum34 --user```
     1. ```pip install six --user```
-    1. ```pip install pyNN --user```
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
  
 # <a name="virtualGit"></a> Virtualenv git clone
@@ -423,7 +421,6 @@ You can now [configure](#Configuration) your environment.
     1. ```git clone https://github.com/SpiNNakerManchester/ybug.git```
     1. ```pip install enum34```
     1. ```pip install six```
-    1. ```pip install pyNN```
 
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
