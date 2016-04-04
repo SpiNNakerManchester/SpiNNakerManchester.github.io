@@ -220,9 +220,9 @@ follow the following instructions for each repository:
 # <a name="userGit"></a> Command Line User-Only gitclone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
-    1. git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
-    1. cd sPyNNaker
-    1. python setup.py develop --no-deps --user
+    1. ```git clone https://github.com/SpiNNakerManchester/sPyNNaker.git```
+    1. ```cd sPyNNaker```
+    1. ```python setup.py develop --no-deps --user```
     1. cd ..
     1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git
     1. cd sPyNNakerExtraModelsPlugin
