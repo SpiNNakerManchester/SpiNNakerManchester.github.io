@@ -165,81 +165,81 @@ follow the following instructions for each repository:
 # <a name="centralGit"></a> Command Line Central gitClone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-    1. cd SpiNNakerGraphFrontEnd
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
-    1. cd SpiNNFrontEndCommon
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/PACMAN.git
-    1. cd PACMAN
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
-    1. cd SpiNNMan
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/DataSpecification.git
-    1. cd DataSpecification
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
-    1. cd SpiNNMachine
-    1. sudo python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
-    1. cd SpiNNStorageHandlers
-    1. sudo python setup.py develop --no-deps
-    1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
-    1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
-    1. git clone https://github.com/SpiNNakerManchester/ybug.git
-    1. sudo pip install enum34
-    1. sudo pip install six
-    1. sudo pip install pyNN
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git```
+    1. ```cd SpiNNakerGraphFrontEnd```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git```
+    1. ```cd SpiNNFrontEndCommon```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/PACMAN.git```
+    1. ```cd PACMAN```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNMan.git```
+    1. ```cd SpiNNMan```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/DataSpecification.git```
+    1. ```cd DataSpecification```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git```
+    1. ```cd SpiNNMachine```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git```
+    1. ```cd SpiNNStorageHandlers```
+    1. ```sudo python setup.py develop --no-deps```
+    1. ```git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git```
+    1. ```git clone https://github.com/SpiNNakerManchester/spinn_common.git```
+    1. ```git clone https://github.com/SpiNNakerManchester/ybug.git```
+    1. ```sudo pip install enum34```
+    1. ```sudo pip install six```
+    1. ```sudo pip install pyNN```
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
 # <a name="userGit"></a> Command Line User-Only gitclone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
-    1. cd SpiNNFrontEndCommon
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/PACMAN.git
-    1. cd PACMAN
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
-    1. cd SpiNNMan
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
-    1. cd sPyNNakerExternalDevicesPlugin
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/DataSpecification.git
-    1. cd DataSpecification
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
-    1. cd SpiNNMachine
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-    1. cd SpiNNakerGraphFrontEnd
-    1. python setup.py develop --no-deps --user
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
-    1. cd SpiNNStorageHandlers
-    1. python setup.py develop --no-deps --user
-    1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
-    1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
-    1. git clone https://github.com/SpiNNakerManchester/ybug.git
-    1. pip install enum34 --user
-    1. pip install six --user
-    1. pip install pyNN --user
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git```
+    1. ```cd SpiNNFrontEndCommon```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/PACMAN.git```
+    1. ```cd PACMAN```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNMan.git```
+    1. ```cd SpiNNMan```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git```
+    1. ```cd sPyNNakerExternalDevicesPlugin```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/DataSpecification.git```
+    1. ```cd DataSpecification```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git```
+    1. ```cd SpiNNMachine```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git```
+    1. ```cd SpiNNakerGraphFrontEnd```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git```
+    1. ```cd SpiNNStorageHandlers```
+    1. ```python setup.py develop --no-deps --user```
+    1. ```git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git```
+    1. ```git clone https://github.com/SpiNNakerManchester/spinn_common.git```
+    1. ```git clone https://github.com/SpiNNakerManchester/ybug.git```
+    1. ```pip install enum34 --user```
+    1. ```pip install six --user```
+    1. ```pip install pyNN --user```
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
  
 # <a name="virtualGit"></a> Virtualenv git clone
@@ -387,43 +387,44 @@ You can now [configure](#Configuration) your environment.
 # <a name="virtual_git_clone"></a> Command Line Virtual git clone
 
 1. You now need to clone the github repositories for all the software stack. This requires you to run the following commands in a terminal, in the folder of your choice where the software will be installed.
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
-    1. cd SpiNNFrontEndCommon
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/PACMAN.git
-    1. cd PACMAN
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
-    1. cd SpiNNMan
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git
-    1. cd sPyNNakerExternalDevicesPlugin
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/DataSpecification.git
-    1. cd DataSpecification
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
-    1. cd SpiNNMachine
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git
-    1. cd SpiNNakerGraphFrontEnd
-    1. python setup.py develop --no-deps
-    1. cd ..
-    1. git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
-    1. cd SpiNNStorageHandlers
-    1. python setup.py develop --no-deps
-    1. git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
-    1. git clone https://github.com/SpiNNakerManchester/spinn_common.git
-    1. git clone https://github.com/SpiNNakerManchester/ybug.git
-    1. pip install enum34
-    1. pip install six
-    1. pip install pyNN
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git```
+    1. ```cd SpiNNFrontEndCommon```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/PACMAN.git```
+    1. ```cd PACMAN```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNMan.git```
+    1. ```cd SpiNNMan```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git```
+    1. ```cd sPyNNakerExternalDevicesPlugin```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/DataSpecification.git```
+    1. ```cd DataSpecification```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git```
+    1. ```cd SpiNNMachine```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git```
+    1. ```cd SpiNNakerGraphFrontEnd```
+    1. ```python setup.py develop --no-deps```
+    1. ```cd ..```
+    1. ```git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git```
+    1. ```cd SpiNNStorageHandlers```
+    1. ```python setup.py develop --no-deps```
+    1. ```git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git```
+    1. ```git clone https://github.com/SpiNNakerManchester/spinn_common.git```
+    1. ```git clone https://github.com/SpiNNakerManchester/ybug.git```
+    1. ```pip install enum34```
+    1. ```pip install six```
+    1. ```pip install pyNN```
+
 1. Continue to the [C Compiler Install](#CCOMPILE) to install the remaining c compiler dependency
 
 # <a name="CCOMPILE"></a> C Compiler Install
@@ -520,8 +521,8 @@ where ```<ip-or-host>``` is the ip address or hostname of your SpiNNaker board.
 When using the make-files supplied in this repository, you must set up a number
 of environment variables using:
 
-	$ cd spinnaker_tools  # You must be in the spinnaker_tools directory!
-	$ source setup
+	$ ```cd spinnaker_tools  # You must be in the spinnaker_tools directory!```
+	$ ```source setup```
 
 You should also ensure you have compiled the SpiNNaker libraries as described
 above otherwise application compilation will fail.
@@ -530,7 +531,7 @@ above otherwise application compilation will fail.
 
 To quickly compile a simple single-file application for SpiNNaker, you can use the following command:
 
-	$ make -f $SPINN_DIRS/Makefile.app APP=example
+	$ ```make -f $SPINN_DIRS/Makefile.app APP=example```
 
 This will compile the application in `example.c` and produce a SpiNNaker binary called `example.aplx` in the current directory.
 
@@ -540,7 +541,7 @@ Though the above is suitable while prototyping applications, real-world applicat
 
 `Makefile.example` in the root of the `spinnaker_tools` repository provides an annotated Makefile template which compiles simple C programs for SpiNNaker using these tools. Once your makefile is set up, your application can then be compiled by calling:
 
-	$ make
+	$ ```make```
 
 
 1. Continue to the [Compile Binaries](#CCOMPILEBINARIES) to complete the installation by compiling the binaries of the c code used by the tool chain.
@@ -552,34 +553,32 @@ Though the above is suitable while prototyping applications, real-world applicat
 1. run this script [automatic_make_spinnaker_graph_front_end.sh](../documents/automatic_make_spinnaker_graph_front_end.sh)
 1. run the following instructions from the base folder where all the software is installed:
 
-    1. cd spinnaker_tools
-    1. source setup
-    1. cd ..
-    1. cd spinn_common
-    1. make clean
-    1. make 
-    1. make install
-    1. cd ..
-    1. cd SpiNNMan/c_models/reinjector/
-    1. make 
-    1. cd ../../..
-    1. cd SpiNNFrontEndCommon/c_common/front_end_common_lib/
-    1. make install-clean
-    1. cd ..
-    1. make clean
-    1. make 
-    1. make install
-    1. cd ../..
-    1. cd ../../SpiNNakerGraphFrontEnd/examples/
-    1. make clean
-    1. make 
+    1. ```cd spinnaker_tools```
+    1. ```source setup```
+    1. ```cd ..```
+    1. ```cd spinn_common```
+    1. ```make clean```
+    1. ```make ```
+    1. ```make install```
+    1. ```cd ..```
+    1. ```cd SpiNNMan/c_models/reinjector/```
+    1. ```make ```
+    1. ```cd ../../..```
+    1. ```cd SpiNNFrontEndCommon/c_common/front_end_common_lib/```
+    1. ```make install-clean```
+    1. ```cd ..```
+    1. ```make clean```
+    1. ```make ```
+    1. ```make install```
+    1. ```cd ../..```
+    1. ```cd ../../SpiNNakerGraphFrontEnd/examples/```
+    1. ```make clean```
+    1. ```make ```
     
 1. Continue to [configure](#Configuration) your environment.
 
 # <a name="Configuration"></a> Configuration
-When the SpiNNakerGraphFrontEnd is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpiNNakerGraphFrontEnd to do this before you run your first simulation as follows:  
-```python -c "import pyNN.spiNNaker"```
-
+When the SpiNNakerGraphFrontEnd is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpiNNakerGraphFrontEnd to do this by attempting to run your first simulation. Where it will fail but the file will be generated.  
 Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its parameters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
 ```[Machine] ```  
 ```machineName = None ```  
