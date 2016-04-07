@@ -627,9 +627,15 @@ Note that if you have previously installed a version of the spiNNaker software, 
 ```machineName = None ```  
 ```version = None ```
 
-Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
+If you have a SpiNNaker board, then go to [Local Board] (#Local Board) if you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](../common_pages/VirtualMode.html) and then go to (Running some examples)[#Examples].
+
+# <a name="Local Board"></a> Local Board
+
+Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board. 
 
 The default ip address for a spinn-3 board is 192.168.240.253 and the default ip address for a spinn-5 board is 192.168.240.1
+
+now go to [Network Configuration](#Network Configuration).
 
 # <a name="Network Configuration"></a> Network Configuration
 

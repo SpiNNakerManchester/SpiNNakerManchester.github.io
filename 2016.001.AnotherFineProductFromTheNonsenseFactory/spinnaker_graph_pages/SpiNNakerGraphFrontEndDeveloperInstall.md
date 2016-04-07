@@ -579,14 +579,20 @@ Though the above is suitable while prototyping applications, real-world applicat
 
 # <a name="Configuration"></a> Configuration
 When the SpiNNakerGraphFrontEnd is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpiNNakerGraphFrontEnd to do this by attempting to run your first simulation. Where it will fail but the file will be generated.  
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its parameters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpiNNakerGraphFrontEnd will attempt to use this file for its parameters.  If you don't have this file, a new file called "..spiNNakerGraphFrontEnd.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
 ```[Machine] ```  
 ```machineName = None ```  
 ```version = None ```
 
-Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
+If you have a SpiNNaker board, then go to [Local Board] (#Local Board) if you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](../common_pages/VirtualMode.html) and then go to (Running some examples)[#Examples].
+
+# <a name="Local Board"></a> Local Board
+
+Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board. 
 
 The default ip address for a spinn-3 board is 192.168.240.253 and the default ip address for a spinn-5 board is 192.168.240.1
+
+now go to [Network Configuration](#Network Configuration).
 
 # <a name="Network Configuration"></a> Network Configuration
 
