@@ -17,7 +17,7 @@ published: true
 
 The content of this page is to support end users whom wish to investigate the 
 use of new mapping algorithms to use with the SpiNNaker tool chain
-under 2016.001 (Another Fine Product From The Nonsense Factor).
+under 2016.001 (Another Fine Product From The Nonsense Factory).
 
 This functionality allows algorithms coded in any language to be used in conjunction with the tool chain through the use of XML and json files.
 
@@ -27,10 +27,10 @@ This functionality allows algorithms coded in any language to be used in conjunc
 To use this functionality, you must have installed one of the Front Ends supported by the 2016.001 (Another Fine Product From The Nonsense Factor)
 software stack. If you have not done so yet, please follow one of the following links:
 
-1. [The sPyNNaker Front end User installation page](../spynnaker_pages/PyNNOnSpinnakerInstall.html)
-1. [The sPyNNaker Front end Developer installation page](../spynnaker_pages/PyNNOnSpinnakerDeveloperInstall.html)
-1. [The SpiNNaker Graph Front End User installation page](../spinnaker_graph_pages/SpiNNakerGraphFrontEndInstall.html)
-1. [The SpiNNaker Graph Front End Developer installation page](../spinnaker_graph_pages/SpiNNakerGraphFrontEndDeveloperInstall.html)
+1. [The sPyNNaker Front end User installation page](../spynnaker/PyNNOnSpinnakerInstall.html)
+1. [The sPyNNaker Front end Developer installation page](../spynnaker/PyNNOnSpinnakerDeveloperInstall.html)
+1. [The SpiNNaker Graph Front End User installation page](../graph_front_edn/SpiNNakerGraphFrontEndInstall.html)
+1. [The SpiNNaker Graph Front End Developer installation page](../graph_front_end/SpiNNakerGraphFrontEndDeveloperInstall.html)
 
 # <a name="XMLMeta"></a> Algorithm Meta-data XML File
 
@@ -130,7 +130,7 @@ The first and second arguments state that it's a python class to run, and the pa
 
 The RigCommandLineSAPlacer also produces one output, which is the json file which contains placement information. This is deduced from the ```<produces_outputs>``` tags. Note that the para_name is the same as the input type for the placements_path. This allows the PACMAN algorithm to deduce what type of data your outputting, whilst supporting general naming of output files. 
 
-The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below and can be found from lines XXXX to XXXX of [spinnaker_main_interface.py](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/spinnaker_main_interface.py):
+The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below:
 
 |Name|Definition|
 |:----------------|:-----------------|
@@ -141,7 +141,7 @@ The tool chain currently supplies a collection of inputs into the PACMAN infrast
 |MemoryMachine|python object of the spiNNaker machine|
 |ReportFolder|the file path for where to write reports|
 |IPAddress|the ip address for the SpiNNaker machine|
-|Transciever| the python interface to the SpiNNaker machine|
+|Transceiver| the python interface to the SpiNNaker machine|
 |FileCoreAllocationsFilePath|the file path for writing core allocations|
 |FileSDRAMAllocationsFilePath|the file path for writing sdram allocations|
 |FileMachineFilePath|the file path for writing the json representation of the SpiNNaker machine produced by PACMAN|
@@ -151,7 +151,7 @@ The tool chain currently supplies a collection of inputs into the PACMAN infrast
 |FileConstraintsFilePath|the file path for writing the json representation of the constraints from the partitioned graph|
 
 
-The tool chain also provides a collection of converters which switch between json file formats and PACMAN'S data objects. These can be found in the [pacman/utilities/file_format_converters](https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters). The XML file describing their inputs and outputs can be found in the same folder under [converter_algorithms_metadata.xml](https://github.com/SpiNNakerManchester/PACMAN/blob/mapping_work_flow/pacman/utilities/file_format_converters/converter_algorithms_metadata.xml). These are summarised below:
+The tool chain also provides a collection of converters which switch between json file formats and PACMAN'S data objects. These are summarised below:
 
 |Name|Definition|Inputs|Outputs|Currently Implemented?|
 |:----------|:----------------------------|:------------|:------------|:-------|
@@ -184,7 +184,7 @@ The tool chain also uses this workflow to control when a collection of support a
 |FrontEndCommonReloadScriptCreator |The generation of a Reload script for reloading an application. We refer the reader to [reload_description](ReloadFunctionality.html) for more information on this functionality.| MemoryTags,ApplicationDataFolder, IPAddress, BoardVersion, BMPDetails, DownedChipsDetails, DownedCoresDetails, NumberOfBoards, MachineHeight, MachineWidth, AutoDetectBMPFlag, EnableReinjectionFlag, ProcessorToAppDataBaseAddress, MemoryPlacements, MemoryRoutingTables, MemoryExtendedMachine, ExecutableTargets, RunTime, TimeScaleFactor,DatabaseWaitOnConfirmationFlag, DatabaseSocketAddresses, VertexToAppDataFilePaths, BufferManager|ReloadToken|True|
 |FrontEndCommonApplicationRunner |The execution of the applications on the SpiNNaker Machine|BufferManager, DatabaseWaitOnConfirmationFlag, SendStartNotifications, DatabaseInterface, ExecutableTargets, APPID, MemoryTransciever, RunTime, TimeScaleFactor, LoadedReverseIPTagsToken, LoadedIPTagsToken, LoadedRoutingTablesToken, LoadBinariesToken, LoadedApplicationDataToken| RanToken| True|
 | FrontEndCommonProvenanceGatherer|The gathering of Provenance data from the SpiNNaker Machine|ProvenanceFilePath, MemoryTransciever, MemoryExtendedMachine, MemoryRoutingTables, MemoryPlacements| RanToken| True |
-|FrontEndCommonDatabaseWriter |The writing of the database used by the notification protocol which supports Live input and Output. We refer the reader to [live_input/output](../workshop_material/lab_manuals/SimpleIOLabManual.pdf) for more information on this functionality.|MemoryPartitionedGraph, UserCreateDatabaseFlag, MemoryTags, DatabaseWaitOnConfirmationFlag, ApplicationDataFolder, RunTime, MemoryExtendedMachine, DatabaseSocketAddresses, TimeScaleFactor, MachineTimeStep, MemoryPartitionableGraph, MemoryGraphMapper, MemoryPlacements, MemoryRoutingInfos, MemoryRoutingTables, ExecuteMapping| DatabaseInterface| True|
+|FrontEndCommonDatabaseWriter |The writing of the database used by the notification protocol which supports Live input and Output. We refer the reader to [live_input/output](../spynnaker/SimpleIOLabManual.pdf) for more information on this functionality.|MemoryPartitionedGraph, UserCreateDatabaseFlag, MemoryTags, DatabaseWaitOnConfirmationFlag, ApplicationDataFolder, RunTime, MemoryExtendedMachine, DatabaseSocketAddresses, TimeScaleFactor, MachineTimeStep, MemoryPartitionableGraph, MemoryGraphMapper, MemoryPlacements, MemoryRoutingInfos, MemoryRoutingTables, ExecuteMapping| DatabaseInterface| True|
 |FrontEndCommonBufferManagerCreator |The execution of the Buffered functionality used to support applications which require data to be sent to it from host during runtime. we refer the reader to [buffer_manager](BufferManager.html) for more information on this functionality.|MemoryPartitionedGraph, MemoryPlacements, MemoryTags, MemoryTransciever, ReportStates, ApplicationDataFolder| BufferManager| True|
 |FrontEndCommon VirtualMachineInterfacer |The creation of the Python representation of the SpiNNaker Machine|MachineWidth, MachineHeight, MachineHasWrapAroundsFlag| MemoryMachine| True|
 |FrontEndCommon MachineInterfacer |The creation of the python representation of the SpiNNaker Machine and the Python interface to the SpiNNaker Machine|IPAddress, BMPDetails, DownedChipsDetails, DownedCoresDetails, BoardVersion, NumberOfBoards, MachineWidth, MachineHeight, AutoDetectBMPFlag, EnableReinjectionFlag, ScampConnectionData, BootPortNum| MemoryMachine, MemoryTransciever| True|
@@ -198,11 +198,11 @@ These algorithms use a collection of Tokens to define which functions depend upo
 |LoadBinariesToken| States that the algorithm has loaded the application binaries onto the SpiNNaker Machine|
 |ReloadToken| States that the reload script has been built|
 |LoadedRoutingTablesToken| States that the routing tables have been loaded onto the chips of the SpiNNaker Machine|
-|LoadedReverseIPTagsToken| States that the reverse iptags have been loaded to the ethernet connected chips on the SpiNNaker Machine|
-|LoadedIPTagsToken| States that the iptags have been loaded to the ethernet connected chips on the SpiNNaker Machine|
+|LoadedReverseIPTagsToken| States that the reverse iptags have been loaded to the Ethernet connected chips on the SpiNNaker Machine|
+|LoadedIPTagsToken| States that the iptags have been loaded to the Ethernet connected chips on the SpiNNaker Machine|
 
 
-The tool chain expects to be able to extract a umber of PACMAN objects at the end of the algorithm execution. This is mainly for transmitting the objects onto the SpiNNaker machine, and supporting data retrieval later-on. These objects are as follows:
+The tool chain expects to be able to extract a number of PACMAN objects at the end of the algorithm execution. This is mainly for transmitting the objects onto the SpiNNaker machine, and supporting data retrieval later-on. These objects are as follows:
 
 |Name|Definition|
 |:----------------|:-----------------|

@@ -8,9 +8,10 @@ The SpiNNaker software stack's reload functionality supports the loading and exe
 
 The reload script has a bunch of functional caveats. There are:
  
-1. The reload script does not run your entire python script, so any functionality between the p.end() and the end of your script will not be ran again.
+1. The reload script does not run your entire python script, so any functionality between the p.end() and the end of your script will not be ran again; thus it is recommended that reload is used mainly for scripts which involve live input and output.
 1. The reload script is a separate function, and so any calls made to plugins or none tool chain supported functions will not be repeated during rerun.
-1. The reload script does not operate in conjunction with the auto_pause_and_resume functionality, and so you must have mapped your script with that functionality turned off.  
+1. The reload script does not operate in conjunction with the auto_pause_and_resume functionality, and so you must have mapped your script with that functionality turned off.
+1. The reload script will only reload and run up to the first call to run() in your script.  Subsequent calls to run() or calls to reset() will not be registered.
 
 # How to you use the reload functionality.
 
@@ -27,8 +28,5 @@ and does not have:
 Once the original script has ran, within the reports folder, there will be a script called rerun.py. To reload the script, all you need to do is run:
 
     ```python reload.py```
-    
-# known issues
 
-There are currently no known issues not covered by the caveats section.
     

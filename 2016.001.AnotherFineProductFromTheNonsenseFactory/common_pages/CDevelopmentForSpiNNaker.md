@@ -101,7 +101,7 @@ The SpiNNFrontEndCommon library will be installed into the SpiNNaker Tools insta
 1. Run ```make install```.
 
 # <a name="Ybug"></a> YBug Installation
-1. Download the current version of ybug [as a zip](https://github.com/SpiNNakerManchester/ybug/archive/2015.001.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/ybug/archive/2016.001.tar.gz).
+1. Download the current version of ybug [as a zip](https://github.com/SpiNNakerManchester/ybug/archive/2016.001.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/ybug/archive/2016.001.tar.gz).
 1. Extract the archive to the location of your choice.
 
 If you want to avoid having to run "source setup" in the ybug folder every time you log in or start a new terminal:
