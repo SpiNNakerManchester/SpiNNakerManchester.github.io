@@ -12,6 +12,6 @@ layout: default
 * [Tutorial: Using PyNN on SpiNNaker](RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
 * [Tutorial: Using Synaptic Plasticity on SpiNNaker](SynapticPlasticityOnSpiNNaker-LabManual.pdf)
 * [Tutorial: Adding new Neural Models](NewNeuronModels-LabManual.pdf)
-* [Tutorial: Using the SpyNNakerExternalDevicesPlugin for External Communication](SimpleIOLabManual.pdf)
+* [Tutorial: Using the SpyNNakerExternalDevicesPlugin for External Communication](SimpleIO-LabManual.pdf)
 * [Using the sPyNNaker reload functionality](../common_pages/ReloadFunctionality.html)
 * [Using new mapping algorithms with different front ends](../common_pages/MappingAlgorithms.html)
