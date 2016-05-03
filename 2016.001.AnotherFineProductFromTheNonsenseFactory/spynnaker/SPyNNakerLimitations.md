@@ -1,8 +1,8 @@
 ---
-title: sPyNNaker Limitations
+title: sPyNNaker Limitations and Extensions
 ---
 
-This guide will detail the limitations that sPyNNaker imposes on users of PyNN.
+This guide will detail the limitations that sPyNNaker imposes on users of PyNN, as well as detailing some extensions to the PyNN language that are supported.
 
 
 # PyNN version
@@ -10,9 +10,9 @@ This guide will detail the limitations that sPyNNaker imposes on users of PyNN.
 sPyNNaker implements a subset of the [PyNN 0.7 API](http://neuralensemble.org/trac/PyNN/wiki/API-0.7).
 
 
-# Model Type Limitations
+# Neuron Model Limitations
 
-sPyNNaker currently only supports the following model types:
+sPyNNaker currently supports the following model types:
 
 1. IFCurrExp: Current based leaky integrate and fire, with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. IFCondExp: Conductance based leaky integrate and fire, with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
@@ -21,6 +21,8 @@ sPyNNaker currently only supports the following model types:
 1. IZKCondExp: Conductance based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron 
 
 Note that there are also further restrictions on what plasticity types are supported when used with the above models.
+
+All of our neural models have a limitation of 255 neurons per core.  Depending on which SpiNNaker board you are using, this will limit the number of neurons that can be supported in any simulation.
 
 
 # External Input
@@ -31,6 +33,8 @@ sPyNNaker currently supports these two models for injecting spikes into a PyNN m
 1. SpikeSourcePoisson: Input of randomly generated spikes at a pre-defined mean rate generated from a Poisson distribution.
 
 Currently, only the i_offset parameter of the neural models can be used to inject current directly; there is no support for noisy or step-based current input.
+
+A third, none standard PyNN interface, way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device. These functions are supported by our sPyNNakerExternalDevicesPlugin.  A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
 
 
 # Connectors
@@ -73,9 +77,24 @@ and the following STDP weight dependence rules:
 1. sPyNNaker does not support assemblers.
 1. sPyNNaker does not support the changing of weights / delays / neuron parameters between the initial call to run() and a reset() call.
 
+# Parameter ranges
 
-# Other Limitations
-sPyNNaker also imposes the following limitations:
+All parameters and their ranges are under software control.  
 
-1. All of our neural models have a limitation of 255 neurons per core.  Depending on which SpiNNaker board you are using, this will limit the number of neurons that can be supported in any simulation.
-1. All our models support delays between 1 timestep and 144 timesteps.  Delays of more than 16 timesteps are supported by delay extensions which take up another core within the machine, thus use of such delays will further limit the total number of neurons that can be supported in any simulation.
+Weights are held as 16-bit integers, with their range determined at compile-time to suit the application; this limits the overall range of weights that can be represented, with the smallest representable weight being dependent on the largest weights specified.
+
+There is a limit on then length of delays of between 1 and 144 time steps (i.e. 1 - 144ms when using 1ms time steps, or 0.1 - 14.4ms when using 0.1ms time steps).  Delays of more than 16 time steps require an additional "delay population" to be added; this is done automatically by the software when such delays are detected.
+
+Membrane voltages and other neuron parameters are generally held as 32-bit fixed point numbers in the s16.15 format.  Membrane voltages are held in mV.
+
+# Synapse and neuron loss
+
+Projection links between two sub-populations that were initially defined as connected are removed by the software the number if the number of connections between the two sub-populations is determined to be zero when the projection is realised in
+the software's mapping process.
+
+The SpiNNaker communication fabric can drop packets, so there is the chance that during
+execution that spikes might not reach their destination (or might only reach some of their destinations).  The software attempts to recover from such losses through a reinjection mechanism, but this will only work if the overall spike rate is not high enough to overload the communications fabric in the first place.
+
+# Reloading Networks
+
+Networks created with sPyNNaker can be re-run after execution.  For more information, see (here)[../common_pages/ReloadFunctionality.html].
