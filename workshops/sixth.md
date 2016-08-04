@@ -20,7 +20,7 @@ After a common introduction to the SpiNNaker platform and its software, topics c
  - Connecting external devices (retinas, motors, etc.) for robotics, using AER and EIEIO protocols
  - Submitting and running neural simulations on the HBP portal
  
-The non-neural track (open to all participants) looks under the hood of the SpiNNaker machine, providing much deeper understand of how applications run on the hardware, allowing new application to be written within our current tools framework. Topics include:
+The non-neural track (open to all participants) looks under the hood of the SpiNNaker machine, providing much deeper understanding of how applications run on the hardware, allowing new application to be written within our current tools framework. Topics include:
 
  - Deeper look at SpiNNaker hardware and software
  - Understanding event-driven simulation on SpiNNaker and how applications are structured
