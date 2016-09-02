@@ -1,3 +1,3 @@
 ---
-redirect_to: http://spinnakermanchester.github.io/2016.001.AnotherFineProductFromTheNonsenseFactory/graph_front_end/SpiNNakerGraphFrontEndInstall.html
+redirect_to: /graph_front_end/3.0.0/SpiNNakerGraphFrontEndInstall.html
 ---

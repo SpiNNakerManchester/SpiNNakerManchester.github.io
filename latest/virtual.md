@@ -1,3 +1,3 @@
 ---
-redirect_to: http://spinnakermanchester.github.io/2016.001.AnotherFineProductFromTheNonsenseFactory/common_pages/VirtualMode.html
+redirect_to: /common_pages/3.0.0/VirtualMode.html
 ---
