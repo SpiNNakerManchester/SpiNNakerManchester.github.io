@@ -1,3 +1,3 @@
 ---
-redirect_to: http://spinnakermanchester.github.io/2016.001.AnotherFineProductFromTheNonsenseFactory/spynnaker/PyNNOnSpinnakerInstall.html
+redirect_to: /spynnaker/3.0.0/PyNNOnSpinnakerInstall.html
 ---
