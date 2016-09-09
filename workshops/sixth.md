@@ -42,6 +42,10 @@ You can get all of the lab manuals as a single PDF [here](https://drive.google.c
  
 You can get the combined slides and lab manuals from [here](https://drive.google.com/open?id=0B9312BuJXntlOVRMM2xCbzBOZUU).
 
+## Social Event
+
+* Photos from the [workshop social event](https://drive.google.com/folderview?id=0B6mZ4-fNjWrdeTY1U2F5akNHcHc&usp=sharing)
+
 If you have any questions, or for information on future workshops, please contact: 
 [simon.davidson@manchester.ac.uk](mailto:simon.davidson@manchester.ac.uk)
 
