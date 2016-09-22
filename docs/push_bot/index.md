@@ -5,19 +5,19 @@ title: PushBot (TUM SpiNNaker Robot)
 # The Robot
 
 <center>
-<img src="therobot.jpg" style="width: 199px">
+<img src="therobot.jpg" style="width: 400px">
 </center>
 
 # The wifi connector for the SpiNNaker machine
 
 <center>
-<img src="wificonnector.jpg" style="width: 199px">
+<img src="wificonnector.jpg" style="width: 400px">
 </center>
 
 # The wifi access point that is used to relay between the push bot and either a host machine or the wifi connector.
 
 <center>
-<img src="wifi_access_point.jpg" style="width: 199px">
+<img src="wifi_access_point.jpg" style="width: 400px">
 </center>
 
 The PushBot is a robotic platform developed by [Technische Universität München](http://www.ei.tum.de/en/research/coc-neuro-engineering/).
@@ -49,13 +49,13 @@ The API for the robot has changed and is now defined in the following google doc
 The robot has 4 AA batteries which are located below:
 
 <center>
-<img src="where_batteries_are_on_pushbot.jpg" style="width: 199px">
+<img src="where_batteries_are_on_pushbot.jpg" style="width: 400px">
 </center>
 
 There is a provided battery charger as shown below:
 
 <center>
-<img src="battery_charger.jpg" style="width: 199px">
+<img src="battery_charger.jpg" style="width: 400px">
 </center>
 
 ## Wifi Access Point
@@ -95,7 +95,7 @@ LAN
 		IP Pool Start: 10.162.177.175
 		IP Pool End: 10.162.177.249
 		Lease Time: 86400
-		Default GW: 10.162.177.254
+		Default GW: 10.162.177.254therobot
 
 		DNS 1: 10.156.33.53
 		DNS 2: 129.187.5.1
@@ -154,5 +154,5 @@ Login
 The IP of the pushbot is 10.162.177.XXXXX where XXXXX is the number of the red circle at the back of the push bot. As shown below, where the IP would by 10.162.177.57.
 
 <center>
-<img src="back_of_push_bot.jpg" style="width: 199px">
+<img src="back_of_push_bot.jpg" style="width: 400px">
 </center>
