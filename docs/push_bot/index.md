@@ -14,6 +14,8 @@ title: PushBot (TUM SpiNNaker Robot)
 <img src="wificonnector.jpg" style="width: 400px">
 </center>
 
+To use the SpiNNaker board wifi adaptor, you must first plug the usb connection into something to provide it with power.
+
 # The wifi access point that is used to relay between the push bot and either a host machine or the wifi connector.
 
 <center>
@@ -27,8 +29,9 @@ The PushBot is a robotic platform developed by [Technische Universität München
 ## Robot Features
 
   * 2 tracks, each controlled by 2 wheels.
-  * A silicon retina
-  * A laser
+  * A silicon retina.
+  * A laser.
+  * A LED.
 
 ## Control Systems
 
@@ -165,6 +168,11 @@ The IP of the SpiNNaker link wifi board is 10.162.177.56
 
 If you are using a desktop machine and the host configuration, you will need a wifi adaptor, as shown below, to connect to the wifi access point. These can be acquired from central services through the website http://studentnet.cs.manchester.ac.uk/ugt/hardware. The systemw as originally tested with the WiPi adaptor from there.
 
+If you are using a remote profile supported by centeral services, you need to be careful with your configuration to stop your wifi adaptor overwriting your ethernet gateway address. The best option we have found is to plug in a switch between your machine and the ethernet socket, and then wire that to the wifi access point and then do the following commands.
+
+    sudo ip addr add 10.162.177.254/24 dev eth0
+    sudo ip addr add 192.168.240.254/16 dev eth0
+
 
 <center>
 <img src="WiPi.jpg" style="width: 400px">
@@ -178,4 +186,3 @@ If on ubuntu machines, open a command terminal and enter the following commands.
     ifconfig
 
 if this is successful, you should be able to ping the standard 4 chip board that communicates on ip address 192.168.240.253
-
