@@ -60,9 +60,10 @@ There is a provided battery charger as shown below:
 
 ## Wifi Access Point
 
-The robot's wifi interface consists of a WiFi access point to which the pushbot communicates with regardless of the connection type for SpiNNaker. The network details are as follows:
+The robot's wifi interface consists of a WiFi access point to which the pushbot communicates with regardless of the connection type for SpiNNaker. The network details are below. But for simplicity, the password to log into the access point is rpo45trkrfgpoloektr45poael
 
 2.4 GHz
+
 	SSID: NSTrobots_2.4GHz
 	wireless mode: b/g/n mixed
 	b/g Protection: auto
@@ -82,6 +83,7 @@ The robot's wifi interface consists of a WiFi access point to which the pushbot 
 	Radius Setting: empty
 
 5.0 GHz
+
 	SSID: NSTrobots_5GHz
 	mode: a/n
 	rest see above
@@ -151,12 +153,29 @@ Firewall
 Login
 	nst/nst
 
+## robot ip addresses
+
 The IP of the pushbot is 10.162.177.XXXXX where XXXXX is the number of the red circle at the back of the push bot. As shown below, where the IP would by 10.162.177.57.
+The IP of the SpiNNaker link wifi board is 10.162.177.56
 
 <center>
 <img src="back_of_push_bot.jpg" style="width: 400px">
 </center>
 
 
-If you are using a desktop machine and the host configuration, you will need a wifi adaptor to connect to the wifi access point.
+If you are using a desktop machine and the host configuration, you will need a wifi adaptor, as shown below, to connect to the wifi access point. These can be acquired from central services through the website http://studentnet.cs.manchester.ac.uk/ugt/hardware. The systemw as originally tested with the WiPi adaptor from there.
+
+
+<center>
+<img src="WiPi.jpg" style="width: 400px">
+</center>
+
+## Setting your uni machine to communicate with generic 4 chip boards.
+
+If on ubuntu machines, open a command terminal and enter the following commands.
+
+    sudo ip addr add 192.168.240.254/16 dev eth0
+    ifconfig
+
+if this is successful, you should be able to ping the standard 4 chip board that communicates on ip address 192.168.240.253
 
