@@ -156,3 +156,7 @@ The IP of the pushbot is 10.162.177.XXXXX where XXXXX is the number of the red c
 <center>
 <img src="back_of_push_bot.jpg" style="width: 400px">
 </center>
+
+
+If you are using a desktop machine and the host configuration, you will need a wifi adaptor to connect to the wifi access point.
+
