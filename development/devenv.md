@@ -27,29 +27,29 @@ Although optional, we recommend the use of an Integrated Development Environment
  * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) - Eclipse Neon has been tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python C and Java; Eclipse is the way to go if you are planning on developing in Java.  Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
     * PyDev - This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for pydev.
     * AnyEditTools - This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for AnyEditTools.
-    * CDT - This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ Hardware Debugging".
+    * CDT - This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ Hardware Debugging".
     
 # <a name="git"></a> Git Cloning
 
 The repositories to be cloned are shown below.  If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirity of the software.
 
-|**Name**|**URL**|
-|:----------------|:-----------------|
-|spinnaker_tools | https://github.com/SpiNNakerManchester/spinnaker_tools.git|
-|spinn_common | https://github.com/SpiNNakerManchester/spinn_common.git|
-|SpiNNMachine | https://github.com/SpiNNakerManchester/SpiNNMachine.git|
-|SpiNNStorageHandlers | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|
-|PACMAN | https://github.com/SpiNNakerManchester/PACMAN.git|
-|SpiNNMan | https://github.com/SpiNNakerManchester/SpiNNMan.git|
-|DataSpecification | https://github.com/SpiNNakerManchester/DataSpecification.git|
-|SpiNNFrontEndCommon | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|
-|SpiNNakerGraphFrontEnd | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|
-|sPyNNaker | https://github.com/SpiNNakerManchester/sPyNNaker.git|
-|sPyNNakerExternalDevicesPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git|
-|sPyNNakerExtraModelsPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git|
-|sPyNNakerNewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git|
-|PyNNExamples | https://github.com/SpiNNakerManchester/PyNNExamples.git|
-|IntroLab | https://github.com/SpiNNakerManchester/IntroLab.git|
+|**Name**|**URL**|**Code Type**|
+|:-------|:------|:------------|
+|spinnaker_tools | https://github.com/SpiNNakerManchester/spinnaker_tools.git|C|
+|spinn_common | https://github.com/SpiNNakerManchester/spinn_common.git|C|
+|SpiNNMachine | https://github.com/SpiNNakerManchester/SpiNNMachine.git|Python|
+|SpiNNStorageHandlers | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|Python|
+|PACMAN | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
+|SpiNNMan | https://github.com/SpiNNakerManchester/SpiNNMan.git|Python and C|
+|DataSpecification | https://github.com/SpiNNakerManchester/DataSpecification.git|Python|
+|SpiNNFrontEndCommon | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
+|SpiNNakerGraphFrontEnd | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C
+|sPyNNaker | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
+|sPyNNakerExternalDevicesPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git|Python and C|
+|sPyNNakerExtraModelsPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git|Python and C|
+|sPyNNakerNewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git|Python and C|
+|PyNNExamples | https://github.com/SpiNNakerManchester/PyNNExamples.git|Python|
+|IntroLab | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 
 ## Command line
 
@@ -66,6 +66,15 @@ For each repository:
  1. Go to VCS -> Checkout from Version Control -> github
  1. In "Git Repository URL" enter the repository URL.
  1. Click Clone.
+ 
+### Dependencies
+You will also need to set up the dependencies between projects.  
+
+This is done as follows:
+
+ 1. Go to File->settings->project: <name> 
+ 1. Select Project Dependencies
+ 1. Select the module and then tick the [appropriate dependencies](#pythondependencies)
     
 ## Eclipse
 
@@ -74,9 +83,77 @@ For each repository:
  1. Go to file -> import -> git -> projects from git -> Clone URI
  1. In "URI"  enter the repository URI.
  1. Click Finish
- 1. Once the repository is imported, right click and select "PyDev" --> "Set as PyDev Project".
-    <img src="eclipsepydev.png">
-   
+ 1. Once the repository is imported:
+     1. If the project is a Python project, right click and select "PyDev" --> "Set as PyDev Project".
+     1. If the project is a C project:
+         1. Select "File" --> "New" --> "Other..."
+         1. Select "C/C++" --> "Convert to a C/C++ Project (Adds C Nature)" and click on "Next"
+         1. Select the project from the list.
+         1. Select the "C Project" radio button.
+         1. Select "Executable" and the "Cross GCC" from the list.
+         1. Click on "Finish".
+     1. If the project is a Python and C project:
+         1. If the project is a Python project, right click and select "PyDev" --> "Set as PyDev Project".
+         1. Select "File" --> "New" --> "Other..."
+         1. Select "C/C++" --> "C Project" and click on "Next".
+         1. Enter the name of the project followed by "_c_code".
+         1. Uncheck "use default location", click on "Browse" and find the subfolder of the project containing the C code (e.g. sPyNNaker has a neural_modelling subfolder).
+         1. Select "Exectuable" --> "Empty Project" and "Cross GCC" and click on "Next".
+         1. Select "Next" again.
+         1. Set the "Cross Compiler Prefix" to "arm-none-eabi-"
+         1. Set the path of the compiler to wherever you installed it (on Windows using MSYS installed to the ```C:\``` folder, this is ```C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\bin.```
+         1. Click on "Finish".
+
+### Dependencies
+You will also need to set up the dependencies between projects.  
+
+In each Python project, this is done as follows:
+
+ 1. Right-click on the project
+ 1. Select "Properties"
+ 1. Select "Project References".  
+ 1. Tick the [appropriate dependencies](#pythondependencies) for each module.
+
+In a C project, this is done as follows:
+ 1. Right-click on the project
+ 1. Select "Properties"
+ 1. Select "C/C++ Build" --> "Settings"
+ 1. In the "Tools Settings" tab, select "Cross GCC Compiler" --> "Includes"
+ 1. Click on the "Add" icon.
+ 1. Add the dependency as ```${workspace_loc:<dependency_path>}``` where ```<dependency_path>``` is the [appropriate dependency](#cdependencies).
+ 1. Repeat for all the dependencies.
+
+## <a name="pythondependencies"></a> Python Dependencies
+
+|**Module**|**Dependencies**|
+|:---------|:---------------|
+|SpiNNMan|SpiNNMachine, SpiNNStorageHandlers|
+|PACMAN|SpiNNMachine|
+|DataSpecification|SpiNNMachine, SpiNNStorageHandlers|
+|SpiNNFrontEndCommon|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification|
+|SpiNNakerGraphFrontEnd|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
+|sPyNNaker|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
+|sPyNNakerExternalDevicesPlugin|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|sPyNNakerExtraModelsPlugin|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|sPyNNakerNewModelTemplate|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|PyNNExamples|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNakerExternalDevicesPlugin|
+|IntroLab|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker|
+
+
+## <a name="cdependencies"></a> C Dependencies
+
+Note that include files are generally installed into ```spinnaker_tools/include```, thus even when a C module is dependent on another library, you only need to add this location.  The C code in sPyNNaker is an exception as some of the headers are dynamically included during the build, and so it is not possible to provide a pre-built library for sPyNNaker neural modelling.
+
+|**Module Folder**|**Include Dependencies**|
+|:----------------|:-----------------------|
+|spinn_common|spinnaker_tools/include|
+|SpiNNMan/c_models|spinnaker_tools/include|
+|SpiNNFrontEndCommon/c_common|spinnaker_tools/include|
+|SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples|spinnaker_tools/include|
+|sPyNNaker/neural_modelling|spinnaker_tools/include|
+|sPyNNakerExternalDevicesPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|sPyNNakerExtraModelsPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|sPyNNakerNewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
     
 # <a name="install"></a> Installing Python Modules
 
@@ -109,6 +186,7 @@ The C code to compile is (in order) as follows:
 |sPyNNaker|neural_modelling|```make```|```make clean```|
 |sPyNNakerExternalDevicesPlugin|neural_modelling|```make```|```make clean```|
 |sPyNNakerExtraModelsPlugin|neural_modelling|```make```|```make clean```|
+|sPyNNakerNewModelTemplate|c_models|```make```|```make clean```|
 
 A script is also available [here](automatic_make.sh) which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time.  Note also that this assumes that you have checked out the git code into a single location.
 
