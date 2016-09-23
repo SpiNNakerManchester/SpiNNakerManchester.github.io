@@ -18,7 +18,7 @@ Git branches are also used when fixing bugs, no matter how big or small the chan
 <img src="gitbugfixing.png">
 
 # Pull Requests
-Once you have finished a feature or a bug fix, you should open a Pull Request on GitHub for the branch containing the changes.  This will indicate that the changes are ready to be merged into master.  Before creating a pull request you should:
+Once you have finished a feature or a bug fix (or even once you have started, to allow tracking - see below), you should open a Pull Request on GitHub for the branch containing the changes.  This will indicate that the changes are ready to be merged into master.  Before creating a pull request you should:
 
  1. Test that your changes don't break anything.  If there are changes that could affect other modules higher up the dependency hierarchy, these modules should be tested with your change as well to ensure that it doesn't break anything.
  1. Ensure that all functions, classes, properties and methods are documented.
