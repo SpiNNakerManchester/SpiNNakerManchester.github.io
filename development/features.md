@@ -53,3 +53,6 @@ The implementation of a Database application using SpiNNaker.
 
 # [Split Neural Models](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:split-neural-model)
 This will split the neural and synapse models so that they are run on separate cores.  This has several advantages, including the ability to run at 0.1ms in real-time and the ability to have multiple STDP rules on a single connection between two populations of neurons.
+
+# [Implement Java/C++ Version](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:java-version)
+The tools might be better in an alternative language (e.g. Java) with hooks to allow calls from other languages e.g. PyNN would be in Python but would call Java through an interface (probably socket-based).  The Java code would likely be easier to maintain as well as faster.  C++ would also be considered.
