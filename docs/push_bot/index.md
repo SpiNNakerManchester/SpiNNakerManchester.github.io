@@ -186,3 +186,27 @@ If on ubuntu machines, open a command terminal and enter the following commands.
     ifconfig
 
 if this is successful, you should be able to ping the standard 4 chip board that communicates on ip address 192.168.240.253
+
+## connection order for the spinnaker link based protocol to behave
+
+connect the SpiNNaker wifi connector to the 0 SpiNNaker link where the board is hovering over the SpiNNaker chips (as shown below). Be careful to align the pins correctly, otherwise you shall find it wont respond at all
+
+<left>
+<img src="connected.jpg" style="width: 400px">
+</left>
+
+<right>
+<img src="connected_zoomed.jpg" style="width: 400px">
+</right>
+
+It seems to be a issue that if the components are not connected and powered in a specific order, then communication fails. The successful connection order is below:
+
+1. turn off:
+    1. spinnaker board
+    2. wifi adaptor power (usb thing)
+    3. push bot
+
+2. turn on push bot and wait for it to connect to wifi (flashing green light) and then ping to verify you can communicate with it
+3. turn on wifi module (put in usb) wait for flashing green light. ping to verify you can talk to it
+4. turn on spinnaker board,
+5. run script.
