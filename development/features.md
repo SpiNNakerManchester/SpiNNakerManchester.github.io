@@ -62,3 +62,6 @@ Provide provenance data for the HBP portal.
 
 # [Initial Software for SpiNNaker-2](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:spinnaker-2-software)
 Create the initial software for the SpiNNaker-2 platform, including the low-level spinnaker_tools, SCAMP and SpiNNMan.
+
+# [Implement the MAT2 neuron model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2722979/)
+Create a MAT2 model (this is the model that has beaten the "what is the next spike" competitions.
