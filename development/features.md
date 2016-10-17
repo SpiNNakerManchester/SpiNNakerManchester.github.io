@@ -83,3 +83,6 @@ Improve the speed of data extraction by using coordinated (i.e. not all cores at
 
 # [In-Machine Analysis](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:in-machine-analysis)
 Allow post-run analysis algorithms to be run on the SpiNNaker machine.
+
+# [Stochastic Rounding for Plasticity]
+Very small updates of weights and ring buffer scaling are currently incompatible since one requires range in the weights and one requires accuracy.  Stochastic rounding can help to solve the problem by deciding whether a small weight is added with probability dependent on the value to be added relative to the value to be added to i.e. if the smallest value representable is 10 and the value to be added (or subtracted) is 2, the probability of the operation occurring is 0.2 (where the operation will use the smallest value representable instead of the value i.e. 10 will be added instead of 2 in the example).
