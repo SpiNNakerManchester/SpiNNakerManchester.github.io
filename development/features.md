@@ -51,8 +51,8 @@ Currently integration tests are based on looking at the outputs.  The few unit t
 # [Database on SpiNNaker](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:database-on-spinnaker)
 The implementation of a Database application using SpiNNaker.
 
-# [Split Neural Models](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:split-neural-model)
-This will split the neural and synapse models so that they are run on separate cores.  This has several advantages, including the ability to run at 0.1ms in real-time and the ability to have multiple STDP rules on a single connection between two populations of neurons.
+# [Split Neural Processing](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:split-neural-model)
+This will split the neural and synapse processing so that they are run on separate cores.  This has several advantages, including the ability to run at 0.1ms in real-time and the ability to have multiple STDP rules on a single connection between two populations of neurons.
 
 # [Implement Java/C++ Version](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:java-version)
 The tools might be better in an alternative language (e.g. Java) with hooks to allow calls from other languages e.g. PyNN would be in Python but would call Java through an interface (probably socket-based).  The Java code would likely be easier to maintain as well as faster.  C++ would also be considered.
@@ -63,5 +63,23 @@ Provide provenance data for the HBP portal.
 # [Initial Software for SpiNNaker-2](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:spinnaker-2-software)
 Create the initial software for the SpiNNaker-2 platform, including the low-level spinnaker_tools, SCAMP and SpiNNMan.
 
-# [Implement the MAT2 neuron model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2722979/)
-Create a MAT2 model (this is the model that has beaten the "what is the next spike" competitions.
+# [Implement the MAT2 neuron model](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:mat2-model)
+Create a [MAT2 model](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2722979/) implementation.
+
+# [Implement the AdEx neuron model](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:adex-model)
+Create an AdEx model implementation.
+
+# [Empirical Probability Distributions](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:empirical-distributions)
+Support Empirical Probability Distributions in connectivity (i.e. a new Connector), connection weights and delays, and neural parameters.
+
+# [Live Update of Live Gathering](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:live-update-live-gathering)
+Allow the turning on and off of the live gathering of populations (and sub-populations if possible) during simulation, including turning off routing entries to reduce traffic.
+
+# [Live Update of Parameters](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:live-update-parameters)
+Allow parameters of neuron models and connectivity (weights and delays rather than turning connections on and off) to be modified during simulation.
+
+# [Faster Data Extraction](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:faster-data-extraction)
+Improve the speed of data extraction by using coordinated (i.e. not all cores at once) multicast/fixed-route packets to send data to a gathering core (one per board) which can then forward the data back to the host.
+
+# [In-Machine Analysis](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:in-machine-analysis)
+Allow post-run analysis algorithms to be run on the SpiNNaker machine.
