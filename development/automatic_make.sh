@@ -31,3 +31,4 @@ make || exit $?
 cd ../../sPyNNakerExtraModelsPlugin/neural_modelling
 make clean
 make || exit $?
+echo "completed"
