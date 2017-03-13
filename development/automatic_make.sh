@@ -21,11 +21,11 @@ cd ../..
 cd SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples/
 make clean
 make || exit $?
-cd sPyNNaker/neural_modelling/
+cd ../../../sPyNNaker/neural_modelling/
 make clean
 make || exit $?
 source setup
-cd sPyNNakerExternalDevicesPlugin/neural_modelling/
+cd ../../sPyNNakerExternalDevicesPlugin/neural_modelling/
 make clean
 make || exit $?
 cd ../../sPyNNakerExtraModelsPlugin/neural_modelling
