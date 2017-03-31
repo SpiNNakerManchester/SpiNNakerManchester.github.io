@@ -165,6 +165,9 @@ The IP of the SpiNNaker link wifi board is 10.162.177.56
 <img src="back_of_push_bot.jpg" style="width: 400px">
 </center>
 
+## Setting your uni machine to communicate with generic 4 chip boards.
+
+### University machines
 
 If you are using a desktop machine and the host configuration, you will need a wifi adaptor, as shown below, to connect to the wifi access point. These can be acquired from central services through the website http://studentnet.cs.manchester.ac.uk/ugt/hardware. The systemw as originally tested with the WiPi adaptor from there.
 
@@ -178,14 +181,41 @@ If you are using a remote profile supported by centeral services, you need to be
 <img src="WiPi.jpg" style="width: 400px">
 </center>
 
-## Setting your uni machine to communicate with generic 4 chip boards.
-
-If on ubuntu machines, open a command terminal and enter the following commands.
+### Ubuntu machines
+1. open a command terminal and enter the following commands.
 
     sudo ip addr add 192.168.240.254/16 dev eth0
     ifconfig
 
 if this is successful, you should be able to ping the standard 4 chip board that communicates on ip address 192.168.240.253
+
+### Windows machines
+1. install (WinIPConfig 4.0)[http://www.pkostov.com/wordpress/?p=19}
+2. turn on WinPIConfig and if message about interface on 0.0.0.0 0.0.0.0 click yes (we currently dont know what that is)
+3. right click on window labeled "available IP configurations loaded form: ...." and click add new configuration item.
+4. add the following data:
+    IP_ADDRESS: 10.162.177.254
+    SUBMASK:    255.255.255.0
+5. click ok
+6. right click on window labeled "available IP configurations loaded form: ...." and click add new configuration item.
+7. add the following data:
+    IP_ADDRESS: 192.168.240.254
+    SUB_MASK:   255.255.0.0
+8. click ok
+9. click on "detailed interface view" and open up tabs till you reach your ethernet adaptor
+10. right click on ethernet adaptor and click on "add secondary ip address ...."
+11. select the ip_address 10.162.177.254
+12. right click on ethernet adaptor and click on "add secondary ip address ...."
+13. select the ip_address 192.168.240.254
+14. verify that the ip_addresses exist in your ethernet adaptor (see below)
+15. open up a command prompt and once powering up the pushbot and the
+spinnaker_link device ping the machines through the below commands:
+    ping 10.162.177.56
+    ping 10.162.177.57
+
+<center>
+<img src="win_ip_config.png" style="width: 400px">
+</center>
 
 ## connection order for the spinnaker link based protocol to behave
 
