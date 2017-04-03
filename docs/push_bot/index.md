@@ -248,3 +248,20 @@ It seems to be a issue that if the components are not connected and powered in a
 1. turn on wifi module (put in usb) wait for flashing green light. ping to verify you can talk to it
 1. turn on spinnaker board,
 1. run script.
+
+If this fails to work, try the following (it seems 48 chip vs 4 chip boards have different order for best chance of working):
+
+1. turn off all.
+1. turn on push bot.
+1. turn on spinnaker board.
+1. turn on wifi module (put in usb) wait for flashing green light. ping to verify you can talk to it.
+
+## connection order for the ethernet link based protocol to behave
+
+1. turn off all.
+1. turn on spinnaker board.
+1. turn on push bot.
+
+Note: You must ensure that the wifi module is turned off, as only 1 client can
+talk to the push bot at a time, and it keeps the connection active till
+client is switched off.
