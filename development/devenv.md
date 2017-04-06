@@ -37,6 +37,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |:-------|:------|:------------|
 |spinnaker_tools | https://github.com/SpiNNakerManchester/spinnaker_tools.git|C|
 |spinn_common | https://github.com/SpiNNakerManchester/spinn_common.git|C|
+|SpiNNUtilities | https://github.com/SpiNNakerManchester/SpiNNUtils.git|Python|
 |SpiNNMachine | https://github.com/SpiNNakerManchester/SpiNNMachine.git|Python|
 |SpiNNStorageHandlers | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|Python|
 |PACMAN | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
@@ -127,17 +128,18 @@ In a C project, this is done as follows:
 
 |**Module**|**Dependencies**|
 |:---------|:---------------|
-|SpiNNMan|SpiNNMachine, SpiNNStorageHandlers|
-|PACMAN|SpiNNMachine|
-|DataSpecification|SpiNNMachine, SpiNNStorageHandlers|
-|SpiNNFrontEndCommon|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification|
-|SpiNNakerGraphFrontEnd|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
-|sPyNNaker|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
-|sPyNNakerExternalDevicesPlugin|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
-|sPyNNakerExtraModelsPlugin|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
-|sPyNNakerNewModelTemplate|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
-|PyNNExamples|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNakerExternalDevicesPlugin|
-|IntroLab|SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker|
+|SpiNNMachine|SpiNNUtilities|
+|SpiNNMan|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers|
+|PACMAN|SpiNNUtilities, SpiNNMachine|
+|DataSpecification|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers|
+|SpiNNFrontEndCommon|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification|
+|SpiNNakerGraphFrontEnd|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
+|sPyNNaker|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
+|sPyNNakerExternalDevicesPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|sPyNNakerExtraModelsPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|sPyNNakerNewModelTemplate|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|PyNNExamples|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNakerExternalDevicesPlugin|
+|IntroLab|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker|
 
 
 ## <a name="cdependencies"></a> C Dependencies
