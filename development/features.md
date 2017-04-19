@@ -89,3 +89,9 @@ Very small updates of weights and ring buffer scaling are currently incompatible
 
 # [SpiNNaker Proxy](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:spinnaker-proxy)
 Create a proxy for SpiNNaker machines so that they can run on any network but be accessed from outside.  This could use UDP directly or UDP tunnelled over TCP.  The proxy should be stateful, so it should also handle the opening of IP Tags and Reverse IP Tags replacing the port and IP addresses internally and then translating on request.  The interface for this could also allow a board to be allocated via spalloc and then managed internally by the proxy.
+
+# [Improved Power Usage](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:improved-power)
+Improve the power usage by turning off unused chips and cores.
+
+# [Combined Neuron Models](https://github.com/issues?q=is%3Aopen+user%3ASpiNNakerManchester+milestone:combined-neuron)
+Allow neuron models that combine all the existing components.

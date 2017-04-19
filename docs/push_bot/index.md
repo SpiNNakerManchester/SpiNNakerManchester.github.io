@@ -165,6 +165,9 @@ The IP of the SpiNNaker link wifi board is 10.162.177.56
 <img src="back_of_push_bot.jpg" style="width: 400px">
 </center>
 
+## Setting your uni machine to communicate with generic 4 chip boards.
+
+### University machines
 
 If you are using a desktop machine and the host configuration, you will need a wifi adaptor, as shown below, to connect to the wifi access point. These can be acquired from central services through the website http://studentnet.cs.manchester.ac.uk/ugt/hardware. The systemw as originally tested with the WiPi adaptor from there.
 
@@ -178,14 +181,48 @@ If you are using a remote profile supported by centeral services, you need to be
 <img src="WiPi.jpg" style="width: 400px">
 </center>
 
-## Setting your uni machine to communicate with generic 4 chip boards.
+### Ubuntu machines
 
-If on ubuntu machines, open a command terminal and enter the following commands.
+1. open a command terminal and enter the following commands.
 
     sudo ip addr add 192.168.240.254/16 dev eth0
     ifconfig
 
+
 if this is successful, you should be able to ping the standard 4 chip board that communicates on ip address 192.168.240.253
+
+### Windows machines
+
+1. install (WinIPConfig 4.0)[http://www.pkostov.com/wordpress/?p=19}
+1. turn on WinPIConfig and if message about interface on 0.0.0.0 0.0.0.0
+click yes (we currently dont know what that is)
+1. right click on window labeled "available IP configurations loaded form: .
+..." and click add new configuration item.
+1. add the following data:
+    IP_ADDRESS: 10.162.177.254
+    SUBMASK:    255.255.255.0
+1. click ok
+1. right click on window labeled "available IP configurations loaded form: .
+..." and click add new configuration item.
+1. add the following data:
+    IP_ADDRESS: 192.168.240.254
+    SUB_MASK:   255.255.0.0
+1. click ok
+1. click on "detailed interface view" and open up tabs till you reach your
+ethernet adaptor
+1. right click on ethernet adaptor and click on "add secondary ip address ...."
+1. select the ip_address 10.162.177.254
+1. right click on ethernet adaptor and click on "add secondary ip address ...."
+1. select the ip_address 192.168.240.254
+1. verify that the ip_addresses exist in your ethernet adaptor (see below)
+1. open up a command prompt and once powering up the pushbot and the
+spinnaker_link device ping the machines through the below commands:
+    ping 10.162.177.56
+    ping 10.162.177.57
+
+<center>
+<img src="win_ip_config.png" style="width: 400px">
+</center>
 
 ## connection order for the spinnaker link based protocol to behave
 
@@ -201,12 +238,30 @@ connect the SpiNNaker wifi connector to the 0 SpiNNaker link where the board is 
 
 It seems to be a issue that if the components are not connected and powered in a specific order, then communication fails. The successful connection order is below:
 
-1. turn off:
-    1. spinnaker board
-    2. wifi adaptor power (usb thing)
-    3. push bot
+1. turn off
 
-2. turn on push bot and wait for it to connect to wifi (flashing green light) and then ping to verify you can communicate with it
-3. turn on wifi module (put in usb) wait for flashing green light. ping to verify you can talk to it
-4. turn on spinnaker board,
-5. run script.
+    1. spinnaker board
+    1. wifi adaptor power (usb thing)
+    1. push bot
+
+1. turn on push bot and wait for it to connect to wifi (flashing green light) and then ping to verify you can communicate with it
+1. turn on wifi module (put in usb) wait for flashing green light. ping to verify you can talk to it
+1. turn on spinnaker board,
+1. run script.
+
+If this fails to work, try the following (it seems 48 chip vs 4 chip boards have different order for best chance of working):
+
+1. turn off all.
+1. turn on push bot.
+1. turn on spinnaker board.
+1. turn on wifi module (put in usb) wait for flashing green light. ping to verify you can talk to it.
+
+## connection order for the ethernet link based protocol to behave
+
+1. turn off all.
+1. turn on spinnaker board.
+1. turn on push bot.
+
+Note: You must ensure that the wifi module is turned off, as only 1 client can
+talk to the push bot at a time, and it keeps the connection active till
+client is switched off.
