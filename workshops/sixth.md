@@ -10,7 +10,7 @@ The workshop is aimed at two groups of researchers: developers of spiking neural
 
 ## Slides
 
-You can get all of the slides as a single PDF [here](https://drive.google.com/open?id=0B9312BuJXntlSS14X01JbmxoUlk).  Alternatively, the individual presentations can be downloaded below.
+You can get all of the slides as a single PDF [here](https://drive.google.com/open?id=0B9312BuJXntlSS14X01JbmxoUlk#workshop.pdf).  Alternatively, the individual presentations can be downloaded below.
 
  * [Workshop Welcome](https://drive.google.com/open?id=0B9312BuJXntlVF85OFlCT0tNckU)
  * [SpiNNaker Hardware and Software Overview](https://drive.google.com/open?id=0B9312BuJXntlMlV1MC1CdGpsRjg)
