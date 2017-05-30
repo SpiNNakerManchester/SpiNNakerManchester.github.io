@@ -263,9 +263,13 @@ To achieve the second, please follow the following steps:
 
 If you are using eclipse, we recommend that you switch your installation of PyNN through the command line.
 to install PyNN 0.75 execute the following line:
+
 ``` pip install "pynn == 0.7.5"```
+
 to install PyNN 0.8 execute the following line:
+
 ``` pip install "pynn == 0.8.0"```
+
 
 # <a name="Examples"></a> Running some examples
 1. Go to the "examples" folder in Pynn7Examples
