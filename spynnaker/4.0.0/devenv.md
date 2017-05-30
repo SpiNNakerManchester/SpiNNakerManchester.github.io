@@ -273,6 +273,32 @@ to install PyNN 0.8 execute the following line:
 
 ``` pip install "pynn == 0.8.0"```
 
+# <a name="Configuration"></a> Configuration
+When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
+```python -c "import pyNN.spiNNaker"```
+
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
+```[Machine] ```
+```machineName = None ```
+```version = None ```
+
+If you have a SpiNNaker board, then go to [Local Board](#LocalBoard) if you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+
+# <a name="LocalBoard"></a> Local Board
+
+Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
+
+The default ip address for a spinn-3 board is 192.168.240.253 and the default ip address for a spinn-5 board is 192.168.240.1
+
+now go to [Network Configuration](#Network Configuration).
+
+## <a name="Network Configuration"></a> Network Configuration
+
+1. Go to the network settings for your computer and add or set an IPv4 entry with the following address for the adapter connected to the SpiNNaker board:
+    1. ip address = 192.168.240.254
+    2. sub-mask = 255.255.255.0
+    3. default gateway = 0.0.0.0
+
 
 # <a name="Examples"></a> Running some examples
  * Go to the "examples" folder in Pynn7Examples
