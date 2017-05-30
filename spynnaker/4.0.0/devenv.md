@@ -221,23 +221,23 @@ Due the lack of backwards compatibility with PyNN 0.8 in relation to PyNN 0.75, 
 
 If you decided to use PyCharm to support your development, then to support both PyNN installations requires you to :
  * build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 install separately.
-2. set the python interpreter for each module accordingly.
+ * set the python interpreter for each module accordingly.
 
 To achieve the first, please follow the following steps:
  * go to File -> settings -> project -> python interpreter.
-2. click on cog in top right corner of pop up and select "Create Virtual Env".
-3. name the virtual env PyNN0.75 and select the boxes "inherit global site-packages" and "Make avilable to all projects".
-4. repeat steps 2 and 3 but naming it PYNN0.8.
-5. select from the drop down list of interpreters the PYNN0.75 version.
-6. click on the + button on the right hand side of the pop up.
-7. select PyNN from the list and select specific version 0.75, install this.
-8. select from the drop down list of interpreters the PYNN0.8 version.
-9. repeat steps 6 and 7 but select specific version 0.8 instead.
+ * click on cog in top right corner of pop up and select "Create Virtual Env".
+ * name the virtual env PyNN0.75 and select the boxes "inherit global site-packages" and "Make avilable to all projects".
+ * repeat steps 2 and 3 but naming it PYNN0.8.
+ * select from the drop down list of interpreters the PYNN0.75 version.
+ * click on the + button on the right hand side of the pop up.
+ * select PyNN from the list and select specific version 0.75, install this.
+ * select from the drop down list of interpreters the PYNN0.8 version.
+ * repeat steps 6 and 7 but select specific version 0.8 instead.
 
 To achieve the second, please follow the following steps:
 
  * go to File -> settings -> project -> python interpreter.
-2. click on the following modules and select the specific interpreter as shown in the following table:
+ * click on the following modules and select the specific interpreter as shown in the following table:
 
 |**Module**|**Python Interpreter**|
 |:---------|:---------------|
