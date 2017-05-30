@@ -6,7 +6,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 
   * [Install Python requirements](#PythonRequirements).
   * [Install the C development requirements](/common_pages/3.0.0/Compiler.html).
-  * [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use and IDE.
+  * [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
   * [Install an IDE](#ide) - optional but recommended for ease of use.
   * [Clone the git repositories](#git).
   * [Install the python software in developer mode](#install).
@@ -16,19 +16,19 @@ title: Setting up a Software Development Environment for SpiNNaker
 # <a name="PythonRequirements"></a> Python Requirements
   * [Install the general platform requirements](/common_pages/3.0.0/PythonInstall.html)
   * If you would prefer to use a virtualenv, [follow these instructions](/common_pages/3.0.0/VirtualEnv.html) to set up the dependencies.
-  * Install other general dependencies via pip:  
+  * Install other general dependencies via pip:
     ```pip install enum34 six "spalloc>=v0.2.2,<v1.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.11.1,<=0.11.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"```
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and and IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
 
  * [PyCharm](https://www.jetbrains.com/pycharm/) - Version 4.5.3 has been tested but other versions should also work. This is very good for Python development and supports C development as well to some degree.  Java development is not supported in this client.  PyCharm is good at working out the links between Python code.
- 
+
  * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) - Eclipse Neon has been tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python C and Java; Eclipse is the way to go if you are planning on developing in Java.  Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
     * PyDev - This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for pydev.
     * AnyEditTools - This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for AnyEditTools.
     * CDT - This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ Hardware Debugging".
-    
+
 # <a name="git"></a> Git Cloning
 
 The repositories to be cloned are shown below.  If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirity of the software.
@@ -64,7 +64,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 ## Command line
 
 To clone using git on the command line, run:
-    
+
     git clone <url>
 
 where ```url``` is one of the URLs from above.  It is recommended that all modules be installed into the same directory.
@@ -76,16 +76,16 @@ For each repository:
   * Go to VCS -> Checkout from Version Control -> github
   * In "Git Repository URL" enter the repository URL.
   * Click Clone.
- 
+
 ### Dependencies
-You will also need to set up the dependencies between projects.  
+You will also need to set up the dependencies between projects.
 
 This is done as follows:
 
-  * Go to File->settings->project: <name> 
+  * Go to File->settings->project: <name>
   * Select Project Dependencies
   * Select the module and then tick the [appropriate dependencies](#pythondependencies)
-    
+
 ## Eclipse
 
 For each repository:
@@ -115,13 +115,13 @@ For each repository:
           * Click on "Finish".
 
 ### Dependencies
-You will also need to set up the dependencies between projects.  
+You will also need to set up the dependencies between projects.
 
 In each Python project, this is done as follows:
 
   * Right-click on the project
   * Select "Properties"
-  * Select "Project References".  
+  * Select "Project References".
   * Tick the [appropriate dependencies](#pythondependencies) for each module.
 
 In a C project, this is done as follows:
@@ -174,13 +174,13 @@ Note that include files are generally installed into ```spinnaker_tools/include`
 |sPyNNakerExternalDevicesPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 |sPyNNakerExtraModelsPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 |sPyNNakerNewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
-    
+
 # <a name="install"></a> Installing Python Modules
 
 Installing the Python modules in developer mode allows you to use the modules from the command line.  Note that the IDEs allow you to run code directly within the IDE, and so this step is optional if you have installed and IDE.  Even when using an IDE, it can be useful to install the modules to avoid issues with the install.
 
 For each of the python modules, go into the root directory of the module and run:
-    
+
     [sudo] python setup.py develop --no-deps [--user]
 
 Where ```sudo``` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and ```--user``` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.
@@ -215,24 +215,24 @@ Note that in many cases, the top-level Makefile for a module may descend in to a
 
 ## PyNN 0.75 vs PyNN 0.8
 
-Due the lack of backwards compatibility with PyNN 0.8 in relation to PyNN 0.75, installing both versions requires a bit of finessing.
+Due to the lack of backwards compatibility with PyNN 0.8 in relation to PyNN 0.75, installing both versions requires a bit of finessing.
 
 ### Pycharm
 
-If you decided to use PyCharm to support your development, then to support both PyNN installations requires you to :
- * build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 install separately.
+If you decided to use PyCharm to support your development, then to support both PyNN installations you are required to:
+ * build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 installed separately.
  * set the python interpreter for each module accordingly.
 
 To achieve the first, please follow the following steps:
  * go to File -> settings -> project -> python interpreter.
- * click on cog in top right corner of pop up and select "Create Virtual Env".
- * name the virtual env PyNN0.75 and select the boxes "inherit global site-packages" and "Make avilable to all projects".
- * repeat steps 2 and 3 but naming it PYNN0.8.
+ * click on the cog in the top right corner of the pop up and select "Create Virtual Env".
+ * name the virtual env "PyNN0.75" and select the boxes "inherit global site-packages" and "Make available to all projects".
+ * repeat the previous two steps but name the virtual env "PYNN0.8".
  * select from the drop down list of interpreters the PYNN0.75 version.
  * click on the + button on the right hand side of the pop up.
  * select PyNN from the list and select specific version 0.75, install this.
  * select from the drop down list of interpreters the PYNN0.8 version.
- * repeat steps 6 and 7 but select specific version 0.8 instead.
+ * repeat steps 6 and 7 but select PyNN and the specific version 0.8 instead.
 
 To achieve the second, please follow the following steps:
 
@@ -263,15 +263,16 @@ To achieve the second, please follow the following steps:
 |PyNN8Examples|PyNN0.8|
 |IntroLab|PyNN0.75|
 
-### Ecipse
+### Eclipse
 If you are using eclipse, we recommend that you switch your installation of PyNN through the command line.
-to install PyNN 0.75 execute the following line:
 
-``` pip install "pynn == 0.7.5"```
+To install PyNN 0.75, execute the following:
 
-to install PyNN 0.8 execute the following line:
+``` pip install pynn==0.7.5```
 
-``` pip install "pynn == 0.8.0"```
+To install PyNN 0.8, execute the following:
+
+``` pip install pynn==0.8.3```
 
 # <a name="Configuration"></a> Configuration
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
