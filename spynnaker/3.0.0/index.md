@@ -3,8 +3,6 @@ title: sPyNNaker version 3.0.0
 layout: default
 ---
 
-* [4th HBP summer School from 12-18 June 2017 in Obergurgl, Austria](/spynnaker/4.0.0/hbp_summar_school.html)
-
 * [License Agreement](/common_pages/3.0.0/LicenseAgreement.html)
 * [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)
 * [PyNN on SpiNNaker Support and Limitations](SPyNNakerLimitations.html)
