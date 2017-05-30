@@ -59,7 +59,6 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |sPyNNaker8NewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C |
 |PyNN7Examples | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
 |PyNN8Examples | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
-
 |IntroLab | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 
 ## Command line
@@ -217,6 +216,9 @@ Note that in many cases, the top-level Makefile for a module may descend in to a
 ## PyNN 0.75 vs PyNN 0.8
 
 Due the lack of backwards compatibility with PyNN 0.8 in relation to PyNN 0.75, installing both versions requires a bit of finessing.
+
+### Pycharm
+
 If you decided to use PyCharm to support your development, then to support both PyNN installations requires you to :
 1. build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 install separately.
 2. set the python interpreter for each module accordingly.
@@ -261,6 +263,7 @@ To achieve the second, please follow the following steps:
 |PyNN8Examples|PyNN0.8|
 |IntroLab|PyNN0.75|
 
+### Ecipse
 If you are using eclipse, we recommend that you switch your installation of PyNN through the command line.
 to install PyNN 0.75 execute the following line:
 
@@ -282,5 +285,6 @@ to install PyNN 0.8 execute the following line:
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
 1. Once the example has finished, you should see a graph, that will look something like this:
 ![VABenchmarkSpikes](va8_benchmark.png)
+
 If you get the output above, you have successfully installed your system.
 
