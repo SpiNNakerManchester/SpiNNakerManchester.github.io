@@ -46,10 +46,18 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |SpiNNFrontEndCommon | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
 |SpiNNakerGraphFrontEnd | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C
 |sPyNNaker | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
+|sPyNNaker7 | https://github.com/SpiNNakerManchester/sPyNNaker7.git|Python and C|
+|sPyNNaker8 | https://github.com/SpiNNakerManchester/sPyNNaker8.git|Python and C|
 |sPyNNakerExternalDevicesPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git|Python and C|
+|sPyNNaker7ExternalDevicesPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git|Python and C|
+|sPyNNaker8ExternalDevicesPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExternalDevicesPlugin.git|Python and C|
 |sPyNNakerExtraModelsPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git|Python and C|
-|sPyNNakerNewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git|Python and C|
-|PyNNExamples | https://github.com/SpiNNakerManchester/PyNNExamples.git|Python|
+|sPyNNaker7ExtraModelsPlugin | https://github.com/SpiNNakerManchester/sPyNNakerExtraModelsPlugin.git|Python and C|
+|sPyNNaker8ExtraModelsPlugin | https://github.com/SpiNNakerManchester/sPyNNaker7ExtraModelsPlugin.git|Python and C|
+|sPyNNaker7NewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNaker7NewModelTemplate.git|Python and C|
+|sPyNNaker8NewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNaker7NewModelTemplate.git|Python and C|
+|PyNN7Examples | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
+|PyNN8Examples | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
 |IntroLab | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 
 ## Command line
@@ -135,11 +143,19 @@ In a C project, this is done as follows:
 |SpiNNFrontEndCommon|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification|
 |SpiNNakerGraphFrontEnd|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
 |sPyNNaker|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon|
+|sPyNNaker7|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|sPyNNaker8|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
 |sPyNNakerExternalDevicesPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
+|sPyNNaker7ExternalDevicesPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spyNNaker, sPyNNaker7, sPyNNakerExternalDevicesPlugin|
+|sPyNNaker8ExternalDevicesPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, sPyNNakerExternalDevicesPlugin|
 |sPyNNakerExtraModelsPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
-|sPyNNakerNewModelTemplate|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker|
-|PyNNExamples|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNakerExternalDevicesPlugin|
-|IntroLab|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker|
+sPyNNaker7ExtraModelsPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, sPyNNakerExtraModelsPlugin|
+sPyNNaker8ExtraModelsPlugin|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, sPyNNakerExtraModelsPlugin|
+|sPyNNaker7NewModelTemplate|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7|
+|sPyNNaker8NewModelTemplate|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8|
+|PyNN7Examples|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, sPyNNakerExternalDevicesPlugin, sPyNNaker7ExternalDevicesPlugin|
+|PyNN8Examples|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, sPyNNakerExternalDevicesPlugin, sPyNNaker8ExternalDevicesPlugin|
+|IntroLab|SpiNNUtilities, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker7|
 
 
 ## <a name="cdependencies"></a> C Dependencies
@@ -155,7 +171,8 @@ Note that include files are generally installed into ```spinnaker_tools/include`
 |sPyNNaker/neural_modelling|spinnaker_tools/include|
 |sPyNNakerExternalDevicesPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 |sPyNNakerExtraModelsPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
-|sPyNNakerNewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|sPyNNaker7NewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|sPyNNaker8NewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
     
 # <a name="install"></a> Installing Python Modules
 
@@ -188,7 +205,8 @@ The C code to compile is (in order) as follows:
 |sPyNNaker|neural_modelling|```make```|```make clean```|
 |sPyNNakerExternalDevicesPlugin|neural_modelling|```make```|```make clean```|
 |sPyNNakerExtraModelsPlugin|neural_modelling|```make```|```make clean```|
-|sPyNNakerNewModelTemplate|c_models|```make```|```make clean```|
+|sPyNNaker7NewModelTemplate|c_models|```make```|```make clean```|
+|sPyNNaker8NewModelTemplate|c_models|```make```|```make clean```|
 
 A script is also available [here](automatic_make.sh) which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time.  Note also that this assumes that you have checked out the git code into a single location.
 

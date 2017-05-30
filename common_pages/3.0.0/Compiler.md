@@ -35,7 +35,7 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 1. Follow the instructions for the [Linux C Compiler](#LinuxC)
 
 ## <a name="LinuxC"></a> Linux C Compiler
-1. Download [CodeSourcery GCC ARM EABI Compiler](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-lin-dev/arm-2013.05.tgz)
+1. Download [GCC ARM EABI Compiler](https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2)
 1. Extract the downloaded archive to the location of your choice
 1. Add the "bin" directory within the installed location to the PATH enviroment variable in .profile in your home directory e.g. append the following:  
 ```export PATH=$PATH:<install-location>/bin```  
