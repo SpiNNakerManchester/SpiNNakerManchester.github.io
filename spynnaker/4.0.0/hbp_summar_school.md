@@ -13,7 +13,7 @@ an official release within a few months of the summer school.
 
 For participants whom only wish to use basic PyNN 0.75 functionality, we ask that you install the official release.
 
-therefore, either follow [link](spynnaker/4.0.0/devenv.html) if you wish to use advanced features. or
-[link](spynnaker/3.0.0/PyNNOnSpinnakerInstall.html) if you wish to use basic functionality.
+therefore, either follow [link]devenv.html) if you wish to use advanced features. or
+[link](../../spynnaker/3.0.0/PyNNOnSpinnakerInstall.html) if you wish to use basic functionality.
 
 
