@@ -266,11 +266,11 @@ To achieve the second, please follow the following steps:
 ### Eclipse
 If you are using eclipse, we recommend that you switch your installation of PyNN through the command line.
 
-To install PyNN 0.75, execute the following line:
+To install PyNN 0.75, execute the following:
 
 ``` pip install pynn==0.7.5```
 
-To install PyNN 0.8, execute the following line:
+To install PyNN 0.8, execute the following:
 
 ``` pip install pynn==0.8.3```
 
