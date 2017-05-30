@@ -4,19 +4,19 @@ title: Setting up a Software Development Environment for SpiNNaker
 
 # Installation
 
- 1. [Install Python requirements](#PythonRequirements).
- 1. [Install the C development requirements](/common_pages/3.0.0/Compiler.html).
- 1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use and IDE.
- 1. [Install an IDE](#ide) - optional but recommended for ease of use.
- 1. [Clone the git repositories](#git).
- 1. [Install the python software in developer mode](#install).
- 1. [Set up the C environment variables](#cenvironment).
- 1. [Build the C code](#cbuild).
+  * [Install Python requirements](#PythonRequirements).
+  * [Install the C development requirements](/common_pages/3.0.0/Compiler.html).
+  * [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use and IDE.
+  * [Install an IDE](#ide) - optional but recommended for ease of use.
+  * [Clone the git repositories](#git).
+  * [Install the python software in developer mode](#install).
+  * [Set up the C environment variables](#cenvironment).
+  * [Build the C code](#cbuild).
 
 # <a name="PythonRequirements"></a> Python Requirements
- 1. [Install the general platform requirements](/common_pages/3.0.0/PythonInstall.html)
- 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/3.0.0/VirtualEnv.html) to set up the dependencies.
- 1. Install other general dependencies via pip:  
+  * [Install the general platform requirements](/common_pages/3.0.0/PythonInstall.html)
+  * If you would prefer to use a virtualenv, [follow these instructions](/common_pages/3.0.0/VirtualEnv.html) to set up the dependencies.
+  * Install other general dependencies via pip:  
     ```pip install enum34 six "spalloc>=v0.2.2,<v1.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.11.1,<=0.11.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"```
 
 # <a name="ide"></a> Integrated Development Environment
@@ -73,65 +73,65 @@ where ```url``` is one of the URLs from above.  It is recommended that all modul
 
 For each repository:
 
- 1. Go to VCS -> Checkout from Version Control -> github
- 1. In "Git Repository URL" enter the repository URL.
- 1. Click Clone.
+  * Go to VCS -> Checkout from Version Control -> github
+  * In "Git Repository URL" enter the repository URL.
+  * Click Clone.
  
 ### Dependencies
 You will also need to set up the dependencies between projects.  
 
 This is done as follows:
 
- 1. Go to File->settings->project: <name> 
- 1. Select Project Dependencies
- 1. Select the module and then tick the [appropriate dependencies](#pythondependencies)
+  * Go to File->settings->project: <name> 
+  * Select Project Dependencies
+  * Select the module and then tick the [appropriate dependencies](#pythondependencies)
     
 ## Eclipse
 
 For each repository:
 
- 1. Go to file -> import -> git -> projects from git -> Clone URI
- 1. In "URI"  enter the repository URI.
- 1. Click Finish
- 1. Once the repository is imported:
-     1. If the project is a Python project, right click and select "PyDev" --> "Set as PyDev Project".
-     1. If the project is a C project:
-         1. Select "File" --> "New" --> "Other..."
-         1. Select "C/C++" --> "Convert to a C/C++ Project (Adds C Nature)" and click on "Next"
-         1. Select the project from the list.
-         1. Select the "C Project" radio button.
-         1. Select "Executable" and the "Cross GCC" from the list.
-         1. Click on "Finish".
-     1. If the project is a Python and C project:
-         1. If the project is a Python project, right click and select "PyDev" --> "Set as PyDev Project".
-         1. Select "File" --> "New" --> "Other..."
-         1. Select "C/C++" --> "C Project" and click on "Next".
-         1. Enter the name of the project followed by "_c_code".
-         1. Uncheck "use default location", click on "Browse" and find the subfolder of the project containing the C code (e.g. sPyNNaker has a neural_modelling subfolder).
-         1. Select "Exectuable" --> "Empty Project" and "Cross GCC" and click on "Next".
-         1. Select "Next" again.
-         1. Set the "Cross Compiler Prefix" to "arm-none-eabi-"
-         1. Set the path of the compiler to wherever you installed it (on Windows using MSYS installed to the ```C:\``` folder, this is ```C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\bin.```
-         1. Click on "Finish".
+  * Go to file -> import -> git -> projects from git -> Clone URI
+  * In "URI"  enter the repository URI.
+  * Click Finish
+  * Once the repository is imported:
+      * If the project is a Python project, right click and select "PyDev" --> "Set as PyDev Project".
+      * If the project is a C project:
+          * Select "File" --> "New" --> "Other..."
+          * Select "C/C++" --> "Convert to a C/C++ Project (Adds C Nature)" and click on "Next"
+          * Select the project from the list.
+          * Select the "C Project" radio button.
+          * Select "Executable" and the "Cross GCC" from the list.
+          * Click on "Finish".
+      * If the project is a Python and C project:
+          * If the project is a Python project, right click and select "PyDev" --> "Set as PyDev Project".
+          * Select "File" --> "New" --> "Other..."
+          * Select "C/C++" --> "C Project" and click on "Next".
+          * Enter the name of the project followed by "_c_code".
+          * Uncheck "use default location", click on "Browse" and find the subfolder of the project containing the C code (e.g. sPyNNaker has a neural_modelling subfolder).
+          * Select "Exectuable" --> "Empty Project" and "Cross GCC" and click on "Next".
+          * Select "Next" again.
+          * Set the "Cross Compiler Prefix" to "arm-none-eabi-"
+          * Set the path of the compiler to wherever you installed it (on Windows using MSYS installed to the ```C:\``` folder, this is ```C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\bin.```
+          * Click on "Finish".
 
 ### Dependencies
 You will also need to set up the dependencies between projects.  
 
 In each Python project, this is done as follows:
 
- 1. Right-click on the project
- 1. Select "Properties"
- 1. Select "Project References".  
- 1. Tick the [appropriate dependencies](#pythondependencies) for each module.
+  * Right-click on the project
+  * Select "Properties"
+  * Select "Project References".  
+  * Tick the [appropriate dependencies](#pythondependencies) for each module.
 
 In a C project, this is done as follows:
- 1. Right-click on the project
- 1. Select "Properties"
- 1. Select "C/C++ Build" --> "Settings"
- 1. In the "Tools Settings" tab, select "Cross GCC Compiler" --> "Includes"
- 1. Click on the "Add" icon.
- 1. Add the dependency as ```${workspace_loc:<dependency_path>}``` where ```<dependency_path>``` is the [appropriate dependency](#cdependencies).
- 1. Repeat for all the dependencies.
+  * Right-click on the project
+  * Select "Properties"
+  * Select "C/C++ Build" --> "Settings"
+  * In the "Tools Settings" tab, select "Cross GCC Compiler" --> "Includes"
+  * Click on the "Add" icon.
+  * Add the dependency as ```${workspace_loc:<dependency_path>}``` where ```<dependency_path>``` is the [appropriate dependency](#cdependencies).
+  * Repeat for all the dependencies.
 
 ## <a name="pythondependencies"></a> Python Dependencies
 
@@ -187,10 +187,10 @@ Where ```sudo``` is required if you are on Linux or OS X and would like to insta
 
 # <a name="cenvironment"></a> Set up the C environment variables
 
- 1. Create an environment variable ```SPINN_DIRS``` that points at the location of the cloned spinnaker_tools folder (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to ```C:\SpiNNaker-Tools\```, you should set the environment variable to ```/c/SpiNNaker-Tools```).
- 1. Add the ```spinnaker_tools/tools``` folder to your ```PATH``` environment variable.  This does *not* need to be a POSIX path on Windows e.g. ```C:\spinnaker_tools\tools``` is fine on Windows, or ```/spinnaker_tools/tools``` on Linux or Mac.
- 1. Add the ```spinnaker_tools/tools``` folder to your ```PERL5LIB``` environment variable (or create this environment variable if it is not already set; note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to ```C:\spinnaker_tools\```, you should set the environment variable to ```/c/spinnaker_tools/tools```).
- 1. Create a new environment variable ```NEURAL_MODELLING_DIRS``` which is set to the path of the ```neural_modelling``` subfolder of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to ```C:\sPyNNaker\```, you should set the environment variable to ```/c/sPyNNaker/neural_modelling```).
+  * Create an environment variable ```SPINN_DIRS``` that points at the location of the cloned spinnaker_tools folder (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to ```C:\SpiNNaker-Tools\```, you should set the environment variable to ```/c/SpiNNaker-Tools```).
+  * Add the ```spinnaker_tools/tools``` folder to your ```PATH``` environment variable.  This does *not* need to be a POSIX path on Windows e.g. ```C:\spinnaker_tools\tools``` is fine on Windows, or ```/spinnaker_tools/tools``` on Linux or Mac.
+  * Add the ```spinnaker_tools/tools``` folder to your ```PERL5LIB``` environment variable (or create this environment variable if it is not already set; note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to ```C:\spinnaker_tools\```, you should set the environment variable to ```/c/spinnaker_tools/tools```).
+  * Create a new environment variable ```NEURAL_MODELLING_DIRS``` which is set to the path of the ```neural_modelling``` subfolder of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to ```C:\sPyNNaker\```, you should set the environment variable to ```/c/sPyNNaker/neural_modelling```).
 
 # <a name="cbuild"></a> Build the C Code
 
@@ -220,11 +220,11 @@ Due the lack of backwards compatibility with PyNN 0.8 in relation to PyNN 0.75, 
 ### Pycharm
 
 If you decided to use PyCharm to support your development, then to support both PyNN installations requires you to :
-1. build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 install separately.
+ * build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 install separately.
 2. set the python interpreter for each module accordingly.
 
 To achieve the first, please follow the following steps:
-1. go to File -> settings -> project -> python interpreter.
+ * go to File -> settings -> project -> python interpreter.
 2. click on cog in top right corner of pop up and select "Create Virtual Env".
 3. name the virtual env PyNN0.75 and select the boxes "inherit global site-packages" and "Make avilable to all projects".
 4. repeat steps 2 and 3 but naming it PYNN0.8.
@@ -236,7 +236,7 @@ To achieve the first, please follow the following steps:
 
 To achieve the second, please follow the following steps:
 
-1. go to File -> settings -> project -> python interpreter.
+ * go to File -> settings -> project -> python interpreter.
 2. click on the following modules and select the specific interpreter as shown in the following table:
 
 |**Module**|**Python Interpreter**|
@@ -275,15 +275,15 @@ to install PyNN 0.8 execute the following line:
 
 
 # <a name="Examples"></a> Running some examples
-1. Go to the "examples" folder in Pynn7Examples
-1. Run: va_benchmark.py
-1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
-1. Once the example has finished, you should see a graph, that will look something like this:
+ * Go to the "examples" folder in Pynn7Examples
+ * Run: va_benchmark.py
+ * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
+ * Once the example has finished, you should see a graph, that will look something like this:
 ![VABenchmarkSpikes](va7_benchmark.png)
-1. Go to the "examples" folder in Pynn7Examples
-1. Run: va_benchmark.py
-1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
-1. Once the example has finished, you should see a graph, that will look something like this:
+ * Go to the "examples" folder in Pynn7Examples
+ * Run: va_benchmark.py
+ * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
+ * Once the example has finished, you should see a graph, that will look something like this:
 ![VABenchmarkSpikes](va8_benchmark.png)
 
 If you get the output above, you have successfully installed your system.
