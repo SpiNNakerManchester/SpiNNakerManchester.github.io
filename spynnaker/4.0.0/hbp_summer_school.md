@@ -9,7 +9,9 @@ Due to the open-endedness of the planned SpiNNaker sessions in the summer school
 
 For participants who only wish to use basic PyNN 0.75 functionality, we ask that you install the official release.
 
-Therefore, either follow [link](devenv.html) if you wish to use advanced features, or
+Therefore, either follow [link](../../development/devenv.html) if you wish to use advanced features, or
 [link](../../spynnaker/3.0.0/PyNNOnSpinnakerInstall.html) if you wish to use basic functionality.
+
+If you wish to set up a development environment to write new extensions to the implementation of SpiNNaker on PyNN, then look at [this link](PyNNOnSpiNNakerExtensions.html) if you wish to use advanced features, or [this link](../../spynnaker/3.0.0/PyNNOnSpiNNakerExtensions.html) if you are using the official release.
 
 
