@@ -12,6 +12,10 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Install the python software in developer mode](#install).
  1. [Set up the C environment variables](#cenvironment).
  1. [Build the C code](#cbuild).
+ 1. [Set up the environment for PyNN 0.7 and 0.8](#PyNNSelect).
+ 1. [Set up the PyNN links](#PyNNInstall).
+ 1. [Configure the environment](#Configuration).
+ 1. [Run some examples](#Examples).
 
 # <a name="PythonRequirements"></a> Python Requirements
   1. [Install the general platform requirements](/common_pages/3.0.0/PythonInstall.html)
@@ -213,11 +217,11 @@ A script is also available [here](automatic_make.sh) which performs the appropri
 ## Building individual models
 Note that in many cases, the top-level Makefile for a module may descend in to a number of sub-directories and build a number of individual models and libraries.  It is always possible to go into these subdirectories yourself and build the individual model directly.  This will save some time, since it will only build the code in the module you are interested in.  This may be necessary when debugging code.
 
-## PyNN 0.75 vs PyNN 0.8
+# <a name="PyNNSelect"></a> PyNN 0.75 vs PyNN 0.8
 
 Due to the lack of backwards compatibility with PyNN 0.8 in relation to PyNN 0.75, installing both versions requires a bit of finessing.
 
-### Pycharm
+## Pycharm
 
 If you decided to use PyCharm to support your development, then to support both PyNN installations you are required to:
  * build 2 versions of your python interpreter with PyNN 0.75 and PyNN 0.8 installed separately.
@@ -263,34 +267,52 @@ To achieve the second, please follow the following steps:
 |PyNN8Examples|PyNN0.8|
 |IntroLab|PyNN0.75|
 
-### Eclipse
+## Eclipse
 
 If you decided to use Eclipse to support your development, then to support both PyNN installations you are required to:
- 1. Uninstall any local PyNN installation
- 1. Clone the PyNN repository twice, each checked out with different tags
+ 1. Uninstall any local PyNN installation (```pip uninstall pyNN```)
+ 1. Get a copy of each of the PyNN dependencies and install them locally
  1. Update the dependencies of specific modules to include the appropriate PyNN version
  
-To clone PyNN twice:
- 1. Use git to clone PyNN to a folder PyNN0.7 either within Eclipse or on the command line
- 1. Checkout the 0.7.5 tag of PyNN0.7
- 1. Use git to clone PyNN to a folder PyNN0.8 either within Eclipse or on the command line
- 1. Checkout the 0.8.3 tag of PyNN0.8
+To install PyNN locally:
+ 1. Download [PyNN0.7.5.tar.gz](https://pypi.python.org/packages/63/c8/be19667dc36adb28bf4ad86c0692d5454eb537ff6fa07b21ca4754fb0b21/PyNN-0.7.5.tar.gz)
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+    ```python setup.py install --install-lib PyNN7```
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File -> Import -> General -> Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project -> PyDev -> Set as PyDev project).
+ 1. Set the PyNN7 folder as a PyDev source folder (right-click folder -> PyDev -> Set as Source Folder).
+ 1. Download [PyNN0.8.3.tar.gz](https://pypi.python.org/packages/16/6e/33c228807e42034f8db90005d0107dc8da12d33e870db1b552d5353fcb5d/PyNN-0.8.3.tar.gz)
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+    ```python setup.py install --install-lib PyNN8```
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File -> Import -> General -> Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project -> PyDev -> Set as PyDev project).
+ 1. Set the PyNN8 folder as a PyDev source folder (right-click folder -> PyDev -> Set as Source Folder).
 
 Update the dependencies for the following modules, adding the indicated module:
 
 |**Module**|**Python Interpreter**|
 |:---------|:---------------|
-|sPyNNaker7|PyNN0.7|
-|sPyNNaker8|PyNN0.8|
-|sPyNNaker7ExternalDevicesPlugin|PyNN0.7|
-|sPyNNaker8ExternalDevicesPlugin|PyNN0.8|
-|sPyNNaker7ExtraModelsPlugin|PyNN0.7|
-|sPyNNaker8ExtraModelsPlugin|PyNN0.8|
-|sPyNNaker7NewModelTemplate|PyNN0.7|
-|sPyNNaker8NewModelTemplate|PyNN0.8|
-|PyNN7Examples|PyNN0.7|
-|PyNN8Examples|PyNN0.8|
-|IntroLab|PyNN0.7|
+|sPyNNaker7|PyNN0.7.5|
+|sPyNNaker8|PyNN0.8.3|
+|sPyNNaker7ExternalDevicesPlugin|PyNN0.7.5|
+|sPyNNaker8ExternalDevicesPlugin|PyNN0.8.3|
+|sPyNNaker7ExtraModelsPlugin|PyNN0.7.5|
+|sPyNNaker8ExtraModelsPlugin|PyNN0.8.3|
+|sPyNNaker7NewModelTemplate|PyNN0.7.5|
+|sPyNNaker8NewModelTemplate|PyNN0.8.3|
+|PyNN7Examples|PyNN0.7.5|
+|PyNN8Examples|PyNN0.8.3|
+|IntroLab|PyNN0.7.5|
+
+# <a name="PyNNInstall"></a> PyNN Install
+Once the modules have been installed, the final step is to create the pyNN.spiNNaker links.  This is done as follows:
+
+ 1. From sPyNNaker7, run the spynnaker7/pyNN/setup-pynn.py script.
+ 1. From sPyNNaker8, run the spynnaker8/setup-pynn.py script.
+
+This will create the correct linking in each of the environments.
 
 # <a name="Configuration"></a> Configuration
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
@@ -303,7 +325,7 @@ Note that if you have previously installed a version of the spiNNaker software, 
 
 If you have a SpiNNaker board, then go to [Local Board](#LocalBoard) if you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
-# <a name="LocalBoard"></a> Local Board
+## <a name="LocalBoard"></a> Local Board
 
 Within the file, you should set ```machineName``` to the IP address or hostname of your SpiNNaker machine, and ```version``` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
