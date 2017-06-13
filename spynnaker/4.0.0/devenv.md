@@ -302,12 +302,12 @@ now go to [Network Configuration](#Network Configuration).
 
 
 # <a name="Examples"></a> Running some examples
- * Go to the "examples" folder in Pynn7Examples
+ * For PyNN 0.7: Go to the "examples" folder in Pynn7Examples
  * Run: va_benchmark.py
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph, that will look something like this:
 ![VABenchmarkSpikes](va7_benchmark.png)
- * Go to the "examples" folder in Pynn7Examples
+ * For PyNN 0.8: Go to the "examples" folder in Pynn8Examples
  * Run: va_benchmark.py
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph, that will look something like this:
