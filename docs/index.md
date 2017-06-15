@@ -15,6 +15,7 @@ This page contains links to various technical documents about SpiNNaker.
 * [App Note 6](spinn-app-6.pdf) - SpiNNaker Serial ROM Notes
 * [App Note 7](spinn-app-7.pdf) - SpiNNaker Links
 * [App Note 8](spinn-app-8.pdf) - Interfacing AER devices to SpiNNaker using an FPGA
+* [App Note 9](spinn-app-9.pdf) - SpiNN-5 Board Quick Start Guide
 
 # Data Sheets
 
