@@ -23,6 +23,9 @@ title: Setting up a Software Development Environment for SpiNNaker
   1. Install other general dependencies via pip:
     ```pip install enum34 six "spalloc>=v0.2.2,<v1.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.11.1,<=0.11.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"```
 
+# <a name="CRequirements"></a> C Development Requirements
+[Install a C compiler](/common_pages/3.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies. 
+
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and and IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
 
