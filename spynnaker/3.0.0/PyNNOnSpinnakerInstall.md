@@ -139,3 +139,12 @@ Then to solve it, edit C:\Python27\Lib\mimetypes.py and add these codes:
 before the following line:
 
     default_encoding = sys.getdefaultencoding()
+    
+2. OSX: if experiencing the following tkinter error:
+
+```_tkinter.TclError: no display name and no $DISPLAY environment variable```
+
+ it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```.
+ ```$DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc```
+ In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file.](https://matplotlib.org/_static/matplotlibrc))
+
