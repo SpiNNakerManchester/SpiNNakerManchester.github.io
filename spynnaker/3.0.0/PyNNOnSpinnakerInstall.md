@@ -144,9 +144,7 @@ before the following line:
 
 ```_tkinter.TclError: no display name and no $DISPLAY environment variable```
 
- it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```.
+ it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in $DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc
  
- ```$DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc```
- 
- In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file.](https://matplotlib.org/_static/matplotlibrc))
+ In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
 
