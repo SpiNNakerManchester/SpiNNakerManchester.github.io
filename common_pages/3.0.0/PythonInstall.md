@@ -42,7 +42,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ```sudo dnf install python-matplotlib```
 
 ## <a name="MacOSXPython"></a> Mac OS X Requirements
-1. Download and install <a href="https://www.macports.org/install.php" target="_blank">MacPorts</a>
+1. Download and install <a href="https://www.macports.org/install.php" target="_blank">MacPorts</a> (Requires [XCode](https://developer.apple.com/technologies/tools/) Developer Tools and an X11 windowing environment such as [XQuartz](https://www.xquartz.org/)).
 1. Install python  
 ```sudo port install python27```  
 ```sudo port select --set python python27```
