@@ -17,7 +17,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 1. Install Python  
 ```sudo apt-get install python2.7```
 1. Install numpy 1.12 or lower  
-```sudo apt-get install python-numpy<=1.12.1```
+```sudo apt-get install python-numpy```
 1. Install scipy  
 ```sudo apt-get install python-scipy```
 1. Install lxml  
@@ -31,7 +31,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 1. Install Python  
 ```sudo dnf install python```
 1. Install numpy 1.12 or lower  
-```sudo dnf install python-numpy<=1.12.1```
+```sudo dnf install python-numpy```
 1. Install scipy  
 ```sudo dnf install scipy```
 1. Install lxml  
