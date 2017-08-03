@@ -21,10 +21,10 @@ title: Setting up a Software Development Environment for SpiNNaker
   1. [Install the general platform requirements](/common_pages/3.0.0/PythonInstall.html)
   1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/3.0.0/VirtualEnv.html) to set up the dependencies.
   1. Install other general dependencies via pip:
-    ```pip install enum34 six "spalloc>=v0.2.2,<v1.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.11.1,<=0.11.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"```
+    ```pip install enum34 six "spalloc>=0.2.2,<1.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.11.1,<=0.11.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"```
 
 # <a name="CRequirements"></a> C Development Requirements
-[Install a C compiler](/common_pages/3.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies. 
+[Install a C compiler](/common_pages/3.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and and IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
@@ -70,7 +70,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 ## Command line
 
 To clone using git on the command line, run:
-    
+
     git clone <url>
 
 where ```url``` is one of the URLs from above.  It is recommended that all modules be installed into the same directory.
@@ -180,13 +180,13 @@ Note that include files are generally installed into ```spinnaker_tools/include`
 |sPyNNakerExtraModelsPlugin/neural_modelling|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 |sPyNNaker7NewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 |sPyNNaker8NewModelTemplate/c_models|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
-    
+
 # <a name="install"></a> Installing Python Modules
 
 Installing the Python modules in developer mode allows you to use the modules from the command line.  Note that the IDEs allow you to run code directly within the IDE, and so this step is optional if you have installed and IDE.  Even when using an IDE, it can be useful to install the modules to avoid issues with the install.
 
 For each of the python modules, go into the root directory of the module and run:
-    
+
     [sudo] python setup.py develop --no-deps [--user]
 
 Where ```sudo``` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and ```--user``` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.
@@ -276,7 +276,7 @@ If you decided to use Eclipse to support your development, then to support both 
  1. Uninstall any local PyNN installation (```pip uninstall pyNN```)
  1. Get a copy of each of the PyNN dependencies and install them locally
  1. Update the dependencies of specific modules to include the appropriate PyNN version
- 
+
 To install PyNN locally:
  1. Download [PyNN0.7.5.tar.gz](https://pypi.python.org/packages/63/c8/be19667dc36adb28bf4ad86c0692d5454eb537ff6fa07b21ca4754fb0b21/PyNN-0.7.5.tar.gz)
  1. Extract the archive.
@@ -347,7 +347,7 @@ now go to [Network Configuration](#Network Configuration).
 # <a name="Examples"></a> Running some examples
 
 ## PyNN 0.7
- 
+
  * Go to the "examples" folder in Pynn7Examples
  * Run: va_benchmark.py
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
@@ -355,7 +355,7 @@ now go to [Network Configuration](#Network Configuration).
 ![VABenchmarkSpikes](va7_benchmark.png)
 
 ## PyNN 0.8
- 
+
  * Go to the "examples" folder in Pynn8Examples
  * Run: va_benchmark.py
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
