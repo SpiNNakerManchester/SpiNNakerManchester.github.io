@@ -3,7 +3,6 @@ title: Seventh SpiNNaker Workshop
 layout: default
 ---
 
-<!---
 # Manchester Conference Centre, Manchester, UK, 3rd-6th October, 2017
 
 <img style="float: right;" src="Rotating_Doughnut_S2.gif">
@@ -34,4 +33,3 @@ For more information or to reserve a place, please click [here](seventh_info).
 <img src="LOGO-ERC.jpg" height="50">&nbsp;&nbsp;
 <img src="ARM.png" height="50">
 </center>
---->
