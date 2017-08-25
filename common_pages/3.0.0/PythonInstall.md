@@ -16,7 +16,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
 1. Install Python  
 ```sudo apt-get install python2.7```
-1. Install numpy  
+1. Install numpy 1.12 or lower  
 ```sudo apt-get install python-numpy```
 1. Install scipy  
 ```sudo apt-get install python-scipy```
@@ -30,8 +30,8 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ## <a name="FedoraPython"></a> Fedora Linux Requirements
 1. Install Python  
 ```sudo dnf install python```
-1. Install numpy  
-```sudo dnf install numpy```
+1. Install numpy 1.12 or lower  
+```sudo dnf install python-numpy```
 1. Install scipy  
 ```sudo dnf install scipy```
 1. Install lxml  
@@ -42,12 +42,12 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ```sudo dnf install python-matplotlib```
 
 ## <a name="MacOSXPython"></a> Mac OS X Requirements
-1. Download and install <a href="https://www.macports.org/install.php" target="_blank">MacPorts</a>
+1. Download and install <a href="https://www.macports.org/install.php" target="_blank">MacPorts</a> (Requires [XCode](https://developer.apple.com/technologies/tools/) Developer Tools and an X11 windowing environment such as [XQuartz](https://www.xquartz.org/)).
 1. Install python  
 ```sudo port install python27```  
 ```sudo port select --set python python27```
-1. Install numpy  
-```sudo port install py27-numpy```
+1. Install numpy 1.12 or lower  
+```sudo port install py27-numpy<=1.12.1```
 1. Install scipy  
 ```sudo port install py27-scipy```
 1. Install lxml  
