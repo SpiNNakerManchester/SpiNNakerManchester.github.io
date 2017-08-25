@@ -49,7 +49,7 @@ As of the August 2017 the contributors included:
 
 [Andrew Mundy](https://github.com/mundya)
 
-[neworderofjamie]([https://github.com/neworderofjamie)
+[neworderofjamie](https://github.com/neworderofjamie)
 
 [Oliver Rhodes](https://github.com/oliverrhodes)
 
