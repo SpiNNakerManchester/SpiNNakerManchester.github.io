@@ -34,7 +34,7 @@ Although optional, we highly recommend the use of an Integrated Development Envi
  * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) - Eclipse Neon has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
     * PyDev - This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for pydev.
     * AnyEditTools - This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for AnyEditTools.
-    * CDT - This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ Hardware Debugging".
+    * CDT - This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
 
 # <a name="git"></a> Git Cloning
 
@@ -61,6 +61,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |sPyNNaker8NewModelTemplate | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C|
 |PyNN7Examples | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
 |PyNN8Examples | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
+|sPyNNakerVisualisers | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |IntroLab | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |SupportScripts | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
@@ -154,9 +155,10 @@ In a C project, this is done as follows:
 |sPyNNaker8|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
 |sPyNNaker7NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc|
 |sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
-|PyNN7Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc, sPyNNakerExternalDevicesPlugin, sPyNNaker7ExternalDevicesPlugin|
-|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc, sPyNNakerExternalDevicesPlugin, sPyNNaker8ExternalDevicesPlugin|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker7, spalloc|
+|PyNN7Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc|
+|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
+|sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker8, spalloc|
 
 
 ## <a name="cdependencies"></a> C Dependencies
