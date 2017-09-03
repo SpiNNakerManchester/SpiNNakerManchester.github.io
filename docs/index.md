@@ -29,6 +29,11 @@ This page contains links to various technical documents about SpiNNaker.
 * [SpOmnibot (TUM SpiNNaker Robot)](spomnibot/)
 * [Pushbot](push_bot/)
 
+# Low-Level Software Documents
+
+* [SpiNNaker low-level software Design Document](SpiNNsoft_designV0.01.pdf)
+* [SpiNNaker low-level software API](SpiNNapi_docV00.pdf)
+
 # Software API Documents
 
 * [SpiNNMachine](https://spinnmachine.readthedocs.org)
