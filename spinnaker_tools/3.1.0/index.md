@@ -12,7 +12,7 @@ spinnaker_tools contains all the requirements for building C binaries for execut
  
 # Installation
 
-1. [Install Development Dependencies](/common_pages/3.0.0/Compiler.html)
+1. [Install Development Dependencies](/common_pages/4.0.0/Compiler.html)
 1. [Install Spinnaker Tools](#SpinnakerTools)
 
 Once you've got a working development environment:
