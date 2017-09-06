@@ -6,6 +6,7 @@ layout: default
  * [Sixth SpiNNaker Workshop](sixth.html), Manchester, UK, 5th - 9th August 2016
 
 # Future Workshops
+ * [Seventh SpiNNaker Workshop](seventh.html), Manchester Conference Centre, Manchester, UK, 3rd - 6th October 2017
 
 If you have any questions, or for information on future workshops, please contact: 
 [simon.davidson@manchester.ac.uk](mailto:simon.davidson@manchester.ac.uk)
