@@ -15,7 +15,7 @@ published: true
 
 # <a name="Usage"></a> Usage of this functionality
 
-The content of this page is to support end users whom wish to investigate the 
+The content of this page is to support end users whom wish to investigate the
 use of new mapping algorithms to use with the SpiNNaker tool chain.
 
 This functionality allows algorithms coded in any language to be used in conjunction with the tool chain through the use of XML and json files.
@@ -26,14 +26,14 @@ This functionality allows algorithms coded in any language to be used in conjunc
 To use this functionality, you must have installed one of the Front Ends supported by the
 software stack. If you have not done so yet, please follow one of the following links:
 
-1. [The sPyNNaker Front end User installation page](/spynnaker/3.0.0/PyNNOnSpinnakerInstall.html)
-1. [The SpiNNaker Graph Front End User installation page](/graph_front_end/3.0.0/SpiNNakerGraphFrontEndInstall.html)
+1. [The sPyNNaker Front end User installation page](/spynnaker/4.0.0/PyNNOnSpinnakerInstall.html)
+1. [The SpiNNaker Graph Front End User installation page](/graph_front_end/4.0.0/SpiNNakerGraphFrontEndInstall.html)
 
 # <a name="XMLMeta"></a> Algorithm Meta-data XML File
 
-As end users can add any arbitrary number of algorithms to the PACMAN flow, 
-this means there is no longer a predefined logic flow between algorithms. 
-To rectify this, there is a block of code located in https://github.com/SpiNNakerManchester/PACMAN/blob/3.0.0/pacman/executor/pacman_algorithm_executor.py which takes a description of the inputs, outputs, and executable parameters of the algorithms available to it and a list of algorithms which it needs to execute and deduces the logical order of algorithms.
+As end users can add any arbitrary number of algorithms to the PACMAN flow,
+this means there is no longer a predefined logic flow between algorithms.
+To rectify this, there is a block of code located in https://github.com/SpiNNakerManchester/PACMAN/blob/4.0.0/pacman/executor/pacman_algorithm_executor.py which takes a description of the inputs, outputs, and executable parameters of the algorithms available to it and a list of algorithms which it needs to execute and deduces the logical order of algorithms.
 
 Any new algorithm needs to have a XML file which states how to execute the algorithm, its inputs and outputs. Below is an example XML file:
 
@@ -110,12 +110,12 @@ The BasicPartitioner takes 2 parameters as its inputs, which are defined by the 
 
 1. The partitionable graph which has a type of MemoryPartitionableGraph for clarity,
 1. and a python representation of the SpiNNaker machine which has been extended to represent external devices as virtual chips, and which has a type of MemoryExtendedMachine for clarity.
- 
+
 The BasicPartitioner generates 2 outputs, which are defined by the parameters encapsulated within the ```<produces_outputs>, <param_name> and <param_type>``` tags. These are:
 
 1. The partitioned graph contains vertices (referred to as "partitioned vertices") each of which contains all or a subset of the atoms from a vertex in the partitionable graph. Each of these partitioned vertices represents what is supported by a core in the SpiNNaker machine.
 1. and a mapping between the partitionable and partitioned graph, known as a graph mapper which has a type of MemoryGraphMapper for clarity.
- 
+
 Because the BasicPartitioner is a internal algorithm of PACMAN and therefore uses the PACMAN data structures, it can be run directly as a imported python module. Therefore the tool chain needs to know where the module lives (in relation to the PACMAN install) and what class to instantiate and call. These pieces of data can be found in the ```<python_module> and <python_class>``` tags.
 
 The RigCommandLineSAPlacer on the other hand is a external algorithm to PACMAN and therefore has to be run as a command runnable from the command line. The RigCommandLineSAPlacer takes 5 parameters as its command line inputs, and requires 2 commands to run. These are encapsulated within the ```<command_line_args> and <arg> ``` tags. These arguments are as follows:
@@ -128,7 +128,7 @@ The first and second arguments state that it's a python class to run, and the pa
 1. A file that contains constraints on vertices within the partitioned graph is required under the parameter --constraints. This is deduced from the required input, which has the parameter_name of constraints and type FileConstraints.
 1. A file path for where to write the output json file for its FilePlacements is required under the parameter --placements. This is deduced from the required input, which has the name placements_path and has the type FilePlacementFilePath.
 
-The RigCommandLineSAPlacer also produces one output, which is the json file which contains placement information. This is deduced from the ```<produces_outputs>``` tags. Note that the para_name is the same as the input type for the placements_path. This allows the PACMAN algorithm to deduce what type of data your outputting, whilst supporting general naming of output files. 
+The RigCommandLineSAPlacer also produces one output, which is the json file which contains placement information. This is deduced from the ```<produces_outputs>``` tags. Note that the para_name is the same as the input type for the placements_path. This allows the PACMAN algorithm to deduce what type of data your outputting, whilst supporting general naming of output files.
 
 The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below:
 
@@ -145,7 +145,7 @@ The tool chain currently supplies a collection of inputs into the PACMAN infrast
 |FileCoreAllocationsFilePath|the file path for writing core allocations|
 |FileSDRAMAllocationsFilePath|the file path for writing sdram allocations|
 |FileMachineFilePath|the file path for writing the json representation of the SpiNNaker machine produced by PACMAN|
-|FilePartitionedGraphFilePath|the file path for writing the json representation of the partitioned graph produced by PACMAN| 
+|FilePartitionedGraphFilePath|the file path for writing the json representation of the partitioned graph produced by PACMAN|
 |FilePlacementFilePath|the file path for writing the json representation of the placements produced by PACMAN|
 |FileRoutingPathsFilePath|the file path for writing the json representation of the routing paths|
 |FileConstraintsFilePath|the file path for writing the json representation of the constraints from the partitioned graph|
@@ -168,7 +168,7 @@ The tool chain also provides a collection of converters which switch between jso
 |ConvertToMemoryPartitionedGraph|Converts Json partitioned graph into PACMAN partitioned graph| FilePartitionedGraph|MemoryPartitionedGraph| False|
 
 
-These extra algorithms are only used when required, and are not needed to be explicitly defined in your algorithm listings.
+These extra algorithms are only used when required, and do not need to be explicitly defined in your algorithm listings.
 
 The tool chain also uses this workflow to control when a collection of support algorithms are executed. These algorithms are summarised below:
 
@@ -201,7 +201,6 @@ These algorithms use a collection of Tokens to define which functions depend upo
 |LoadedReverseIPTagsToken| States that the reverse iptags have been loaded to the Ethernet connected chips on the SpiNNaker Machine|
 |LoadedIPTagsToken| States that the iptags have been loaded to the Ethernet connected chips on the SpiNNaker Machine|
 
-
 The tool chain expects to be able to extract a number of PACMAN objects at the end of the algorithm execution. This is mainly for transmitting the objects onto the SpiNNaker machine, and supporting data retrieval later-on. These objects are as follows:
 
 |Name|Definition|
@@ -214,10 +213,9 @@ The tool chain expects to be able to extract a number of PACMAN objects at the e
 |MemoryGraphMapper| The PACMAN representation of the mapping between partition able and partitioned graphs.|
 |RanToken| The Token that states that the simulation executed on the SpiNNaker machine|
 
-
 # <a name="Json"></a> Json File Format
 
-we refer you to the documentation on the Json File Format found [here](https://github.com/mossblaser/place-and-route-interchange-format)
+We refer you to the documentation on the Json File Format found [here](https://github.com/mossblaser/place-and-route-interchange-format)
 
 # <a name="Configuration"></a> Configuration
 
@@ -227,7 +225,7 @@ To configure the sPyNNaker front end to use your algorithms, you must first have
     application_to_machine_graph_algorithms = PartitionAndPlacePartitioner
     machine_graph_to_machine_algorithms = GraphEdgeFilter,OneToOnePlacer,RigRoute,BasicTagAllocator,FrontEndCommonEdgeToNKeysMapper,MallocBasedRoutingInfoAllocator,BasicRoutingTableGenerator,MundyRouterCompressor
 
-    
+
     # format is <path1>,<path2>
     extra_xmls_paths = None
 
@@ -494,11 +492,11 @@ machine_graph_to_machine_algorithms = GraphEdgeFilter,RigRouter,RigCommandLineHi
 extra_xmls_paths = PATH_TO_XML_FILE
 ```
 
-6. replace PATH_TO_XML_FILE with a absolute path to the XML file you just wrote.
-7.  (PyNNExamples)[https://github.com/SpiNNakerManchester/PyNNExamples]
-8. run python PyNNExamples/examples/synfire_if_curr_exp.py
+6. Replace PATH_TO_XML_FILE with a absolute path to the XML file you just wrote.
+7. Download (PyNN7Examples)[https://github.com/SpiNNakerManchester/PyNN7Examples] (if using PyNN 0.7) or (PyNN8Examples)[https://github.com/SpiNNakerManchester/PyNN7Examples] (if using PyNN 0.8)
+8. Run the python script examples/synfire_if_curr_exp.py
 
-You should see output like the one below:
+You should see output like this (this needs updating!):
 
 ```
 /usr/bin/python2.7 /home/S06/stokesa6/spinniker/alpha_package_103_git/PyNNExamples/examples/synfire_if_curr_exp.py
@@ -512,7 +510,7 @@ You should see output like the one below:
 2015-10-12 12:02:14 INFO: going to try to boot the machine with scamp
 2015-10-12 12:02:14 INFO: Detected a machine on ip address ******** which has 5138 cores and 864 links
 2015-10-12 12:02:14 INFO: successfully booted the machine with scamp
-2015-10-12 12:02:15 INFO: *** Running Mapper *** 
+2015-10-12 12:02:15 INFO: *** Running Mapper ***
 Allocating virtual identifiers
 |0                           50%                         100%|
  ============================================================
@@ -556,7 +554,7 @@ Verifying the routes from each core travel to the correct locations
 |0                           50%                         100%|
  ============================================================
 2015-10-12 12:02:16 INFO: Time to map model: 0:00:00.791293
-2015-10-12 12:02:16 INFO: *** Generating Output *** 
+2015-10-12 12:02:16 INFO: *** Generating Output ***
 Generating data specifications
 |0                           50%                         100%|
  ============================================================
@@ -581,7 +579,7 @@ Loading executables onto the machine
 Initialising buffers
 |0                           50%                         100%|
  ============================================================
-2015-10-12 12:02:18 INFO: *** Running simulation... *** 
+2015-10-12 12:02:18 INFO: *** Running simulation... ***
 Loading buffers (12 bytes)
 |0                           50%                         100%|
  ============================================================
@@ -874,9 +872,9 @@ Process finished with exit code 0
 
 ```
 
-If so, you have just ran the sPyNNaker front end and used 3 external algorithms (RigRouter,RigCommandLineHilbertPlacer,RigAllocator). Now try creating your own algorithms and XML files and start experimenting.
+If so, you have just run the sPyNNaker front end and used 3 external algorithms (RigRouter,RigCommandLineHilbertPlacer,RigAllocator). Now try creating your own algorithms and XML files and start experimenting.
 
 
 # <a name="Trouble"></a> Troubleshooting
 
-no issues have come about yet.
+We are not aware of any issues with this at present.

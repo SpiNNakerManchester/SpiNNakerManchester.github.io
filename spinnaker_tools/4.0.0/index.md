@@ -9,10 +9,10 @@ spinnaker_tools contains all the requirements for building C binaries for execut
  * Spin1 API, the SpiNNaker low-level hardware abstraction API.
  * ybug, for low-level execution of binaries and debugging.
  * tools and Makefiles, for constructing executables to be run on SpiNNaker.
- 
+
 # Installation
 
-1. [Install Development Dependencies](/common_pages/3.0.0/Compiler.html)
+1. [Install Development Dependencies](/common_pages/4.0.0/Compiler.html)
 1. [Install Spinnaker Tools](#SpinnakerTools)
 
 Once you've got a working development environment:
@@ -22,7 +22,7 @@ Once you've got a working development environment:
  * [Creating a Makefile for SpiNNaker C projects](#Makefile)
 
 # <a name="SpinnakerTools"></a> SpiNNakerTools Installation
-1. Download the current version of SpiNNaker Tools from [here](https://github.com/SpiNNakerManchester/spinnaker_tools/releases/download/v3.1.0/spinnaker_tools_3.1.0.tar.gz)
+1. Download the current version of SpiNNaker Tools from [here](https://github.com/SpiNNakerManchester/spinnaker_tools/releases/download/v4.0.0/spinnaker_tools_4.0.0.tar.gz)
 1. Extract the archive to the location of your choice.
 1. Create an environment variable ```SPINN_DIRS``` that points at the location of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to C:\spinnaker_tools\, you should set the environment variable to /c/spinnaker_tools).
 1. Add the tools folder in the extracted archive to your ```PATH``` environment variable.  This does not need to be a POSIX path on Windows e.g. C:\spinnaker_tools\tools is fine on Windows, or /spinnaker_tools/tools on Linux or Mac.
