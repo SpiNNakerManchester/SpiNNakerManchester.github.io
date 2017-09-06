@@ -35,3 +35,4 @@ On windows, the instructions are similar, but subtly different:
   ```pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl```
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:  
 ```TCL_LIBRARY: C:\Python27\tcl\tcl8.5```  
+```TK_LIBRARY: C:\Python27\tcl\tk8.5```

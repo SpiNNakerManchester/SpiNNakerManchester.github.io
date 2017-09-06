@@ -25,7 +25,7 @@ If you already have installed the SpiNNakerGraphFrontEnd previously, you will ne
 ```[sudo] pip uninstall SpiNNakerGraphFrontEnd```
 
 1. Install SpiNNakerGraphFrontEnd
-```[sudo] pip install "SpiNNakerGraphFrontEnd == 4.0.0"```
+```[sudo] pip install "SpiNNakerGraphFrontEnd == 1!4.0.0"```
 
 You can now [configure](#Configuration) your environment.
 
@@ -36,7 +36,7 @@ If you already have installed the SpiNNakerGraphFrontEnd previously, you will ne
 ```[sudo] pip uninstall SpiNNakerGraphFrontEnd```
 
 1. Install   SpiNNakerGraphFrontEnd
-```pip install "SpiNNakerGraphFrontEnd == 4.0.0" --user```
+```pip install "SpiNNakerGraphFrontEnd == 1!4.0.0" --user```
 
 You can now [configure](#Configuration) your environment.
 
@@ -55,7 +55,7 @@ To install the tools:
 1. Activate your virtualenv, ```<name>```
 ```source <name>/bin/activate```
 1. Install SpiNNakerGraphFrontEnd
-```pip install "SpiNNakerGraphFrontEnd == 4.0.0"```
+```pip install "SpiNNakerGraphFrontEnd == 1!4.0.0"```
 
 You can now [configure](#Configuration) your environment.
 

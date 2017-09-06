@@ -6,7 +6,7 @@ This guide will help you to install the tools required for development with the 
 
 The steps required are:
 
-1. [Install a compiler and spinnaker_tools](/spinnaker_tools/4.0.0/)
+1. [Install a compiler and spinnaker_tools](/spinnaker_tools/3.1.0/)
 1. [Install spinn_common Library](#spinn_common) (for additional utility, mathematical and efficiency library functions)
 1. [Install SpiNNFrontEndCommon Library](#SpinnFrontEndCommon) (for front-end development support)
 
@@ -17,7 +17,6 @@ The spinn_common library will be installed into the SpiNNaker Tools installation
 1. Extract the archive to the location of your choice.
 1. In the directory of the extracted archive, run ```make```.
 1. Run ```make install```.
-
 
 # <a name="SpinnFrontEndCommon"></a> SpiNNFrontEndCommon Library Installation
 The SpiNNFrontEndCommon library will be installed into the SpiNNaker Tools installation directory, as set up above.
