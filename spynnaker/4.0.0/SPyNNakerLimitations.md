@@ -92,7 +92,7 @@ All parameters and their ranges are under software control.
 
 Weights are held as 16-bit integers, with their range determined at compile-time to suit the application; this limits the overall range of weights that can be represented, with the smallest representable weight being dependent on the largest weights specified.
 
-There is a limit on then length of delays of between 1 and 144 time steps (i.e. 1 - 144ms when using 1ms time steps, or 0.1 - 14.4ms when using 0.1ms time steps).  Delays of more than 16 time steps require an additional "delay population" to be added; this is done automatically by the software when such delays are detected.
+There is a limit on then length of delays of between 1 and 144 time steps (i.e. 1 to 144ms when using 1ms time steps, or 0.1 to 14.4ms when using 0.1ms time steps).  Delays of more than 16 time steps require an additional "delay population" to be added; this is done automatically by the software when such delays are detected.
 
 Membrane voltages and other neuron parameters are generally held as 32-bit fixed point numbers in the s16.15 format.  Membrane voltages are held in mV.
 
