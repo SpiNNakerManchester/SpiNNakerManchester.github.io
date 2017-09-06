@@ -1,3 +1,3 @@
 ---
-redirect_to: /spynnaker/3.0.0/PyNNOnSpinnakerInstall.html
+redirect_to: /spynnaker/4.0.0/PyNNOnSpinnakerInstall.html
 ---
