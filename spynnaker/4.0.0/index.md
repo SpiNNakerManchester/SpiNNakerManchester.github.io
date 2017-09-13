@@ -1,5 +1,5 @@
 ---
-title: sPyNNaker version 3.0.0
+title: sPyNNaker version 4.0.0
 layout: default
 ---
 

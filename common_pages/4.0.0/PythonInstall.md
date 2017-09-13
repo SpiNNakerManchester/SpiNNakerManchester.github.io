@@ -4,7 +4,7 @@ title: Python Dependencies for SpiNNaker
 
 This guide will detail how to install the Python dependencies for SpiNNaker.
 
-This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Windows 8.1 64-bit, and Mac OS X Mavericks, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7, 8 and 10, and Mac OS X.
+This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Ubuntu Linux 16.04 LTS 64-bit, Windows 8.1 64-bit, Mac OS X Mavericks and Mac OS X Yosemite, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7, 8 and 10, and Mac OS X.
 
 * [Ubuntu Linux Requirements](#UbuntuPython)
 * [Fedora Linux Requirements](#FedoraPython)
@@ -14,14 +14,15 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 * [Windows PATH settings](#WindowsPath)
 
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
-1. Install Python  
+1. Install Python
 ```sudo apt-get install python2.7```
 1. Install pip  
 ```sudo apt-get install python-pip```  
 ```sudo pip install --upgrade pip```
 
+
 ## <a name="FedoraPython"></a> Fedora Linux Requirements
-1. Install Python  
+1. Install Python
 ```sudo dnf install python```
 1. Install pip  
 ```sudo dnf install python-pip```  
@@ -29,8 +30,8 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 
 ## <a name="MacOSXPython"></a> Mac OS X Requirements
 1. Download and install <a href="https://www.macports.org/install.php" target="_blank">MacPorts</a> (Requires [XCode](https://developer.apple.com/technologies/tools/) Developer Tools and an X11 windowing environment such as [XQuartz](https://www.xquartz.org/)).
-1. Install python  
-```sudo port install python27```  
+1. Install python
+```sudo port install python27```
 ```sudo port select --set python python27```
 1. Install pip  
 ```sudo port install py27-pip```  
@@ -69,5 +70,5 @@ Continue to [edit your PATH](#WindowsPath).
     1. Select "Environment Variables"
     1. Select the "Path" in the "System Variables" box at the bottom
     1. Click on "Edit"
-    1. Add the new directory by putting it before the existing string, followed by a single semi-colon; if you installed the dependencies to the default/recommended locations, prepend Path with:  
-```C:\Python27;C:\Python27\Scripts; ``` 
+    1. Add the new directory by putting it before the existing string, followed by a single semi-colon; if you installed the dependencies to the default/recommended locations, prepend Path with:
+```C:\Python27;C:\Python27\Scripts; ```

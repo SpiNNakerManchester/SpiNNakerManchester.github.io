@@ -8,20 +8,20 @@ To install and create a virtualenv on any platform other than Windows:
 
 1. Install virtualenv  
 ```sudo pip install virtualenv```
-1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice
 ```virtualenv <name>```
-1. Activate the virtualenv  
+1. Activate the virtualenv
 ```source <name>/bin/activate```
 
 On windows, the instructions are similar, but subtly different:
 
 1. Open a console as administrator and cd to your home directory  
 ```cd %HOMEPATH%```
-1. Install virtualenv  
+1. Install virtualenv
 ```pip install virtualenv```
-1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice  
+1. Create a virtualenv; ```<name>``` in the following can be replaced by the name of your choice
 ```virtualenv <name>```
-1. Activate the virtualenv  
+1. Activate the virtualenv
 ```<name>\Scripts\activate.bat ```
 1. Install numpy:  
   1. On 32-bit Windows:  

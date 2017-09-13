@@ -7,15 +7,15 @@ The software is currently being released under the GPL version 3 license listed 
 
 # Paper Authorship
 
-We request that papers based off work that uses tool chain should contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to determine how to allocate contributions.
+We request that papers based off work that uses the software tool chain should contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to determine how to allocate contributions.
 
-In the future the software is expected to be reported in a research paper, at which point contacting the software team requirement will be rescinded and a citation to the research paper will be required. 
+In the future the software is expected to be reported in a research paper, at which point the requirement to contact the software team will be rescinded and a citation to the research paper will be required.
 
 # Modifications
 
-The software is open source and therefore we support, in principle, the modification of any aspect of the tool chain, but we reserve the right to not support maintenance of said software once modified. 
+The software is open source and therefore in principle we support the modification of any aspect of the tool chain, but we reserve the right to not support maintenance of said software once modified.
 
-Any modifications which are believed to be useful to the tool chain as a whole, we kindly ask you to contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to be supported in discussions on if and how to integrate the modifications into future releases of the tool chain. 
+If you have made any modifications which you believe to be useful to the tool chain as a whole, we kindly ask you to contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to be supported in discussions on if and how to integrate the modifications into future releases of the tool chain.
 
 # Contributors
 
@@ -23,9 +23,9 @@ For up to date information on Contributors see the graphs/contributors pages on 
 
 For example [https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors)
 
-As of the August 2017 the contributors included:
+As of September 2017 the contributors included:
 
-(Names as per github and in alphebetical order of their github id)
+(Names as per GitHub and in alphabetical order of their GitHub id)
 
 [Alan Stokes](https://github.com/alan-stokes)
 

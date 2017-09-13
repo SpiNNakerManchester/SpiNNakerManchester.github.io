@@ -10,7 +10,7 @@ This guide will detail the limitations that sPyNNaker imposes on users of PyNN, 
 sPyNNaker7 implements a subset of the [PyNN 0.7 API](http://neuralensemble.org/trac/PyNN/wiki/API-0.7).
 
 sPyNNaker8 implements a subset of the [PyNN 0.8 API]
-(http://neuralensemble.org/docs/PyNN/0.8/).
+(http://neuralensemble.org/docs/PyNN/0.8/api_reference.html).
 
 
 # Neuron Models
@@ -24,6 +24,10 @@ sPyNNaker currently supports the following model types:
 1. extra_models.IZK_cond_exp (PyNN 0.7) or extra_models.Izhikevich_cond (PyNN 0.8): Conductance based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. extra_models.IFCurrDelta: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory delta synaptic input per neuron
 1. extra_models.IFCurrExpCa2Adaptive: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory exponentially decaying, calcium-adaptive synaptic input per neuron
+<!--
+Commented out as doesn't work just now
+1. extra_models.IfCondExpStoc: Conductance-based leaky intergate and fire with a stochastic Maass threshold.
+-->
 
 Note that there are also further restrictions on what plasticity types are supported when used with the above models.
 
@@ -39,7 +43,7 @@ sPyNNaker currently supports these two models for injecting spikes into a PyNN m
 
 Currently, only the ```i_offset``` parameter of the neural models can be used to inject current directly; there is no support for noisy or step-based current input.  Step-based current input can be achieved by updating ```i_offset``` between calls to ```run```.
 
-A third, none standard PyNN interface, way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device. A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
+A third, non-standard PyNN interface, way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device. A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
 
 
 # Connectors
@@ -49,11 +53,13 @@ sPyNNaker currently supports the following connector types:
 1. AllToAllConnector: All neurons in the pre-population are connected to all neurons in the post-population
 1. DistanceDependentProbabilityConnector: The connectivity is random with a probability that depends on the distance between the neurons in the pre and post populations.
 1. FixedNumberPreConnector: A fixed number of randomly selected neurons in the pre-population are connected to all neurons in the post-population.
+1. FixedNumberPostConnector: A fixed number of randomly selected neurons in the post-population are connected to all neurons in the pre-population.
 1. FixedProbabilityConnector: The connectivity is random with a fixed probability of connection between any pair of neurons.
 1. FromFileConnector: The connectivity is explicitly specified in a file, including all weights and delays.  Note that this connector will result in slower operation of the tools.
 1. FromListConnector: The connectivity is explicitly specified in a list, including all weights and delays.  Note that this connector will result in slower operation of the tools. 
 1. MultapseConnector (PyNN 0.7) or FixedTotalNumberConnector (PyNN 0.8): A fixed number of randomly selected connections are made.
 1. OneToOneConnector: The neuron with index i in the pre-population is connected to the neuron with index i in the post-population.
+1. SmallWorldConnector: Connect cells so as to create a small-world network.
 
 # Plasticity
 
@@ -102,5 +108,4 @@ Membrane voltages and other neuron parameters are generally held as 32-bit fixed
 Projection links between two sub-populations that were initially defined as connected are removed by the software the number if the number of connections between the two sub-populations is determined to be zero when the projection is realised in
 the software's mapping process.
 
-The SpiNNaker communication fabric can drop packets, so there is the chance that during
-execution that spikes might not reach their destination (or might only reach some of their destinations).  The software attempts to recover from such losses through a reinjection mechanism, but this will only work if the overall spike rate is not high enough to overload the communications fabric in the first place.
+The SpiNNaker communication fabric can drop packets, so there is the chance that during execution that spikes might not reach their destination (or might only reach some of their destinations).  The software attempts to recover from such losses through a reinjection mechanism, but this will only work if the overall spike rate is not high enough to overload the communications fabric in the first place.
