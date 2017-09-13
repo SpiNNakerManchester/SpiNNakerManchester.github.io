@@ -266,7 +266,7 @@ To achieve the second, please follow the following steps:
 |sPyNNaker8NewModelTemplate|PyNN0.8|
 |PyNN7Examples|PyNN0.75|
 |PyNN8Examples|PyNN0.8|
-|IntroLab|PyNN0.75|
+|IntroLab|PyNN0.8|
 
 ## Eclipse
 
@@ -301,7 +301,7 @@ Update the dependencies for the following modules, adding the indicated module:
 |sPyNNaker8NewModelTemplate|PyNN0.8.3|
 |PyNN7Examples|PyNN0.7.5|
 |PyNN8Examples|PyNN0.8.3|
-|IntroLab|PyNN0.7.5|
+|IntroLab|PyNN0.8.3|
 
 # <a name="PyNNInstall"></a> PyNN Install
 Once the modules have been installed, the final step is to create the pyNN.spiNNaker links.  This is done as follows:
