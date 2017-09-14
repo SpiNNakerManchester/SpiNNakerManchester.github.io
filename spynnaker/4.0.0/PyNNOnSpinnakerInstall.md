@@ -25,9 +25,9 @@ __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no l
 These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator" - without the ```sudo```).
 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
-```[sudo] pip uninstall pyNN-SpiNNaker```
-```[sudo] pip uninstall sPyNNaker```
-```[sudo] pip uninstall sPyNNakerExternalDevicesPlugin```
+```[sudo] pip uninstall pyNN-SpiNNaker```  
+```[sudo] pip uninstall sPyNNaker```  
+```[sudo] pip uninstall sPyNNakerExternalDevicesPlugin```  
 ```[sudo] pip uninstall sPyNNakerExtraModelsPlugin```
 
 1. For PyNN 0.7 support:
@@ -47,9 +47,9 @@ You can now [configure](#Configuration) your environment.
 These instructions will install the required packages only for the current user (in your home directory).  This can avoid issues where you don't have root access to the machine you are installing on, or on a shared machine where the dependencies might otherwise conflict with those of other users.
 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
-```pip uninstall pyNN-SpiNNaker```
-```pip uninstall sPyNNaker```
-```pip uninstall sPyNNakerExternalDevicesPlugin```
+```pip uninstall pyNN-SpiNNaker```  
+```pip uninstall sPyNNaker```  
+```pip uninstall sPyNNakerExternalDevicesPlugin```  
 ```pip uninstall sPyNNakerExtraModelsPlugin```
 
 1. For PyNN 0.7 support:
@@ -73,9 +73,9 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 1. Activate your virtualenv, ```<name>```
 ```source <name>/bin/activate```
 1. Uninstall the existing tools
-```pip uninstall pyNN-SpiNNaker```
-```pip uninstall sPyNNaker```
-```pip uninstall sPyNNakerExternalDevicesPlugin```
+```pip uninstall pyNN-SpiNNaker```  
+```pip uninstall sPyNNaker```  
+```pip uninstall sPyNNakerExternalDevicesPlugin```  
 ```pip uninstall sPyNNakerExtraModelsPlugin```
 
 To install the tools:
@@ -100,8 +100,8 @@ When SpyNNaker is first called, if a configuration file is not found, it will cr
 ```python -c "import pyNN.spiNNaker"```
 
 Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
-```[Machine] ```
-```machineName = None ```
+```[Machine] ```  
+```machineName = None ```  
 ```version = None ```
 
 If you have a SpiNNaker board, then go to [Local Board](#LocalBoard) if you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
