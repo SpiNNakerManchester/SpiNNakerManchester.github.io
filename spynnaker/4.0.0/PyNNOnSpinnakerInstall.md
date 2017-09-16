@@ -24,44 +24,53 @@ __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no l
 # <a name="Central"></a> Standard Central Installation
 These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator" - without the ```sudo```).
 
-If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:  
 ```[sudo] pip uninstall pyNN-SpiNNaker```  
 ```[sudo] pip uninstall sPyNNaker```  
 ```[sudo] pip uninstall sPyNNakerExternalDevicesPlugin```  
 ```[sudo] pip uninstall sPyNNakerExtraModelsPlugin```
 
-1. For PyNN 0.7 support:
-  1. Install sPyNNaker7:
-    ```[sudo] pip install "sPyNNaker7 == 1!4.0.0"```
-  1. Install pyNN-SpiNNaker:
-    ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
-1. For PyNN 0.8 support:
-  1. Install sPyNNaker8:
-    ```[sudo] pip install "sPyNNaker8 == 1!4.0.0"```
-  1. Install pyNN-SpiNNaker:
-    ```[sudo] python -m spynnaker8.setup-pynn```
+
+**For PyNN 0.7 support:**
+
+1. Install sPyNNaker7:  
+  ```[sudo] pip install "sPyNNaker7 == 1!4.0.0"```
+1. Install pyNN-SpiNNaker:  
+  ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
+
+
+**For PyNN 0.8 support:**
+
+1. Install sPyNNaker8:  
+  ```[sudo] pip install "sPyNNaker8 == 1!4.0.0"```
+1. Install pyNN-SpiNNaker:  
+  ```[sudo] python -m spynnaker8.setup-pynn```
 
 You can now [configure](#Configuration) your environment.
 
 # <a name="User"></a> User-only Installation
 These instructions will install the required packages only for the current user (in your home directory).  This can avoid issues where you don't have root access to the machine you are installing on, or on a shared machine where the dependencies might otherwise conflict with those of other users.
 
-If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:  
 ```pip uninstall pyNN-SpiNNaker```  
 ```pip uninstall sPyNNaker```  
 ```pip uninstall sPyNNakerExternalDevicesPlugin```  
 ```pip uninstall sPyNNakerExtraModelsPlugin```
 
-1. For PyNN 0.7 support:
-  1. Install sPyNNaker7:
-    ```[sudo] pip install "sPyNNaker7 == 1!4.0.0" --user```
-  1. Install pyNN-SpiNNaker:
-    ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
-1. For PyNN 0.8 support:
-  1. Install sPyNNaker8:
-    ```[sudo] pip install "sPyNNaker8 == 1!4.0.0" --user```
-  1. Install pyNN-SpiNNaker:
-    ```[sudo] python -m spynnaker8.setup-pynn```
+**For PyNN 0.7 support:**
+
+1. Install sPyNNaker7:  
+  ```[sudo] pip install "sPyNNaker7 == 1!4.0.0" --user```
+1. Install pyNN-SpiNNaker:  
+  ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
+
+
+**For PyNN 0.8 support:**
+
+1. Install sPyNNaker8:  
+  ```[sudo] pip install "sPyNNaker8 == 1!4.0.0" --user```
+1. Install pyNN-SpiNNaker:  
+  ```[sudo] python -m spynnaker8.setup-pynn```
 
 You can now [configure](#Configuration) your environment.
 
@@ -70,36 +79,42 @@ Follow [these instructions](/common_pages/4.0.0/VirtualEnv.html) to install the 
 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
 
-1. Activate your virtualenv, ```<name>```
+1. Activate your virtualenv, ```<name>```  
 ```source <name>/bin/activate```
-1. Uninstall the existing tools
+1. Uninstall the existing tools  
 ```pip uninstall pyNN-SpiNNaker```  
 ```pip uninstall sPyNNaker```  
 ```pip uninstall sPyNNakerExternalDevicesPlugin```  
 ```pip uninstall sPyNNakerExtraModelsPlugin```
 
-To install the tools:
+To install the tools, first, activate your virtualenv, ```<name>```:
 
-1. Activate your virtualenv, ```<name>```
 ```source <name>/bin/activate```
-1. For PyNN 0.7 support:
-  1. Install sPyNNaker7:
+
+**For PyNN 0.7 support:**
+
+
+1. Install sPyNNaker7:  
     ```[sudo] pip install "sPyNNaker7 == 1!4.0.0"```
-  1. Install pyNN-SpiNNaker:
+1. Install pyNN-SpiNNaker:  
     ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
-1. For PyNN 0.8 support:
-  1. Install sPyNNaker8:
-    ```[sudo] pip install "sPyNNaker8 == 1!4.0.0"```
-  1. Install pyNN-SpiNNaker:
-    ```[sudo] python -m spynnaker8.setup-pynn```
+
+
+**For PyNN 0.8 support:**
+
+
+1. Install sPyNNaker8:  
+  ```[sudo] pip install "sPyNNaker8 == 1!4.0.0"```
+1. Install pyNN-SpiNNaker:  
+  ```[sudo] python -m spynnaker8.setup-pynn```
 
 You can now [configure](#Configuration) your environment.
 
 # <a name="Configuration"></a> Configuration
-When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
+When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:  
 ```python -c "import pyNN.spiNNaker"```
 
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
 ```[Machine] ```  
 ```machineName = None ```  
 ```version = None ```
@@ -123,8 +138,10 @@ now go to [Network Configuration](#Network Configuration).
 
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
+
   1. PyNN 0.7 Examples are [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.tar.gz) (tar.gz)
   1. PyNN 0.8 Examples are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
+
 1. Extract the archive
 1. Go to the "examples" folder
 1. Run:
