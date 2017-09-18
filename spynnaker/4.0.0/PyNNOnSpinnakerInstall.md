@@ -37,6 +37,8 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
   ```[sudo] pip install "sPyNNaker7 == 1!4.0.0"```
 1. Install pyNN-SpiNNaker:  
   ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
+1. Install Matplotlib:  
+  ```[sudo] pip install matplotlib```
 
 
 **For PyNN 0.8 support:**
@@ -45,6 +47,8 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
   ```[sudo] pip install "sPyNNaker8 == 1!4.0.0"```
 1. Install pyNN-SpiNNaker:  
   ```[sudo] python -m spynnaker8.setup-pynn```
+1. Install Matplotlib:  
+  ```[sudo] pip install matplotlib```
 
 You can now [configure](#Configuration) your environment.
 
@@ -60,17 +64,21 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 **For PyNN 0.7 support:**
 
 1. Install sPyNNaker7:  
-  ```[sudo] pip install "sPyNNaker7 == 1!4.0.0" --user```
+  ```pip install "sPyNNaker7 == 1!4.0.0" --user```
 1. Install pyNN-SpiNNaker:  
-  ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
+  ```python -m spynnaker7.pyNN.setup-pynn```
+1. Install Matplotlib:  
+  ```pip install matplotlib --user```
 
 
 **For PyNN 0.8 support:**
 
 1. Install sPyNNaker8:  
-  ```[sudo] pip install "sPyNNaker8 == 1!4.0.0" --user```
+  ```pip install "sPyNNaker8 == 1!4.0.0" --user```
 1. Install pyNN-SpiNNaker:  
-  ```[sudo] python -m spynnaker8.setup-pynn```
+  ```python -m spynnaker8.setup-pynn```
+1. Install Matplotlib:  
+  ```pip install matplotlib --user```
 
 You can now [configure](#Configuration) your environment.
 
@@ -95,18 +103,22 @@ To install the tools, first, activate your virtualenv, ```<name>```:
 
 
 1. Install sPyNNaker7:  
-    ```[sudo] pip install "sPyNNaker7 == 1!4.0.0"```
+    ```pip install "sPyNNaker7 == 1!4.0.0"```
 1. Install pyNN-SpiNNaker:  
-    ```[sudo] python -m spynnaker7.pyNN.setup-pynn```
+    ```python -m spynnaker7.pyNN.setup-pynn```
+1. Install Matplotlib:  
+  ```pip install matplotlib```    
 
 
 **For PyNN 0.8 support:**
 
 
 1. Install sPyNNaker8:  
-  ```[sudo] pip install "sPyNNaker8 == 1!4.0.0"```
+  ```pip install "sPyNNaker8 == 1!4.0.0"```
 1. Install pyNN-SpiNNaker:  
-  ```[sudo] python -m spynnaker8.setup-pynn```
+  ```python -m spynnaker8.setup-pynn```
+1. Install Matplotlib:  
+  ```pip install matplotlib```
 
 You can now [configure](#Configuration) your environment.
 
