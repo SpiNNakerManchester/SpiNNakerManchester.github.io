@@ -18,7 +18,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ```sudo apt-get install python2.7```
 1. Install pip  
 ```sudo apt-get install python-pip```  
-```sudo pip install --upgrade pip```
+```sudo pip install --upgrade pip setuptools wheel```
 
 
 ## <a name="FedoraPython"></a> Fedora Linux Requirements
@@ -26,7 +26,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ```sudo dnf install python```
 1. Install pip  
 ```sudo dnf install python-pip```  
-```sudo pip install --upgrade pip```
+```sudo pip install --upgrade pip setuptools wheel```
 
 ## <a name="MacOSXPython"></a> Mac OS X Requirements
 1. Download and install <a href="https://www.macports.org/install.php" target="_blank">MacPorts</a> (Requires [XCode](https://developer.apple.com/technologies/tools/) Developer Tools and an X11 windowing environment such as [XQuartz](https://www.xquartz.org/)).
@@ -36,7 +36,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 1. Install pip  
 ```sudo port install py27-pip```  
 ```sudo port select --set pip pip27```  
-```sudo pip install --upgrade pip```
+```sudo pip install --upgrade pip setuptools wheel```
 
 ## <a name="Windows32Python"></a> 32-bit Windows Requirements
 1. Download and install [Python](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/python-2.7.6.msi)
