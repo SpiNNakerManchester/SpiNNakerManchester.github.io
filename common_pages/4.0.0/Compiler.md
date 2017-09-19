@@ -50,6 +50,12 @@ where ```<install-location>``` is the place where you extracted the file.
 **NOTE:** take into account your Mac version.
 
 ## <a name="WindowsDev"></a> Development Dependencies for Windows
+Users with an up-to-date version of Windows 10 64-bit may want to use the [Linux Subsystem for Windows 10](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide?f=255&MSPPError=-2147217396).  This has been tested with an Ubuntu 14.04 install and seems to work well.
+For graphics content, you will also need to install and run [an X-Windows Server](https://sourceforge.net/projects/xming/).
+After installing, you should follow the [Ubuntu installation instructions](#Ubuntu64Dev).
+
+All other Windows Users should follow the instructions below.
+
 1. Download the prepackaged [MinGW Environment](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win-dev/MinGW.zip)
 1. Extract the downloaded archive to the location of your choice
 1. Create a shortcut to MinGW/msys/1.0/msys.bat and add it to your start menu

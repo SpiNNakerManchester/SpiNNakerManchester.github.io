@@ -51,6 +51,10 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 Continue to [edit your PATH](#WindowsPath).
 
 ## <a name="Windows64Python"></a> 64-bit Windows Requirements
+Users with an up-to-date version of Windows 10 64-bit may want to use the [Linux Subsystem for Windows 10](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide?f=255&MSPPError=-2147217396).  This has been tested with an Ubuntu 14.04 install and seems to work well.
+For graphics content, you will also need to install and run [an X-Windows Server](https://sourceforge.net/projects/xming/).
+After installing, you should follow the [Ubuntu installation instructions](#UbuntuPython).
+
 1. Download and install [Python](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/python-2.7.6.amd64.msi)
 1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/setuptools-5.8.win-amd64-py2.7.exe) and [pip] (https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/pip-1.5.6.win-amd64-py2.7.exe)
 1. Update pip - from an administrative console, run:  
