@@ -28,6 +28,7 @@ This page contains links to various technical documents about SpiNNaker.
 * [Interfacing AER devices to SpiNNaker using an FPGA](fpga_aer/)
 * [SpOmnibot (TUM SpiNNaker Robot)](spomnibot/)
 * [Pushbot](push_bot/)
+* [SpiNN-5 FPGA Links](spin5-links.pdf)
 
 # Low-Level Software Documents
 
