@@ -186,8 +186,8 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
-    1. PyNN 0.7 Examples are [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.tar.gz) (tar.gz)
-    2. PyNN 0.8 Examples are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
+    * __PyNN 0.7 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.tar.gz) (tar.gz)
+    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
 
 1. Extract the archive
 1. Go to the "examples" folder
@@ -197,9 +197,12 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
 1. Once the example has finished, you should see a graph that will look something like this (for PyNN 0.7):
-![VABenchmarkSpikes](va7_benchmark.png)
-or this (for PyNN 0.8):
-![VABenchmarkSpikes](va8_benchmark.png)
+
+   ![VABenchmarkSpikes](va7_benchmark.png)
+
+   or this (for PyNN 0.8):
+
+   ![VABenchmarkSpikes](va8_benchmark.png)
 
 If you get the output above, you have successfully installed your system.
 
@@ -227,6 +230,6 @@ If you get the output above, you have successfully installed your system.
 
        _tkinter.TclError: no display name and no $DISPLAY environment variable
 
-    it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in $DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc
+    it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in `$DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc`
 
     In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
