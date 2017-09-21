@@ -186,8 +186,8 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
-  1. PyNN 0.7 Examples are [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.tar.gz) (tar.gz)
-  2. PyNN 0.8 Examples are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
+    1. PyNN 0.7 Examples are [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.tar.gz) (tar.gz)
+    2. PyNN 0.8 Examples are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
 
 1. Extract the archive
 1. Go to the "examples" folder
@@ -205,11 +205,11 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="Trouble"></a> Troubleshooting
 
-1. If you experience the error:
+1. If on Windows you experience the error:
 
        **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)**
 
-   Then to solve it, edit C:\Python27\Lib\mimetypes.py and add these codes:
+   Then to solve it, edit `C:\Python27\Lib\mimetypes.py` and add these codes:
 
    ```python
    if sys.getdefaultencoding() != 'gbk':
@@ -219,11 +219,14 @@ If you get the output above, you have successfully installed your system.
 
    before the following line:
 
-       default_encoding = sys.getdefaultencoding()
+   ```python
+   default_encoding = sys.getdefaultencoding()
+   ```
 
 2. In OSX, if experiencing the following tkinter error:
 
        _tkinter.TclError: no display name and no $DISPLAY environment variable
 
     it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in $DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc
+
     In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
