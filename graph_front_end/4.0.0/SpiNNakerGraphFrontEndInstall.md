@@ -10,7 +10,7 @@ This guide details how to install the release version of the tools required to r
 
 You must first install the [Python Dependencies](/common_pages/4.0.0/PythonInstall.html).  Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements, depending on the needs of your working environment.
 
-* [Python Dependencies](/common_pages/3.0.0/PythonInstall.html)
+* [Python Dependencies](/common_pages/4.0.0/PythonInstall.html)
 * [Standard Central Installation](#Central)
 * [User-Only Installation](#User)
 * [Virtualenv Installation](#Virtualenv)

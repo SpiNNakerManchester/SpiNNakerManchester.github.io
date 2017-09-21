@@ -122,6 +122,20 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 To install the tools, first, activate your virtualenv, `<name>`:
 
     source <name>/bin/activate
+    
+## Windows 64-bit:
+
+1. Install numpy (optional if you are going to use a Virtual Env):
+```pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/numpy-1.13.1.mkl-cp27-cp27m-win_amd64.whl```
+1. Install scipy (optional if you are going to use a Virtual Env):
+``` pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl```
+
+## Windows 32-bit:
+
+1. Install numpy (optional if you are going to use a Virtual Env):  
+```pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl```
+1. Install scipy (optional if you are going to use a Virtual Env):  
+``` pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl```
 
 ## For PyNN 0.7 support:
 

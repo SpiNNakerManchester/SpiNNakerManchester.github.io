@@ -43,9 +43,9 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/setuptools-5.8.win32-py2.7.exe) and [pip] (https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/pip-1.5.6.win32-py2.7.exe)
 1. Update pip - from an administrative console, run:  
 ```pip install --upgrade pip```
-1. Install numpy (optional if you are going to use a Virtual Env):
+1. Install numpy (optional if you are going to use a Virtual Env):  
 ```pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl```
-1. Install scipy (optional if you are going to use a Virtual Env):
+1. Install scipy (optional if you are going to use a Virtual Env):  
 ``` pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl```
 
 Continue to [edit your PATH](#WindowsPath).
