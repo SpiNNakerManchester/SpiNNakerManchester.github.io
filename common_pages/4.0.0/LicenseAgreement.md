@@ -35,9 +35,9 @@ As of September 2017 the contributors included:
 
 [Christian Y. Brenninkmeijer](https://github.com/Christian-B)
 
-[Donal Fellows](https://github.com/dkfellows)
+[Donal K. Fellows](https://github.com/dkfellows)
 
-[dr-david-lester](https://github.com/dr-david-lester)
+[David Lester](https://github.com/dr-david-lester)
 
 [Arthur Ceccotti](https://github.com/gmtuca)
 
@@ -49,7 +49,7 @@ As of September 2017 the contributors included:
 
 [Andrew Mundy](https://github.com/mundya)
 
-[neworderofjamie](https://github.com/neworderofjamie)
+[James Knight](https://github.com/neworderofjamie)
 
 [Oliver Rhodes](https://github.com/oliverrhodes)
 
@@ -61,9 +61,10 @@ As of September 2017 the contributors included:
 
 [Sara Summerton](https://github.com/sara-es)
 
-[sergiodavies](https://github.com/sergiodavies)
+[Sergio Davies](https://github.com/sergiodavies)
 
-[sfurber](https://github.com/sfurber)
+[Stephen Furber](https://github.com/sfurber)
 
 [Joanna Moy](https://github.com/shrinkingviolet)
 
+[Cameron Patterson](https://github.com/404)
