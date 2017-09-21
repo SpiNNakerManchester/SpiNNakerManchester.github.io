@@ -41,22 +41,24 @@ On Windows, the instructions are similar, but subtly different:
        <name>\Scripts\activate.bat
 
 1. Install numpy:
-  * On 32-bit Windows:
 
-        pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl
+   * On 32-bit Windows:
 
-  * On 64-bit Windows:
+         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl
 
-        pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/numpy-1.13.1.mkl-cp27-cp27m-win_amd64.whl
+   * On 64-bit Windows:
+
+         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/numpy-1.13.1.mkl-cp27-cp27m-win_amd64.whl
 
 1. Install scipy:
-  * On 32-bit Windows:
 
-        pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl
+   * On 32-bit Windows:
 
-  * On 64-bit Windows:
+         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl
 
-        pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl
+   * On 64-bit Windows:
+
+         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl
 
 1. *Optional:* To make matplotlib work within a virtualenv, create the following environment variables:
 
