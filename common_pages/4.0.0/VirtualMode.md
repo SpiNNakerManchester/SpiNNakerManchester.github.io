@@ -11,12 +11,12 @@ This guide will detail how to operate either front end (sPyNNaker, or SpiNNakerG
 
 # How to make the software release operate in "virtual mode"
 
-1. Open either your .spynnaker.cfg (When Using SpyNNaker) or .spinnakerGraphFrontEnd.cfg (when using the SpiNNakerGraphFrontEnd).
-1. Modify the parameters within the [Machine] section.
-1. Modify "width = None" to state the size of your virtual SpiNNaker machine in the x dimension.
-1. Modify "height = None" to state the size of your virtual SpiNNaker machine in the y dimension.
-1. Modify "virtual_board = False" to state "virtual_board = True".
-1. If you wish to represent a virtual SpiNNaker machine which is wired as a toroid, please set "requires_wrap_arounds" from False to True
+1. Open either your `.spynnaker.cfg` (when using SpyNNaker) or `.spinnakerGraphFrontEnd.cfg` (when using the SpiNNakerGraphFrontEnd).
+1. Modify the parameters within the `[Machine]` section.
+1. Modify "`width = None`" to state the size of your virtual SpiNNaker machine in the _x_ dimension.
+1. Modify "`height = None`" to state the size of your virtual SpiNNaker machine in the _y_ dimension.
+1. Modify "`virtual_board = False`" to state "`virtual_board = True`".
+1. If you wish to represent a virtual SpiNNaker machine which is wired as a toroid, please set "`requires_wrap_arounds`" from False to True
 
 # Now what?
 
