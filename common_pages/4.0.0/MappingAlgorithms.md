@@ -16,9 +16,7 @@ published: true
 # <a name="Usage"></a> Usage of this functionality
 
 The content of this page is to support end users whom wish to investigate the
-use of new mapping algorithms to use with the SpiNNaker tool chain.
-
-This functionality allows algorithms coded in any language to be used in conjunction with the tool chain through the use of XML and json files.
+use of new mapping algorithms to use with the SpiNNaker tool chain. This functionality allows algorithms coded in any language to be used in conjunction with the tool chain through the use of XML and JSON files.
 
 **NB:** Updating this part of the software is for advanced users only; you can break your installation of the SpiNNaker tool chain quite profoundly if you get it truly wrong. 
 
@@ -186,17 +184,17 @@ The tool chain also uses this workflow to control when a collection of support a
 |`FrontEndCommon VirtualMachineInterfacer`|The creation of the Python representation of the SpiNNaker Machine|MachineWidth, MachineHeight, MachineHasWrapAroundsFlag| MemoryMachine| True|
 |`FrontEndCommon MachineInterfacer`|The creation of the python representation of the SpiNNaker Machine and the Python interface to the SpiNNaker Machine|IPAddress, BMPDetails, DownedChipsDetails, DownedCoresDetails, BoardVersion, NumberOfBoards, MachineWidth, MachineHeight, AutoDetectBMPFlag, EnableReinjectionFlag, ScampConnectionData, BootPortNum| MemoryMachine, MemoryTransciever| True|
 
-These algorithms use a collection of Tokens to define which functions depend upon each other. These tokens are usually the output from each function. But are summarised below for clarity:
+These algorithms use a collection of Tokens to define which functions depend upon each other. These tokens are usually the output from each function; they are summarised below for clarity:
 
-|Name|Definition|
+|Name|Definition of Generation Condition|
 |:----------------|:-----------------|
-|`RanToken`| states that the algorithm has ran the simulation on the SpiNNaker machine.|
-|`LoadedApplicationDataToken`| States that the algorithm has loaded the data needed by the application onto the SDRAM of the SpiNNaker machine.|
-|`LoadBinariesToken`| States that the algorithm has loaded the application binaries onto the SpiNNaker machine.|
-|`ReloadToken`| States that the reload script has been built.|
-|`LoadedRoutingTablesToken`| States that the routing tables have been loaded onto the chips of the SpiNNaker machine.|
-|`LoadedReverseIPTagsToken`| States that the reverse iptags have been loaded to the Ethernet connected chips on the SpiNNaker machine.|
-|`LoadedIPTagsToken`| States that the iptags have been loaded to the Ethernet connected chips on the SpiNNaker machine.|
+|`RanToken`| The simulation on the SpiNNaker machine.|
+|`LoadedApplicationDataToken`| The data needed by the application has been loaded into the SDRAM of the SpiNNaker machine.|
+|`LoadBinariesToken`| The application binaries have been loaded onto the SpiNNaker machine.|
+|`ReloadToken`| The reload script has been built.|
+|`LoadedRoutingTablesToken`| The routing tables have been loaded onto the SpiNNaker machine.|
+|`LoadedReverseIPTagsToken`| The reverse iptags have been loaded onto the Ethernet connected chips on the SpiNNaker machine.|
+|`LoadedIPTagsToken`| The iptags have been loaded onto the Ethernet connected chips on the SpiNNaker machine.|
 
 The tool chain expects to be able to extract a number of PACMAN objects at the end of the algorithm execution. This is mainly for transmitting the objects onto the SpiNNaker machine, and supporting data retrieval later-on. These objects are as follows:
 
@@ -242,252 +240,252 @@ To run a simple example of using external and internal algorithms, please follow
 2. `git clone https://github.com/mossblaser/place-and-route-interchange-format.git`
 3. Create a XML file with the following data:
 
-```xml
-<algorithms>
-    <algorithm name="RigCommandLineSAPlacer">
-        <command_line_args>
-            <arg>rig_place.py</arg>
-            <arg>--algorithm=sa</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements_path}</arg>
-        </command_line_args>
-        <input_definitions>
-            <parameter>
+    ```xml
+    <algorithms>
+        <algorithm name="RigCommandLineSAPlacer">
+            <command_line_args>
+                <arg>rig_place.py</arg>
+                <arg>--algorithm=sa</arg>
+                <arg>--graph={graph}</arg>
+                <arg>--constraints={constraints}</arg>
+                <arg>--machine={machine}</arg>
+                <arg>--placements={placements_path}</arg>
+            </command_line_args>
+            <input_definitions>
+                <parameter>
+                    <param_name>graph</param_name>
+                    <param_type>FileMachineGraph</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>machine</param_name>
+                    <param_type>FileMachine</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>constraints</param_name>
+                    <param_type>FileConstraints</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>placements_path</param_name>
+                    <param_type>FilePlacementsFilePath</param_type>
+                </parameter>
+            </input_definitions>
+            <required_inputs>
                 <param_name>graph</param_name>
-                <param_type>FileMachineGraph</param_type>
-            </parameter>
-            <parameter>
                 <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
                 <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
                 <param_name>placements_path</param_name>
-                <param_type>FilePlacementsFilePath</param_type>
-            </parameter>
-        </input_definitions>
-        <required_inputs>
-            <param_name>graph</param_name>
-            <param_name>machine</param_name>
-            <param_name>constraints</param_name>
-            <param_name>placements_path</param_name>
-        </required_inputs>
-        <outputs>
-            <param_type file_name_type="FilePlacementsFilePath">
-                FilePlacements
-            </param_type>
-        </outputs>
-    </algorithm>
-    <algorithm name="RigCommandLineHilbertPlacer">
-        <command_line_args>
-            <arg>rig_place.py</arg>
-            <arg>--algorithm=hilbert</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements_path}</arg>
-        </command_line_args>
-        <input_definitions>
-            <parameter>
+            </required_inputs>
+            <outputs>
+                <param_type file_name_type="FilePlacementsFilePath">
+                    FilePlacements
+                </param_type>
+            </outputs>
+        </algorithm>
+        <algorithm name="RigCommandLineHilbertPlacer">
+            <command_line_args>
+                <arg>rig_place.py</arg>
+                <arg>--algorithm=hilbert</arg>
+                <arg>--graph={graph}</arg>
+                <arg>--constraints={constraints}</arg>
+                <arg>--machine={machine}</arg>
+                <arg>--placements={placements_path}</arg>
+            </command_line_args>
+            <input_definitions>
+                <parameter>
+                    <param_name>graph</param_name>
+                    <param_type>FileMachineGraph</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>machine</param_name>
+                    <param_type>FileMachine</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>constraints</param_name>
+                    <param_type>FileConstraints</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>placements_path</param_name>
+                    <param_type>FilePlacementsFilePath</param_type>
+                </parameter>
+            </input_definitions>
+            <required_inputs>
                 <param_name>graph</param_name>
-                <param_type>FileMachineGraph</param_type>
-            </parameter>
-            <parameter>
                 <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
                 <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
                 <param_name>placements_path</param_name>
-                <param_type>FilePlacementsFilePath</param_type>
-            </parameter>
-        </input_definitions>
-        <required_inputs>
-            <param_name>graph</param_name>
-            <param_name>machine</param_name>
-            <param_name>constraints</param_name>
-            <param_name>placements_path</param_name>
-        </required_inputs>
-        <outputs>
-            <param_type file_name_type="FilePlacementsFilePath">
-                FilePlacements
-            </param_type>
-        </outputs>
-    </algorithm>
-    <algorithm name="RigCommandLineRandomPlacer">
-        <command_line_args>
-            <arg>rig_place.py</arg>
-            <arg>--algorithm=rand</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements_path}</arg>
-        </command_line_args>
-        <input_definitions>
-            <parameter>
+            </required_inputs>
+            <outputs>
+                <param_type file_name_type="FilePlacementsFilePath">
+                    FilePlacements
+                </param_type>
+            </outputs>
+        </algorithm>
+        <algorithm name="RigCommandLineRandomPlacer">
+            <command_line_args>
+                <arg>rig_place.py</arg>
+                <arg>--algorithm=rand</arg>
+                <arg>--graph={graph}</arg>
+                <arg>--constraints={constraints}</arg>
+                <arg>--machine={machine}</arg>
+                <arg>--placements={placements_path}</arg>
+            </command_line_args>
+            <input_definitions>
+                <parameter>
+                    <param_name>graph</param_name>
+                    <param_type>FileMachineGraph</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>machine</param_name>
+                    <param_type>FileMachine</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>constraints</param_name>
+                    <param_type>FileConstraints</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>placements_path</param_name>
+                    <param_type>FilePlacementsFilePath</param_type>
+                </parameter>
+            </input_definitions>
+            <required_inputs>
                 <param_name>graph</param_name>
-                <param_type>FileMachineGraph</param_type>
-            </parameter>
-            <parameter>
                 <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
                 <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
                 <param_name>placements_path</param_name>
-                <param_type>FilePlacementsFilePath</param_type>
-            </parameter>
-        </input_definitions>
-        <required_inputs>
-            <param_name>graph</param_name>
-            <param_name>machine</param_name>
-            <param_name>constraints</param_name>
-            <param_name>placements_path</param_name>
-        </required_inputs>
-        <outputs>
-            <param_type file_name_type="FilePlacementsFilePath">
-                FilePlacements
-            </param_type>
-        </outputs>
-    </algorithm>
-    <algorithm name="RigAllocator">
-        <command_line_args>
-            <arg>rig_allocate.py</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements}</arg>
-            <arg>--algorithm=greedy</arg>
-            <arg>--allocations=cores:{core_allocation_path}</arg>
-            <arg>--allocations=sdram:{sdram_allocation_path}</arg>
-        </command_line_args>
-        <input_definitions>
-            <parameter>
+            </required_inputs>
+            <outputs>
+                <param_type file_name_type="FilePlacementsFilePath">
+                    FilePlacements
+                </param_type>
+            </outputs>
+        </algorithm>
+        <algorithm name="RigAllocator">
+            <command_line_args>
+                <arg>rig_allocate.py</arg>
+                <arg>--graph={graph}</arg>
+                <arg>--constraints={constraints}</arg>
+                <arg>--machine={machine}</arg>
+                <arg>--placements={placements}</arg>
+                <arg>--algorithm=greedy</arg>
+                <arg>--allocations=cores:{core_allocation_path}</arg>
+                <arg>--allocations=sdram:{sdram_allocation_path}</arg>
+            </command_line_args>
+            <input_definitions>
+                <parameter>
+                    <param_name>graph</param_name>
+                    <param_type>FileMachineGraph</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>machine</param_name>
+                    <param_type>FileMachine</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>constraints</param_name>
+                    <param_type>FileConstraints</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>placements</param_name>
+                    <param_type>FilePlacements</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>core_allocation_path</param_name>
+                    <param_type>FileCoreAllocationsFilePath</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>sdram_allocation_path</param_name>
+                    <param_type>FileSDRAMAllocationsFilePath</param_type>
+                </parameter>
+            </input_definitions>
+            <required_inputs>
                 <param_name>graph</param_name>
-                <param_type>FileMachineGraph</param_type>
-            </parameter>
-            <parameter>
                 <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
                 <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
                 <param_name>placements</param_name>
-                <param_type>FilePlacements</param_type>
-            </parameter>
-            <parameter>
                 <param_name>core_allocation_path</param_name>
-                <param_type>FileCoreAllocationsFilePath</param_type>
-            </parameter>
-            <parameter>
                 <param_name>sdram_allocation_path</param_name>
-                <param_type>FileSDRAMAllocationsFilePath</param_type>
-            </parameter>
-        </input_definitions>
-        <required_inputs>
-            <param_name>graph</param_name>
-            <param_name>machine</param_name>
-            <param_name>constraints</param_name>
-            <param_name>placements</param_name>
-            <param_name>core_allocation_path</param_name>
-            <param_name>sdram_allocation_path</param_name>
-        </required_inputs>
-        <outputs>
-            <param_type file_name_type="FileCoreAllocationsFilePath">
-                FileCoreAllocations
-            </param_type>
-            <param_type file_name_type="FileSDRAMAllocationsFilePath">
-                FileSDRAMAllocations
-            </param_type>
-        </outputs>
-    </algorithm>
-    <algorithm name="RigRouter">
-        <command_line_args>
-            <arg>rig_route.py</arg>
-            <arg>--graph={graph}</arg>
-            <arg>--constraints={constraints}</arg>
-            <arg>--machine={machine}</arg>
-            <arg>--placements={placements}</arg>
-            <arg>--allocations=cores:{allocations}</arg>
-            <arg>--algorithm=ner</arg>
-            <arg>--core-resource=cores</arg>
-            <arg>--routes={routing_paths_file_path}</arg>
-        </command_line_args>
-        <input_definitions>
-            <parameter>
+            </required_inputs>
+            <outputs>
+                <param_type file_name_type="FileCoreAllocationsFilePath">
+                    FileCoreAllocations
+                </param_type>
+                <param_type file_name_type="FileSDRAMAllocationsFilePath">
+                    FileSDRAMAllocations
+                </param_type>
+            </outputs>
+        </algorithm>
+        <algorithm name="RigRouter">
+            <command_line_args>
+                <arg>rig_route.py</arg>
+                <arg>--graph={graph}</arg>
+                <arg>--constraints={constraints}</arg>
+                <arg>--machine={machine}</arg>
+                <arg>--placements={placements}</arg>
+                <arg>--allocations=cores:{allocations}</arg>
+                <arg>--algorithm=ner</arg>
+                <arg>--core-resource=cores</arg>
+                <arg>--routes={routing_paths_file_path}</arg>
+            </command_line_args>
+            <input_definitions>
+                <parameter>
+                    <param_name>graph</param_name>
+                    <param_type>FileMachineGraph</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>machine</param_name>
+                    <param_type>FileMachine</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>constraints</param_name>
+                    <param_type>FileConstraints</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>placements</param_name>
+                    <param_type>FilePlacements</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>allocations</param_name>
+                    <param_type>FileCoreAllocations</param_type>
+                </parameter>
+                <parameter>
+                    <param_name>routing_paths_file_path</param_name>
+                    <param_type>FileRoutingPathsFilePath</param_type>
+                </parameter>
+            </input_definitions>
+            <required_inputs>
                 <param_name>graph</param_name>
-                <param_type>FileMachineGraph</param_type>
-            </parameter>
-            <parameter>
                 <param_name>machine</param_name>
-                <param_type>FileMachine</param_type>
-            </parameter>
-            <parameter>
                 <param_name>constraints</param_name>
-                <param_type>FileConstraints</param_type>
-            </parameter>
-            <parameter>
                 <param_name>placements</param_name>
-                <param_type>FilePlacements</param_type>
-            </parameter>
-            <parameter>
                 <param_name>allocations</param_name>
-                <param_type>FileCoreAllocations</param_type>
-            </parameter>
-            <parameter>
                 <param_name>routing_paths_file_path</param_name>
-                <param_type>FileRoutingPathsFilePath</param_type>
-            </parameter>
-        </input_definitions>
-        <required_inputs>
-            <param_name>graph</param_name>
-            <param_name>machine</param_name>
-            <param_name>constraints</param_name>
-            <param_name>placements</param_name>
-            <param_name>allocations</param_name>
-            <param_name>routing_paths_file_path</param_name>
-        </required_inputs>
-        <outputs>
-            <param_type file_name_type="FileRoutingPathsFilePath">
-                FileRoutingPaths
-            </param_type>
-        </outputs>
-    </algorithm>
-</algorithms>
-```
+            </required_inputs>
+            <outputs>
+                <param_type file_name_type="FileRoutingPathsFilePath">
+                    FileRoutingPaths
+                </param_type>
+            </outputs>
+        </algorithm>
+    </algorithms>
+    ```
 
 4. Replace `PATH_TO_GIT_CLONE` in the xml file with the absolute path to the git clone from before.
 5. Modify your `.spynnaker.cfg` file to include the following lines:
 
-```
-[Mapping]
-
-# format is  <algorithm_name>,<>
-# pacman algorithms are:
-# Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,
-# BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,
-# BasicRoutingInfoAllocator, BasicDijkstraRouting,
-# MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
-application_to_machine_graph_algorithms = PartitionAndPlacePartitioner
-machine_graph_to_machine_algorithms = GraphEdgeFilter,RigRouter,RigCommandLineHilbertPlacer,RigAllocator,BasicTagAllocator,FrontEndCommonEdgeToNKeysMapper,MallocBasedRoutingInfoAllocator,BasicRoutingTableGenerator,MundyRouterCompressor
-
-# format is <path1>,<path2>
-extra_xmls_paths = PATH_TO_XML_FILE
-```
+    ```
+    [Mapping]
+    
+    # format is  <algorithm_name>,<>
+    # pacman algorithms are:
+    # Basic_dijkstra_routing, RadialPlacer, BasicPlacer, ConnectiveBasedPlacer,
+    # BasicTagAllocator, BasicPartitioner, PartitionAndPlacePartitioner,
+    # BasicRoutingInfoAllocator, BasicDijkstraRouting,
+    # MallocBasedRoutingInfoAllocator, GraphEdgeFilter, EdgeToNKeysMapper
+    application_to_machine_graph_algorithms = PartitionAndPlacePartitioner
+    machine_graph_to_machine_algorithms = GraphEdgeFilter,RigRouter,RigCommandLineHilbertPlacer,RigAllocator,BasicTagAllocator,FrontEndCommonEdgeToNKeysMapper,MallocBasedRoutingInfoAllocator,BasicRoutingTableGenerator,MundyRouterCompressor
+    
+    # format is <path1>,<path2>
+    extra_xmls_paths = PATH_TO_XML_FILE
+    ```
 
 6. Replace `PATH_TO_XML_FILE` with a absolute path to the XML file you just wrote.
 7. Download (PyNN7Examples)[https://github.com/SpiNNakerManchester/PyNN7Examples] (if using PyNN 0.7) or (PyNN8Examples)[https://github.com/SpiNNakerManchester/PyNN7Examples] (if using PyNN 0.8)
