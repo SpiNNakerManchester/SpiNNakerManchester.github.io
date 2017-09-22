@@ -19,11 +19,11 @@ The workshop will focus on simulation of spiking neural networks using PyNN 0.8 
 
 The workshop consists of sessions of presentations by the software team as well as hands-on labs with SpiNNaker hardware. There will also be time to discuss your own project plans and issues with the design team during the week.
 
-Attendees should have some experience with Python. For the new neuron models and learning rules topics, some background in C is recommended.
+Attendees should have some prior experience with Python. For the topics on new neuron models and learning rules, some background in C is highly recommended.
 
 Attendance is free.
 
-For more information or to reserve a place, please click [here](seventh_info).
+_For more information or to reserve a place, please click [here](seventh_info)._
 
 <center>
 <img src="UoM.png" height="50">&nbsp;&nbsp;
