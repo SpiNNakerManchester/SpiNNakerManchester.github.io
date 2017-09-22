@@ -22,7 +22,7 @@ __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no l
 
 
 # <a name="Central"></a> Standard Central Installation
-These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with ```sudo```), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator" - without the ```sudo```).
+These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with `sudo`), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator", but do not use the `sudo` in the commands below).
 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:  
 
