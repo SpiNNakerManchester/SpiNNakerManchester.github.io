@@ -25,46 +25,26 @@ For example [https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.i
 
 As of September 2017 the contributors included:
 
-(Names as per GitHub and in alphabetical order of their GitHub id)
+(Names in alphabetical order of their GitHub id)
 
-[Alan Stokes](https://github.com/alan-stokes)
-
-[Andrew Gait](https://github.com/andrewgait)
-
-[Andreas Stöckel](https://github.com/astoeckel)
-
-[Christian Y. Brenninkmeijer](https://github.com/Christian-B)
-
-[Donal K. Fellows](https://github.com/dkfellows)
-
-[David Lester](https://github.com/dr-david-lester)
-
-[Arthur Ceccotti](https://github.com/gmtuca)
-
-[Luis A. Plana](https://github.com/lplana)
-
-[Mantas Mikaitis](https://github.com/mmikaitis)
-
-[Jonathan Heathcote](https://github.com/mossblaser)
-
-[Andrew Mundy](https://github.com/mundya)
-
-[James Knight](https://github.com/neworderofjamie)
-
-[Oliver Rhodes](https://github.com/oliverrhodes)
-
-[Petrut Antoniu Bogdan](https://github.com/pabogdan)
-
-[Paul92](https://github.com/Paul92)
-
-[Andrew Rowley](https://github.com/rowleya)
-
-[Sara Summerton](https://github.com/sara-es)
-
-[Sergio Davies](https://github.com/sergiodavies)
-
-[Stephen Furber](https://github.com/sfurber)
-
-[Joanna Moy](https://github.com/shrinkingviolet)
-
-[Cameron Patterson](https://github.com/404)
+* [Alan Stokes](https://github.com/alan-stokes)
+* [Andrew Gait](https://github.com/andrewgait)
+* [Andreas Stöckel](https://github.com/astoeckel)
+* [Christian Y. Brenninkmeijer](https://github.com/Christian-B)
+* [Donal K. Fellows](https://github.com/dkfellows)
+* [David Lester](https://github.com/dr-david-lester)
+* [Arthur Ceccotti](https://github.com/gmtuca)
+* [Luis A. Plana](https://github.com/lplana)
+* [Mantas Mikaitis](https://github.com/mmikaitis)
+* [Jonathan Heathcote](https://github.com/mossblaser)
+* [Andrew Mundy](https://github.com/mundya)
+* [James Knight](https://github.com/neworderofjamie)
+* [Oliver Rhodes](https://github.com/oliverrhodes)
+* [Petrut Antoniu Bogdan](https://github.com/pabogdan)
+* [Paul Gafton](https://github.com/Paul92)
+* [Andrew Rowley](https://github.com/rowleya)
+* [Sara Summerton](https://github.com/sara-es)
+* [Sergio Davies](https://github.com/sergiodavies)
+* [Stephen Furber](https://github.com/sfurber)
+* [Joanna Moy](https://github.com/shrinkingviolet)
+* Cameron Patterson
