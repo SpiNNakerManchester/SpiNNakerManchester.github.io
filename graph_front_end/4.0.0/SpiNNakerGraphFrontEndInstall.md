@@ -133,7 +133,7 @@ If you get this output, you have successfully installed your system.
 
        **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)**
 
-   Then to solve it, edit C:\Python27\Lib\mimetypes.py and add these codes:
+   Then to solve it, edit `C:\Python27\Lib\mimetypes.py` and add these codes:
 
    ```python
    if sys.getdefaultencoding() != 'gbk':
