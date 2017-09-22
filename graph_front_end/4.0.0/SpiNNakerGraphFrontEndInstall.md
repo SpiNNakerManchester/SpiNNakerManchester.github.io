@@ -119,10 +119,9 @@ The default ip address for a spinn-3 board is 192.168.240.253 and the default ip
  3. default gateway = 0.0.0.0
 
 # <a name="Examples"></a> Running some examples
-1. Go to the "examples/hello_world" folder.
 1. Run:
 
-        python hello_world.py
+        python -m spinnaker_graph_front_end.examples.hello_world.hello_world
 
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running, followed by a list of outputs of "Hello World" (one for each core on your board).
 If you get this output, you have successfully installed your system.
