@@ -2,7 +2,7 @@
 title: License Agreement and list of contributors across all repositories
 ---
 
-The software is currently being released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html)
+The software is currently being released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html).
 
 
 # Paper Authorship
@@ -19,13 +19,9 @@ If you have made any modifications which you believe to be useful to the tool ch
 
 # Contributors
 
-For up to date information on Contributors see the graphs/contributors pages on each project.
+For up to date information on Contributors see the graphs/contributors pages on each project (bearing in mind that some older code predates being transferred to Github). For example [SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors).
 
-For example [https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors)
-
-As of September 2017 the contributors included:
-
-(Names in alphabetical order of their GitHub id)
+As of September 2017 the contributors included (names in alphabetical order of their GitHub id):
 
 * [Alan Stokes](https://github.com/alan-stokes)
 * [Andrew Gait](https://github.com/andrewgait)
