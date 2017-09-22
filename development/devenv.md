@@ -6,8 +6,8 @@ title: Setting up a Software Development Environment for SpiNNaker
 
  1. [Install Python requirements](#PythonRequirements).
  1. [Install the C development requirements](/common_pages/3.0.0/Compiler.html).
- 1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
- 1. [Install an IDE](#ide) - optional but recommended for ease of use.
+ 1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) — only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
+ 1. [Install an IDE](#ide) — optional but recommended for ease of use.
  1. [Clone the git repositories](#git).
  1. [Install the python software in developer mode](#install).
  1. [Set up the C environment variables](#cenvironment).
@@ -66,7 +66,7 @@ Although optional, we highly recommend the use of an Integrated Development Envi
  * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Neon has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
     * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for pydev.
     * AnyEditTools — This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for AnyEditTools.
-    * CDT — This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
+    * CDT — This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT — `http://download.eclipse.org/tools/cdt/releases/9.0`.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
 
 ## Command line
 
@@ -89,7 +89,7 @@ You will also need to set up the dependencies between projects.
 
 This is done as follows:
 
- 1. Go to File->settings->project: <name>
+ 1. Go to File → Settings → Project: <name>
  1. Select Project Dependencies
  1. Select the module and then tick the [appropriate dependencies](#pythondependencies)
 
@@ -281,7 +281,7 @@ To install PyNN locally:
  1. Extract the archive.
  1. Within the extracted archive, run:
 
-       python setup.py install --install-lib PyNN7
+        python setup.py install --install-lib PyNN7
 
  1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
@@ -290,11 +290,11 @@ To install PyNN locally:
  1. Extract the archive.
  1. Within the extracted archive, run:
 
-       python setup.py install --install-lib PyNN8
+        python setup.py install --install-lib PyNN8
 
  1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
- 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev -> Set as Source Folder).
+ 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
 
 Update the dependencies for the following modules, adding the indicated module:
 
