@@ -22,7 +22,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install enum34 six "spalloc>=1.0.0,<2.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"
+       pip install enum34 six "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
