@@ -6,8 +6,8 @@ title: Setting up a Software Development Environment for SpiNNaker
 
  1. [Install Python requirements](#PythonRequirements).
  1. [Install the C development requirements](/common_pages/3.0.0/Compiler.html).
- 1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
- 1. [Install an IDE](#ide) - optional but recommended for ease of use.
+ 1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) — only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
+ 1. [Install an IDE](#ide) — optional but recommended for ease of use.
  1. [Clone the git repositories](#git).
  1. [Install the python software in developer mode](#install).
  1. [Set up the C environment variables](#cenvironment).
@@ -64,9 +64,9 @@ Although optional, we highly recommend the use of an Integrated Development Envi
  * [PyCharm](https://www.jetbrains.com/pycharm/) — Version 4.5.3 has been tested but other versions should also work. This is very good for Python development and supports C development as well to some degree.  Java development is not supported in this client.  PyCharm is good at working out the links between Python code.
 
  * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Neon has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
-    * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for pydev.
-    * AnyEditTools — This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help...Eclipse MarketPlace...) by searching for AnyEditTools.
-    * CDT — This is required for C Development.  This has to be installed from the Help...Install New Software... menu option.  Here, paste in this url: CDT - http://download.eclipse.org/tools/cdt/releases/9.0.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
+    * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for pydev.
+    * AnyEditTools — This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for AnyEditTools.
+    * CDT — This is required for C Development.  This has to be installed from the Help → Install New Software… menu option.  Here, paste in this url: CDT — `http://download.eclipse.org/tools/cdt/releases/9.0`.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
 
 ## Command line
 
@@ -89,7 +89,7 @@ You will also need to set up the dependencies between projects.
 
 This is done as follows:
 
- 1. Go to File->settings->project: <name>
+ 1. Go to File → Settings → Project: <name>
  1. Select Project Dependencies
  1. Select the module and then tick the [appropriate dependencies](#pythondependencies)
 
@@ -103,7 +103,7 @@ For each repository:
  1. Once the repository is imported:
      1. If the project is a Python project, right click and select "PyDev" → "Set as PyDev Project".
      1. If the project is a C project:
-         1. Select "File" → "New" → "Other..."
+         1. Select "File" → "New" → "Other…"
          1. Select "C/C++" → "Convert to a C/C++ Project (Adds C Nature)" and click on "Next"
          1. Select the project from the list.
          1. Select the "C Project" radio button.
@@ -111,7 +111,7 @@ For each repository:
          1. Click on "Finish".
      1. If the project is a Python and C project:
          1. Right click and select "PyDev" → "Set as PyDev Project".
-         1. Select "File" → "New" → "Other..."
+         1. Select "File" → "New" → "Other…"
          1. Select "C/C++" → "C Project" and click on "Next".
          1. Enter the name of the project followed by `_c_code`.
          1. Uncheck "use default location", click on "Browse" and find the subfolder of the project containing the C code (e.g. sPyNNaker has a neural_modelling subfolder).
@@ -230,20 +230,20 @@ If you decided to use PyCharm to support your development, then to support both 
  * set the Python interpreter for each module accordingly.
 
 To achieve the first, please follow the following steps:
- * go to File → Settings → Project → Python Interpreter.
- * click on the cog in the top right corner of the pop up and select "Create Virtual Env".
- * name the virtual env "PyNN0.75" and select the boxes "inherit global site-packages" and "Make available to all projects".
- * repeat the previous two steps but name the virtual env "PYNN0.8".
- * select from the drop down list of interpreters the PYNN0.75 version.
- * click on the + button on the right hand side of the pop up.
- * select PyNN from the list and select specific version 0.75, install this.
- * select from the drop down list of interpreters the PYNN0.8 version.
- * repeat steps 6 and 7 but select PyNN and the specific version 0.8 instead.
+ 1. Go to File → Settings → Project → Python Interpreter.
+ 2. Click on the cog in the top right corner of the pop up and select "Create Virtual Env".
+ 3. Name the virtual env "PyNN0.75" and select the boxes "inherit global site-packages" and "Make available to all projects".
+ 4. Repeat the previous two steps but name the virtual env "PYNN0.8".
+ 5. Select from the drop down list of interpreters the PYNN0.75 version.
+ 6. Click on the `+` button on the right hand side of the pop up.
+ 7. Select PyNN from the list and select specific version 0.75, install this.
+ 8. Select from the drop down list of interpreters the PYNN0.8 version.
+ 9. Repeat steps 6 and 7 but select PyNN and the specific version 0.8 instead.
 
 To achieve the second, please follow the following steps:
 
- * go to File → Settings → Project → Python Interpreter.
- * click on the following modules and select the specific interpreter as shown in the following table:
+ * Go to File → Settings → Project → Python Interpreter.
+ * Click on the following modules and select the specific interpreter as shown in the following table:
 
 |**Module**|**Python Interpreter**|
 |:---------|:---------------|
@@ -281,7 +281,7 @@ To install PyNN locally:
  1. Extract the archive.
  1. Within the extracted archive, run:
 
-       python setup.py install --install-lib PyNN7
+        python setup.py install --install-lib PyNN7
 
  1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
@@ -290,11 +290,11 @@ To install PyNN locally:
  1. Extract the archive.
  1. Within the extracted archive, run:
 
-       python setup.py install --install-lib PyNN8
+        python setup.py install --install-lib PyNN8
 
  1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
- 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev -> Set as Source Folder).
+ 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
 
 Update the dependencies for the following modules, adding the indicated module:
 
@@ -341,7 +341,7 @@ Now go to [Network Configuration](#Network Configuration).
 
 ## <a name="Network Configuration"></a> Network Configuration
 
-1. Go to the network settings for your computer and add or set an IPv4 entry with the following address for the adapter connected to the SpiNNaker board:
+Go to the network settings for your computer and add or set an IPv4 entry with the following address for the adapter connected to the SpiNNaker board:
     1. ip address = `192.168.240.254`
     2. sub-mask = `255.255.255.0`
     3. default gateway = `0.0.0.0`
@@ -354,7 +354,8 @@ Now go to [Network Configuration](#Network Configuration).
  * Run: `va_benchmark.py`
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph that will look something like this:
-![VA7BenchmarkSpikes](va7_benchmark.png)
+
+   ![VA7BenchmarkSpikes](va7_benchmark.png)
 
 ## PyNN 0.8
 
@@ -362,6 +363,7 @@ Now go to [Network Configuration](#Network Configuration).
  * Run: `va_benchmark.py`
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph that will look something like this:
-![VA8BenchmarkSpikes](va8_benchmark.png)
+
+   ![VA8BenchmarkSpikes](va8_benchmark.png)
 
 If you get the output above, you have successfully installed your system.

@@ -26,7 +26,7 @@ exploit the software stack to it's most potential:
 * [Presentation: Introduction to the Graph Front End](GFEIntro.pdf)
 * [Presentation: Advanced Graph Front End Usage](GFEAdvanced.pdf) 
 
-A summary is that a developer needs to develop both a python and c representation of any computation nodes (vertices) and often just a python version for any unique communication requirements. 
+A summary is that a developer needs to develop both a Python and c representation of any computation nodes (vertices) and often just a Python version for any unique communication requirements. 
 
 # SpiNNakerGraphFrontEnd interface
 
@@ -34,15 +34,15 @@ The SpiNNakerGraphFrontEnd supports the following interface for developers to us
 
 |Name|Definition|
 |:----------|:----------------------------|
-|setup()|This is the first call that needs to be executed at all times. It sets up all the basic data structures the software stack requires|
-|add_application_vertex()|This adds a vertex that can be split over multiple computational nodes|
-|add_machine_vertex()|This adds a vertex that can only reside on one computational node|
-|add_application_edge()|This adds a edge between vertices that can be split over multiple computational nodes|
-|add_machine_edge()|This adds a edge between vertices that can only reside on individual computational nodes|
-|get_machine_dimensions()|This function supports inquiring the SpiNNaker machine and being given the dimensions of the machine|
-|machine()|This function returns the python representation of the SpiNNaker machine|
-|transceiver()| This function returns the python communication interface to the SpiNNaker machine| 
-|run()|This function executes: mapping, loading, running, extraction of provenance and debug data on the SpiNNaker machine|
-|stop()|This function shuts down the SpiNNaker machine cleanly|
+|`setup()`|This is the first call that needs to be executed at all times. It sets up all the basic data structures the software stack requires|
+|`add_application_vertex()`|This adds a vertex that can be split over multiple computational nodes|
+|`add_machine_vertex()`|This adds a vertex that can only reside on one computational node|
+|`add_application_edge()`|This adds a edge between vertices that can be split over multiple computational nodes|
+|`add_machine_edge()`|This adds a edge between vertices that can only reside on individual computational nodes|
+|`get_machine_dimensions()`|This function supports inquiring the SpiNNaker machine and being given the dimensions of the machine|
+|`machine()`|This function returns the Python representation of the SpiNNaker machine|
+|`transceiver()`| This function returns the Python communication interface to the SpiNNaker machine| 
+|`run()`|This function executes: mapping, loading, running, extraction of provenance and debug data on the SpiNNaker machine|
+|`stop()`|This function shuts down the SpiNNaker machine cleanly|
 
 To be extended in the future.
