@@ -42,7 +42,9 @@ sPyNNaker currently supports these two models for injecting spikes into a PyNN m
 
 Currently, only the `i_offset` parameter of the neural models can be used to inject current directly; there is no support for noisy or step-based current input.  Step-based current input can be achieved by updating `i_offset` between calls to `run()`.
 
+<!---
 A third, non-standard PyNN interface, way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device (e.g., a robot). A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
+--->
 
 # Connectors
 
