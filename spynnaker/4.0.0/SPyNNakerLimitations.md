@@ -9,8 +9,7 @@ This guide will detail the limitations that sPyNNaker imposes on users of PyNN, 
 
 sPyNNaker7 implements a subset of the [PyNN 0.7 API](http://neuralensemble.org/trac/PyNN/wiki/API-0.7).
 
-sPyNNaker8 implements a subset of the [PyNN 0.8 API]
-(http://neuralensemble.org/docs/PyNN/0.8/api_reference.html).
+sPyNNaker8 implements a subset of the [PyNN 0.8 API](http://neuralensemble.org/docs/PyNN/0.8/api_reference.html).
 
 **We _recommend_ using PyNN 0.8 for new work.**
 
