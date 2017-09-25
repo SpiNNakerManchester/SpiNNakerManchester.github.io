@@ -5,7 +5,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 # Installation
 
  1. [Install Python requirements](#PythonRequirements).
- 1. [Install the C development requirements](/common_pages/3.0.0/Compiler.html).
+ 1. [Install the C development requirements](/common_pages/4.0.0/Compiler.html).
  1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) — only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
  1. [Install an IDE](#ide) — optional but recommended for ease of use.
  1. [Clone the git repositories](#git).
@@ -18,14 +18,14 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Run some examples](#Examples).
 
 # <a name="PythonRequirements"></a> Python Requirements
-1. [Install the general platform requirements](/common_pages/3.0.0/PythonInstall.html)
-1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/3.0.0/VirtualEnv.html) to set up the dependencies.
+1. [Install the general platform requirements](/common_pages/4.0.0/PythonInstall.html)
+1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install enum34 six "spalloc>=0.2.2,<1.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.11.1,<=0.11.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"
+       pip install enum34 six "spalloc>=1.0.0,<2.0.0" "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"
 
 # <a name="CRequirements"></a> C Development Requirements
-[Install a C compiler](/common_pages/3.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
+[Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
 
 # <a name="git"></a> Git Cloning
 
@@ -327,7 +327,7 @@ Note that if you have previously installed a version of the spiNNaker software, 
     machineName = None
     version = None
 
-If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/4.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
 
