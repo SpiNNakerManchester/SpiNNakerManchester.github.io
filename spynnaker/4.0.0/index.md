@@ -9,9 +9,9 @@ layout: default
 * [Using SpiNNaker software without a SpiNNaker Board](/common_pages/4.0.0/VirtualMode.html)
 * [Adding new mapping algorithms with different front ends](/common_pages/4.0.0/MappingAlgorithms.html)
 
-<!--
+<!---
 * [Tutorial: Using PyNN on SpiNNaker](RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
 * [Extending sPyNNaker with New Neuron and Plasticity Models](PyNNOnSpiNNakerExtensions.html)
 * [Tutorial: Simple interaction with Live PyNN Simulation](SimpleIO-LabManual.pdf)
 * [Tutorial: Connecting External Devices to PyNN Simulations](ExternalDevices-LabManual.pdf)
---!>
+---!>
