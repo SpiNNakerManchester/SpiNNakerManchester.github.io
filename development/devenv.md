@@ -56,7 +56,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
-The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
+The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain. 
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we highly recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and an IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
