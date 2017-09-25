@@ -22,7 +22,7 @@ Once you've got a working development environment:
  * [Creating a Makefile for SpiNNaker C projects](#Makefile)
 
 # <a name="SpinnakerTools"></a> SpiNNakerTools Installation
-1. Download the current version of SpiNNaker Tools from [here](https://github.com/SpiNNakerManchester/spinnaker_tools/releases/download/v3.1.0/spinnaker_tools_3.1.0.tar.gz)
+1. Download the current version of SpiNNaker Tools from [here](https://github.com/SpiNNakerManchester/spinnaker_tools/releases/download/v3.1.1/spinnaker_tools_3.1.1.tar.gz)
 1. Extract the archive to the location of your choice.
 1. Create an environment variable ```SPINN_DIRS``` that points at the location of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to C:\spinnaker_tools\, you should set the environment variable to /c/spinnaker_tools).
 1. Add the tools folder in the extracted archive to your ```PATH``` environment variable.  This does not need to be a POSIX path on Windows e.g. C:\spinnaker_tools\tools is fine on Windows, or /spinnaker_tools/tools on Linux or Mac.
