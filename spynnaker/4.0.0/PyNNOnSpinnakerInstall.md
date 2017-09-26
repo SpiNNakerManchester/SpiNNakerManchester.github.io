@@ -254,3 +254,5 @@ If you get the output above, you have successfully installed your system.
     it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in `$DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc`
 
     In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
+    
+    If you are still having issues, you may also need to install [XQuartz](https://www.xquartz.org/).
