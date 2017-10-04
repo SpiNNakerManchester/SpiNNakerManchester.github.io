@@ -12,7 +12,7 @@ This page details the latest version of various software for the SpiNNaker Neuro
 * [Writing low-level SpiNNaker C code](spinnaker_tools/3.1.0/index.html)
 * [Writing low-level SpiNNaker Python code](low_level_apis/index.html)
 * [Technical hardware and software documents](docs/)
-* [Past and future SpiNNaker workshops](workshops/index.html)
+* [SpiNNaker workshops](workshops/index.html)
 * [Software development pages](development/index.html)
 
 # Crediting
