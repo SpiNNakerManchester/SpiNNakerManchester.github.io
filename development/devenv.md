@@ -56,7 +56,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
-The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain. 
+The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we highly recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and an IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
@@ -271,12 +271,12 @@ To achieve the second, please follow the following steps:
 
 ## Eclipse
 
-If you decided to use Eclipse to support your development, then to support both PyNN installations you are required to:
+If you decided to use Eclipse to support your development, then to support any PyNN installations you are required to:
  1. Uninstall any local PyNN installation you may have installed previously (`pip uninstall pyNN`).
- 1. Get a copy of each of the PyNN versions and install them locally
+ 1. Get a copy of any PyNN version you want to use and install them locally
  1. Update the dependencies of specific modules to include the appropriate PyNN version
 
-To install PyNN locally:
+To install PyNN 0.7 locally:
  1. Download [PyNN0.7.5.tar.gz](https://pypi.python.org/packages/63/c8/be19667dc36adb28bf4ad86c0692d5454eb537ff6fa07b21ca4754fb0b21/PyNN-0.7.5.tar.gz)
  1. Extract the archive.
  1. Within the extracted archive, run:
@@ -286,6 +286,8 @@ To install PyNN locally:
  1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
  1. Set the PyNN7 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
+
+To install PyNN 0.8 locally:
  1. Download [PyNN0.8.3.tar.gz](https://pypi.python.org/packages/16/6e/33c228807e42034f8db90005d0107dc8da12d33e870db1b552d5353fcb5d/PyNN-0.8.3.tar.gz).
  1. Extract the archive.
  1. Within the extracted archive, run:
@@ -296,17 +298,28 @@ To install PyNN locally:
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
  1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
 
-Update the dependencies for the following modules, adding the indicated module:
+Or to install PyNN 0.9 locally:
+ 1. Download [PyNN0.9.1.tar.gz](https://pypi.python.org/packages/ea/c9/ae4a6ac5a6007b85a0e35cce9bd34283eb577606e1f0c15443f575fba630/PyNN-0.9.1.tar.gz).
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+
+        python setup.py install --install-lib PyNN9
+
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
+ 1. Set the PyNN9 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
+
+Update the dependencies for the following modules, adding the indicated module.  Note that you should not mix the use of versions 0.8 and 0.9, and that if you are using the current master branch, then you should be using PyNN 0.9.
 
 |**Module**|**Python Interpreter**|
 |:---------|:---------------|
 |sPyNNaker7|PyNN0.7.5|
-|sPyNNaker8|PyNN0.8.3|
+|sPyNNaker8|PyNN0.8.3 or PyNN0.9.1|
 |sPyNNaker7NewModelTemplate|PyNN0.7.5|
-|sPyNNaker8NewModelTemplate|PyNN0.8.3|
+|sPyNNaker8NewModelTemplate|PyNN0.8.3 or PyNN0.9.1|
 |PyNN7Examples|PyNN0.7.5|
-|PyNN8Examples|PyNN0.8.3|
-|IntroLab|PyNN0.8.3|
+|PyNN8Examples|PyNN0.8.3 or PyNN0.9.1|
+|IntroLab|PyNN0.8.3 or PyNN0.9.1|
 
 # <a name="PyNNInstall"></a> PyNN Install
 Once the modules have been installed, the final step is to create the pyNN.spiNNaker links.  This is done as follows:
