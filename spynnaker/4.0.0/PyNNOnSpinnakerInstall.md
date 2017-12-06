@@ -45,7 +45,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] pip install matplotlib
 
-## For PyNN 0.8 support:
+## For PyNN 0.9 support:
 
 1. Install sPyNNaker8:
 
@@ -86,7 +86,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        pip install matplotlib --user
 
-## For PyNN 0.8 support:
+## For PyNN 0.9 support:
 
 1. Install sPyNNaker8:
 
@@ -158,7 +158,7 @@ To install the tools, first, activate your virtualenv, `<name>`:
 
        pip install matplotlib
 
-## For PyNN 0.8 support:
+## For PyNN 0.9 support:
 
 1. Install sPyNNaker8:
 
@@ -178,9 +178,14 @@ You can now [configure](#Configuration) your environment.
 
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
 
-    python -c "import pyNN.spiNNaker"
-
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its paramters.  If you don't have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
+Run this small script
+    
+    import pynn.spiNNaker as sim
+    sim.setup()
+    sim.end()
+    
+Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
+    
 
 ```
 [Machine]
@@ -221,7 +226,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 
    ![VABenchmarkSpikes](va7_benchmark.png)
 
-   or this (for PyNN 0.8):
+   or this (for PyNN 0.9):
 
    ![VABenchmarkSpikes](va8_benchmark.png)
 
