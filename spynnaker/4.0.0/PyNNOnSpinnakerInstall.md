@@ -24,7 +24,7 @@ __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no l
 # <a name="Central"></a> Standard Central Installation
 These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with `sudo`), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator", but do not use the `sudo` in the commands below).
 
-If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:  
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
 
     [sudo] pip uninstall pyNN-SpiNNaker
     [sudo] pip uninstall sPyNNaker
@@ -41,7 +41,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] python -m spynnaker7.pyNN.setup-pynn
 
-1. Install Matplotlib:  
+1. Install Matplotlib:
 
        [sudo] pip install matplotlib
 
@@ -51,7 +51,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] pip install sPyNNaker8
 
-1. Install pyNN-SpiNNaker:  
+1. Install pyNN-SpiNNaker:
 
        [sudo] python -m spynnaker8.setup-pynn
 
@@ -122,24 +122,24 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 To install the tools, first, activate your virtualenv, `<name>`:
 
     source <name>/bin/activate
-    
+
 ## Windows 64-bit:
 
 1. Install numpy:
 
         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/numpy-1.13.1.mkl-cp27-cp27m-win_amd64.whl
 
-1. Install scipy:  
+1. Install scipy:
 
         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl```
 
 ## Windows 32-bit:
 
-1. Install numpy (optional if you are going to use a Virtual Env):  
+1. Install numpy (optional if you are going to use a Virtual Env):
 
         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl```
 
-1. Install scipy (optional if you are going to use a Virtual Env):  
+1. Install scipy (optional if you are going to use a Virtual Env):
 
         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl```
 
@@ -179,13 +179,13 @@ You can now [configure](#Configuration) your environment.
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
 
 Run this small script
-    
-    import pynn.spiNNaker as sim
+
+    import pyNN.spiNNaker as sim
     sim.setup()
     sim.end()
-    
-Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:  
-    
+
+Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
+
 
 ```
 [Machine]
@@ -259,5 +259,5 @@ If you get the output above, you have successfully installed your system.
     it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in `$DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc`
 
     In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
-    
+
     If you are still having issues, you may also need to install [XQuartz](https://www.xquartz.org/).
