@@ -1,0 +1,278 @@
+
+	Updating BMP Firmware - Steve Temple - 22 Apr 2016
+	==================================================
+
+This note describes how to update BMP firmware on the Spin5
+board. This is not generally a "user" operation but the procedure is
+fairly straightforward. There are two sets of firmware on a Spin5
+board. One is the code that the BMP runs to carry out its operation
+and the other is the bitmaps that are loaded into the three FPGAs when
+the board is reset. Both of these can be updated with the "bmpc"
+program and the commands to achieve this are described here.
+
+BMP Program Code
+----------------
+
+The BMP code is stored in a flash memory inside the BMP chip. This
+memory is divided up into sectors of 4 Kbytes and 32 Kbytes. Sectors 0
+to 15 are 4 Kbytes and begin at address 0. Sectors 16 to 29 are 32
+Kbytes and begin at address 0x10000. Sector 0 at address 0 is referred
+to as the Boot sector and contains boot code which inspects other
+sectors for valid blocks of code. All sectors used by the BMP code
+have a CRC32 checksum. To provide some tolerance to errors in the
+flash sectors, the boot code scans flash memory at addresses 0x10000,
+0x20000, 0x30000 and 0x40000 for a block of code with a valid
+CRC32. When it finds a block with a valid CRC32 it then transfers
+control to that block of code.
+
+When BMP code is compiled and linked, three binary files are
+created. BOOT is the boot sector code which is placed at address 0,
+PROGL is the main (primary) program code which is placed at address
+0x10000 and PROGH is a backup copy of the program code which is placed
+at address 0x20000. The other two possible code blocks at 0x30000 and
+0x40000 are not used.
+
+"bmpc" has a command "flash_write" which is used to update the BMP
+flash memory to install new firmware. It is important that the images
+are written in the correct order and that the board is not reset
+between writes. It is possible that a failure during a write sequence
+could render the board unusable. In this case the BMP would need to be
+reinitialised using its JTAG interface. The image files have names of
+the form "BOOT-2.1.0", that is the name of the image followed by a
+3-element version number.
+
+To update the firmware proceed as follows - reset the board, start
+"bmpc" and ensure that you can communicate with the BMP, for example
+with the "sver" command. At this point it is useful to give the
+"firmware" command which shows the currently loaded versions of each
+flash block.
+
+This is then followed by three "flash_write" commands where you
+specify the name of the file to be written and the address at which it
+is to be written. The third write is slightly different as it updates
+the main code sectors which are running the current version of the
+firmware. Following the third write the board will stop communicating
+with "bmpc" and you may see some error messages.
+
+After the three write operations, the board can be reset and the
+updated firmware should now be running. The "firmware" command can be
+used again to verify that all three have been correctly updated. For
+example, to update to firmware version 2.1.0
+
+### Start "bmpc"
+
+  cspc265:bin > bmpc 192.168.1.0
+  # bmpc - version 2.1.0
+
+### Check that we can talk to BMP
+
+  192.168.1.0:0 > sver
+  BC&MP 2.0.1 at Spin5-BMP:0 (built Mon Apr 18 13:26:19 2016) [C=0, F=1, B=1]
+
+### Show current firmware versions
+
+  192.168.1.0:0 > firmware 
+  Slot  Addr    Primary                 Backup                  Boot
+  ----  -----   ---------------------   ---------------------   ---------------------
+    0   10000   2.0.1   18apr16 13:26   2.0.1   15apr16 13:51   2.0.0   16mar16 14:42
+
+### Update the firmware in flash memory
+
+  192.168.1.0:0 > flash_write BOOT-2.1.0 0
+  Program from 0x000000 to 0x000724
+
+  192.168.1.0:0 > flash_write PROGH-2.1.0 0x20000
+  Program from 0x020000 to 0x023d30
+
+  192.168.1.0:0 > flash_write PROGL-2.1.0 update
+  Program from 0x070000 to 0x073d30
+  You'll need to reset now...
+  error: too many retries
+
+  192.168.1.0:0 > quit
+
+### Reset the board and restart "bmpc"
+
+  cspc265:bin > bmpc 192.168.1.0
+  # bmpc - version 2.1.0
+
+### "sver" says we're running "2.1.0"
+
+  192.168.1.0:0 > sver
+  BC&MP 2.1.0 at Spin5-BMP:0 (built Fri Apr 22 10:49:41 2016) [C=0, F=1, B=1]
+
+### and all blocks appear to have been updated
+
+  192.168.1.0:0 > firmware 
+  Slot  Addr    Primary                 Backup                  Boot
+  ----  -----   ---------------------   ---------------------   ---------------------
+    0   10000   2.1.0   22apr16 10:49   2.1.0   22apr16 10:49   2.1.0   22apr16 10:49
+
+
+FPGA Bitmap Files
+-----------------
+
+Bitmap files are stored in a serial Flash memory which is attached to
+an SPI interface on the BMP. A full bitmap file for the Spartan6 FPGAs
+on Spin5 is around 1.5 Mbytes and the 8 Mbyte memory can hold up to
+4 bitmaps. Each bitmap is stored in a "slot" in the flash memory. Slots
+are numbered from 0 to 3 and, on reset, the BMP scans the slots in order
+starting with 0. Each slot can be configured to place its bitmap in any
+or all of the FPGAs.
+
+The normal configuration of bitmaps for Spin5 consists of 4 bitmaps
+placed one per slot. Slot 0 contains a "default" bitmap which must be
+loaded into all 3 FPGAs before any other bitmaps are loaded. Slots
+1, 2 and 3 contain individual bitmaps for each FPGA. "bmpc" has a
+command "xboot" which allows the contents of each slot to be displayed
+or loaded with a bitmap file.
+
+The three FPGAs on a Spin5 are numbered 0, 1 and 2.  Bitmap files for
+individual FPGAs have names of the form "xxxx_idN.bit" where N is 0, 1
+or 2 and specifies which FPGA they are for. A bitmap file called
+"default.bit" is normally placed on slot 0 and loaded to all three
+FPGAs. Using the "bmpc" command "xboot" without arguments displays the
+current set of loaded bitmaps as follows
+
+  cspc265:fpga_bit_files > bmpc 192.168.1.0
+  # bmpc - version 2.1.0
+
+  192.168.1.0:0 > xboot
+  S0   ENABLED   Chips 210, Base 0x200000, Length   452672, CRC 0xb41a3941
+       File      default.bit
+       Written   Fri Apr 22 14:08:43 2016
+       ModTime   Thu Aug 28 13:17:05 2014
+
+  S1   ENABLED   Chips   0, Base 0x380000, Length  1349198, CRC 0x86a0969f
+       File      psync_snd_rcv_05021545_id0.bit
+       Written   Fri Apr 22 14:09:12 2016
+       ModTime   Fri Feb 26 09:35:56 2016
+
+  S2   ENABLED   Chips   1, Base 0x500000, Length  1346170, CRC 0xdf56ccd5
+       File      psync_snd_rcv_05021545_id1.bit
+       Written   Fri Apr 22 14:09:41 2016
+       ModTime   Fri Feb 26 09:35:57 2016
+
+  S3   ENABLED   Chips   2, Base 0x680000, Length  1349112, CRC 0x9417e75b
+       File      psync_snd_rcv_05021545_id2.bit
+       Written   Fri Apr 22 14:10:10 2016
+       ModTime   Fri Feb 26 09:35:57 2016
+
+This shows "default.bit" in slot 0 (S0), "psync_snd_rcv_05021545_id0.bit"
+in slot 1, etc. To update a slot the "xboot" command is given with arguments
+which specify the file, the slot and the set of FPGAs which are to be loaded
+with this bitmap. To fully update the bitmaps, the "xboot" command must be
+used four times though, generally, the "default.bit" file is not changed and
+can be skipped. To update all four slots with FPGA bitfiles from release
+"spin5_fpga_00210416", the following commands would be used
+
+  cspc265:fpga_bit_files > bmpc 192.168.1.0
+  # bmpc - version 2.1.0
+
+### Load "default.bit" to slot 0 for FPGAs 0,1,2
+
+  192.168.1.0:0 > xboot default.bit 0 7
+  Copying to Serial Flash at 0x200000
+  Sent 452672 bytes
+  Checking Serial Flash CRC - 0xb41a3941
+  Updating Flash Data sector
+
+### Load "spin5_fpga_00210416_id0.bit" to slot 1 for FPGA 0
+
+  192.168.1.0:0 > xboot spin5_fpga_00210416_id0.bit 1 1
+  Copying to Serial Flash at 0x380000
+  Sent 1344376 bytes
+  Checking Serial Flash CRC - 0x38d7b474
+  Updating Flash Data sector
+
+### Load "spin5_fpga_00210416_id1.bit" to slot 2 for FPGA 1
+
+  192.168.1.0:0 > xboot spin5_fpga_00210416_id1.bit 2 2
+  Copying to Serial Flash at 0x500000
+  Sent 1349738 bytes
+  Checking Serial Flash CRC - 0x6bfd8fa3
+  Updating Flash Data sector
+
+### Load "spin5_fpga_00210416_id2.bit" to slot 3 for FPGA 2
+
+  192.168.1.0:0 > xboot spin5_fpga_00210416_id2.bit 3 4
+  Copying to Serial Flash at 0x680000
+  Sent 1349170 bytes
+  Checking Serial Flash CRC - 0x0ce3f714
+  Updating Flash Data sector
+
+### Finally check that everything went OK
+
+  192.168.1.0:0 > xboot
+  S0   ENABLED   Chips 210, Base 0x200000, Length   452672, CRC 0xb41a3941
+       File      default.bit
+       Written   Fri Apr 22 14:16:45 2016
+       ModTime   Thu Aug 28 13:17:05 2014
+
+  S1   ENABLED   Chips   0, Base 0x380000, Length  1344376, CRC 0x38d7b474
+       File      spin5_fpga_00210416_id0.bit
+       Written   Fri Apr 22 14:17:14 2016
+       ModTime   Fri Apr 22 10:08:53 2016
+
+  S2   ENABLED   Chips   1, Base 0x500000, Length  1349738, CRC 0x6bfd8fa3
+       File      spin5_fpga_00210416_id1.bit
+       Written   Fri Apr 22 14:17:43 2016
+       ModTime   Fri Apr 22 10:08:53 2016
+
+  S3   ENABLED   Chips   2, Base 0x680000, Length  1349170, CRC 0x0ce3f714
+       File      spin5_fpga_00210416_id2.bit
+       Written   Fri Apr 22 14:18:12 2016
+       ModTime   Fri Apr 22 10:08:53 2016
+
+Note that the copying of bitfiles to the serial flash can be quite
+slow and may take several minutes to complete.
+
+For releases of FPGA bitmaps from April 2016 (and BMP firmware
+versions from "2.1.0") an additional step is necessary as these
+bitmaps require an additional step to enable the FPGA output drivers
+onto the 2-of-7 SpiNNaker links. This is achieved with the "xreg"
+command as follows
+
+  cspc265:fpga_bit_files > bmpc 192.168.1.0
+  # bmpc - version 2.1.0
+
+### Set FPGA register at 0x40014 to 0xffffffff in FPGAs 0,1,2
+### Set FPGA register at 0x40018 to 0 in FPGAs 0,1,2
+
+  192.168.1.0:0 > xreg 0-2 0x40014 0xffffffff 0-2 0x40018 0
+
+### Check that it worked
+
+  192.168.1.0:0 > xreg
+  0-2 00040014 ffffffff
+  0-2 00040018 00000000
+
+Note that the changes made with "xboot" and "xreg" do not take
+effect immediately. The bitmaps are only loaded onto the FPGAs
+and the register updates specified by "xreg" performed when the
+board is next reset.
+
+
+Special "xreg" command sets
+---------------------------
+
+The "xreg" facility was introduced to allow the 2-of-7 interface
+present on J1 (34 way connector) to be used. This requires that
+the corresponding 2-of-7 interface on FPGA 1 is disabled. The
+"xreg" command to do this is
+
+  xreg 0 0x40014 0xffffffff 0 0x40018 0 \
+       1 0x40014 0xfffffffc 1 0x40018 0x30 \
+       2 0x40014 0xffffffff 2 0x40018 0
+
+Note that this must all be typed as a single command line - each
+use of "xreg" removes any previous configuration. After doing this
+the following should appear after giving "xreg" without arguments.
+
+  192.168.1.0:0 > xreg
+  0   00040014 ffffffff
+  0   00040018 00000000
+  1   00040014 fffffffc
+  1   00040018 00000030
+  2   00040014 ffffffff
+  2   00040018 00000000

@@ -28,13 +28,15 @@ This page contains links to various technical documents about SpiNNaker.
 * [Interfacing AER devices to SpiNNaker using an FPGA](fpga_aer/)
 * [SpOmnibot (TUM SpiNNaker Robot)](spomnibot/)
 * [Pushbot](push_bot/)
-* [SpiNN-5 FPGA Links](spin5-links.pdf)
+* [SpiNN-5 FPGA SATA Links](spin5-links.pdf)
+* [Safe conection of external devices to SpiNN-5 boards](spiNN-5_fpgas.txt)
 
 # Low-Level Software Documents
 
 * [SpiNNaker low-level software Design Document](SpiNNsoft_designV0.01.pdf)
 * [SARK - SpiNNaker Application Runtime Kernel](sarkV200.pdf)
 * [SpiNNaker low-level software API](SpiNNapi_docV200.pdf)
+* [Updating BMP Firmware](bmp_note.txt)
 
 # Software API Documents
 

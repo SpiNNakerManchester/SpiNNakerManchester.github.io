@@ -1,0 +1,149 @@
+
+Safe connection of External devices to SpiNN-5 boards - 22 Apr 2016
+===================================================================
+
+This note describes how to configure the FPGAs on a SpiNN-5 board to
+allow external devices to be connected safely. This procedure is
+fairly straightforward but must be done with care.
+
+The procedure requires the use of the spinnaker_tools 'bmpc' utility
+to communicate with the SpiNN-5 board BMP processor. The commands to
+achieve this are described here.
+
+
+Connecting external devices
+---------------------------
+
+External devices can be connected to a SpiNN-5 board through the
+asynchronous, 2-of-7 SpiNNaker link associated to link 4 on SpiNNaker
+chip (0, 0). This link is available as 34-way connector 'J1', located
+near the top left corner of the SpiNN-5 board.
+
+This SpiNNaker link is also connected to FPGA1 ('U10), used to
+interconnect two SpiNN-5 boards together. It is extremely important
+that only one device drives this link at any time. If an external
+device is to be connected to the board then the connection to FPGA1
+must be disabled.
+
+
+FPGA configuration
+------------------
+
+The three FPGAs on a Spin5 are numbered 0, 1 and 2. Each FPGA contains
+a register bank that controls its operation. The registers are described in
+a table at the end of this document.
+
+Register 'SLEN' can be used to enable/disable the links between the
+SpiNNaker chips and the FPGAs. Disabling a link using the 'SLEN'
+register 'tristates' the associated FPGA pins and holds in reset the
+corresponding SpiNNaker link interface block in the FPGA. This
+register must be configured correctly to allow an external device to
+be connected to the SpiNN-5 board.
+
+On a SpiNN-5 board, the BMP can be used to configure automatically the
+links after power up using the 'xreg' command of the 'bmpc' utility.
+The 'xreg' command shows the values of the FPGA registers and can also
+modify them. The correct 'xreg' command must be used to disable the
+FPGA1 link and safely connect the external device.
+
+
+using 'bmpc'
+------------
+
+- You must have the 'spinnaker_tools' package installed. It is
+  distributed as part of the SpiNNaker Software.
+
+- You must have network access to the BMP on the SpiNN-5 board. this
+  is done through the RJ45 (Ethernet) connector identified as 'J14'.
+
+Assuming that the BMP IP address is the default value (192.168.240.0):
+
+### start 'bmpc'
+
+  cspc265:bin > bmpc 192.168.240.0
+  # bmpc - version 2.1.0
+
+### check that you can talk to the BMP
+
+  192.168.240.0:0 > sver
+  BC&MP 2.0.1 at Spin5-BMP:0 (built Mon Apr 18 13:26:19 2016) [C=0, F=1, B=1]
+
+### use the 'xreg' to configure the FPGAs
+
+  192.168.240.0:0 > xreg 0 0x40014 0xffffffff 0 0x40018 0 1 0x40014 0xfffffffc 1 0x40018 0x30 2 0x40014 0xffffffff 2 0x40018 0
+
+Note that this must all be typed as a single command line - each
+use of 'xreg' removes any previous configuration. After doing this
+the following should appear after giving 'xreg' without arguments.
+
+  192.168.240.0:0 > xreg
+  0   00040014 ffffffff
+  0   00040018 00000000
+  1   00040014 fffffffc
+  1   00040018 00000030
+  2   00040014 ffffffff
+  2   00040018 00000000
+
+### exit 'bmpc'
+
+  192.168.240.0:0 > quit
+
+
+
+----------------------------
+FPGA configuration registers
+----------------------------
+
+Name  Number Offset  Access  Size  Description
+----  ------ ------  ------  ----  ---------------------------------------------
+VERS       0   0x00  RO        32  Top-level design version
+FLAG       1   0x04  RO         6  Compile flags {   5: chip scope
+                                                 ,   4: peripheral support
+                                                 ,   3: ring support
+                                                 ,   2: north/south on front
+                                                 , 1-0: FPGA ID
+                                                 }
+PKEY       2   0x08  RW        32  Peripheral MC route key (default: 0xFFFFFFFF)
+PMSK       3   0x0C  RW        32  Peripheral MC route mask (default: 0x00000000)
+SCRM       4   0x10  RW         4  Scrambler on (default: 0xF)
+                                   { 3: ring link
+                                   , 2: peripheral link
+                                   , 1: board-to-board link1
+                                   , 0: board-to-board link0
+                                   }
+SLEN       5   0x14  RW        32  Enable SpiNNaker chip (2-of-7) link.
+                                   (Default: 0x00000000)
+                                   { 0: Link 0 SpiNN->FPGA enable
+                                   , 1: Link 0 FPGA->SpiNN enable
+                                   , 2: Link 1 SpiNN->FPGA enable
+                                   , 3: Link 1 FPGA->SpiNN enable
+                                   , ...
+                                   }
+LEDO       6   0x18  RW         8  Override status LED (default: 0x0F)
+                                   { 7: DIM_RING
+                                   , 6: DIM_PERIPH
+                                   , 5: DIM_B2B1
+                                   , 4: DIM_B2B0
+                                   , 3: FORCE_ERROR_RING
+                                   , 2: FORCE_ERROR_PERIPH
+                                   , 1: FORCE_ERROR_B2B1
+                                   , 0: FORCE_ERROR_B2B0
+                                   }
+RXEQ       7   0x1C  RW         8  rx equalization (default: 0x0A)
+                                       { 7-6: RING_RXEQMIX
+                                       , 5-4: PERIPH_RXEQMIX
+                                       , 3-2: B2B1_RXEQMIX
+                                       , 1-0: B2B0_RXEQMIX
+                                       }
+TXDS       8   0x20  RW        16  tx driver swing (default: 0x0066)
+                                       { 15-12: RING_TXDIFFCTRL
+                                       ,  11-8: PERIPH_TXDIFFCTRL
+                                       ,   7-4: B2B1_TXDIFFCTRL
+                                       ,   3-0: B2B0_TXDIFFCTRL
+                                       }
+TXPE       9   0x24  RW        12  tx pre-emphasis (default: 0x012)
+                                       { 11-9: RING_TXPREEMPHASIS
+                                       ,  8-6: PERIPH_TXPREEMPHASIS
+                                       ,  5-3: B2B1_TXPREEMPHASIS
+                                       ,  2-0: B2B0_TXPREEMPHASIS
+                                       }
