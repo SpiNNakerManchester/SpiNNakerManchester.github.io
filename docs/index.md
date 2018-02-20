@@ -29,7 +29,7 @@ This page contains links to various technical documents about SpiNNaker.
 * [SpOmnibot (TUM SpiNNaker Robot)](spomnibot/)
 * [Pushbot](push_bot/)
 * [SpiNN-5 FPGA SATA Links](spin5-links.pdf)
-* [Safe conection of external devices to SpiNN-5 boards](spiNN-5_fpgas.txt)
+* [Safe connection of external devices to SpiNN-5 boards](spiNN-5_fpgas.txt)
 
 # Low-Level Software Documents
 
