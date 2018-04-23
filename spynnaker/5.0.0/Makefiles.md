@@ -1,3 +1,8 @@
+---
+title: Makefiles in sPyNNaker version 5.0.0
+layout: default
+---
+
 The way the C code is built was changed April 2018.
 
 These changes have required major modificattions to the make files and moving many c and make files.
@@ -19,7 +24,7 @@ For example:
     log_info("Reading parameters from 0x%.8x", region_address);
 becomes
     log_mini_info(12345, region_address);
-
+        
 The conversion from message ids back to the full string is done automatically by spinn_utilities.make_tools.replacer called from spinn_front_end_common/interface/interface_functions/chip_iobuf_extractor.py
 
 Future_work
@@ -30,88 +35,135 @@ Limitations
 -----------
 The convertor expects the first parameter in each log message to be a pure string. 
 
-Changes
-=======
-
-Moving of files
----------------
-### Sections
-
+Location of files
+=================
 The c files have now been split into 4 sections
 
-#### src
+## src
 All the raw c files have been moved into src directories (unless already in src)
 The only files in the src directory and its children should be compilable c files (*.c and *.h).
 (ignoring any .gitignore files)
 
-#### makefiles
+## makefiles
 In the sPynnaker repository makefiles have been moved into a seperate makefiles directory.
 
-#### modified_src
+## modified_src
 This is where the make files will place the converted c files.
 This is done automatically and these directories are deleted by clean so do not edit them.
 
-#### build
+## build
 This is where temporary files used during make are placed.
 In the sPynnaker repository build is no longer a subdirectory of src. 
 This includes *.o object files, *.bin, *.elf ect.
 These directories are deleted by clean so do not add anything you hope to keep. 
 
-### includes
-----------
+Changes to the C files
+----------------------
+
+## includes
 All .. include paths have been removed!
 Instead they have been replaced by full paths back to NEURAL_MODELLING_DIRS/src or the eqivellent.
 This allows for the modified files to be easily found using -I NEURAL_MODELLING_DIRS/modified_src
 
-#### Other c changes
+## Other c changes
 The only other c file changes is in neuron/structural_plasticity/synaptogenesis/topographic_map_impl.c
 The DMA_WRITEBACK method has been removed. (code hardlined in where needed)
 This because of th elimitations of the convertor mentioned above.
 
-### Makefiles
+Makefiles
+=========
 
-#### Discontinued makefiles
-##### FrontEndCommon.mk and Makefile.SpiNNFrontEndCommon
-These are no longer in use and if they are included will raise a make error.
+## spinnaker_tools.mk
+This is the root make file for nearly all the make files.
 
-The code that previously was here has been transferred to local.mk and neural_build.mk
+Contains the main instuctions for building spinnaker c files into o files, 
+then elf files, then bin and md files and filay aplx files
 
+This is a nearly like for like replacement of spinnaker_tools/make/Makefile.common 
 
-#### local.mk
+## local.mk
 For all builds that do not depend on NEURAL_MODELLING_DIRS/src/neuron
 Includes the relative stuff previously in FrontEndCommon.mk
 
 This requires 4 variables to be set before being called.
 1. APP: name of the application. Used to name the aplx and dict files.
-2. BUILD_DIR: see above
-3. SOURCES: List of files to build
-4. APP_OUTPUT_DIR: Location where to place the aplx and dict files
+2. SOURCES: List of files to build
+3. APP_OUTPUT_DIR: Location where to place the aplx and dict files
 
 Optionally extra variables are;
 SRC_DIR: defaults to src/ at the same level as the makefile 
 MODIFIED_DIR:  defaults to modified_src/ at the same level as the makefile
+BUILD_DIR: defaults to build/ at the same level as the makefile
 
-####  neural_build.mk
+Muiltple make files can be in the same directory, 
+sharing the same src and build dirs as long as the define a different APP.
+The code will be modifed once unless it is changed between builds. 
+
+## neural_build.mk
 For Neuron builds ect that do depend on NEURAL_MODELLING_DIRS/src/neuron
-....
 
-#### sPyNNaker8NewModelTemplate/c_models/makefiles/common.mk
+Includes the relative stuff previously in FrontEndCommon.mk, paths.mk 
+and sPyNNaker/neural_modelling/src/neuron/builds/common.mk 
 
+Neurons are built by linking together various bits of c code defined in the variables
+* NEURON_MODEL
+* NEURON_MODEL_H
+* INPUT_TYPE_H
+* THRESHOLD_TYPE_H
+* SYNAPSE_TYPE_H
+* SYNAPSE_DYNAMICS
 
+Plus the following optional variables:
+* ADDITIONAL_INPUT_H
+* WEIGHT_DEPENDENCE
+* TIMING_DEPENDENCE
+* SYNAPTOGENESIS_DYNAMICS
 
+These should all be defined based on the variable
+* NEURON_DIR  (Which points to $(NEURAL_MODELLING_DIRS)/src/)
+  * For historical SOURCE_DIR is also set but its use is not encouraged
 
+If the c sources are not all in NEURAL_MODELLING_DIRS/src see [sPyNNaker8NewModelTemplate](https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate) 
+and in particular sPyNNaker8NewModelTemplate/c_models/makefiles/extra.mk for an example.  
 
+The following variables are also needed but have default values
+* BUILD_DIR defaults to $(NEURAL_MODELLING_DIRS)/builds/$(APP)/
+   * Each individual build MUST have a unique build directory due to the complex linking. 
+* APP_OUTPUT_DIR defaults to:=  $(abspath $(NEURAL_MODELLING_DIRS)/../spynnaker/pyNN/model_binaries)/
 
+Internally the paths are changed to ones based on: 
+* MODIFIED_DIR := $(NEURAL_MODELLING_DIRS)/modified_src
 
+All the make rules required to modify the c code and build the dict files are provided. 
 
+## sPyNNaker8NewModelTemplate/c_models/makefiles/extra.mk 
+This is an example file of how to use multiple source directories and still build using neurons.
 
+Documentation has been include in the make file itself.
 
+## Other make files
+Many of the previous shared make files are no longer used.
 
-Changes to the make files
--------------------------
+They have been converted to just throwing an error and pointing here.
 
+Please contact the spinnaker team (idealy via the googlegroup) if you need help converting previous make files.
 
+## Dict Files
+The make files generate a APP_OUTPUT_DIR/APP.dict file next to each 
+APP_OUTPUT_DIR/APP.aplx file. 
 
+The purpose of these files is to supply the dictionary mapping 
+for the log messages so that they can be correctly converted back.
+
+These hold the mappings as they where at the time the aplx file was created. 
+If the sources have changed and partially rebuilt since aplx file was commited they may not match the files in the modified directories.
+
+The dict files includes all the c code in all the directories used in the build 
+and not just the actual built code. 
+As they list by log message and not by c file, files with no log statements 
+will not be included, but will have been converted into the modified directories.
+So they can not be considered listing of what c files where used, 
+or what messages could be logged.      
 
 
 
