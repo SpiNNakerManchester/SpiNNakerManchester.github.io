@@ -45,7 +45,8 @@ The only files in the src directory and its children should be compilable c file
 (ignoring any .gitignore files)
 
 ## makefiles
-In the sPynnaker repository makefiles have been moved into a seperate makefiles directory.
+Each root makefile is now at the same level as their src directory 
+or in a makefile directoy parallel to their src directory.
 
 ## modified_src
 This is where the make files will place the converted c files.
@@ -82,7 +83,8 @@ then elf files, then bin and md files and filay aplx files
 This is a nearly like for like replacement of spinnaker_tools/make/Makefile.common 
 
 ## local.mk
-For all builds that do not depend on NEURAL_MODELLING_DIRS/src/neuron
+For all builds where the c files are local to the make file.
+This covers most cases that do depend on NEURAL_MODELLING_DIRS/src/neuron
 Includes the relative stuff previously in FrontEndCommon.mk
 
 This requires 4 variables to be set before being called.
@@ -158,11 +160,14 @@ for the log messages so that they can be correctly converted back.
 These hold the mappings as they where at the time the aplx file was created. 
 If the sources have changed and partially rebuilt since aplx file was commited they may not match the files in the modified directories.
 
-The dict files includes all the c code in all the directories used in the build 
-and not just the actual built code. 
+Whole c code directories are converted in a single call. 
+This approach was chosen as if avoids having to track exactly which files are included.
+It also allows the modified code to be reused for several build.
+Log Levels are ignored as they could be different between builds.
+Therefor the dict files will include more classes and messages than actualy used in the cod 
 As they list by log message and not by c file, files with no log statements 
 will not be included, but will have been converted into the modified directories.
-So they can not be considered listing of what c files where used, 
+So the dict files can not be considered listing of what c files where used, 
 or what messages could be logged.      
 
 
