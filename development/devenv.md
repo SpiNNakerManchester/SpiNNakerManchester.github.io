@@ -33,28 +33,28 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 
 |**Name**|**URL**|**Code Type**|
 |:-------|:------|:------------|
-|`spinnaker_tools` | https://github.com/SpiNNakerManchester/spinnaker_tools/tree/406f85f87b13f7adf8a5a68289dd2001795371ac|C|
-|`spinn_common` | https://github.com/SpiNNakerManchester/spinn_common/tree/7f0208163e12e4e714f560ccb6042b2aa874a0a1|C|
-|`SpiNNUtils` | https://github.com/SpiNNakerManchester/SpiNNUtils/tree/4024c644fb0c6c77d0091c6db1023b682eee311e|Python|
-|`SpiNNMachine` | https://github.com/SpiNNakerManchester/SpiNNMachine/tree/7e25c58a4cde58a8bed9faa578004afc4967b6c1|Python|
-|`SpiNNStorageHandlers` | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers/tree/1e55c9241c94e7cb0e79dbb6b152c6304cf93eb8|Python|
-|`spalloc` | https://github.com/SpiNNakerManchester/spalloc/tree/2a13d27dbd6e43175b2fc583fcf015f59920cac1|Python|
-|`spalloc_server` | https://github.com/SpiNNakerManchester/spalloc_server/tree/2733bb933c8327dd708fb710c730013bde666b09|Python|
-|`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN/tree/3b8a7316a0a81a901cc082c30d03adc90afdefc6|Python|
-|`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan/tree/34c0db6dd47a7391f5e35472a57f747681ce91cd|Python and C|
-|`DataSpecification` | https://github.com/SpiNNakerManchester/DataSpecification/tree/5e4e60f2bbd7428373fbe03a53d85e09ca51564c|Python|
-|`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/tree/5794c6588539562ade331f49c1b2f88af6835780|Python and C|
-|`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd/tree/22fbf8932558846ef31dd5161b85650a01ee86eb|Python and C|
-|`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker/tree/e97c98d293f8bb2c4784e45c89a4f9fd8ab4bebd|Python and C|
-|`sPyNNaker7` | https://github.com/SpiNNakerManchester/sPyNNaker7/tree/7416a0451f9c8b7afc45f2875c4fdbca4412cece|Python|
-|`sPyNNaker8` | https://github.com/SpiNNakerManchester/sPyNNaker8/tree/bb6c6f547dfeaed3c81f55c78cde4fc3b782430d|Python|
+|`spinnaker_tools` | https://github.com/SpiNNakerManchester/spinnaker_tools.git|C|
+|`spinn_common` | https://github.com/SpiNNakerManchester/spinn_common.git|C|
+|`SpiNNUtils` | https://github.com/SpiNNakerManchester/SpiNNUtils.git|Python|
+|`SpiNNMachine` | https://github.com/SpiNNakerManchester/SpiNNMachine.git|Python|
+|`SpiNNStorageHandlers` | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|Python|
+|`spalloc` | https://github.com/SpiNNakerManchester/spalloc.git|Python|
+|`spalloc_server` | https://github.com/SpiNNakerManchester/spalloc_server.git|Python|
+|`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
+|`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan.git|Python and C|
+|`DataSpecification` | https://github.com/SpiNNakerManchester/DataSpecification.git|Python|
+|`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
+|`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
+|`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
+|`sPyNNaker7` | https://github.com/SpiNNakerManchester/sPyNNaker7.git|Python|
+|`sPyNNaker8` | https://github.com/SpiNNakerManchester/sPyNNaker8.git|Python|
 |`sPyNNaker7NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker7NewModelTemplate.git|Python and C|
-|`sPyNNaker8NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate/tree/0484405bb289a8d33600cd7c02d2c727eed9e57a|Python and C|
-|`PyNN7Examples` | https://github.com/SpiNNakerManchester/PyNN7Examples/tree/2243899283cbd5e257c4c8f6ee08b1b0eca810fe|Python|
-|`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples/tree/f7903876e3f7a32be8fe184aa5f00f4a9a02c153|Python|
-|`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers/tree/95fb9f518541fff73a28df6f1cd38de096d6fbb8|Python|
-|`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab/tree/a3fb2fcf0b8bee3fdf73a66dd2b1a6995e0faad6|Python|
-|`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts/tree/97fc1b5beac480660efeb772919782494a16aa2c|Python and scripting|
+|`sPyNNaker8NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C|
+|`PyNN7Examples` | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
+|`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
+|`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
+|`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
+|`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
 
