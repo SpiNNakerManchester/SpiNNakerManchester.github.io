@@ -33,7 +33,13 @@ The log_mini_ methods currently still use fprintf and record each number ids and
 
 Limitations
 -----------
-The convertor expects the first parameter in each log message to be a pure string. 
+The convertor expects the first parameter in each log message to be a pure string.
+
+As String parameter can be passed in using as a variable using %s for example:
+Instead of:   
+log_info(msg);   
+do:   
+log_info("%s", msg); 
 
 Location of files
 =================
@@ -68,8 +74,7 @@ This allows for the modified files to be easily found using -I NEURAL_MODELLING_
 
 ## Other c changes
 The only other c file changes is in neuron/structural_plasticity/synaptogenesis/topographic_map_impl.c
-The DMA_WRITEBACK method has been removed. (code hardlined in where needed)
-This because of th elimitations of the convertor mentioned above.
+The DMA_WRITEBACK method has been changed. (See limitations)
 
 Makefiles
 =========
