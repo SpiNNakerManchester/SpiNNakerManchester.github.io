@@ -41,7 +41,7 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |`spalloc` | https://github.com/SpiNNakerManchester/spalloc.git|Python|
 |`spalloc_server` | https://github.com/SpiNNakerManchester/spalloc_server.git|Python|
 |`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
-|`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan.git|Python and C|
+|`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan.git|Python|
 |`DataSpecification` | https://github.com/SpiNNakerManchester/DataSpecification.git|Python|
 |`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
 |`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
@@ -169,7 +169,6 @@ Note that include files are generally installed into `spinnaker_tools/include`, 
 |**Module Folder**|**Include Dependencies**|
 |:----------------|:-----------------------|
 |`spinn_common`|spinnaker_tools/include|
-|`SpiNNMan/c_models`|spinnaker_tools/include|
 |`SpiNNFrontEndCommon/c_common`|spinnaker_tools/include|
 |`SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples`|spinnaker_tools/include|
 |`sPyNNaker/neural_modelling`|spinnaker_tools/include|
@@ -203,7 +202,6 @@ The C code to compile is (in order) as follows:
 |:-----|:---------|:-------|:------------|
 |`spinnaker_tools`||`make`|`make clean`|
 |`spinn_common`||`make`<br>`make install`|`make clean`|
-|`SpiNNMan`|`c_models`|`make`|`make clean`|
 |`SpiNNFrontEndCommon`|`c_common`|`make`<br>`make install`|`make clean`|
 |`sPyNNaker`|`neural_modelling`|`make`|`make clean`|
 |`SpiNNakerGraphFrontEnd`|`spinnaker_graph_front_end/examples`|`make`|`make clean`|
