@@ -24,12 +24,14 @@ title: Setting up a Software Development Environment for SpiNNaker
 
        pip install pylru enum34 six future "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"
 
+We recommend the use of virtualenv for development work, _especially_ if you wish to use both sPyNNaker7 and sPyNNaker8.
+
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
 
 # <a name="git"></a> Git Cloning
 
-The repositories to be cloned are shown below.  If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirity of the software.
+The repositories to be cloned are shown below.  If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirety of the software.
 
 |**Name**|**URL**|**Code Type**|
 |:-------|:------|:------------|
@@ -63,10 +65,10 @@ Although optional, we highly recommend the use of an Integrated Development Envi
 
  * [PyCharm](https://www.jetbrains.com/pycharm/) — Version 4.5.3 has been tested but other versions should also work. This is very good for Python development and supports C development as well to some degree.  Java development is not supported in this client.  PyCharm is good at working out the links between Python code.
 
- * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Neon has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
-    * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for pydev.
-    * AnyEditTools — This enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for AnyEditTools.
-    * CDT — This is required for C Development.  This has to be installed from the Help → Install New Software… menu option.  Here, paste in this url: CDT — `http://download.eclipse.org/tools/cdt/releases/9.0`.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
+ * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Oxygen has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
+    * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for `pydev`.
+    * CDT — This is required for C Development.  This has to be installed from the Help → Install New Software… menu option.  Here, paste in this URL: CDT — `http://download.eclipse.org/tools/cdt/releases/9.0`.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
+    * AnyEditTools — This optional plugin enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for `AnyEditTools`.
 
 ## Command line
 
@@ -217,26 +219,26 @@ If you have also downloaded the repositories for building new neuron models, the
 ## Building individual models
 Note that in many cases, the top-level Makefile for a module may descend in to a number of sub-directories and build a number of individual models and libraries.  It is always possible to go into these subdirectories yourself and build the individual model directly.  This will save some time, since it will only build the code in the module you are interested in.  This may be necessary when debugging code.
 
-# <a name="PyNNSelect"></a> PyNN 0.7.5 vs PyNN 0.8
+# <a name="PyNNSelect"></a> PyNN 0.7.5 vs PyNN 0.9
 
-Due to the lack of backwards compatibility between PyNN 0.8 and PyNN 0.7.5, installing both versions requires a bit of finessing within your chosen IDE.
+Due to the lack of backwards compatibility between PyNN 0.9 and PyNN 0.7.5, installing both versions requires a bit of extra work within your chosen IDE. _We recommend for new work that people only use PyNN 0.9 (or later)._
 
 ## Pycharm
 
 If you decided to use PyCharm to support your development, then to support both PyNN installations you are required to:
- * build 2 versions of your Python interpreter with PyNN 0.7.5 and PyNN 0.8 installed separately.
+ * build 2 versions of your Python interpreter with PyNN 0.7.5 and PyNN 0.9 installed separately.
  * set the Python interpreter for each module accordingly.
 
 To achieve the first, please follow the following steps:
  1. Go to File → Settings → Project → Python Interpreter.
- 2. Click on the cog in the top right corner of the pop up and select "Create Virtual Env".
- 3. Name the virtual env "PyNN0.75" and select the boxes "inherit global site-packages" and "Make available to all projects".
- 4. Repeat the previous two steps but name the virtual env "PYNN0.8".
+ 2. Click on the cog in the top right corner of the pop up and select "Create Virtual Env" to create a virtual environment.
+ 3. Name the virtual environment "PyNN0.75" and select the boxes "inherit global site-packages" and "Make available to all projects".
+ 4. Repeat the previous two steps but name the virtual environment "PYNN0.9".
  5. Select from the drop down list of interpreters the PYNN0.75 version.
  6. Click on the `+` button on the right hand side of the pop up.
  7. Select PyNN from the list and select specific version 0.75, install this.
  8. Select from the drop down list of interpreters the PYNN0.8 version.
- 9. Repeat steps 6 and 7 but select PyNN and the specific version 0.8 instead.
+ 9. Repeat steps 6 and 7 but select PyNN and the specific version 0.9 instead.
 
 To achieve the second, please follow the following steps:
 
@@ -253,19 +255,14 @@ To achieve the second, please follow the following steps:
 |SpiNNakerGraphFrontEnd|Any python 2.7 Interpreter|
 |sPyNNaker|Any python 2.7 Interpreter|
 |sPyNNaker7|PyNN0.75|
-|sPyNNaker8|PyNN0.8|
-|sPyNNakerExternalDevicesPlugin|Any Python 2.7 Interpreter|
-|sPyNNaker7ExternalDevicesPlugin|PyNN0.75|
-|sPyNNaker8ExternalDevicesPlugin|PyNN0.8|
-|sPyNNakerExtraModelsPlugin|Any Python 2.7 Interpreter|
-|sPyNNaker7ExtraModelsPlugin|PyNN0.75|
-|sPyNNaker8ExtraModelsPlugin|PyNN0.8|
-|sPyNNakerNewModelTemplate|Any Python 2.7 Interpreter|
+|sPyNNaker8|PyNN0.9|
 |sPyNNaker7NewModelTemplate|PyNN0.75|
-|sPyNNaker8NewModelTemplate|PyNN0.8|
+|sPyNNaker8NewModelTemplate|PyNN0.9|
 |PyNN7Examples|PyNN0.75|
-|PyNN8Examples|PyNN0.8|
-|IntroLab|PyNN0.8|
+|PyNN8Examples|PyNN0.9|
+|IntroLab|PyNN0.9|
+
+Our PyNN0.9 support has also been tested in Python 3.6.
 
 ## Eclipse
 
@@ -285,18 +282,7 @@ To install PyNN 0.7 locally:
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
  1. Set the PyNN7 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
 
-To install PyNN 0.8 locally:
- 1. Download [PyNN0.8.3.tar.gz](https://pypi.python.org/packages/16/6e/33c228807e42034f8db90005d0107dc8da12d33e870db1b552d5353fcb5d/PyNN-0.8.3.tar.gz).
- 1. Extract the archive.
- 1. Within the extracted archive, run:
-
-        python setup.py install --install-lib PyNN8
-
- 1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
- 1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
- 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
-
-Or to install PyNN 0.9 locally:
+To install PyNN 0.9 locally:
  1. Download [PyNN0.9.1.tar.gz](https://pypi.python.org/packages/ea/c9/ae4a6ac5a6007b85a0e35cce9bd34283eb577606e1f0c15443f575fba630/PyNN-0.9.1.tar.gz).
  1. Extract the archive.
  1. Within the extracted archive, run:
@@ -306,6 +292,17 @@ Or to install PyNN 0.9 locally:
  1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
  1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
  1. Set the PyNN9 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
+
+Or to install PyNN 0.8 locally _(not recommended)_:
+ 1. Download [PyNN0.8.3.tar.gz](https://pypi.python.org/packages/16/6e/33c228807e42034f8db90005d0107dc8da12d33e870db1b552d5353fcb5d/PyNN-0.8.3.tar.gz).
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+
+        python setup.py install --install-lib PyNN8
+
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
+ 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
 
 Update the dependencies for the following modules, adding the indicated module.  Note that you should not mix the use of versions 0.8 and 0.9, and that if you are using the current master branch, then you should be using PyNN 0.9.
 
@@ -319,11 +316,13 @@ Update the dependencies for the following modules, adding the indicated module. 
 |PyNN8Examples|PyNN0.8.3 or PyNN0.9.1|
 |IntroLab|PyNN0.8.3 or PyNN0.9.1|
 
+Note that sPyNNaker8 supports both PyNN 0.8 and PyNN 0.9.
+
 # <a name="PyNNInstall"></a> PyNN Install
 Once the modules have been installed, the final step is to create the pyNN.spiNNaker links.  This is done as follows:
 
  1. From sPyNNaker7, run the `spynnaker7/pyNN/setup-pynn.py` script.
- 1. From sPyNNaker8, run the `spynnaker8/setup-pynn.py` script.
+ 1. From sPyNNaker8, run the `spynnaker8/setup_pynn.py` script.
 
 This will create the correct linking in each of the environments.
 
@@ -332,7 +331,7 @@ When SpyNNaker is first called, if a configuration file is not found, it will cr
 
     python -c "import pyNN.spiNNaker"
 
-Note that if you have previously installed a version of the spiNNaker software, you may already have a file called ".pacman.cfg" in your home directory.  In this case, SpyNNaker will attempt to use this file for its parameters.  If you do not have this file, a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
+Note that if you have previously installed a version of the spiNNaker software, you may already have a file called "`.pacman.cfg`" in your home directory.  In this case, SpyNNaker will attempt to use this file for its parameters.  If you do not have this file, a new file called "`.spynnaker.cfg`" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
 
     [Machine]
     machineName = None
@@ -344,7 +343,7 @@ If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do
 
 Within the file, you should set `machineName` to the IP address or hostname of your SpiNNaker machine, and `version` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
 
-The default ip address for a spinn-3 board is `192.168.240.253` and the default ip address for a spinn-5 board is `192.168.240.1`.
+The default IP address for a spinn-3 board is `192.168.240.253` and the default IP address for a spinn-5 board is `192.168.240.1`.
 
 _TODO:_ Does there need to be anything in here about using `spalloc_server=spinnaker.cs.man.ac.uk` and `spalloc_user`, with `machineName` and `version` set to `None`?
 
