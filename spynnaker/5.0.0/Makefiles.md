@@ -16,7 +16,7 @@ Instead of using Strings in log messages a Dictionary coder is now used.
 
 However to avoid ever developer having to the dictionary and make sure to use the correct message number this substitution is now done automatically.
 
-This conversion is done by the make files who now call spinn_utilities.make_tools.convertor to convert c files from the src directory into a modified_src directory before building.
+This conversion is done by the make files who now call spinn_utilities.make_tools.converter to convert c files from the src directory into a modified_src directory before building.
 The tool also creates *.dict files to record the mappings as well as *.range files to keep the number unique in each parts of the code.
 
 Each log messages is changed to a log_mini method where the message string is replaced by a number.
@@ -33,7 +33,7 @@ The log_mini_ methods currently still use fprintf and record each number ids and
 
 Limitations
 -----------
-The convertor expects the first parameter in each log message to be a pure string.
+The converter expects the first parameter in each log message to be a pure string.
 
 As String parameter can be passed in using as a variable using %s for example:
 Instead of:   
