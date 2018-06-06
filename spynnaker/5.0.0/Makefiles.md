@@ -131,7 +131,7 @@ These should all be defined based on the variable
   * For historical SOURCE_DIR is also set but its use is not encouraged
 
 If the c sources are not all in NEURAL_MODELLING_DIRS/src see [sPyNNaker8NewModelTemplate](https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate) 
-and in particular sPyNNaker8NewModelTemplate/c_models/makefiles/extra.mk for an example.  
+and in particular sPyNNaker8NewModelTemplate/c_models/makefiles/my_neuron_modelling_build.mk for an example.
 
 The following variables are also needed but have default values
 * BUILD_DIR defaults to $(NEURAL_MODELLING_DIRS)/builds/$(APP)/
@@ -143,7 +143,7 @@ Internally the paths are changed to ones based on:
 
 All the make rules required to modify the c code and build the dict files are provided. 
 
-## sPyNNaker8NewModelTemplate/c_models/makefiles/extra.mk 
+## sPyNNaker8NewModelTemplate/c_models/makefiles/my_neuron_modelling_build.mk
 This is an example file of how to use multiple source directories and still build using neurons.
 
 Documentation has been include in the make file itself.
