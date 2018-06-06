@@ -87,9 +87,9 @@ then elf files, then bin and md files and filay aplx files
 
 This is a nearly like for like replacement of spinnaker_tools/make/Makefile.common 
 
-## local.mk
+## front_end_common.mk
 For all builds where the c files are local to the make file.
-This covers most cases that do depend on NEURAL_MODELLING_DIRS/src/neuron
+This covers most cases that do NOT depend on NEURAL_MODELLING_DIRS/src/neuron
 Includes the relative stuff previously in FrontEndCommon.mk
 
 This requires 4 variables to be set before being called.
