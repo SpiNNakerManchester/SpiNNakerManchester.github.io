@@ -22,9 +22,11 @@ title: Setting up a Software Development Environment for SpiNNaker
 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install pylru enum34 six future "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1"
+       pip install pylru enum34 six future "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1" futures sortedcollections csa
 
 We recommend the use of virtualenv for development work, _especially_ if you wish to use both sPyNNaker7 and sPyNNaker8.
+
+Note: the version of neo you use will depend upon which PyNN version you use.  This is discussed later in this document.
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
@@ -221,7 +223,7 @@ Note that in many cases, the top-level Makefile for a module may descend in to a
 
 # <a name="PyNNSelect"></a> PyNN 0.7.5 vs PyNN 0.9
 
-Due to the lack of backwards compatibility between PyNN 0.9 and PyNN 0.7.5, installing both versions requires a bit of extra work within your chosen IDE. _We recommend for new work that people only use PyNN 0.9 (or later)._
+Due to the lack of backwards compatibility between PyNN 0.9 and PyNN 0.7.5, installing both versions requires a bit of extra work within your chosen IDE. _We recommend for new work that people only use PyNN 0.9 (or later)._ Note as well that if you use PyNN 0.9 then you will need to update your version of neo to at least version 0.5.2.
 
 ## Pycharm
 
