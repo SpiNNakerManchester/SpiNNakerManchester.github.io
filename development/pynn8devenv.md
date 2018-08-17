@@ -4,7 +4,7 @@ title: Setting up with multiple PyNN Versions
 
 # Deprecated
 
-These pages discussed setting up Spynnaker for multiple versions of PyNN.
+These pages discussed setting up SpyNNaker for multiple versions of PyNN.
 Unless you specifically need to work with older version of PyNN uses the [current documentation.](http://spinnakermanchester.github.io/development/devenv.html)
 
 While generally these tools still work against PyNN0.7 and PyNN0.8 the master branch is not been fully tested against these.
