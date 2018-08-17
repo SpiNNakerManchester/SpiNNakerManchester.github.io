@@ -22,15 +22,11 @@ title: Setting up a Software Development Environment for SpiNNaker
 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install "appdirs>=1.4.2,<2.0.0" future "numpy>=1.12,<1.9999"  "scipy>=0.16.0" "six>=1.8.0" "pylru>=1" enum34 future lxml jsonschema sortedcollections
+       pip install pylru enum34 six future "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1" futures sortedcollections csa
 
-       pip install  "rig>=2.0.0,<3.0.0" futures enum-compat pytz tzlocal "requests>=2.4.1" matplotlib
+We recommend the use of virtualenv for development work, _especially_ if you wish to use both sPyNNaker7 and sPyNNaker8.
 
-       pip install  csa "quantities>=0.12.1" "pynn>=0.9.1,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
-
-You may need to install python3-tk
-
-We recommend the use of virtualenv for development work
+Note: the version of neo you use will depend upon which PyNN version you use.  This is discussed later in this document.
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
@@ -54,8 +50,11 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
 |`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
 |`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
+|`sPyNNaker7` | https://github.com/SpiNNakerManchester/sPyNNaker7.git|Python|
 |`sPyNNaker8` | https://github.com/SpiNNakerManchester/sPyNNaker8.git|Python|
+|`sPyNNaker7NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker7NewModelTemplate.git|Python and C|
 |`sPyNNaker8NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C|
+|`PyNN7Examples` | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
 |`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
@@ -157,8 +156,11 @@ In a C project, this is done as follows:
 |SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, spalloc|
 |SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
 |sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|sPyNNaker7|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
 |sPyNNaker8|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|sPyNNaker7NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc|
 |sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
+|PyNN7Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc|
 |PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
 |sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
 |IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker8, spalloc|
@@ -208,7 +210,7 @@ The C code to compile is (in order) as follows:
 |`sPyNNaker`|`neural_modelling`|`make`|`make clean`|
 |`SpiNNakerGraphFrontEnd`|`spinnaker_graph_front_end/examples`|`make`|`make clean`|
 
-A script is also available [in Support Scripts](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location.
+A script is also available [here](automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location.
 
 If you have also downloaded the repositories for building new neuron models, then the C code is compiled using the following commands:
 
