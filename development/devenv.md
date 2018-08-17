@@ -1,5 +1,5 @@
 ---
-title: Setting up a Software Development Environment for SpiNNaker
+title: Setting up with multiple PyNN Versions
 ---
 
 # Installation
@@ -15,6 +15,9 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Set up the PyNN links](#PyNNInstall).
  1. [Configure the environment](#Configuration).
  1. [Run some examples](#Examples).
+ 1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
+
+ These instuction
 
 # <a name="PythonRequirements"></a> Python Requirements
 1. [Install the general platform requirements](/common_pages/4.0.0/PythonInstall.html)
@@ -246,17 +249,6 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 
 # <a name="Examples"></a> Running some examples
 
-## PyNN 0.7
-
- * Go to the "examples" folder in Pynn7Examples
- * Run: `va_benchmark.py`
- * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
- * Once the example has finished, you should see a graph that will look something like this:
-
-   ![VA7BenchmarkSpikes](va7_benchmark.png)
-
-## PyNN 0.8
-
  * Go to the "examples" folder in Pynn8Examples
  * Run: `va_benchmark.py`
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
@@ -265,3 +257,4 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
    ![VA8BenchmarkSpikes](va8_benchmark.png)
 
 If you get the output above, you have successfully installed your system.
+
