@@ -6,7 +6,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 These pages discussed setting up Spynnaker for multiple versions of PyNN.
 Unless you specifically need to work with older version of PyNN uses the [current documentation.](http://spinnakermanchester.github.io/development/devenv.html)
 
-Please be aware that the master branches may no longer work against older versions of pynn.
+While generally these tools still work against PyNN0.7 and PyNN0.8 the master branch is not been fully tested against these.
 
 # Installation
 

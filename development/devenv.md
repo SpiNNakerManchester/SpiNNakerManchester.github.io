@@ -17,8 +17,6 @@ title: Setting up with multiple PyNN Versions
  1. [Run some examples](#Examples).
  1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
 
- These instuction
-
 # <a name="PythonRequirements"></a> Python Requirements
 1. [Install the general platform requirements](/common_pages/4.0.0/PythonInstall.html)
 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
