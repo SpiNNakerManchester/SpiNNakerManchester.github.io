@@ -31,14 +31,14 @@ Attendees should have some prior experience with Python. For the topics on new n
 1. [Hardware Interfaces](https://drive.google.com/drive/folders/1HPw0S4rJ__O98GGq5lvBf3nvwuWIorn8)
 1. [Fixed Point Maths and Libraries](https://docs.google.com/presentation/d/14KdkXI4ods5LRfpnOtuHcjlQ2_AUF3Vjh0IQBZJ-NMQ/export/pdf)
 1. [Adding New Neuron Models](https://docs.google.com/presentation/d/10MBagCZfONxJ3AR7dAqSHQfJlv8ZJPvmhFSndNlvA7g/export/pdf)
-1. [Adding New Models of Synaptic Plasticity](https://docs.google.com/presentation/d/14KdkXI4ods5LRfpnOtuHcjlQ2_AUF3Vjh0IQBZJ-NMQ/export/pdf)
+1. [Adding New Models of Synaptic Plasticity](https://docs.google.com/presentation/d/1NrPESxzYqsr7cn3zMq9pHeANxENzA44WkLzjTFJ7Bhs/export/pdf)
 
 # Lab Manuals
 
 1. [Intro Lab](https://docs.google.com/document/d/1yOew57KyApb5TSKJ1MMAWI_zwXBPbuqXta1Y5CzCbcc/export?format=pdf)
 1. [Running PyNN 0.8 Simulations on SpiNNaker](https://docs.google.com/document/d/1yOew57KyApb5TSKJ1MMAWI_zwXBPbuqXta1Y5CzCbcc/export?format=pdf)
 1. [Simple Data Input Output and Visualisation](https://docs.google.com/document/d/1JBQgLFy2USaJ4L5kYRDmq_1-CE7BYVVlBJoIa9nSWIM/export?format=pdf)
-1. [External Devices](https://docs.google.com/document/d/1JBQgLFy2USaJ4L5kYRDmq_1-CE7BYVVlBJoIa9nSWIM/export?format=pdf)
+1. [External Devices](https://docs.google.com/document/d/1nZ4m82rCF6CfD5qWGy6MeLiP4sfodanGXUUaG6zK4jA/export?format=pdf)
 1. [Adding New Neuron Models](https://docs.google.com/document/d/1-LdnQPaOG2b8aJ1k9l1iTcrRFyiGx-73SIQvxB-QNiM/export?format=pdf)
 1. [Adding New Models of Synapstic Plasticity](https://docs.google.com/document/d/104hSwG8e9tYq-rlc4f_hmQ3pCH6y1g2G4ZZPLQeSUKk/export?format=pdf)
 
