@@ -30,6 +30,7 @@ As of September 2017 the contributors included (names in alphabetical order of t
 * [Donal K. Fellows](https://github.com/dkfellows)
 * [David Lester](https://github.com/dr-david-lester)
 * [Arthur Ceccotti](https://github.com/gmtuca)
+* [Michael Hopkins](https://github.com/hopper333)
 * [Luis A. Plana](https://github.com/lplana)
 * [Mantas Mikaitis](https://github.com/mmikaitis)
 * [Jonathan Heathcote](https://github.com/mossblaser)
@@ -42,5 +43,7 @@ As of September 2017 the contributors included (names in alphabetical order of t
 * [Sara Summerton](https://github.com/sara-es)
 * [Sergio Davies](https://github.com/sergiodavies)
 * [Stephen Furber](https://github.com/sfurber)
+* [Simon Davidson](https://github.com/SimonDavidson)
 * [Joanna Moy](https://github.com/shrinkingviolet)
+* [Steve Temple](https://github.com/Steve-Temple)
 * Cameron Patterson
