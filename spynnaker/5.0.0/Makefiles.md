@@ -5,7 +5,7 @@ layout: default
 
 The way the C code is built was changed in April 2018.
 
-These changes have required major modifications to the make files, and moving many C and make files.
+These changes have required major modifications to the make files, and moving many C and makefiles.
 
 Background
 ==========
