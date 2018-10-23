@@ -163,8 +163,8 @@ These hold the mappings as they where at the time the aplx file was created.
 If the sources have changed and partially rebuilt since the aplx file was committed they may not match the files in the modified directories.
 
 Whole C code directories are converted in a single call.
-This approach was chosen as if avoids having to track exactly which files are included.
-It also allows the modified code to be reused for several build.
+This approach was chosen as it avoids having to track exactly which files are included.
+It also allows the modified code to be re-used for several builds.
 Log levels are ignored as they could be different between builds.
 Therefore the dict files will include more classes and messages than actualy used in the code.
 As they list by log message and not by C file, files with no log statements will not be included, but will have been converted into the modified directories.
