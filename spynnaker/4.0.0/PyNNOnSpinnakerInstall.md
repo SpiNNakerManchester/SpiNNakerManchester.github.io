@@ -4,7 +4,7 @@ layout: default
 published: true
 ---
 
-This guide will detail how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
+This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
 
 # Installation
 
