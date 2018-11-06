@@ -31,20 +31,6 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
     [sudo] pip uninstall sPyNNakerExternalDevicesPlugin
     [sudo] pip uninstall sPyNNakerExtraModelsPlugin
 
-## For PyNN 0.7 support:
-
-1. Install sPyNNaker7:
-
-       [sudo] pip install sPyNNaker7
-
-1. Install pyNN-SpiNNaker:
-
-       [sudo] python -m spynnaker7.pyNN.setup-pynn
-
-1. Install Matplotlib:
-
-       [sudo] pip install matplotlib
-
 ## For PyNN 0.9 support:
 
 1. Install sPyNNaker8:
@@ -59,6 +45,8 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] pip install matplotlib
 
+If for some reason you have to use a version of PyNN earlier than 0.8 then please contact us.
+
 You can now [configure](#Configuration) your environment.
 
 # <a name="User"></a> User-only Installation
@@ -71,20 +59,6 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
     pip uninstall sPyNNaker
     pip uninstall sPyNNakerExternalDevicesPlugin
     pip uninstall sPyNNakerExtraModelsPlugin
-
-## For PyNN 0.7 support:
-
-1. Install sPyNNaker7:
-
-       pip install sPyNNaker7 --user
-
-1. Install pyNN-SpiNNaker:
-
-       python -m spynnaker7.pyNN.setup-pynn
-
-1. Install Matplotlib:
-
-       pip install matplotlib --user
 
 ## For PyNN 0.9 support:
 
@@ -99,6 +73,8 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 1. Install Matplotlib:
 
        pip install matplotlib --user
+
+If for some reason you have to use a version of PyNN earlier than 0.8 then please contact us.
 
 You can now [configure](#Configuration) your environment.
 
@@ -143,21 +119,6 @@ To install the tools, first, activate your virtualenv, `<name>`:
 
         pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl```
 
-
-## For PyNN 0.7 support:
-
-1. Install sPyNNaker7:
-
-       pip install sPyNNaker7
-
-1. Install pyNN-SpiNNaker:
-
-       python -m spynnaker7.pyNN.setup-pynn
-
-1. Install Matplotlib:
-
-       pip install matplotlib
-
 ## For PyNN 0.9 support:
 
 1. Install sPyNNaker8:
@@ -171,6 +132,8 @@ To install the tools, first, activate your virtualenv, `<name>`:
 1. Install Matplotlib:
 
        pip install matplotlib
+
+If for some reason you have to use a version of PyNN earlier than 0.8 then please contact us.
 
 You can now [configure](#Configuration) your environment.
 
@@ -212,7 +175,6 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
-    * __PyNN 0.7 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN7Examples/archive/4.0.0.tar.gz) (tar.gz)
     * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
 
 1. Extract the archive
@@ -222,11 +184,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
        python va_benchmark.py
 
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
-1. Once the example has finished, you should see a graph that will look something like this (for PyNN 0.7):
-
-   ![VABenchmarkSpikes](va7_benchmark.png)
-
-   or this (for PyNN 0.9):
+1. Once the example has finished, you should see a graph that will look something like this (for PyNN 0.9):
 
    ![VABenchmarkSpikes](va8_benchmark.png)
 
