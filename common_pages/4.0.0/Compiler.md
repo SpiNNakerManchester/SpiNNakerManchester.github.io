@@ -54,7 +54,8 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 
 ## <a name="LinuxC"></a> Linux C Compiler
 
-1. Download [GCC ARM EABI Compiler](https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2).
+1. Download [GCC ARM EABI Compiler](https://https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads/6-2017-q2-update). 
+Note Windows users pick the "Linux 64-bit" as it will be used inside the shell.
 
 1. Extract the downloaded archive to the location of your choice
 
@@ -99,3 +100,11 @@ All other Windows Users should follow the instructions below.
 1. Create a shortcut to `MinGW/msys/1.0/msys.bat` and add it to your start menu
 
 You can now use the `msys.bat` to start up an environment from in which you can compile C code for SpiNNaker.
+
+Note the make requires access to the python package spinn_utilities.make_tools.
+This requires inside the Ubuntu/minGW window
+- sudo apt-get update
+- sudo apt install python
+- sudo pip install setuptools
+- Change to the directory with SpiNNakerManchester/SpiNNUtils
+- sudo python setup.py develop
