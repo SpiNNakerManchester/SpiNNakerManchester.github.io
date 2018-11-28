@@ -4,15 +4,16 @@ layout: default
 ---
 # Past Workshops
  * [Sixth SpiNNaker Workshop](sixth.html), Manchester, UK, 5th - 9th August 2016
+ * [Seventh SpiNNaker Workshop](seventh.html), Manchester Conference Centre, Manchester, UK, 3rd - 6th October 2017
+ * Mini-workshop at HBP Summit 2017 in Glasgow.
 
 # Current Workshop
- * [Seventh SpiNNaker Workshop](seventh.html), Manchester Conference Centre, Manchester, UK, 3rd - 6th October 2017
+ * [Eighth SpiNNaker Workshop](eighth.html), School of Computer Science, Manchester, UK, 11th - 14th September 2017
 
 # Future Workshops
+ * Mini-workshop planned at HBP Summit 2018 in Maastricht.
 
- * Mini-workshop planned at HBP Summit 2017 in Glasgow.
-
-If you have any questions, or for information on future workshops, please contact: 
+If you have any questions, or for information on future workshops, please contact:
 [simon.davidson@manchester.ac.uk](mailto:simon.davidson@manchester.ac.uk)
 
 <center>

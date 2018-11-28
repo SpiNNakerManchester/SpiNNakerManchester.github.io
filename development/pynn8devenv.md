@@ -1,6 +1,13 @@
 ---
-title: Setting up a Software Development Environment for SpiNNaker
+title: Setting up with multiple PyNN Versions
 ---
+
+# Deprecated
+
+These pages discussed setting up SpyNNaker for multiple versions of PyNN.
+Unless you specifically need to work with older version of PyNN uses the [current documentation.](http://spinnakermanchester.github.io/development/devenv.html)
+
+While generally these tools still work against PyNN0.7 and PyNN0.8 the master branch is not been fully tested against these.
 
 # Installation
 
@@ -12,25 +19,21 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Install the python software in developer mode](#install).
  1. [Set up the C environment variables](#cenvironment).
  1. [Build the C code](#cbuild).
+ 1. [Set up the environment for PyNN 0.7 and 0.8](#PyNNSelect).
  1. [Set up the PyNN links](#PyNNInstall).
  1. [Configure the environment](#Configuration).
  1. [Run some examples](#Examples).
- 1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
 
 # <a name="PythonRequirements"></a> Python Requirements
 1. [Install the general platform requirements](/common_pages/4.0.0/PythonInstall.html)
 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install "appdirs>=1.4.2,<2.0.0" future "numpy>=1.12,<1.9999"  "scipy>=0.16.0" "six>=1.8.0" "pylru>=1" enum34 future lxml jsonschema sortedcollections
+       pip install pylru enum34 six future "requests>=2.4.1" jsonschema "rig>=2.0.0,<3.0.0" "quantities>=0.12.1" "lazyarray>=0.2.9,<=0.2.9" "appdirs>=1.4.2,<2.0.0" "neo>=0.3.0,<=0.4.1" futures sortedcollections csa
 
-       pip install  "rig>=2.0.0,<3.0.0" futures enum-compat pytz tzlocal "requests>=2.4.1" matplotlib
+We recommend the use of virtualenv for development work, _especially_ if you wish to use both sPyNNaker7 and sPyNNaker8.
 
-       pip install  csa "quantities>=0.12.1" "pynn>=0.9.1,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
-
-You may need to install python3-tk
-
-We recommend the use of virtualenv for development work
+Note: the version of neo you use will depend upon which PyNN version you use.  This is discussed later in this document.
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
@@ -54,8 +57,11 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
 |`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
 |`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
+|`sPyNNaker7` | https://github.com/SpiNNakerManchester/sPyNNaker7.git|Python|
 |`sPyNNaker8` | https://github.com/SpiNNakerManchester/sPyNNaker8.git|Python|
+|`sPyNNaker7NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker7NewModelTemplate.git|Python and C|
 |`sPyNNaker8NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C|
+|`PyNN7Examples` | https://github.com/SpiNNakerManchester/PyNN7Examples.git|Python|
 |`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
@@ -157,8 +163,11 @@ In a C project, this is done as follows:
 |SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, spalloc|
 |SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
 |sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|sPyNNaker7|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
 |sPyNNaker8|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|sPyNNaker7NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc|
 |sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
+|PyNN7Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker7, spalloc|
 |PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
 |sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
 |IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker8, spalloc|
@@ -174,6 +183,7 @@ Note that include files are generally installed into `spinnaker_tools/include`, 
 |`SpiNNFrontEndCommon/c_common`|spinnaker_tools/include|
 |`SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples`|spinnaker_tools/include|
 |`sPyNNaker/neural_modelling`|spinnaker_tools/include|
+|`sPyNNaker7NewModelTemplate/c_models`|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 |`sPyNNaker8NewModelTemplate/c_models`|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 
 # <a name="install"></a> Installing Python Modules
@@ -207,13 +217,123 @@ The C code to compile is (in order) as follows:
 |`sPyNNaker`|`neural_modelling`|`make`|`make clean`|
 |`SpiNNakerGraphFrontEnd`|`spinnaker_graph_front_end/examples`|`make`|`make clean`|
 
-A script is also available [here](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location.
+A script is also available [here](automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location.
 
 If you have also downloaded the repositories for building new neuron models, then the C code is compiled using the following commands:
 
 |**Module**|**Sub Folder**|**Commands**|**Clean Command**|
-
+|`sPyNNaker7NewModelTemplate`|`c_models`|`make`|`make clean`|
 |`sPyNNaker8NewModelTemplate`|`c_models`|`make`|`make clean`|
+
+## Building individual models
+Note that in many cases, the top-level Makefile for a module may descend in to a number of sub-directories and build a number of individual models and libraries.  It is always possible to go into these subdirectories yourself and build the individual model directly.  This will save some time, since it will only build the code in the module you are interested in.  This may be necessary when debugging code.
+
+# <a name="PyNNSelect"></a> PyNN 0.7.5 vs PyNN 0.9
+
+Due to the lack of backwards compatibility between PyNN 0.9 and PyNN 0.7.5, installing both versions requires a bit of extra work within your chosen IDE. _We recommend for new work that people only use PyNN 0.9 (or later)._ Note as well that if you use PyNN 0.9 then you will need to update your version of neo to at least version 0.5.2.
+
+## Pycharm
+
+If you decided to use PyCharm to support your development, then to support both PyNN installations you are required to:
+ * build 2 versions of your Python interpreter with PyNN 0.7.5 and PyNN 0.9 installed separately.
+ * set the Python interpreter for each module accordingly.
+
+To achieve the first, please follow the following steps:
+ 1. Go to File → Settings → Project → Python Interpreter.
+ 2. Click on the cog in the top right corner of the pop up and select "Create Virtual Env" to create a virtual environment.
+ 3. Name the virtual environment "PyNN0.75" and select the boxes "inherit global site-packages" and "Make available to all projects".
+ 4. Repeat the previous two steps but name the virtual environment "PYNN0.9".
+ 5. Select from the drop down list of interpreters the PYNN0.75 version.
+ 6. Click on the `+` button on the right hand side of the pop up.
+ 7. Select PyNN from the list and select specific version 0.75, install this.
+ 8. Select from the drop down list of interpreters the PYNN0.8 version.
+ 9. Repeat steps 6 and 7 but select PyNN and the specific version 0.9 instead.
+
+To achieve the second, please follow the following steps:
+
+ * Go to File → Settings → Project → Python Interpreter.
+ * Click on the following modules and select the specific interpreter as shown in the following table:
+
+|**Module**|**Python Interpreter**|
+|:---------|:---------------|
+|SpiNNMachine|Any python 2.7 Interpreter|
+|SpiNNMan|Any python 2.7 Interpreter|
+|PACMAN|Any python 2.7 Interpreter|
+|DataSpecification|Any python 2.7 Interpreter|
+|SpiNNFrontEndCommon|Any python 2.7 Interpreter|
+|SpiNNakerGraphFrontEnd|Any python 2.7 Interpreter|
+|sPyNNaker|Any python 2.7 Interpreter|
+|sPyNNaker7|PyNN0.75|
+|sPyNNaker8|PyNN0.9|
+|sPyNNaker7NewModelTemplate|PyNN0.75|
+|sPyNNaker8NewModelTemplate|PyNN0.9|
+|PyNN7Examples|PyNN0.75|
+|PyNN8Examples|PyNN0.9|
+|IntroLab|PyNN0.9|
+
+Our PyNN0.9 support has also been tested in Python 3.6.
+
+## Eclipse
+
+If you decided to use Eclipse to support your development, then to support any PyNN installations you are required to:
+ 1. Uninstall any local PyNN installation you may have installed previously (`pip uninstall pyNN`).
+ 1. Get a copy of any PyNN version you want to use and install them locally
+ 1. Update the dependencies of specific modules to include the appropriate PyNN version
+
+To install PyNN 0.7 locally:
+ 1. Download [PyNN0.7.5.tar.gz](https://pypi.python.org/packages/63/c8/be19667dc36adb28bf4ad86c0692d5454eb537ff6fa07b21ca4754fb0b21/PyNN-0.7.5.tar.gz)
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+
+        python setup.py install --install-lib PyNN7
+
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
+ 1. Set the PyNN7 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
+
+To install PyNN 0.9 locally:
+ 1. Download [PyNN0.9.1.tar.gz](https://pypi.python.org/packages/ea/c9/ae4a6ac5a6007b85a0e35cce9bd34283eb577606e1f0c15443f575fba630/PyNN-0.9.1.tar.gz).
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+
+        python setup.py install --install-lib PyNN9
+
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
+ 1. Set the PyNN9 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
+
+Or to install PyNN 0.8 locally _(not recommended)_:
+ 1. Download [PyNN0.8.3.tar.gz](https://pypi.python.org/packages/16/6e/33c228807e42034f8db90005d0107dc8da12d33e870db1b552d5353fcb5d/PyNN-0.8.3.tar.gz).
+ 1. Extract the archive.
+ 1. Within the extracted archive, run:
+
+        python setup.py install --install-lib PyNN8
+
+ 1. Import the root folder of the extracted archive to Eclipse as a project (File → Import… → General → Projects from Archive or Folder).
+ 1. Set the project as a PyDev project (right-click project → PyDev → Set as PyDev project).
+ 1. Set the PyNN8 folder as a PyDev source folder (right-click folder → PyDev → Set as Source Folder).
+
+Update the dependencies for the following modules, adding the indicated module.  Note that you should not mix the use of versions 0.8 and 0.9, and that if you are using the current master branch, then you should be using PyNN 0.9.
+
+|**Module**|**Python Interpreter**|
+|:---------|:---------------|
+|sPyNNaker7|PyNN0.7.5|
+|sPyNNaker8|PyNN0.8.3 or PyNN0.9.1|
+|sPyNNaker7NewModelTemplate|PyNN0.7.5|
+|sPyNNaker8NewModelTemplate|PyNN0.8.3 or PyNN0.9.1|
+|PyNN7Examples|PyNN0.7.5|
+|PyNN8Examples|PyNN0.8.3 or PyNN0.9.1|
+|IntroLab|PyNN0.8.3 or PyNN0.9.1|
+
+Note that sPyNNaker8 supports both PyNN 0.8 and PyNN 0.9.
+
+# <a name="PyNNInstall"></a> PyNN Install
+Once the modules have been installed, the final step is to create the pyNN.spiNNaker links.  This is done as follows:
+
+ 1. From sPyNNaker7, run the `spynnaker7/pyNN/setup-pynn.py` script.
+ 1. From sPyNNaker8, run the `spynnaker8/setup_pynn.py` script.
+
+This will create the correct linking in each of the environments.
 
 # <a name="Configuration"></a> Configuration
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
@@ -247,6 +367,17 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 
 # <a name="Examples"></a> Running some examples
 
+## PyNN 0.7
+
+ * Go to the "examples" folder in Pynn7Examples
+ * Run: `va_benchmark.py`
+ * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
+ * Once the example has finished, you should see a graph that will look something like this:
+
+   ![VA7BenchmarkSpikes](va7_benchmark.png)
+
+## PyNN 0.8
+
  * Go to the "examples" folder in Pynn8Examples
  * Run: `va_benchmark.py`
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
@@ -255,4 +386,3 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
    ![VA8BenchmarkSpikes](va8_benchmark.png)
 
 If you get the output above, you have successfully installed your system.
-

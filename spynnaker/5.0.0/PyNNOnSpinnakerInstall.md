@@ -4,15 +4,15 @@ layout: default
 published: true
 ---
 
-This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
+This guide will detail how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
 
 # Installation
 
-You must first install the [Python Dependencies](/common_pages/4.0.0/PythonInstall.html).  Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements, depending on the needs of your working environment.
+You must first install the [Python Dependencies](/common_pages/5.0.0/PythonInstall.html).  Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements, depending on the needs of your working environment.
 
 __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no longer required.  These extra modules have been merged in to the main sPyNNaker module.  You will be asked to uninstall these modules below if you have previously installed them, but will note that there are no instructions for installing a newer version.
 
-* [Python Dependencies](/common_pages/4.0.0/PythonInstall.html)
+* [Python Dependencies](/common_pages/5.0.0/PythonInstall.html)
 * [Standard Central Installation](#Central)
 * [User-Only Installation](#User)
 * [Virtualenv Installation](#Virtualenv)
@@ -45,8 +45,6 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] pip install matplotlib
 
-If for some reason you have to use a version of PyNN earlier than 0.8 then please contact us.
-
 You can now [configure](#Configuration) your environment.
 
 # <a name="User"></a> User-only Installation
@@ -74,13 +72,11 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        pip install matplotlib --user
 
-If for some reason you have to use a version of PyNN earlier than 0.8 then please contact us.
-
 You can now [configure](#Configuration) your environment.
 
 # <a name="Virtualenv"></a> Virtualenv Installation
 
-Follow [these instructions](/common_pages/4.0.0/VirtualEnv.html) to install the dependencies in a virtual environment.
+Follow [these instructions](/common_pages/5.0.0/VirtualEnv.html) to install the dependencies in a virtual environment.
 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
 
@@ -133,8 +129,6 @@ To install the tools, first, activate your virtualenv, `<name>`:
 
        pip install matplotlib
 
-If for some reason you have to use a version of PyNN earlier than 0.8 then please contact us.
-
 You can now [configure](#Configuration) your environment.
 
 # <a name="Configuration"></a> Configuration
@@ -175,7 +169,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
-    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.tar.gz) (tar.gz)
+    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.0.0.tar.gz) (tar.gz)
 
 1. Extract the archive
 1. Go to the "examples" folder
@@ -184,7 +178,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
        python va_benchmark.py
 
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
-1. Once the example has finished, you should see a graph that will look something like this (for PyNN 0.9):
+1. Once the example has finished, you should see a graph that will look something like this:
 
    ![VABenchmarkSpikes](va8_benchmark.png)
 

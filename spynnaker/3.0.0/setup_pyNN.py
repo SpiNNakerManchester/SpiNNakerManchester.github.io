@@ -10,4 +10,4 @@ if not os.path.exists(spinnaker_dir):
 spinn_file = open(spinnaker_init, "w")
 spinn_file.write("from spynnaker.pyNN import *\n")
 spinn_file.close()
-print "Created", spinnaker_init
+print("Created", spinnaker_init)
