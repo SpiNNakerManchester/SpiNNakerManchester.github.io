@@ -6,7 +6,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 
  1. [Install Python requirements](#PythonRequirements).
  1. [Install the C development requirements](/common_pages/4.0.0/Compiler.html).
- 1. [Install Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) — only required if modifying the Remote Access software for the Human Brain Project portal, or if you are going to use an IDE.
+ 1. [Java](#java).
  1. [Install an IDE](#ide) — optional but recommended for ease of use.
  1. [Clone the git repositories](#git).
  1. [Install the python software in developer mode](#install).
@@ -37,7 +37,11 @@ We recommend the use of virtualenv for development work
 
 # <a name="git"></a> Git Cloning
 
-The repositories to be cloned are shown below.  If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirety of the software.
+The repositories to be cloned are shown below.  
+
+We recommend that all repositories are cloned into the same parent directory as some of our scripts and tool defaults assume this.
+
+If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirety of the software.
 
 |**Name**|**URL**|**Code Type**|
 |:-------|:------|:------------|
@@ -59,9 +63,49 @@ The repositories to be cloned are shown below.  If you are using an IDE, it is r
 |`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
+|`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
 |`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
+
+# <a name="java"></a> Java Development kit
+
+A Java JDK will be required in the following conditions
+
+1. If modifying or even just using the Java versions of the tools 
+1. If modifying the Remote Access software for the Human Brain Project portal
+
+A Java JRE will be required 
+1. If you are going to use an IDE (which requires Java and does not have one with it)
+
+We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+
+The tools require at least Java 8 but there is no know reason a more upto date version can not be used.
+
+## Java version of the tools
+Java version is optional and off by default.
+
+Requires the JavaSpiNNaker repository. 
+
+### Current Dec 2018 situation
+The Java version is still under development and requires you to use the extractor2 branch
+1. DataSpecification
+1. PACMAN
+1. SpiNNFrontEndCommon
+1. sPyNNaker
+1. SpiNNakerGraphFrontEnd
+1. JavaSpiNNaker
+
+- Also advanced monitors are not working to in configs set
+enable_advanced_monitor_support = False
+
+You will be required to build the jar file required.
+Open JavaSpiNNaker in and IDE which supports maven.
+
+Build "SpiNNaker Java Host" with dependecies
+-This will create the SpiNNaker-comms-0.0.1-SNAPSHOT.jar file in SpiNNaker-comms/target
+
+See [Configure the environment](#Configuration) for how to active these.
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we highly recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and an IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
@@ -244,6 +288,13 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
     1. ip address = `192.168.240.254`
     2. sub-mask = `255.255.255.0`
     3. default gateway = `0.0.0.0`
+    
+## Java Tools
+Optional but requires the steps in the [Java Section](#java). 
+
+Java is off by default so requires changing the values in the Java section of the config file.
+Copy and change the ones required from spinn_front_end_common\interface\spinnaker.cfg
+
 
 # <a name="Examples"></a> Running some examples
 
