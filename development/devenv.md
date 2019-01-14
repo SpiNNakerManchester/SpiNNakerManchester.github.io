@@ -96,9 +96,6 @@ The Java version is still under development and requires you to use the extracto
 1. SpiNNakerGraphFrontEnd
 1. JavaSpiNNaker
 
-- Also advanced monitors are not working to in configs set
-enable_advanced_monitor_support = False
-
 You will be required to build the jar file required.
 Open JavaSpiNNaker in and IDE which supports maven.
 
