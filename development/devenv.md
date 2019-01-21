@@ -26,7 +26,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 
        pip install  "rig>=2.0.0,<3.0.0" futures enum-compat pytz tzlocal "requests>=2.4.1" matplotlib
 
-       pip install  csa "quantities>=0.12.1" "pynn>=0.9.1,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
+       pip install  csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
 
 You may need to install python3-tk
 
@@ -37,7 +37,7 @@ We recommend the use of virtualenv for development work
 
 # <a name="git"></a> Git Cloning
 
-The repositories to be cloned are shown below.  
+The repositories to be cloned are shown below.
 
 We recommend that all repositories are cloned into the same parent directory as some of our scripts and tool defaults assume this.
 
@@ -72,10 +72,10 @@ The last of these repositories contains a useful selection of scripts for semi-a
 
 A Java JDK will be required in the following conditions
 
-1. If modifying or even just using the Java versions of the tools 
+1. If modifying or even just using the Java versions of the tools
 1. If modifying the Remote Access software for the Human Brain Project portal
 
-A Java JRE will be required 
+A Java JRE will be required
 1. If you are going to use an IDE (which requires Java and does not have one with it)
 
 We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -85,7 +85,7 @@ The tools require at least Java 8 but there is no know reason a more upto date v
 ## Java version of the tools
 Java version is optional and off by default.
 
-Requires the JavaSpiNNaker repository. 
+Requires the JavaSpiNNaker repository.
 
 ### Current Dec 2018 situation
 The Java version is still under development and requires you to use the extractor2 branch
@@ -285,9 +285,9 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
     1. ip address = `192.168.240.254`
     2. sub-mask = `255.255.255.0`
     3. default gateway = `0.0.0.0`
-    
+
 ## Java Tools
-Optional but requires the steps in the [Java Section](#java). 
+Optional but requires the steps in the [Java Section](#java).
 
 Java is off by default so requires changing the values in the Java section of the config file.
 Copy and change the ones required from spinn_front_end_common\interface\spinnaker.cfg
