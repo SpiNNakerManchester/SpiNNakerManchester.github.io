@@ -24,10 +24,7 @@ sPyNNaker currently supports the following model types:
 1. `extra_models.IZK_cond_exp` (PyNN 0.7) or `extra_models.Izhikevich_cond` (PyNN 0.8): Conductance based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. `extra_models.IFCurDelta`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory delta synaptic input per neuron
 1. `extra_models.IFCurrExpCa2Adaptive`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory exponentially decaying, calcium-adaptive synaptic input per neuron
-
-<!--
 1. `extra_models.IFCondExpStoc`: Conductance-based leaky intergate and fire with a stochastic Maass threshold.
--->
 
 Note that there are also further restrictions on what plasticity types are supported when used with the above models.
 
