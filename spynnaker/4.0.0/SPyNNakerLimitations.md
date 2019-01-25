@@ -20,13 +20,13 @@ sPyNNaker currently supports the following model types:
 1. `IF_curr_exp`: Current based leaky integrate and fire, with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. `IF_cond_Exp`: Conductance based leaky integrate and fire, with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. `extra_models.IF_curr_dual_exp`: Current based, Leaky integrate and fire, with 2 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
-1. `extra_models.IZK_curr_exp` (PyNN 0.7) or `Izhikevich` (PyNN 0.8): Current based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron 
+1. `extra_models.IZK_curr_exp` (PyNN 0.7) or `Izhikevich` (PyNN 0.8): Current based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. `extra_models.IZK_cond_exp` (PyNN 0.7) or `extra_models.Izhikevich_cond` (PyNN 0.8): Conductance based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
-1. `extra_models.IFCurrDelta`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory delta synaptic input per neuron
+1. `extra_models.IFCurDelta`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory delta synaptic input per neuron
 1. `extra_models.IFCurrExpCa2Adaptive`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory exponentially decaying, calcium-adaptive synaptic input per neuron
+
 <!--
-Commented out as doesn't work just now
-1. `extra_models.IfCondExpStoc`: Conductance-based leaky intergate and fire with a stochastic Maass threshold.
+1. `extra_models.IFCondExpStoc`: Conductance-based leaky intergate and fire with a stochastic Maass threshold.
 -->
 
 Note that there are also further restrictions on what plasticity types are supported when used with the above models.
@@ -42,9 +42,7 @@ sPyNNaker currently supports these two models for injecting spikes into a PyNN m
 
 Currently, only the `i_offset` parameter of the neural models can be used to inject current directly; there is no support for noisy or step-based current input.  Step-based current input can be achieved by updating `i_offset` between calls to `run()`.
 
-<!---
 A third, non-standard PyNN interface, way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device (e.g., a robot). A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
---->
 
 # Connectors
 
@@ -56,7 +54,7 @@ sPyNNaker currently supports the following connector types:
 1. `FixedNumberPostConnector`: A fixed number of randomly selected neurons in the post-population are connected to all neurons in the pre-population.
 1. `FixedProbabilityConnector`: The connectivity is random with a fixed probability of connection between any pair of neurons.
 1. `FromFileConnector`: The connectivity is explicitly specified in a file, including all weights and delays.  Note that this connector will result in slower operation of the tools.
-1. `FromListConnector`: The connectivity is explicitly specified in a list, including all weights and delays.  Note that this connector will result in slower operation of the tools. 
+1. `FromListConnector`: The connectivity is explicitly specified in a list, including all weights and delays.  Note that this connector will result in slower operation of the tools.
 1. `MultapseConnector` (PyNN 0.7) or `FixedTotalNumberConnector` (PyNN 0.8): A fixed number of randomly selected connections are made.
 1. `OneToOneConnector`: The neuron with index _i_ in the pre-population is connected to the neuron with index _i_ in the post-population.
 1. `SmallWorldConnector`: Connect cells so as to create a small-world network.
@@ -69,9 +67,9 @@ sPyNNaker8 currently only supports plasticity described by and `STDPMechanism` w
 
 sPyNNaker supports the following STDP timing dependence rules:
 
-1. `SpikePairRule`: The amount of potentiation or depression decays exponentially with the time between each pair of pre and post spikes. 
+1. `SpikePairRule`: The amount of potentiation or depression decays exponentially with the time between each pair of pre and post spikes.
 1. `extra_models.SpikeNearestPair`: Similar to the SpikePairRule, but only the nearest pair of pre and post spikes are considered i.e. the pre-spike that immediately follows a post spike or the post spike that immediately follows a pre-spike
-1. `extra_models.PfisterSpikeTripletRule`: 
+1. `extra_models.PfisterSpikeTripletRule`:
 1. `extra_models.Vogels2011Rule`:
 
 and the following STDP weight dependence rules:
@@ -84,9 +82,9 @@ and the following STDP weight dependence rules:
 
 ## sPyNNaker execution limitations
 
-1. sPyNNaker supports the ability to call `run()` multiple times with different combinations of runtime values. 
+1. sPyNNaker supports the ability to call `run()` multiple times with different combinations of runtime values.
 1. sPyNNaker supports the ability to call `reset()` multiple times within the script with `run()` interleaved.
-1. sPyNNaker supports the addition of Populations and Projections into the application space between a `reset()` and a `run()`. 
+1. sPyNNaker supports the addition of Populations and Projections into the application space between a `reset()` and a `run()`.
 1. sPyNNaker does not support the addition of Populations and Projections between multiple calls to `run()`, i.e., `reset()` must be called before a Population or Projection is added.
 
 ## PyNN missing functionality
@@ -97,7 +95,7 @@ and the following STDP weight dependence rules:
 
 ## Parameter ranges
 
-All parameters and their ranges are under software control.  
+All parameters and their ranges are under software control.
 
 Weights are held as 16-bit integers, with their range determined at compile-time to suit the application; this limits the overall range of weights that can be represented, with the smallest representable weight being dependent on the largest weights specified.
 
