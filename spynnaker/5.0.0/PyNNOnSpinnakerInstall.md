@@ -213,3 +213,9 @@ If you get the output above, you have successfully installed your system.
     In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
 
     If you are still having issues, you may also need to install [XQuartz](https://www.xquartz.org/).
+
+3. In OSX, if you have problems during the installation of the `csa` package (a dependency of sPyNNaker8; this problem cascades outwards) within your virtualenv, then use:
+
+        MPLBACKEND=module://matplotlib.backends.backend_agg pip install sPyNNaker8 --user
+
+    This overrides the matplotlib plotting backend _just during the installation phase,_ which is sufficient to get a working installation if you are not actively using matplotlib to do immediate plotting of the data.
