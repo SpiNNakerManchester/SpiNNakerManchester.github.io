@@ -6,7 +6,6 @@ layout: default
  * [Sixth SpiNNaker Workshop](sixth.html), Manchester, UK, 5th - 9th August 2016
  * [Seventh SpiNNaker Workshop](seventh.html), Manchester Conference Centre, Manchester, UK, 3rd - 6th October 2017
  * [Eighth SpiNNaker Workshop](eighth.html), School of Computer Science, Manchester, UK, 11th - 14th September 2017
-# Current Workshop
 
 # Future Workshops
  * From Virtual to Real Neurorobotics Workshop, Manchester, UK, Week of 9th September 2019.  Planning is currently underway and the date is subject to change; please contact us if you are interested in attending.
