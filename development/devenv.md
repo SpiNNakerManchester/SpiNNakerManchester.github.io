@@ -269,6 +269,11 @@ Note that if you have previously installed a version of the spiNNaker software, 
 
 If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/4.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
+Also, make sure you turn on extraction of iobuf when working with the C code at all. Without this, you will be unable to read anything that your code writes to the logs.
+
+    [Reports]
+    extract_iobuf = True
+
 ## <a name="LocalBoard"></a> Local Board
 
 Within the file, you should set `machineName` to the IP address or hostname of your SpiNNaker machine, and `version` to the version of your SpiNNaker board; this will almost certainly be "3" for a 4-chip board or "5" on a 48-chip board.
