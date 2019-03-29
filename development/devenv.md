@@ -267,6 +267,13 @@ Note that if you have previously installed a version of the spiNNaker software, 
     machineName = None
     version = None
 
+If you are going to be doing C code development, then we would strongly suggest that you also turn on the extraction of IOBuf (this is turned off by default as end-users prefer speed over information).  Edit your config file to add:
+
+    [Reports]
+    extract_iobuf = True
+
+There are plenty of other configuration options that you may wish to edit too; please look at the default configuration files in spynnaker/pyNN/spynnaker.cfg and spinn_front_end_common/interface/spinnaker.cfg for more information.
+
 If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/4.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
