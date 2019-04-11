@@ -267,6 +267,15 @@ Note that if you have previously installed a version of the spiNNaker software, 
     machineName = None
     version = None
 
+Also, make sure you turn on extraction of iobuf when working with the C code at all. Without this, you will be unable to read anything that your code writes to the logs.
+
+    [Reports]
+    extract_iobuf = True
+
+There are plenty of other configuration options that you may wish to edit too; please look at the default configuration files in spynnaker/pyNN/spynnaker.cfg, spinn_front_end_common/interface/spinnaker.cfg and spinnaker_graph_front_end/spiNNakerGraphFrontEnd.cfg for more information.
+
+[Note: if you are running using SpiNNakerGraphFrontEnd then the file in your home directory you need to edit will be called "`.spiNNakerGraphFrontEnd.cfg`".]
+
 If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/4.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
