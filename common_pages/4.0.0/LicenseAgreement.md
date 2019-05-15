@@ -5,17 +5,19 @@ title: License Agreement and list of contributors across all repositories
 The software is currently being released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html).
 
 
-# Paper Authorship
+# Citation
 
-We request that papers based off work that uses the software tool chain should contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to determine how to allocate contributions.
-
-In the future the software is expected to be reported in a research paper, at which point the requirement to contact the software team will be rescinded and a citation to the research paper will be required.
+If you find the software useful for your research for which you produce a paper, we request that you cite one or both of the following papers, depending on the relevance to the work in question:
+ - [sPyNNaker: A Software Package for Running PyNN Simulations on SpiNNaker](https://www.frontiersin.org/articles/10.3389/fnins.2018.00816/full)
+ - [SpiNNTools: The Execution Engine for the SpiNNaker Platform](https://www.frontiersin.org/articles/10.3389/fnins.2019.00231/full) 
 
 # Modifications
 
 The software is open source and therefore in principle we support the modification of any aspect of the tool chain, but we reserve the right to not support maintenance of said software once modified.
 
-If you have made any modifications which you believe to be useful to the tool chain as a whole, we kindly ask you to contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to be supported in discussions on if and how to integrate the modifications into future releases of the tool chain.
+If you have made any modifications which you believe to be useful to the tool chain as a whole, we kindly ask you to contact the software team via the [SpiNNaker User Group](https://groups.google.com/forum/#!forum/spinnakerusers) to be supported in discussions on if and how to integrate the modifications into future releases of the tool chain, or alternatively, provide the changes in the form of a github Pull Request or Pull Requests to the appropriate repositories.
+
+We request a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute any contributions and such derivative works.
 
 # Contributors
 
