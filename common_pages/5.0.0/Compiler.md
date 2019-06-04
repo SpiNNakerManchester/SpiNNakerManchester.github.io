@@ -38,7 +38,7 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 
 ## <a name="Ubuntu32Dev"></a> Development Dependencies for 32-bit Ubuntu
 
-1. Install perl and dependencies  
+1. Install perl and dependencies
 
        sudo apt-get install perl perl-tk libterm-readline-gnu-perl
 
@@ -54,7 +54,8 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 
 ## <a name="LinuxC"></a> Linux C Compiler
 
-1. Download [GCC ARM EABI Compiler](https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2).
+1. Download [GCC ARM EABI Compiler](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads/) - choose version 6-2017-q2-update (for the release version).  For a development version we believe newer versions (7 and 8) work, but without extensive testing.
+Note Windows users pick the "Linux 64-bit" as it will be used inside the shell.
 
 1. Extract the downloaded archive to the location of your choice
 
