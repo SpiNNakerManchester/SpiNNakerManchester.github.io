@@ -54,7 +54,7 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 
 ## <a name="LinuxC"></a> Linux C Compiler
 
-1. Download [GCC ARM NONE EABI Compiler](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads/6-2017-q2-update).
+1. Download [GCC ARM NONE EABI Compiler](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads/) - choose version 6-2017-q2-update (for the release version).  For a development version we believe newer versions work, but without extensive testing.
 Note Windows users pick the "Linux 64-bit" as it will be used inside the shell.
 
 1. Extract the downloaded archive to the location of your choice
