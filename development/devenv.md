@@ -80,7 +80,7 @@ A Java JRE will be required
 
 We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-The tools require at least Java 8 but there is no know reason a more upto date version can not be used.
+The tools require at least Java 8 but there is no known reason that a more up to date version cannot be used.  We have regularly tested OpenJDK 8 and OpenJDK 11 with no problems.
 
 ## Java version of the tools
 Java version is optional and off by default.
@@ -97,10 +97,12 @@ The Java version is still under development and requires you to use the extracto
 1. JavaSpiNNaker
 
 You will be required to build the jar file required.
-Open JavaSpiNNaker in and IDE which supports maven.
 
-Build "SpiNNaker Java Host" with dependecies
--This will create the SpiNNaker-comms-0.0.1-SNAPSHOT.jar file in SpiNNaker-comms/target
+Open JavaSpiNNaker in an IDE which supports maven.
+
+Build "SpiNNaker Java Host" with dependencies.  This will create the SpiNNaker-comms-0.0.1-SNAPSHOT.jar file in SpiNNaker-comms/target
+
+It is also possible to [install maven](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html) and run "mvn package" on the command line from the JavaSpiNNaker directory.
 
 See [Configure the environment](#Configuration) for how to active these.
 
