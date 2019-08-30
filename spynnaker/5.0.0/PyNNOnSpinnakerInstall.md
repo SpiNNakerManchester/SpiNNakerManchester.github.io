@@ -37,13 +37,13 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] pip install sPyNNaker8
 
-1. Install pyNN-SpiNNaker:
-
-       [sudo] python -m spynnaker8.setup-pynn
-
 1. Install Matplotlib:
 
        [sudo] pip install matplotlib
+
+1. Install pyNN-SpiNNaker:
+
+       [sudo] python -m spynnaker8.setup_pynn
 
 You can now [configure](#Configuration) your environment.
 
@@ -64,13 +64,13 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        pip install sPyNNaker8 --user
 
-1. Install pyNN-SpiNNaker:
-
-       python -m spynnaker8.setup-pynn
-
 1. Install Matplotlib:
 
        pip install matplotlib --user
+
+1. Install pyNN-SpiNNaker:
+
+       python -m spynnaker8.setup_pynn
 
 You can now [configure](#Configuration) your environment.
 
@@ -121,13 +121,13 @@ To install the tools, first, activate your virtualenv, `<name>`:
 
        pip install sPyNNaker8
 
-1. Install pyNN-SpiNNaker:
-
-       python -m spynnaker8.setup-pynn
-
 1. Install Matplotlib:
 
        pip install matplotlib
+
+1. Install pyNN-SpiNNaker:
+
+       python -m spynnaker8.setup_pynn
 
 You can now [configure](#Configuration) your environment.
 
@@ -142,7 +142,6 @@ Run this small script
     sim.end()
 
 Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that SpyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
-
 
 ```
 [Machine]
@@ -169,7 +168,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
-    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/4.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.0.0.tar.gz) (tar.gz)
+    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.0.0.tar.gz) (tar.gz)
 
 1. Extract the archive
 1. Go to the "examples" folder
