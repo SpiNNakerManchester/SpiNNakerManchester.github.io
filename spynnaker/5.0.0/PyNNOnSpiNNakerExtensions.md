@@ -12,7 +12,7 @@ If you are writing new neural models, synapse models or plasticity models, it is
 1. Create a new environment variable `NEURAL_MODELLING_DIRS` which is set to the path of the `neural_modelling` subfolder of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to `C:\sPyNNaker\`, you should set the environment variable to `/c/sPyNNaker/neural_modelling`).
 
 # sPyNNaker Python Development Environment
-In addition to the C code, you will also likely need to write Python code which enables the use of the new models from within PyNN.  Other extensions to sPyNNaker might also only require Python code changes, such as the development of new connector types.  The only requirements for the Python development, is a [working sPyNNaker install](PyNNOnSpinnakerInstall.html).
+In addition to the C code, you will also likely need to write Python code which enables the use of the new models from within PyNN.  Other extensions to sPyNNaker might also only require Python code changes, such as the development of new connector types.  The only requirements for the Python development is a [working sPyNNaker install](PyNNOnSpinnakerInstall.html).
 
 If the code that you are writing only extends the Python functionality, this can be written as with any normal Python code, using sPyNNaker as a library as required.  The new code can then be used from PyNN scripts by importing the code separately from sPyNNaker.
 
