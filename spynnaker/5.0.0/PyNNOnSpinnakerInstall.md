@@ -218,3 +218,8 @@ If you get the output above, you have successfully installed your system.
         MPLBACKEND=module://matplotlib.backends.backend_agg pip install sPyNNaker8 --user
 
     This overrides the matplotlib plotting backend _just during the installation phase,_ which is sufficient to get a working installation if you are not actively using matplotlib to do immediate plotting of the data.
+
+# <a name="Links"></a> Other Links
+
+Follow [SpiNNaker Extensions](PyNNOnSpiNNakerExtensions.html) to install extensions for building new neuron models.  
+
