@@ -5,7 +5,7 @@ layout: default
 WORK IN PROGRESS
 ================
 
-sPyNNaker version 5.0.0 is still work in progress so the full documentation has not yet been released,
+sPyNNaker version 5.0.0 has been released; we are currently working on the documentation.  If anything here doesn't work, please let the software team know.
 
 * [License Agreement](/common_pages/5.0.0/LicenseAgreement.html)
 * [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)
