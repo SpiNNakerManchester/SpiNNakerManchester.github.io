@@ -311,7 +311,7 @@ Copy and change the ones required from spinn_front_end_common\interface\spinnake
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph that will look something like this:
 
-   ![VA8BenchmarkSpikes](va8_benchmark.png)
+   ![VA8BenchmarkSpikes](vabenchmark8_v5.png)
 
 If you get the output above, you have successfully installed your system.
 

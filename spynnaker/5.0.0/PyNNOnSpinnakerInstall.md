@@ -179,7 +179,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
 1. Once the example has finished, you should see a graph that will look something like this:
 
-   ![VABenchmarkSpikes](va8_benchmark.png)
+   ![VABenchmarkSpikes](vabenchmark8_v5.png)
 
 If you get the output above, you have successfully installed your system.
 
@@ -221,5 +221,5 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="Links"></a> Other Links
 
-Follow [SpiNNaker Extensions](PyNNOnSpiNNakerExtensions.html) to install extensions for building new neuron models.  
+Follow [SpiNNaker Extensions](PyNNOnSpiNNakerExtensions.html) to install extensions for building new neuron models.
 
