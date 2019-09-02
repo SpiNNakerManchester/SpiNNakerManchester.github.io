@@ -1,9 +1,9 @@
 ---
-title: Eighth SpiNNaker Workshop
+title: Ninth SpiNNaker Workshop
 layout: default
 ---
 
-# School of Computer Science, Manchester, UK, 11th-14th September, 2018
+# School of Computer Science, Manchester, UK, 9th-13th September, 2018
 
 <img style="float: right;" src="Rotating_Doughnut_S2.gif">
 
@@ -20,6 +20,8 @@ The workshop consists of sessions of presentations by the software team as well 
 
 Attendees should have some prior experience with Python. For the topics on new neuron models and learning rules, some background in C is highly recommended.
 
+See the [timetable](robotics2019.html).
+
 # Slides
 
 - to be added
@@ -27,7 +29,7 @@ Attendees should have some prior experience with Python. For the topics on new n
 # Lab Manuals
 
 1. [Intro Lab](/spynnaker/5.0.0/IntroLab-PyNN-LabManual.pdf)
-1. [Running PyNN 0.8 Simulations on SpiNNaker](/spynnaker/5.0.0/RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
+1. [Running PyNN 0.9 Simulations on SpiNNaker](/spynnaker/5.0.0/RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
 1. [Simple Data Input Output and Visualisation](/spynnaker/5.0.0/SimpleIO-LabManual.pdf)
 1. [External Devices](/spynnaker/5.0.0/ExternalDevices-LabManual.pdf)
 1. [Adding New Neuron Models](/spynnaker/5.0.0/NewNeuronModels-LabManual.pdf)
