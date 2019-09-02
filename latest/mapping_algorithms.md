@@ -1,3 +1,3 @@
 ---
-redirect_to: /common_pages/4.0.0/MappingAlgorithms.html
+redirect_to: /common_pages/5.0.0/MappingAlgorithms.html
 ---
