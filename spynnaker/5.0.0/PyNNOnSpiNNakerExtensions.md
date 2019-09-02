@@ -18,3 +18,4 @@ If the code that you are writing only extends the Python functionality, this can
 
 # Writing New Neuron Models and Plasticity Rules
 * [Tutorial: Adding new Neural Models](NewNeuronModels-LabManual.pdf)
+* [Tutorial: Adding new Plasticity Rules](NewPlasticityRules-LabManual.pdf)

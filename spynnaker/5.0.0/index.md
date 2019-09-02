@@ -11,6 +11,7 @@ sPyNNaker version 5.0.0 has been released; we are currently working on the docum
 * [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)
 * [PyNN on SpiNNaker Models and Limitations](SPyNNakerModelsAndLimitations.html)
 * [Using SpiNNaker software without a SpiNNaker Board](/common_pages/5.0.0/VirtualMode.html)
+* [Intro Lab: Running simulations on SpiNNaker](IntroLab-PyNN-LabManual.pdf)
 * [Tutorial: Using PyNN on SpiNNaker](RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
 * [Extending sPyNNaker with New Neuron and Plasticity Models](PyNNOnSpiNNakerExtensions.html)
 * [Tutorial: Simple interaction with Live PyNN Simulation](SimpleIO-LabManual.pdf)
