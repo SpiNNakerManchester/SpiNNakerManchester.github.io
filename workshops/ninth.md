@@ -3,7 +3,7 @@ title: Ninth SpiNNaker Workshop
 layout: default
 ---
 
-# School of Computer Science, Manchester, UK, 9th-13th September, 2018
+# School of Computer Science, Manchester, UK, 9th-13th September, 2019
 
 <img style="float: right;" src="Rotating_Doughnut_S2.gif">
 
@@ -16,7 +16,7 @@ The workshop will focus using SpiNNaker in robotics; including but not limited t
  - Connecting external devices to SpiNNaker
  - Adding new neuron & synapse models & learning rules
 
-The workshop consists of sessions of presentations by the software team as well as hands-on labs with SpiNNaker hardware. There will also be time to discuss your own project plans and issues with the design team during the week.
+The workshop consists of presentations by the software team and other SpiNNaker users (mainly from the field of robotics) as well as hands-on labs with SpiNNaker hardware. There will be time to discuss your own project plans and issues with the design team during the week.
 
 Attendees should have some prior experience with Python. For the topics on new neuron models and learning rules, some background in C is highly recommended.
 
