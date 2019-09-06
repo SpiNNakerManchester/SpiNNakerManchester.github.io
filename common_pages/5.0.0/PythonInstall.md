@@ -2,8 +2,6 @@
 title: Python Dependencies for SpiNNaker
 ---
 
-NOTE: do we want to suggest people use Python 3(.6) here?
-
 This guide will detail how to install the core Python dependencies for SpiNNaker.
 
 This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Ubuntu Linux 16.04 LTS 64-bit, Windows 8.1 64-bit, Mac OS X Mavericks and Mac OS X Yosemite, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7, 8 and 10, and Mac OS X.
@@ -19,7 +17,7 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
 1. If you are on Ubuntu 16 or less, you will need to add a repository to get later versions of Python
 
-       sudo add-apt-repository ppa:jonathonf/python-3.6  
+       sudo add-apt-repository ppa:jonathonf/python-3.6
        sudo apt-get update
 
 1. Install Python
