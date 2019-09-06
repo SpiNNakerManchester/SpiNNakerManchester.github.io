@@ -11,21 +11,23 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 * [Ubuntu Linux Requirements](#UbuntuPython)
 * [Fedora Linux Requirements](#FedoraPython)
 * [Mac OS X Requirements](#MacOSXPython)
-* [64-bit Windows Requirements](#Windows64Python)
-* [32-bit Windows Requirements](#Windows32Python)
+* [Windows Requirements](#WindowsPython)
 * [Windows PATH settings](#WindowsPath)
 
 # Linux
 
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
+1. If you are on Ubuntu 16 or less, you will need to add a repository to get later versions of Python
+
+       sudo add-apt-repository ppa:jonathonf/python-3.6  
+       sudo apt-get update
 
 1. Install Python
 
-       sudo apt-get install python2.7
+       sudo apt-get install python3.6
 
-1. Install pip
+1. Upgrade pip and dependencies
 
-       sudo apt-get install python-pip
        sudo pip install --upgrade pip setuptools wheel
 
 ## <a name="FedoraPython"></a> Fedora Linux Requirements
@@ -34,9 +36,8 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 
        sudo dnf install python
 
-1. Install pip
+1. Upgrade pip and dependencies
 
-       sudo dnf install python-pip
        sudo pip install --upgrade pip setuptools wheel
 
 # Mac OS X
@@ -47,60 +48,29 @@ This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit
 
 1. Install python
 
-       sudo port install python27
-       sudo port select --set python python27
+       sudo port install python36
+       sudo port select --set python python36
+       sudo port select --set pip pip36
 
-1. Install pip
+1. Upgrade pip and dependencies
 
-       sudo port install py27-pip
-       sudo port select --set pip pip27
        sudo pip install --upgrade pip setuptools wheel
 
-# Windows
+# <a name="WindowsPython"></a>Windows
 
 Note that you need to install the correct build of the tools _and_ update your `PATH` environment variable for the toolchain to work.
 
-## <a name="Windows64Python"></a> 64-bit Windows Requirements
-
 Users with an up-to-date version of Windows 10 64-bit may want to use the [Linux Subsystem for Windows 10](https://msdn.microsoft.com/en-gb/commandline/wsl/install_guide?f=255&MSPPError=-2147217396).  This has been tested with an Ubuntu 14.04 install and seems to work well.
 For graphics content, you will also need to install and run [an X-Windows Server](https://sourceforge.net/projects/xming/).
-After installing, you should follow the [Ubuntu installation instructions](#UbuntuPython).
+After installing, you should follow the [Ubuntu installation instructions](#UbuntuPython) and __not__ the instructions below.
 
-1. Download and install [Python](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/python-2.7.6.amd64.msi).
+1. Download and install [Python 3.6](https://www.python.org/downloads/).
 
-1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/setuptools-5.8.win-amd64-py2.7.exe) and [pip](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/pip-1.5.6.win-amd64-py2.7.exe).
+1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/setuptools-5.8.win-amd64-py2.7.exe).
 
-1. Update pip - from an administrative console, run:
+1. Update pip and dependencies - from an administrative console, run:
 
-       sudo pip install --upgrade pip
-
-1. Install numpy (optional if you are going to use a Virtual Env):
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/numpy-1.13.1.mkl-cp27-cp27m-win_amd64.whl
-
-1. Install scipy (optional if you are going to use a Virtual Env):
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl
-
-Continue to [edit your PATH](#WindowsPath).
-
-## <a name="Windows32Python"></a> 32-bit Windows Requirements
-
-1. Download and install [Python](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/python-2.7.6.msi)
-
-1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/setuptools-5.8.win32-py2.7.exe) and [pip](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win32/pip-1.5.6.win32-py2.7.exe).
-
-1. Update pip - from an administrative console, run:
-
-       pip install --upgrade pip
-
-1. Install numpy (optional if you are going to use a Virtual Env):
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl
-
-1. Install scipy (optional if you are going to use a Virtual Env):
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl
+       pip install --upgrade pip setuptools wheel
 
 Continue to [edit your PATH](#WindowsPath).
 

@@ -8,15 +8,38 @@ This guide details how to install the release version of the tools required to r
 
 # Installation
 
-You must first install the [Python Dependencies](/common_pages/5.0.0/PythonInstall.html).  Continue to the [Standard Central Installation](#Central), [User-only Installation](#User) or [Virtualenv Installation](#Virtualenv) to install the remaining requirements, depending on the needs of your working environment.
+You must first install the [Python Dependencies](/common_pages/5.0.0/PythonInstall.html).  Continue to the [Virtualenv Installation](#Virtualenv), [Standard Central Installation](#Central) or [User-only Installation](#User) to install the remaining requirements, depending on the needs of your working environment.  If you are unsure what to choose, the option that will most likely work is the [Virtualenv Installation](#Virtualenv).
 
 * [Python Dependencies](/common_pages/5.0.0/PythonInstall.html)
+* [Virtualenv Installation](#Virtualenv)
 * [Standard Central Installation](#Central)
 * [User-Only Installation](#User)
-* [Virtualenv Installation](#Virtualenv)
 * [Configuration](#Configuration)
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
+
+# <a name="Virtualenv"></a> Virtualenv Installation
+Follow [these instructions](/common_pages/5.0.0/VirtualEnv.html) to install the dependencies in a virtual environment.
+
+If you already have installed the SpiNNakerGraphFrontEnd previously, you will need to uninstall it:
+
+1. Activate your virtualenv, `<name>`
+
+       source <name>/bin/activate
+
+1. Uninstall the existing tools
+
+       [sudo] pip uninstall SpiNNakerGraphFrontEnd
+
+Remember, to install the tools, first activate your virtualenv, `<name>`
+
+    source <name>/bin/activate
+
+1. Install SpiNNakerGraphFrontEnd
+
+       pip install SpiNNakerGraphFrontEnd
+
+You can now [configure](#Configuration) your environment.
 
 # <a name="Central"></a> Standard Central Installation
 These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with `sudo`), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator" — without the `sudo`).
@@ -41,51 +64,6 @@ These instructions will install the required packages only for the current user 
 1. Install   SpiNNakerGraphFrontEnd
 
        pip install SpiNNakerGraphFrontEnd --user
-
-You can now [configure](#Configuration) your environment.
-
-# <a name="Virtualenv"></a> Virtualenv Installation
-Follow [these instructions](/common_pages/5.0.0/VirtualEnv.html) to install the dependencies in a virtual environment.
-
-If you already have installed the SpiNNakerGraphFrontEnd previously, you will need to uninstall it:
-
-1. Activate your virtualenv, `<name>`
-
-       source <name>/bin/activate
-
-1. Uninstall the existing tools
-
-       [sudo] pip uninstall SpiNNakerGraphFrontEnd
-
-Remember, to install the tools, first activate your virtualenv, `<name>`
-
-    source <name>/bin/activate
-
-## Windows 64-bit:
-
-1. Install numpy:
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/numpy-1.13.1.mkl-cp27-cp27m-win_amd64.whl
-
-1. Install scipy:
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win64/scipy-0.19.1-cp27-cp27m-win_amd64.whl```
-
-## Windows 32-bit:
-
-1. Install numpy (optional if you are going to use a Virtual Env):
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/numpy-1.13.1.mkl-cp27-cp27m-win32.whl```
-
-1. Install scipy (optional if you are going to use a Virtual Env):
-
-       pip install https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/releases/download/v1.0-win32/scipy-0.19.1-cp27-cp27m-win32.whl```
-
-## All Platforms
-
-1. Install SpiNNakerGraphFrontEnd
-
-       pip install SpiNNakerGraphFrontEnd
 
 You can now [configure](#Configuration) your environment.
 
