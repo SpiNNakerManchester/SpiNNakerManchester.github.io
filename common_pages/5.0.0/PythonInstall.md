@@ -17,7 +17,7 @@ This has been tested using Ubuntu Linux 14.04 LTS 64-bit, Ubuntu Linux 16.04 LTS
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
 1. If you are on Ubuntu 16 or less, you will need to add a repository to get later versions of Python
 
-       sudo add-apt-repository ppa:jonathonf/python-3.6  
+       sudo add-apt-repository ppa:jonathonf/python-3.6
        sudo apt-get update
 
 1. Install Python
