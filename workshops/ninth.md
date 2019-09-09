@@ -24,6 +24,8 @@ See the [timetable](robotics2019.html).
 
 # Slides
 
+1. [Workshop Welcome](https://drive.google.com/open?id=1VDUrzmZ4myPvK9keAcXwe_RFUUX5qpr-)
+1. [SpiNNaker Hardware and Software Overview](https://drive.google.com/open?id=1X8nSNux-kKRUyD3KY-BaBqPYjRcnPTNr)
 1. [Access to SpiNNaker](https://drive.google.com/open?id=15XWZL-aAIJlN-Ixa_uJuEjxjqnn3yvarXBkWiHcWv_E)
 1. [External Devices](https://drive.google.com/open?id=1h_4mbXPbEOpZ92ZU876q7op30libvgSnhJiF7mHOAvM)
 1. [SNNs on SpiNNaker](https://drive.google.com/open?id=1Fb41D0udoxGfWWDz_ADRAsswqeW3GZTI7E42ZyeGYjQ)
