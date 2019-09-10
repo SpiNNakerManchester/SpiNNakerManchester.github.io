@@ -1,3 +1,3 @@
 ---
-redirect_to: https://github.com/SpiNNakerManchester/IntroLab/archive/5.0.0.tar.gz
+redirect_to: https://github.com/SpiNNakerManchester/IntroLab/archive/4.0.0.tar.gz
 ---
