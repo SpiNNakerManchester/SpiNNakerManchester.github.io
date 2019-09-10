@@ -27,6 +27,7 @@ See the [timetable](robotics2019.html).
 1. [Workshop Welcome](https://drive.google.com/open?id=1VDUrzmZ4myPvK9keAcXwe_RFUUX5qpr-)
 1. [SpiNNaker Hardware and Software Overview](https://drive.google.com/open?id=1X8nSNux-kKRUyD3KY-BaBqPYjRcnPTNr)
 1. [Access to SpiNNaker](https://drive.google.com/open?id=15XWZL-aAIJlN-Ixa_uJuEjxjqnn3yvarXBkWiHcWv_E)
+1. [The Neurorobotics Platform and Spinnaker](https://drive.google.com/open?id=1hLl0AGhrjCtmqSo5gldgurIYZbgIJHpw) (Axel von Armin, Daniel Zimmermann) [associated video](https://drive.google.com/open?id=1M9MzKhod42LI13-7vd8nHPP236mx3urg)
 1. [SpiNNaker Hardware Interfaces](https://drive.google.com/open?id=1dLlHQqQNB2mBlUU_yavzLKd7X3PrUwKe)
 1. [External Devices](https://drive.google.com/open?id=1h_4mbXPbEOpZ92ZU876q7op30libvgSnhJiF7mHOAvM)
 1. [SNNs on SpiNNaker](https://drive.google.com/open?id=1Fb41D0udoxGfWWDz_ADRAsswqeW3GZTI7E42ZyeGYjQ)
