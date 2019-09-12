@@ -36,6 +36,7 @@ See the [timetable](robotics2019.html).
 1. [MammalBot & MiRo](https://docs.google.com/presentation/d/1Zo7c0iZthgDoVZynPoJ9SbP_SAZvkrEo-vQJ3HumLJM/edit?usp=sharing) (David Buxton, Alejandro Jimenez-Rodriguez)
 1. [SNNs on SpiNNaker](https://drive.google.com/open?id=1Fb41D0udoxGfWWDz_ADRAsswqeW3GZTI7E42ZyeGYjQ)
 1. [Neuron Models and Learning](https://drive.google.com/open?id=1YjucTHMAjnLI8fJTyAUE2pyBpaElxgev)
+1. [Vision and Whiskers for spatial navigation: role of heterogeneous cognitive architectures in real-time robotics](https://drive.google.com/file/d/11pZToF6Nag-Gij4SePsNR8-45wO2-JCh/view?usp=sharing) (Martin Pearson)
 1. [SpiNNaker and the NRP](https://drive.google.com/open?id=1yhynahDRmX9RbCrwfWaPPCYSXXsbtKLiIvDaVM_0cls)
 
 # Lab Manuals
