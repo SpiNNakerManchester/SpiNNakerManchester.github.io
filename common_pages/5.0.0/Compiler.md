@@ -14,7 +14,7 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 
 1. Install the arm-none-eabi toolchain
 
-       sudo apt-get install arm-none-eabi-gcc libnewlib-arm-none-eabi
+       sudo apt-get install gcc-arm-none-eabi libnewlib-arm-none-eabi
 
 1. Install perl and dependencies
 
