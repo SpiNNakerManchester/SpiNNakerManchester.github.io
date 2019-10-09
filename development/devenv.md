@@ -5,7 +5,7 @@ title: Setting up a Software Development Environment for SpiNNaker
 # Installation
 
  1. [Install Python requirements](#PythonRequirements).
- 1. [Install the C development requirements](/common_pages/4.0.0/Compiler.html).
+ 1. [Install the C development requirements](/common_pages/5.0.0/Compiler.html).
  1. [Java](#java).
  1. [Install an IDE](#ide) — optional but recommended for ease of use.
  1. [Clone the git repositories](#git).
@@ -18,8 +18,8 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
 
 # <a name="PythonRequirements"></a> Python Requirements
-1. [Install the general platform requirements](/common_pages/4.0.0/PythonInstall.html)
-1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/4.0.0/VirtualEnv.html) to set up the dependencies.
+1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html)
+1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/5.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
        pip install "appdirs>=1.4.2,<2.0.0" future "numpy>=1.12,<1.9999"  "scipy>=0.16.0" "six>=1.8.0" "pylru>=1" enum34 future lxml jsonschema sortedcollections
@@ -33,7 +33,7 @@ You may need to install python3-tk
 We recommend the use of virtualenv for development work
 
 # <a name="CRequirements"></a> C Development Requirements
-[Install a C compiler](/common_pages/4.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
+[Install a C compiler](/common_pages/5.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
 
 # <a name="git"></a> Git Cloning
 
@@ -227,7 +227,7 @@ For each of the python modules, go into the root directory of the module and run
 
     [sudo] python setup.py develop --no-deps [--user]
 
-Where `sudo` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and `--user` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.
+Where `sudo` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and `--user` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.  If you have installed Python 3 then make sure that the version of "python" is the correct one before continuing.
 
 This step can be performed for every Python repository you have — assuming you have put them all into the same location — by using the `setup.sh` or `setup_sudo.sh` scripts in the SupportScripts repository.
 
@@ -278,7 +278,7 @@ There are plenty of other configuration options that you may wish to edit too; p
 
 [Note: if you are running using SpiNNakerGraphFrontEnd then the file in your home directory you need to edit will be called "`.spiNNakerGraphFrontEnd.cfg`".]
 
-If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/4.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/5.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
 

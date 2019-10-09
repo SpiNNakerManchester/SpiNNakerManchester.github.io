@@ -24,7 +24,7 @@ This has been tested using Ubuntu Linux 14.04 LTS 64-bit, Ubuntu Linux 16.04 LTS
 
        sudo apt-get install python3.6
 
-1. Upgrade pip and dependencies
+1. Upgrade pip and dependencies (be careful at this point that the version of pip you use here is the Python 3 version; you may need to type "pip3" instead of "pip")
 
        sudo pip install --upgrade pip setuptools wheel
 
