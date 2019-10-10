@@ -35,7 +35,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
 1. Install sPyNNaker8:
 
-       [sudo] pip install sPyNNaker8
+       [sudo] pip install 'sPyNNaker8=1!4.0.0'
 
 1. Install pyNN-SpiNNaker:
 
@@ -64,7 +64,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
 1. Install sPyNNaker8:
 
-       pip install sPyNNaker8 --user
+       pip install 'sPyNNaker8=1!4.0.0' --user
 
 1. Install pyNN-SpiNNaker:
 
