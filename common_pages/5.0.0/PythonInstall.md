@@ -6,6 +6,8 @@ This guide will detail how to install the core Python dependencies for SpiNNaker
 
 This has been tested using Ubuntu Linux 14.04 LTS 64-bit, Ubuntu Linux 16.04 LTS 64-bit, Ubuntu Linux 18.04 LTS 64-bit, Windows 10 64-bit and Mac OS X but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7, 8 and 10, and Mac OS X.
 
+Note that once you have completed these instructions, the remainder of the installation instructions assume that the command "python" points at the version of Python you have installed here; please ensure that this is the case.
+
 * [Ubuntu Linux Requirements](#UbuntuPython)
 * [Fedora Linux Requirements](#FedoraPython)
 * [Mac OS X Requirements](#MacOSXPython)

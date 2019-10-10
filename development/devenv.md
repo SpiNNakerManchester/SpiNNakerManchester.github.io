@@ -28,9 +28,11 @@ title: Setting up a Software Development Environment for SpiNNaker
 
        pip install  csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
 
-You may need to install python3-tk
+You may need to install python3-tk.
 
-We recommend the use of virtualenv for development work
+We recommend the use of virtualenv for development work.
+
+The remainder of these installation instructions assume that the command "python" corresponds to the Python version you have installed here (recommended 3.6 or later); please ensure that this is the case.
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/5.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
