@@ -252,13 +252,15 @@ The C code to compile is (in order) as follows:
 |`sPyNNaker`|`neural_modelling`|`make`|`make clean`|
 |`SpiNNakerGraphFrontEnd`|`spinnaker_graph_front_end/examples`|`make`|`make clean`|
 
-A script is also available [here](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location.
+A script is also available [here](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location, and that you have installed and setup the Python modules already (as described in the previous step).  If you haven't done so then this step is likely to fail.
 
 If you have also downloaded the repositories for building new neuron models, then the C code is compiled using the following commands:
 
 |**Module**|**Sub Folder**|**Commands**|**Clean Command**|
 
 |`sPyNNaker8NewModelTemplate`|`c_models`|`make`|`make clean`|
+
+This compilation is included in the automatic make script.
 
 # <a name="Configuration"></a> Configuration
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
