@@ -16,6 +16,8 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Configure the environment](#Configuration).
  1. [Run some examples](#Examples).
  1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
+ 1. [Moving away from sPynnaker8](#sPyNNaker8).
+
 
 # <a name="PythonRequirements"></a> Python Requirements
 1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html)
@@ -60,7 +62,6 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
 |`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
 |`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
-|`sPyNNaker8` | https://github.com/SpiNNakerManchester/sPyNNaker8.git|Python|
 |`sPyNNaker8NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C|
 |`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
@@ -202,7 +203,6 @@ In a C project, this is done as follows:
 |SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, spalloc|
 |SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
 |sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|sPyNNaker8|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
 |sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
 |PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
 |sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
@@ -263,7 +263,7 @@ If you have also downloaded the repositories for building new neuron models, the
 This compilation is included in the automatic make script.
 
 # <a name="Configuration"></a> Configuration
-Run spynnaker8.setup_pynn.py
+Run spynnaker.pyNN.setup_pynn.py
 
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
 
@@ -320,4 +320,31 @@ Copy and change the ones required from spinn_front_end_common\interface\spinnake
    ![VA8BenchmarkSpikes](vabenchmark8_v5.png)
 
 If you get the output above, you have successfully installed your system.
+
+
+# <a name="sPyNNaker8"></a> Moving away from sPynnaker8
+
+This section only applies if you have previous used sPyNNaker while we where using the sPyNNaker8 repository.
+
+All [sPynnaker8](https://github.com/SpiNNakerManchester/sPyNNaker8) code has been merged into [sPynnaker](https://github.com/SpiNNakerManchester/sPyNNaker).
+
+* Run spynnaker.pyNN.setup_pynn.py
+* Replace any import of just spynnaker8 to spynnaker
+import spynnaker8 as ....
+    becomes
+import spynnaker as ...
+
+* Replace all other spynnaker8 imports with spynnaker.pyNN
+import spynnaker8.XYZ ...
+becomes
+import spynnaker.pyNN.XYZ ....
+
+All
+The integration tests have been moved from
+sPyNNaker8/p8_integration_tests
+to
+sPyNNaker/spynnaker_integration_tests
+
+
+Note: In the near future the PyNN8Examples and sPyNNaker8NewModelTemplate repositories and directories will be renamed to remove the 8.
 
