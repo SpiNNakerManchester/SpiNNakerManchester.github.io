@@ -23,7 +23,7 @@ The steps required are:
 
 The `spinn_common` library will be installed into the SpiNNaker Tools installation directory, as set up above.
 
-1. Download the current release version of spinn_common [as a zip](https://github.com/SpiNNakerManchester/spinn_common/archive/5.0.0.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/spinn_common/archive/5.0.0.tar.gz).
+1. Download the current release version of spinn_common [as a zip](https://github.com/SpiNNakerManchester/spinn_common/archive/5.1.0.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/spinn_common/archive/5.1.0.tar.gz).
 1. Extract the archive to the location of your choice.
 1. In the directory of the extracted archive, run `make`.
 1. Run `make install`.
@@ -32,7 +32,7 @@ The `spinn_common` library will be installed into the SpiNNaker Tools installati
 
 The `SpiNNFrontEndCommon` library will be installed into the SpiNNaker Tools installation directory, as set up above.
 
-1. Download the current release version of SpiNNFrontEndCommon [as a zip](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/5.0.0.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/5.0.0.tar.gz).
+1. Download the current release version of SpiNNFrontEndCommon [as a zip](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/5.1.0.zip) or [as a tar.gz](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/archive/5.1.0.tar.gz).
 1. Extract the archive to the location of your choice.
 1. In the `c_common` directory of the extracted archive, run `make`.
 1. Run `make install`.

@@ -7,7 +7,7 @@ This guide is intended to help you set up your development environment so that y
 # sPyNNaker C Development Environment
 If you are writing new neural models, synapse models or plasticity models, it is likely that you will need to compile C code to run on SpiNNaker.  Firstly, you must [follow the instructions](/common_pages/5.0.0/CDevelopmentForSpiNNaker.html) to install a C development environment.  If your code is then to make use of the sPyNNaker neural modelling code base (which avoids the need to rewrite much of the necessary code):
 
-1. Download the sPyNNaker source code as a [zip](https://github.com/SpiNNakerManchester/sPyNNaker/archive/5.0.0.zip) or [tar.gz](https://github.com/SpiNNakerManchester/sPyNNaker/archive/5.0.0.tar.gz)
+1. Download the sPyNNaker source code as a [zip](https://github.com/SpiNNakerManchester/sPyNNaker/archive/5.1.0.zip) or [tar.gz](https://github.com/SpiNNakerManchester/sPyNNaker/archive/5.1.0.tar.gz)
 1. Extract the code to the location of your choice.
 1. Create a new environment variable `NEURAL_MODELLING_DIRS` which is set to the path of the `neural_modelling` subfolder of the extracted archive (note that in Windows, this should be the MinGW Posix path e.g. if you have extracted the archive to `C:\sPyNNaker\`, you should set the environment variable to `/c/sPyNNaker/neural_modelling`).
 

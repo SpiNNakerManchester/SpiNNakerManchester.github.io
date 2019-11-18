@@ -32,7 +32,7 @@ software stack. If you have not done so yet, please follow one of the following 
 
 As end users can add any arbitrary number of algorithms to the PACMAN flow,
 this means there is no longer a predefined logic flow between algorithms.
-To rectify this, there is a block of code located in https://github.com/SpiNNakerManchester/PACMAN/blob/5.0.0/pacman/executor/pacman_algorithm_executor.py which takes a description of the inputs, outputs, and executable parameters of the algorithms available to it and a list of algorithms which it needs to execute and deduces the logical order of algorithms.
+To rectify this, there is a block of code located in https://github.com/SpiNNakerManchester/PACMAN/blob/5.1.0/pacman/executor/pacman_algorithm_executor.py which takes a description of the inputs, outputs, and executable parameters of the algorithms available to it and a list of algorithms which it needs to execute and deduces the logical order of algorithms.
 
 Any new algorithm needs to have a XML file which states how to execute the algorithm, its inputs and outputs. Below is an example XML file:
 

@@ -145,7 +145,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
-    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.0.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.0.0.tar.gz) (tar.gz)
+    * __PyNN 0.8 Examples__ are [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.1.0.zip) (zip) or [here](https://github.com/SpiNNakerManchester/PyNN8Examples/archive/5.1.0.tar.gz) (tar.gz)
 
 1. Extract the archive
 1. Go to the "examples" folder
