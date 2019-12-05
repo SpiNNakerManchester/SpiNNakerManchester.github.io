@@ -14,6 +14,12 @@ Note that once you have completed these instructions, the remainder of the insta
 * [Windows Requirements](#WindowsPython)
 * [Windows PATH settings](#WindowsPath)
 
+# pyNN
+
+Please be aware due to an unexpected change to pyNN the relased versions only work with pyNN version 0.9.0 to 0.9.4
+
+Please install pyNN version 0.9.4 before running the rest of these instructions.
+
 # Linux
 
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
