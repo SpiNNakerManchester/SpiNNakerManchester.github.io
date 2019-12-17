@@ -64,6 +64,10 @@ To the MachineVertex init add a param timestep_in_us=self.timestep_in_us
 
 ### AbstractGeneratesDataSpecification
 1. Removed machine_time_step from generate_data_specification and generate_machine_data_specification
+- Use self.timestep_in_us instead
+
+### simulator.machine_time_step changed to user_time_step_in_us
+- Unit unchanged as still microseconds
 
 
 ## Moves
@@ -80,12 +84,16 @@ ApplicationFPGAVertex and ApplicationSpiNNakerLinkVertex moved to  spinn_front_e
 - Unit changed from timestep to microseconds
 3. DataNTimeSteps -> DataSimtimeInUs
 - Unit changed from timestep to microseconds
-4. RunTime -> RunTimeInUs
+4. RunUntilTimeSteps -> RunUntilTimeInUs
+- Unit changed from timestep to microseconds
+5. FirstMachineTimeStep -> RunFromTimeInUs
+- Unit changed from timestep to microseconds
+6. RunTime -> RunTimeInUs
 - Unit changed from milliseconds (float) to microseconds (int)
-5. RunUntilTimeSteps -> RunUntilTimeInUs
-- Unit changed from timestep to microseconds
-6. FirstMachineTimeStep -> RunFromTimeInUs
-- Unit changed from timestep to microseconds
+
+### Adapting to param change
+1. Convert microseconds to timesteps using vertex.simtime_in_us_to_timesteps
+2. Use from spinn_front_end_common.utilities.constants to convert between time units
 
 ## Changes required
 1. Use new params
