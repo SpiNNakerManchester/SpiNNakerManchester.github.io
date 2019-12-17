@@ -10,6 +10,7 @@ To use the _current release_ of the software:
 * [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v5.0** front end interface](/latest/spynnaker.html)
 * [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v5.0** front end interface](/latest/gfe.html)
 * [Running simulations through the Human Brain Project Portal](/latest/hbp_portal.html)
+* [Running simulations using SpiNNaker Jupyter Notebooks](/latest/jupyter.html)
 
 ## Previous Releases
 ### Version 4.0
