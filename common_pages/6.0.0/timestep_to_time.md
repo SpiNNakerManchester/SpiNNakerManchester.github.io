@@ -51,7 +51,7 @@ Changes to AbstractVertex which effect all vertexes
 * Add a _timestep_in_us variable
 * return _timestep_in_us as timestep_in_us
 * add timestep_in_us to init with a None default.
-If none call globals_variables.get_simulator().user_time_step_in_us  (unittest with 1000)
+If none call globals_variables.get_simulator().user_timestep_in_us  (unittest with 1000)
 2. create_machine_vertex
 To the MachineVertex init add a param timestep_in_us=self.timestep_in_us
 
