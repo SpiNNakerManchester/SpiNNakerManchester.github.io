@@ -20,6 +20,9 @@ __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no l
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
 
+Please be aware due to an unexpected change to PyNN the relased versions only work with PyNN version 0.9.0 to 0.9.4.
+
+Please make sure you have installed PyNN version 0.9.4 before running the rest of these instructions.
 
 # <a name="Virtualenv"></a> Virtualenv Installation
 
@@ -162,7 +165,15 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="Trouble"></a> Troubleshooting
 
-1. If on Windows you experience the error:
+1. If when you run a script you see an error of the form:
+
+       **TypeError: can't multiply sequence by non-int of type 'float'**
+
+   this likely means that you have a newer version of PyNN that is not compatible with our released version of sPyNNaker8.  To fix it, downgrade to PyNN version 0.9.4 by using:
+
+		pip install pynn==0.9.4
+
+2. If on Windows you experience the error:
 
        **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)**
 
@@ -180,7 +191,7 @@ If you get the output above, you have successfully installed your system.
    default_encoding = sys.getdefaultencoding()
    ```
 
-2. In OSX, if experiencing the following tkinter error:
+3. In OSX, if experiencing the following tkinter error:
 
        _tkinter.TclError: no display name and no $DISPLAY environment variable
 
@@ -190,7 +201,7 @@ If you get the output above, you have successfully installed your system.
 
     If you are still having issues, you may also need to install [XQuartz](https://www.xquartz.org/).
 
-3. In OSX, if you have problems during the installation of the `csa` package (a dependency of sPyNNaker8; this problem cascades outwards) within your virtualenv, then use:
+4. In OSX, if you have problems during the installation of the `csa` package (a dependency of sPyNNaker8; this problem cascades outwards) within your virtualenv, then use:
 
         MPLBACKEND=module://matplotlib.backends.backend_agg pip install sPyNNaker8 --user
 
