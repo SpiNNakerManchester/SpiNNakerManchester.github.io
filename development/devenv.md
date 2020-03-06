@@ -126,6 +126,8 @@ To clone using git on the command line, run:
 
 where `<url>` is one of the URLs from above.  It is strongly recommended that all modules be installed into the same directory.
 
+You may also find some of the scripts in the SupportScripts repository useful for this purpose; see for example [installing using git](gitinstall.html).
+
 ## PyCharm
 
 For each repository:
