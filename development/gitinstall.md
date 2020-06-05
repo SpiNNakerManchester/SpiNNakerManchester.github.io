@@ -10,7 +10,7 @@ It is recommended that this is done in a [virtual environment](/common_pages/5.0
 
 First, clone the SupportScripts repository:
 
-    git clone https://github.com/SupportScripts
+    git clone https://github.com/SpiNNakerManchester/SupportScripts
 
 Next, run the install script:
 
