@@ -133,6 +133,20 @@ You won't see these so much.
 * `\author`, `\copyright`, `\date` — Fairly obvious things for the file
   header material.
 
+## Cross references
+
+You link to a function definition by using its name with `()`
+_immediately afterwards._
+
+You link to a macro by _preceding_ it with `#`.
+
+You link to a source file by just mentioning it _including extension._
+You do not need to include any part of the path unless the name is ambiguous;
+don't create ambiguous filenames!
+
+You link to other global symbols (e.g., enumeration values, types) by
+_preceding_ them with `::` (which sort of makes sense in a C++ way).
+
 ## Writing style
 
 Every public symbol should have a `\brief` description.
