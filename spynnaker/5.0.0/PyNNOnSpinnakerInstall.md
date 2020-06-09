@@ -20,7 +20,7 @@ __Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no l
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
 
-Please be aware due to an unexpected change to PyNN the relased versions only work with PyNN version 0.9.0 to 0.9.4.
+Please be aware due to an unexpected change to PyNN the released versions only work with PyNN version 0.9.0 to 0.9.4.
 
 Please make sure you have installed PyNN version 0.9.4 before running the rest of these instructions.
 
