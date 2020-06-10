@@ -4,8 +4,7 @@ layout: default
 published: true
 ---
 
-This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.  If you wish to
-run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter.md) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal.md) instead.
+This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.  If you wish to run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter.md) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal.md) instead.
 
 # Installation
 
@@ -130,7 +129,21 @@ machineName = None
 version = None
 ```
 
-If you have a SpiNNaker board, then go to [Local Board](#LocalBoard) if you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).
+
+If you do not have a SpiNNaker board, then you have two options:
+
+1) If you can directly access a local machine that uses spalloc (for example, you are in Manchester and wish to use the million-core machine), then you need to set the following parameters in the ".spynnaker.cfg" you just created (e.g.):
+
+```
+[Machine]
+spalloc_server = spinnaker.cs.man.ac.uk
+spalloc_user = user.name@email.address
+```
+
+where you edit spalloc_server if you are using a different spalloc_server; editing spalloc_user is helpful for administrators of the machine to contact you if there are any problems, which is why we suggest using an email address.
+
+OR 2) To run in virutal mode, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
 
