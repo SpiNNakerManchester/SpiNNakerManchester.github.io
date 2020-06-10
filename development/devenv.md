@@ -300,7 +300,7 @@ spalloc_user = user.name@email.address
 
 where you edit spalloc_server if you are using a different spalloc_server; editing spalloc_user is helpful for administrators of the machine to contact you if there are any problems, which is why we suggest using an email address.
 
-OR 2) To run in virutal mode, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+OR 2) To run in virtual mode, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
 
