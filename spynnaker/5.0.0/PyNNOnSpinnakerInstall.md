@@ -4,7 +4,8 @@ layout: default
 published: true
 ---
 
-This guide will detail how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
+This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.  If you wish to
+run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter.md) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal.md) instead.
 
 # Installation
 
