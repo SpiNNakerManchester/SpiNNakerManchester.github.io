@@ -1,6 +1,6 @@
 # Documenting SpiNNaker C Code using Doxygen
 
-We use [Doxygen](https://www.doxygen.nl/manual/) to translate special comments
+We use [Doxygen][doxygen] to translate special comments
 in our C code into our online documentation trees.
 
 Doxygen is very complicated, but we only use a subset of it. The configuration
@@ -100,7 +100,9 @@ Note that Doxygen is apparently poor at recovering from typos in formulæ.
 You won't see these so much.
 
 * `\mainpage` — Used to provide content for the main page of the documentation
-  tree. Obviously, there should only be one of these per repository!
+  tree. Obviously, there should only be one of these per repository! By
+  convention, this is usually in a file called `mainpage.dox`, but that's just
+  for our convenience.
 
 * `\dir` — Used to describe a whole directory. Only appears once at most in
   that entire directory.
@@ -149,7 +151,10 @@ _preceding_ them with `::` (which sort of makes sense in a C++ way).
 
 ## Writing style
 
-Every public symbol should have a `\brief` description.
+Every public symbol should have a `\brief` description. In our general style,
+symbols are public unless excluded by the `Doxyfile`'s `EXCLUDE_SYMBOLS`
+configuration file. We normally document `static` symbols and symbols starting
+with one or more underscores (`_`).
 
 Functions should have their brief description begin with a present tense
 immediate active verb. Thus, instead of:
@@ -207,3 +212,24 @@ macros, which are defined like this in an appropriate C file:
 
 The standard pattern of `#ifndef`/`#define` guards for a whole file do not need
 to be documented (and should not be).
+
+# Documentation Deployment
+
+Our documentation deployments are driven automatically on Github (using Travis
+to do much of the work) and, for Python _only,_ on ReadTheDocs (which also
+stores old versions).
+
+The core of our Github/Travis deployment rules are based on
+[this blog comment][gist]
+(!) with some adaptations. Essentially, we run Doxygen as part of the build, and
+then we assemble the output into the right directory _with minimal extra work._
+The magic token required for publishing from Travis to Github is placed in the
+`GITHUB_TOKEN` environment variable by the configuration settings on Travis
+(no, it's not in the repository) only for the `master` branch. If you want to
+test how your documentation changes look, you should run Doxygen locally; there
+is no capacity to do test deployments on a per-branch/PR basis.
+
+
+
+ [doxygen]: https://www.doxygen.nl/manual/
+ [gist]: https://gist.github.com/vidavidorra/548ffbcdae99d752da02#gistcomment-2604229
