@@ -49,7 +49,7 @@ As of September 2019 the contributors included (names in alphabetical order of t
 * [Sergio Davies](https://github.com/sergiodavies)
 * [Stephen Furber](https://github.com/sfurber)
 * [Simon Davidson](https://github.com/SimonDavidson)
-* [Joanna Moy](https://github.com/shrinkingviolet)
+* [Joanna Moy](https://github.com/joannavioletmoy)
 * [Steve Temple](https://github.com/Steve-Temple)
 * [Adam Perrett](https://github.com/such-a-git)
 * Cameron Patterson
