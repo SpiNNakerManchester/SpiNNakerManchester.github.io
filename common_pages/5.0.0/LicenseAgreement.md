@@ -35,6 +35,7 @@ As of September 2019 the contributors included (names in alphabetical order of t
 * [Arthur Ceccotti](https://github.com/gmtuca)
 * [Michael Hopkins](https://github.com/hopper333)
 * [Basabdatta Sen Bhattacharya](https://github.com/iambasab)
+* [Joanna Moy](https://github.com/joannavioletmoy)
 * [Luis A. Plana](https://github.com/lplana)
 * [Mantas Mikaitis](https://github.com/mmikaitis)
 * [Jonathan Heathcote](https://github.com/mossblaser)
@@ -49,7 +50,6 @@ As of September 2019 the contributors included (names in alphabetical order of t
 * [Sergio Davies](https://github.com/sergiodavies)
 * [Stephen Furber](https://github.com/sfurber)
 * [Simon Davidson](https://github.com/SimonDavidson)
-* [Joanna Moy](https://github.com/joannavioletmoy)
 * [Steve Temple](https://github.com/Steve-Temple)
 * [Adam Perrett](https://github.com/such-a-git)
 * Cameron Patterson
