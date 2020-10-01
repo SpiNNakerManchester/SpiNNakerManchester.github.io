@@ -45,8 +45,9 @@ See the [timetable](robotics2019.html).
 1. [Running PyNN 0.9 Simulations on SpiNNaker](/spynnaker/5.0.0/RunningPyNNSimulationsonSpiNNaker-LabManual.pdf)
 1. [Simple Data Input Output and Visualisation](/spynnaker/5.0.0/SimpleIO-LabManual.pdf)
 1. [External Devices](/spynnaker/5.0.0/ExternalDevices-LabManual.pdf)
-1. [Adding New Neuron Models](/spynnaker/5.0.0/NewNeuronModels-LabManual.pdf)
-1. [Adding New Models of Synapstic Plasticity](/spynnaker/5.0.0/NewPlasticityRules-LabManual.pdf)
+1. [Adding New Neuron Models (5.0)](/spynnaker/5.0.0/NewNeuronModels-LabManual.pdf)
+1. [Adding New Neuron Models (current - 5.1)](/spynnaker/5.0.0/NewNeuronModels5.1-LabManual.pdf)
+1. [Adding New Models of Synaptic Plasticity](/spynnaker/5.0.0/NewPlasticityRules-LabManual.pdf)
 
 <center>
 <img src="UoM.png" height="50">&nbsp;&nbsp;

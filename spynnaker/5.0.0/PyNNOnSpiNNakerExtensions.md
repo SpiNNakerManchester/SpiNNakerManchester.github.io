@@ -17,5 +17,5 @@ In addition to the C code, you will also likely need to write Python code which 
 If the code that you are writing only extends the Python functionality, this can be written as with any normal Python code, using sPyNNaker as a library as required.  The new code can then be used from PyNN scripts by importing the code separately from sPyNNaker.
 
 # Writing New Neuron Models and Plasticity Rules
-* [Tutorial: Adding new Neural Models](NewNeuronModels-LabManual.pdf)
+* [Tutorial: Adding new Neural Models](NewNeuronModels5.1-LabManual.pdf)
 * [Tutorial: Adding new Plasticity Rules](NewPlasticityRules-LabManual.pdf)
