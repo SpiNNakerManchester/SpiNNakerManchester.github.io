@@ -5,7 +5,7 @@ This page details the latest version of various software for the SpiNNaker Neuro
 
 # Using
 ## Support
-If you have any issues with using SpiNNaker machines, please join the [SpiNNaker users group](https://groups.google.com/u/0/g/spinnakerusers) and ask for help there.
+If you have any issues with using SpiNNaker machines, please join the [SpiNNaker users group](https://groups.google.com/u/0/g/spinnakerusers) and ask for help there (please say who you are and who you are working with when applying to join to speed up the process).
 
 ## Version 5.1
 To use the _current release_ of the software:
