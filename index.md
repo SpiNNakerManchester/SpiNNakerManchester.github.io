@@ -4,13 +4,16 @@ title: Software for SpiNNaker
 This page details the latest version of various software for the SpiNNaker Neuromorphic Compute Platform.  Please see the following pages for more details:
 
 # Using
-### Version 5.0
+## Support
+If you have any issues with using SpiNNaker machines, please join the [SpiNNaker users group](https://groups.google.com/u/0/g/spinnakerusers) and ask for help there.
+
+## Version 5.1
 To use the _current release_ of the software:
 
 * [Running simulations using SpiNNaker Jupyter Notebooks](/latest/jupyter.html)
 * [Running simulations through the Human Brain Project Portal](/latest/hbp_portal.html)
-* [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v5.0** front end interface](/latest/spynnaker.html)
-* [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v5.0** front end interface](/latest/gfe.html)
+* [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v5.1** front end interface](/latest/spynnaker.html)
+* [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v5.1** front end interface](/latest/gfe.html)
 
 
 ## Previous Releases
