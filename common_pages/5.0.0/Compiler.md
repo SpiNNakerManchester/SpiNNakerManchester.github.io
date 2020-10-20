@@ -20,6 +20,16 @@ To build programs on SpiNNaker, you will primarily need to install a C compiler 
 
        sudo apt-get install perl perl-tk libterm-readline-gnu-perl
 
+Note: as of October 2020, if you have Ubuntu 18 or earlier then you will find that certain binaries will not compile due to overflowing the ITCM limit.  You can solve this by either upgrading to Ubuntu 20, or by installing a newer version of the arm-none-eabi-gcc compiler.  To do this:
+
+1. [Download from the ARM developer site](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) (choose at least version 9).
+
+1. Click the link "gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2" to download a tarball
+
+1. Untar this file once downloaded; note the <location> where you have untarred it
+
+1. Add <location>/bin to your PATH in order to use the new binary (to check you have the correct one, type "which arm-none-eabi-gcc")
+
 ## <a name="FedoraDev"></a> Development Dependencies for 64-bit Fedora
 
 1. Install the arm-none-eabi toolchain
