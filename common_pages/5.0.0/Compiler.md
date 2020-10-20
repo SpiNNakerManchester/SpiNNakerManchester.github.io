@@ -24,11 +24,13 @@ Note: as of October 2020, if you have Ubuntu 18 or earlier then you will find th
 
 1. [Download from the ARM developer site](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) (choose at least version 9).
 
-1. Click the link (e.g. "gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2") to download a tarball
+1. Click the link (e.g. "gcc-arm-none-eabi-*-x86_64-linux.tar.bz2") to download a tarball
 
-1. Untar this file once it has downloaded; note the **location** where you have untarred it
+1. Untar this file once it has downloaded (noting the **location** where you have untarred it) e.g.:
 
-1. Add **location**/bin to your PATH in order to use the new binary (to check you have the correct one, type "which arm-none-eabi-gcc")
+       tar -xjf gcc-arm-none-eabi-*-x86_64-linux.tar.bz2
+
+1. Add **location**/bin to your PATH in order to use the new binary (make sure the new location comes before any old locations in your PATH variable; to check you are using the correct one, type "which arm-none-eabi-gcc")
 
 ## <a name="FedoraDev"></a> Development Dependencies for 64-bit Fedora
 
