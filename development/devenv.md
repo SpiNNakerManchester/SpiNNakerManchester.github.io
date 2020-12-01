@@ -51,7 +51,6 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`spinn_common` | https://github.com/SpiNNakerManchester/spinn_common.git|C|
 |`SpiNNUtils` | https://github.com/SpiNNakerManchester/SpiNNUtils.git|Python|
 |`SpiNNMachine` | https://github.com/SpiNNakerManchester/SpiNNMachine.git|Python|
-|`SpiNNStorageHandlers` | https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git|Python|
 |`spalloc` | https://github.com/SpiNNakerManchester/spalloc.git|Python|
 |`spalloc_server` | https://github.com/SpiNNakerManchester/spalloc_server.git|Python|
 |`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
@@ -197,18 +196,17 @@ In a C project, this is done as follows:
 |**Module**|**Dependencies**|
 |:---------|:---------------|
 |SpiNNMachine|SpiNNUtils|
-|SpiNNStorageHandlers|SpiNNUtils|
-|SpiNNMan|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers|
+|SpiNNMan|SpiNNUtils, SpiNNMachine|
 |PACMAN|SpiNNUtils, SpiNNMachine|
-|DataSpecification|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers|
-|SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, spalloc|
-|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|sPyNNaker8|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
-|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
-|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
-|sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker8, spalloc|
+|DataSpecification|SpiNNUtils, SpiNNMachine|
+|SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, spalloc|
+|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|sPyNNaker8|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
+|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
+|sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker8, spalloc|
 
 
 ## <a name="cdependencies"></a> C Dependencies
