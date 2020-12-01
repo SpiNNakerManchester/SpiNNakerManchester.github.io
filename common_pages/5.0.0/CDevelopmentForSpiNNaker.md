@@ -17,7 +17,7 @@ The steps required are:
 **These critical steps must be performed** before building and installing other SpiNNaker support libraries.
 
 1. [Install a compiler](Compiler.html).
-1. [Install `spinnaker_tools`](/spinnaker_tools/3.2.5/).  NOTE: check release number!
+1. [Install `spinnaker_tools`](/spinn_tools/3.2.5/).  NOTE: check release number!
 
 # <a name="spinn_common"></a> spinn_common Library Installation
 

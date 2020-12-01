@@ -22,7 +22,7 @@ Note that version 4.0, while supported, is _not recommended for new work._
 * [Running simulations through the Human Brain Project Portal](common_pages/4.0.0/how_to_use_spinnaker_HBP_portal_for_dummies.pdf)
 
 # Developing
-* [Writing low-level SpiNNaker C code](spinnaker_tools/3.2.5/index.html)
+* [Writing low-level SpiNNaker C code](spinn_tools/3.2.5/index.html)
 * [Writing low-level SpiNNaker Python code](low_level_apis/index.html)
 * [Technical hardware and software documents](docs/)
 * [SpiNNaker workshops](workshops/index.html)
