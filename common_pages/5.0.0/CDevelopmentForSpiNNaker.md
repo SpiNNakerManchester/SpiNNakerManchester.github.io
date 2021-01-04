@@ -6,7 +6,9 @@ This guide will help you to install the tools required for development with the 
 
 The steps required are:
 
-1. [Install a compiler and spinnaker_tools](#spinnaker_tools) (makes building code for SpiNNaker possible at all).
+1. Make sure you have installed the [latest version of the python tools](/latest/spynnaker.html).
+
+1. [Install a compiler, SpiNNUtils, and spinnaker_tools](#spinnaker_tools) (makes building code for SpiNNaker possible at all).
 
 1. [Install spinn_common Library](#spinn_common) (for additional utility, mathematical and efficiency library functions).
 
