@@ -18,21 +18,23 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
 
 # <a name="PythonRequirements"></a> Python Requirements
-1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html)
+1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html); note that _we do not support any version of Python before 3.6._
 1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/5.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install "appdirs>=1.4.2,<2.0.0" future "numpy>=1.12,<1.9999"  "scipy>=0.16.0" "six>=1.8.0" "pylru>=1" enum34 future lxml jsonschema sortedcollections
+       pip install "numpy>=1.13,<1.9999" "scipy>=0.16.0" matplotlib
+       pip install "appdirs>=1.4.2,<2.0.0" "pylru>=1" lxml jsonschema sortedcollections futures pytz tzlocal "requests>=2.4.1"
+       pip install csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
 
-       pip install  "rig>=2.0.0,<3.0.0" futures enum-compat pytz tzlocal "requests>=2.4.1" matplotlib
+   Optionally, you can also install `rig` though this is not normally needed:
 
-       pip install  csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
+       pip install "rig>=2.0.0,<3.0.0"
 
-You may need to install python3-tk.
+You may need to install `python3-tk`; this cannot be installed via pip due to the way it interacts with the base Python installation. If you do install this, it must be done _before_ you create any virtualenv.
 
-We recommend the use of virtualenv for development work.
+We _strongly_ recommend the use of virtualenv for development work.
 
-The remainder of these installation instructions assume that the command "python" corresponds to the Python version you have installed here (recommended 3.6 or later); please ensure that this is the case.
+The remainder of these installation instructions assume that the command "`python`" corresponds to the Python version you have installed here (version 3.6 or later); please ensure that this is the case.
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/5.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
@@ -70,12 +72,12 @@ The last of these repositories contains a useful selection of scripts for semi-a
 
 # <a name="java"></a> Java Development kit
 
-A Java JDK will be required in the following conditions
+A Java JDK will be required in the following conditions:
 
 1. If modifying or even just using the Java versions of the tools
 1. If modifying the Remote Access software for the Human Brain Project portal
 
-A Java JRE will be required
+A Java JRE may also be required:
 1. If you are going to use an IDE (which requires Java and does not have one with it)
 
 We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -85,15 +87,18 @@ The tools require at least Java 8 but there is no known reason that a more up to
 ## Java version of the tools
 Java version is optional and off by default.
 
-Requires the JavaSpiNNaker repository.
+Requires the `JavaSpiNNaker` repository.
 
+**NB:** You still need the Python tools to use this.
+
+### Current situation
 You will be required to build the jar file required.
 
 Open JavaSpiNNaker in an IDE which supports maven.
 
-Build "SpiNNaker Java Host" with dependencies.  This will create the SpiNNaker-comms-0.0.1-SNAPSHOT.jar file in SpiNNaker-comms/target
+Build "SpiNNaker Java Host" with dependencies.  This will create the `spinnaker-exe.jar` file in `SpiNNaker-front-end/target`
 
-It is also possible to [install maven](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html) and run "mvn package" on the command line from the JavaSpiNNaker directory.
+It is also possible to [install maven](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html) and run "`mvn package`" on the command line from the `JavaSpiNNaker` directory.
 
 See [Configure the environment](#Configuration) for how to active these.
 
