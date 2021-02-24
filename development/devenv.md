@@ -65,6 +65,7 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
+| `TestBase` | https://github.com/SpiNNakerManchester/TestBase.get| Optional Integeration Testing |
 |`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
@@ -194,13 +195,14 @@ In a C project, this is done as follows:
 |PACMAN|SpiNNUtils, SpiNNMachine|
 |DataSpecification|SpiNNUtils, SpiNNMachine|
 |SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, spalloc|
-|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
-|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc, TestBase*|
+|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc, TestBase*|
+|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
+|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
 |sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc|
+|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc, TestBase*|
 
+* TestBase is only required to run IntergationTests
 
 ## <a name="cdependencies"></a> C Dependencies
 
