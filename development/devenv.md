@@ -15,7 +15,6 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Set up the PyNN links](#PyNNInstall).
  1. [Configure the environment](#Configuration).
  1. [Run some examples](#Examples).
- 1. [Multiple PyNN versions](http://spinnakermanchester.github.io/development/pynn8devenv.html)
 
 # <a name="PythonRequirements"></a> Python Requirements
 1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html); note that _we do not support any version of Python before 3.6._
