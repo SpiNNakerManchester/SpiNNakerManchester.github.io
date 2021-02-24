@@ -1,0 +1,128 @@
+---
+title: Integration testing the SpiNNaker software
+---
+1. [Install requirements](#Requirements)
+1. [Integration tests directory](#directory)
+1. [Testing example scripts Automatically](#BuildScripts)
+
+# <a name="Requirements"></a> Requirements
+
+To run interrogation test locally you will need TestBase installed
+ [check these instructions](../devenv.html)
+ 
+To added the tests to the Jenkins build the Jenkins files in IntegrationTests may need updating.
+
+The things that could need adding include:
+1. Add a gitclone 
+2. Add a make
+3. Add a setup.py call
+4. Add an install requirements-test.txt
+5. Add a stage('Run ..... Integeration Tests')
+    - run script_builder.py if used
+    - run tests
+    
+# <a name="directory">Integeration tests directory
+Ensure one or more integeration tests directory exists
+1. Directly under the repository root
+2. Directory name(s) must end with "_tests" 
+
+# <a name="BaseTestCase">BaseTestCase
+
+An exstention of unittest.TestCase to add extra functionality
+
+...python
+from spinnaker_testbase import BaseTestCase
+
+class MyTestClass(BaseTestCase):
+
+    def the_script(self):
+        _some_test_stuff
+
+    def test_the_script(self):
+        self.runsafe(self.the_scipt)
+
+...
+
+1. As BaseTestCase extends unittest.TestCase all assert available there are included
+2. self.runsafe
+- Runs the method given in the parameter
+- It will automatically cd into the directory the test is in
+    - Therefor picking up any cfg file
+    - Allowing for relative paths to supporting files
+- It will reset the simulator state in case a previous test left in unstable.
+    - Sorry it can not push the reset button on a 4 chip board for you.
+_ Will try the method a few times if a network type error occurs.
+    - The retry is recorded and jenkins will fail at a later stage
+3. Proves a few extra support methods including
+    - 
+
+
+# <a name="TestScripts">Testing example scripts
+
+[ScriptChecker](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py) 
+provides a convenient tool for easily testing a python script.
+- It will automatically cd into the directory the script is in
+    - Therefor picking up any cfg file
+    - Allowing for relative paths to supporting files
+- It will reset the simulator state in case a previous test left in unstable.
+    - Sorry it can not push the reset button on a 4 chip board for you.
+_ Will try the script a few times if a network type error occurs.
+    - The retry is recorded and jenkins will fail at a later stage
+- It will convert a relative path to an absolute one.
+    - The relative should be from the repository root
+    - Currently only works if the test file is directly under an [Integration tests directory](#directory)
+- Keeps a record of how long the script took to standard output and in TestBase/reports/scripts_ran_successfully
+
+1. Success criteria
+    - The script must have run without error
+    - No checking of results is done unless the script contains assert statements
+    - As the script is run in its directory any files output by the script will be relatiove to it
+    - For an example that checks the log files [see HelloWorld](https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd/blob/master/gfe_integration_tests/test_hello_world.py)
+    
+1. Matplotlib
+   - Scripts can safely include plotting to maplotlib
+   - Must use the import format: import matplotlib.pyplot ...
+   - ScriptChecker will mock out the show
+   - ScriptChecker will raise SkipTest if the show is not called at least once
+
+1. Data available from globals_variables even after the script finished
+   
+    from spinn_front_end_common.utilities.globals_variables import ...
+    - provenance_file_path(): The path to the directory that holds all provenance files 
+    - app_provenance_file_path(): The path to the directory that holds all app provenance files
+    - system_provenance_file_path(): The path to the directory that holds all system provenance files
+    - run_report_directory(): The path to the directory that holds all the reports for run
+    
+# <a name="BuildScripts">Testing example scripts automatically
+
+1. Add a script_builder.py
+    - Copy in a [script_builder.py](https://github.com/SpiNNakerManchester/PyNN8Examples/blob/master/integration_tests/script_builder.py)
+    - Must be directly under the integeration tests directory
+    - self.create_test_scripts takes three parameters
+        1. A List of directries to find test scipts in
+            - The path should be relative to the repository root
+        2. A dictionary of "too_long" files that take a long time to test
+            - File name (without path)
+            - Time it takes to run
+        3. A dictionary of "exceptions" python files that should not run
+            - File name (without path)
+            - A reason they should not be run
+    - too_long and exceptions may be empty
+    - too_long files
+       - Will add a comment with the time it takes to run
+       - Will add a commented out SkipTest so the script can easily be skipped
+       - Jenkins can be configured to uncomment the SkipTest(s) 
+       - Jenkins runs several tests in parallel so 4 scripts that each take 5 minutes should run faster than one 10 minute script
+    - exceptions
+        - Class and utility files with no main do not need to be listed as exception.  The test will on these will just be a can they be imported.  
+        - exceptions scripts will raise a SkipTest with the reason given
+            - ideally a link to the issue why they dont run or a needs x device
+    
+1. To run the tests locally
+    - run script_builder.py
+    - pytest the created "test_scripts.py"
+
+1. To run the tests on Jenkins.
+    - "script_builder.py" is run every job so new scripts are automatically found
+    - test_scripts.py if found in github is ignored/ reference only
+    
