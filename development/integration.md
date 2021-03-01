@@ -3,7 +3,11 @@ title: Integration testing the SpiNNaker software
 ---
 1. [Install requirements](#Requirements)
 1. [Integration tests directory](#directory)
+1. [Extendied unittest.TestCase](#BaseTestCase)
+1. [Testing Scipts](#TestScripts)
 1. [Testing example scripts Automatically](#BuildScripts)
+1. [global_variables tool to get output](#global_variables)
+1. [Reading provenance database](#provenance)
 
 # <a name="Requirements"></a> Requirements
 
@@ -28,7 +32,8 @@ Ensure one or more integeration tests directory exists
 
 # <a name="BaseTestCase">BaseTestCase
 
-An exstention of unittest.TestCase to add extra functionality
+[BaseTestCase](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/base_test_case.py)
+is an  exstention of unittest.TestCase to add extra functionality
 
 ...python
 from spinnaker_testbase import BaseTestCase
@@ -43,7 +48,8 @@ class MyTestClass(BaseTestCase):
 
 ...
 
-1. As BaseTestCase extends unittest.TestCase all assert available there are included
+1. As [BaseTestCase](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/base_test_case.py)
+   extends unittest.TestCase all assert available there are included
 2. self.runsafe
 - Runs the method given in the parameter
 - It will automatically cd into the directory the test is in
@@ -54,13 +60,31 @@ class MyTestClass(BaseTestCase):
 _ Will try the method a few times if a network type error occurs.
     - The retry is recorded and jenkins will fail at a later stage
 3. Proves a few extra support methods including
-    - 
-
-
+    - assert_logs_messages
+    - get_provenance_files
+    - get_system_iobuf_files
+    - get_app_iobuf_files
+    - get_placements
+    - report
+    
 # <a name="TestScripts">Testing example scripts
 
 [ScriptChecker](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py) 
 provides a convenient tool for easily testing a python script.
+
+...python
+from spinnaker_testbase import ScriptChecker
+
+class MyTestClass(ScriptChecker):
+
+    def test_learning_simple(self):
+        self.check_script("learning/simple.py")
+
+...
+
+- It will convert a relative script path to an absolute one.
+    - The relative should be from the repository root
+    - Currently only works if the test file is directly under an [Integration tests directory](#directory)
 - It will automatically cd into the directory the script is in
     - Therefor picking up any cfg file
     - Allowing for relative paths to supporting files
@@ -68,9 +92,6 @@ provides a convenient tool for easily testing a python script.
     - Sorry it can not push the reset button on a 4 chip board for you.
 _ Will try the script a few times if a network type error occurs.
     - The retry is recorded and jenkins will fail at a later stage
-- It will convert a relative path to an absolute one.
-    - The relative should be from the repository root
-    - Currently only works if the test file is directly under an [Integration tests directory](#directory)
 - Keeps a record of how long the script took to standard output and in TestBase/reports/scripts_ran_successfully
 
 1. Success criteria
@@ -126,3 +147,35 @@ _ Will try the script a few times if a network type error occurs.
     - "script_builder.py" is run every job so new scripts are automatically found
     - test_scripts.py if found in github is ignored/ reference only
     
+# <a name="global_variables">global_variables tool to get output
+Many [global varibales](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/utilities/globals_variables.py)
+are available even after a end is called or [ScriptChecker.check_script](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py) 
+has returned.
+
+These include:
+- get_generated_output
+- provenance_file_path
+- app_provenance_file_path
+- system_provenance_file_path
+- run_report_directory
+- config
+
+These methods will work from when setup is called until the next setup or reset.
+config is callable even before setup but then will not inlcude any changes done to the configs by the setup call.
+
+# <a name="provenance">Reading provenance database
+[ProvenanceReader]https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/provenance/provenance_reader.py)
+provides a tool for readint the provenance database.
+
+The Reader provides a thin wrapper around the provenance database. 
+As long as the object is created between setup and end/reset the data is available.
+(or at least as long as the file is not deleted by later runs)
+
+While the class has methods get_database_handle and run_query which provide a very flexible way of accessing the data,
+their use is not the recommended way of IntegrationTesting.
+
+Ideally add an extra support function directly to [ProvenanceReader]https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/provenance/provenance_reader.py)
+so that it is 
+1. Easy to find for other tests / scripts to reuse
+1. Easier to update if the sql schema changes
+
