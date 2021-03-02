@@ -13,29 +13,29 @@ title: Integration testing the SpiNNaker software
 
 To run interrogation test locally you will need TestBase installed
  [check these instructions](../devenv.html)
- 
+
 To added the tests to the Jenkins build the Jenkins files in IntegrationTests may need updating.
 
 The things that could need adding include:
-1. Add a gitclone 
+1. Add a gitclone
 2. Add a make
 3. Add a setup.py call
 4. Add an install requirements-test.txt
 5. Add a stage('Run ..... Integeration Tests')
     - run script_builder.py if used
     - run tests
-    
+
 # <a name="directory">Integeration tests directory
 Ensure one or more integeration tests directory exists
 1. Directly under the repository root
-2. Directory name(s) must end with "_tests" 
+2. Directory name(s) must end with "_tests"
 
 # <a name="BaseTestCase">BaseTestCase
 
 [BaseTestCase](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/base_test_case.py)
 is an  exstention of unittest.TestCase to add extra functionality
 
-...python
+```python
 from spinnaker_testbase import BaseTestCase
 
 class MyTestClass(BaseTestCase):
@@ -45,8 +45,7 @@ class MyTestClass(BaseTestCase):
 
     def test_the_script(self):
         self.runsafe(self.the_scipt)
-
-...
+```
 
 1. As [BaseTestCase](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/base_test_case.py)
    extends unittest.TestCase all assert available there are included
@@ -66,21 +65,20 @@ _ Will try the method a few times if a network type error occurs.
     - get_app_iobuf_files
     - get_placements
     - report
-    
+
 # <a name="TestScripts">Testing example scripts
 
-[ScriptChecker](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py) 
+[ScriptChecker](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py)
 provides a convenient tool for easily testing a python script.
 
-...python
+```python
 from spinnaker_testbase import ScriptChecker
 
 class MyTestClass(ScriptChecker):
 
     def test_learning_simple(self):
         self.check_script("learning/simple.py")
-
-...
+```
 
 - It will convert a relative script path to an absolute one.
     - The relative should be from the repository root
@@ -99,7 +97,7 @@ _ Will try the script a few times if a network type error occurs.
     - No checking of results is done unless the script contains assert statements
     - As the script is run in its directory any files output by the script will be relatiove to it
     - For an example that checks the log files [see HelloWorld](https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd/blob/master/gfe_integration_tests/test_hello_world.py)
-    
+
 1. Matplotlib
    - Scripts can safely include plotting to maplotlib
    - Must use the import format: import matplotlib.pyplot ...
@@ -107,13 +105,13 @@ _ Will try the script a few times if a network type error occurs.
    - ScriptChecker will raise SkipTest if the show is not called at least once
 
 1. Data available from globals_variables even after the script finished
-   
+
     from spinn_front_end_common.utilities.globals_variables import ...
-    - provenance_file_path(): The path to the directory that holds all provenance files 
+    - provenance_file_path(): The path to the directory that holds all provenance files
     - app_provenance_file_path(): The path to the directory that holds all app provenance files
     - system_provenance_file_path(): The path to the directory that holds all system provenance files
     - run_report_directory(): The path to the directory that holds all the reports for run
-    
+
 # <a name="BuildScripts">Testing example scripts automatically
 
 1. Add a script_builder.py
@@ -132,13 +130,13 @@ _ Will try the script a few times if a network type error occurs.
     - too_long files
        - Will add a comment with the time it takes to run
        - Will add a commented out SkipTest so the script can easily be skipped
-       - Jenkins can be configured to uncomment the SkipTest(s) 
+       - Jenkins can be configured to uncomment the SkipTest(s)
        - Jenkins runs several tests in parallel so 4 scripts that each take 5 minutes should run faster than one 10 minute script
     - exceptions
-        - Class and utility files with no main do not need to be listed as exception.  The test will on these will just be a can they be imported.  
+        - Class and utility files with no main do not need to be listed as exception.  The test will on these will just be a can they be imported.
         - exceptions scripts will raise a SkipTest with the reason given
             - ideally a link to the issue why they dont run or a needs x device
-    
+
 1. To run the tests locally
     - run script_builder.py
     - pytest the created "test_scripts.py"
@@ -146,10 +144,10 @@ _ Will try the script a few times if a network type error occurs.
 1. To run the tests on Jenkins.
     - "script_builder.py" is run every job so new scripts are automatically found
     - test_scripts.py if found in github is ignored/ reference only
-    
+
 # <a name="global_variables">global_variables tool to get output
 Many [global varibales](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/utilities/globals_variables.py)
-are available even after a end is called or [ScriptChecker.check_script](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py) 
+are available even after a end is called or [ScriptChecker.check_script](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/script_checker.py)
 has returned.
 
 These include:
@@ -167,7 +165,7 @@ config is callable even before setup but then will not inlcude any changes done 
 [ProvenanceReader]https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/provenance/provenance_reader.py)
 provides a tool for readint the provenance database.
 
-The Reader provides a thin wrapper around the provenance database. 
+The Reader provides a thin wrapper around the provenance database.
 As long as the object is created between setup and end/reset the data is available.
 (or at least as long as the file is not deleted by later runs)
 
@@ -175,7 +173,7 @@ While the class has methods get_database_handle and run_query which provide a ve
 their use is not the recommended way of IntegrationTesting.
 
 Ideally add an extra support function directly to [ProvenanceReader]https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/provenance/provenance_reader.py)
-so that it is 
+so that it is
 1. Easy to find for other tests / scripts to reuse
 1. Easier to update if the sql schema changes
 
