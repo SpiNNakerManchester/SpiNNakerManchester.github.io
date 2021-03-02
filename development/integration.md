@@ -11,8 +11,8 @@ title: Integration testing the SpiNNaker software
 
 # <a name="Requirements">Requirements</a>
 
-To run interrogation test locally you will need TestBase installed
- [check these instructions](../devenv.html)
+To run interrogation test locally you will need TestBase installed;
+[check these instructions](../devenv.html)
 
 To added the tests to the Jenkins build the Jenkins files in IntegrationTests may need updating.
 
@@ -33,7 +33,7 @@ Ensure one or more integration tests directory exists
 # <a name="BaseTestCase">BaseTestCase</a>
 
 [BaseTestCase](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/base_test_case.py)
-is an  extension of `unittest.TestCase` to add extra functionality
+is an  extension of `unittest.TestCase` to add extra functionality. Usage:
 
 ```python
 from spinnaker_testbase import BaseTestCase
@@ -48,23 +48,24 @@ class MyTestClass(BaseTestCase):
 ```
 
 1. As [BaseTestCase](https://github.com/SpiNNakerManchester/TestBase/blob/main/spinnaker_testbase/base_test_case.py)
-   extends unittest.TestCase all assert available there are included
-2. self.runsafe
-- Runs the method given in the parameter
-- It will automatically `cd` into the directory the test is in
-    - Therefore picking up any cfg file
-    - Allowing for relative paths to supporting files
-- It will reset the simulator state in case a previous test left in unstable.
-    - Sorry it can not push the reset button on a 4 chip board for you.
-- Will try the method a few times if a network type error occurs.
-    - The retry is recorded and Jenkins will fail at a later stage
+   extends `unittest.TestCase` all assert available there are included.
+   You can also use the Python `assert` keyword.
+2. The main method is `self.runsafe()`, which:
+    - Runs the method given in the parameter
+    - Will automatically `cd` into the directory the test is in
+        - Therefore picking up any cfg file
+        - Allowing for relative paths to supporting files
+    - Will reset the simulator state in case a previous test left in unstable.
+        - Sorry, it can not push the reset button on a 4 chip board for you.
+    - Will try the method a few times if a network type error occurs.
+        - The retry is recorded and Jenkins will fail at a later stage
 3. Proves a few extra support methods including
-    - `assert_logs_messages`
-    - `get_provenance_files`
-    - `get_system_iobuf_files`
-    - `get_app_iobuf_files`
-    - `get_placements`
-    - `report`
+    - `assert_logs_messages()`
+    - `get_provenance_files()`
+    - `get_system_iobuf_files()`
+    - `get_app_iobuf_files()`
+    - `get_placements()`
+    - `report()`
 
 # <a name="TestScripts">Testing example scripts</a>
 
@@ -87,7 +88,7 @@ class MyTestClass(ScriptChecker):
     - Therefore picking up any cfg file
     - Allowing for relative paths to supporting files
 - It will reset the simulator state in case a previous test left in unstable.
-    - Sorry it can not push the reset button on a 4 chip board for you.
+    - Sorry, it can not push the reset button on a 4 chip board for you.
 - Will try the script a few times if a network type error occurs.
     - The retry is recorded and Jenkins will fail at a later stage
 - Keeps a record of how long the script took to standard output and in `TestBase/reports/scripts_ran_successfully`
@@ -100,9 +101,9 @@ class MyTestClass(ScriptChecker):
 
 1. Matplotlib
    - Scripts can safely include plotting to maplotlib
-   - Must use the import format: import matplotlib.pyplot ...
-   - ScriptChecker will mock out the show
-   - ScriptChecker will raise SkipTest if the show is not called at least once
+   - Must use the import format: `import matplotlib.pyplot ...`
+   - `ScriptChecker` will mock out the show
+   - `ScriptChecker` will raise `SkipTest` if the show is not called at least once
 
 1. Data available from `globals_variables` even after the script finished
 
@@ -115,27 +116,27 @@ class MyTestClass(ScriptChecker):
 
 # <a name="BuildScripts">Testing example scripts automatically</a>
 
-1. Add a script_builder.py
+1. Add a `script_builder.py`
     - Copy in a [script_builder.py](https://github.com/SpiNNakerManchester/PyNN8Examples/blob/master/integration_tests/script_builder.py)
     - Must be directly under the integration tests directory
-    - self.create_test_scripts takes three parameters
+    - `self.create_test_scripts` takes three parameters
         1. A List of directories to find test scripts in
             - The path should be relative to the repository root
-        2. A dictionary of "too_long" files that take a long time to test
+        2. A dictionary of `too_long` files that take a long time to test
             - File name (without path)
             - Time it takes to run
-        3. A dictionary of "exceptions" python files that should not run
+        3. A dictionary of `exceptions` python files that should not run
             - File name (without path)
             - A reason they should not be run
-    - too_long and exceptions may be empty
-    - too_long files
+    - `too_long` and `exceptions` may be empty
+    - `too_long` files
        - Will add a comment with the time it takes to run
        - Will add a commented out SkipTest so the script can easily be skipped
-       - Jenkins can be configured to uncomment the SkipTest(s)
+       - Jenkins can be configured to uncomment the `SkipTest`(s)
        - Jenkins runs several tests in parallel so 4 scripts that each take 5 minutes should run faster than one 10 minute script
-    - exceptions
+    - `exceptions`
         - Class and utility files with no main do not need to be listed as exception.  The test will on these will just be a can they be imported.
-        - exceptions scripts will raise a SkipTest with the reason given
+        - exceptions scripts will raise a `SkipTest` with the reason given
             - ideally a link to the issue why they don't run or a needs x device
 
 1. To run the tests locally
@@ -152,15 +153,15 @@ are available even after a end is called or [ScriptChecker.check_script](https:/
 has returned.
 
 These include:
-- get_generated_output
-- provenance_file_path
-- app_provenance_file_path
-- system_provenance_file_path
-- run_report_directory
-- config
+- `get_generated_output`
+- `provenance_file_path`
+- `app_provenance_file_path`
+- `system_provenance_file_path`
+- `run_report_directory`
+- `config`
 
-These methods will work from when setup is called until the next setup or reset.
-config is callable even before setup but then will not include any changes done to the configs by the setup call.
+These methods will work from when `setup` is called until the next `setup` or `reset`.
+`config` is callable even before `setup` but then will not include any changes done to the configs by the setup call.
 
 # <a name="provenance">Reading provenance database</a>
 [ProvenanceReader](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/provenance/provenance_reader.py)
