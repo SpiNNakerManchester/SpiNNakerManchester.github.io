@@ -1,5 +1,5 @@
 ---
-title: Setting up a Software Development Environment for SpiNNaker
+title: Setting up a Software Development Environment for SpiNNaker, v5.1
 ---
 
 # Installation
