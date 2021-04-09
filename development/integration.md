@@ -12,9 +12,9 @@ title: Integration testing the SpiNNaker software
 # <a name="Requirements">Requirements</a>
 
 To run interrogation test locally you will need TestBase installed;
-[check these instructions](../devenv.html)
+[check these instructions](devenv6.0.html).
 
-To added the tests to the Jenkins build the Jenkins files in IntegrationTests may need updating.
+To add the tests to the Jenkins build the Jenkins files in IntegrationTests may need updating.
 
 The things that could need adding include:
 1. Add a `git clone`
