@@ -8,6 +8,7 @@ WORK IN PROGRESS
 sPyNNaker version 6.0.0 has been released; we are currently working on the documentation.  If anything here doesn't work, please let the software team know.
 
 * [License Agreement](/common_pages/6.0.0/LicenseAgreement.html)
+* [Release Notes for version 6.0.0](ReleaseNotes.html)
 * [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)
 * [PyNN on SpiNNaker Models and Limitations](SPyNNakerModelsAndLimitations.html)
 * [Using SpiNNaker software without a SpiNNaker Board](/common_pages/6.0.0/VirtualMode.html)
