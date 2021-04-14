@@ -1,6 +1,10 @@
 ---
 title: Executing the SpiNNaker software stack reload functionality. 
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 
 The SpiNNaker software stack's reload functionality supports the loading and executing of a already mapped application onto the same SpiNNaker machine without having to go through the mapping process again. 
 

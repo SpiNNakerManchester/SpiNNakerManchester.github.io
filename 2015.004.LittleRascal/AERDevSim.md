@@ -1,6 +1,9 @@
 ---
 title: AER_dev_sim - An external device simulator for EIEIO interfacing
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 # Introduction
 

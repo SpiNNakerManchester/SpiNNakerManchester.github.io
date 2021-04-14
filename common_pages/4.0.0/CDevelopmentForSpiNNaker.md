@@ -1,6 +1,9 @@
 ---
 title: High-level C development for SpiNNaker
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This guide will help you to install the tools required for development with the high-level software for SpiNNaker, including sPyNNaker and SpiNNakerGraphFrontEnd.
 

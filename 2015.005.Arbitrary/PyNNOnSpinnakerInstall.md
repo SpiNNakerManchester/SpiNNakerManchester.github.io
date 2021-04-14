@@ -3,6 +3,9 @@ title: PyNN on SpiNNaker Installation Guide
 layout: default
 published: true
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This guide will detail how to install the 2015.005 "Arbitrary" release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language.
 

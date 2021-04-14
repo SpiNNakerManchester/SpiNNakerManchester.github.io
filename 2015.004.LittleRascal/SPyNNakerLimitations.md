@@ -1,6 +1,10 @@
 ---
 title: sPyNNaker Limitations
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 
 This guide will detail the limitations that sPyNNaker imposes on users of PyNN.
 

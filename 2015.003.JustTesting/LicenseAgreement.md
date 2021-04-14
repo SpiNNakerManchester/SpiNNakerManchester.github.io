@@ -1,6 +1,9 @@
 ---
 title: License Agreement
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 The software is currently being released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html)
 

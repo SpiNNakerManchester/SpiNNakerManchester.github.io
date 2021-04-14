@@ -3,6 +3,9 @@ title: SpiNNakerGraphFrontEnd Installation Guide
 layout: default
 published: true
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the SpiNNakerGraphFrontEnd interface.
 

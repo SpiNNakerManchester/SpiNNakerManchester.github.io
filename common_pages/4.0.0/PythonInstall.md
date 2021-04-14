@@ -1,6 +1,10 @@
 ---
 title: Python Dependencies for SpiNNaker
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 
 This guide will detail how to install the core Python dependencies for SpiNNaker.
 

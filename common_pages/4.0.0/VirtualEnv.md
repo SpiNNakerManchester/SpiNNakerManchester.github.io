@@ -1,6 +1,9 @@
 ---
 title: Setting up a Python Virtualenv for SpiNNaker
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 These instructions will install the required packages only in a virtualenv.  This can help when you don't have root access or are on a shared machine.  Additionally, it will help when you have several packages with conflicting dependencies, or those that occupy the same namespace (such as pyNN.spiNNaker if you have an older version of the toolchain).
 

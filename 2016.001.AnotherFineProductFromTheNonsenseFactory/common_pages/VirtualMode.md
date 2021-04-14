@@ -1,6 +1,9 @@
 ---
 title: Executing the SpiNNaker software stack in "virtual mode"
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This guide will detail how to operate either front end to the SpiNNaker software stack in "virtual mode". This results in the end user not needing a board to test basic operation of their script.
 

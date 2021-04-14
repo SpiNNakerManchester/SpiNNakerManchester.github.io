@@ -4,6 +4,10 @@ layout: default
 published: true
 ---
 
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 This guide will detail how to install the release versions of the tools required to run simulations on SpiNNaker using the PyNN scripting language. This has been tested using Fedora Linux 20 64-bit, Ubuntu Linux 14.04 LTS 64-bit, Windows 8.1 64-bit, and Mac OS X Mavericks, but it should in principle work on 32-bit and 64-bit versions of Fedora and Ubuntu Linux, Windows 7 and 8, and Mac OS X.
 
 # Contents

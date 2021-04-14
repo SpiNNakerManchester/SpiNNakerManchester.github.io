@@ -1,5 +1,10 @@
 ---
 title: Example Mapping Files
+
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 files:
   - name: machine.json
     info: The machine in use

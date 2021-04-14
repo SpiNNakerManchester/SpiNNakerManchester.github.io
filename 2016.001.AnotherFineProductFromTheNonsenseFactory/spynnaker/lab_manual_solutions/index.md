@@ -2,6 +2,9 @@
 title: Spynnaker version 2015.005 (Arbitrary) Solutions for Lab Manuals
 layout: default
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 ## Running PyNN Simulations on SpiNNaker
 * [Task_1.1](pynn_simulations_task_1.1.py)

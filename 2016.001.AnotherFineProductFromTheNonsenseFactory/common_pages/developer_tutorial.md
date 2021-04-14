@@ -1,6 +1,9 @@
 ---
 title: Developer helpful pages
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This page links to a collection of pages that cover separate aspects of the SpiNNaker software stack. Depending upon what the developer is operating on, one or more of these pages may be helpful to read to inform the developer on what high level functionality does. 
 

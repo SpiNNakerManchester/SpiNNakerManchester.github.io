@@ -1,6 +1,10 @@
 ---
 title: Injecting Data into a simulation on a SpiNNaker machine in real-time
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 This page describes the information required to be able to inject data into SpiNNaker machines.
 
 # Page Contents

@@ -1,6 +1,10 @@
 ---
 title: Data Specification Language
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 
 This page gives a link to the data specification document used by the the SpiNNaker software stack.
 

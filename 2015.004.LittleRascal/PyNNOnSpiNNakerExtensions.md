@@ -2,6 +2,10 @@
 title: PyNN on SpiNNaker Extension Development Guide
 ---
 
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 This guide is intended to help you set up your development environment so that you can write new extensions to the implementation of SpiNNaker on PyNN.  This might include new neural models, or new connectors.  Note that this guide is not intended to help you make changes to the implementation itself, although it is conceivable that once your extension is stable, it might find its way in to the core code base.
 
 # sPyNNaker C Development Environment

@@ -6,8 +6,6 @@ title: C Development for SpiNNaker
 
 [Home page for current version](/) 
 
-# C Development for SpiNNaker
-
 This guide is intended to help you set up your development environment so that you can write C code and compile binaries to be run on SpiNNaker.
 
 

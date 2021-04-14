@@ -2,6 +2,9 @@
 title: Spynnaker version 2015.004 (Little-Rascal)
 layout: default
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 * [License Agreement](LicenseAgreement.html)
 * [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)

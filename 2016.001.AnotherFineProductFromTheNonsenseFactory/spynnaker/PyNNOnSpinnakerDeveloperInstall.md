@@ -1,6 +1,9 @@
 ---
 title: PyNN on SpiNNaker Developer Install Guide
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 # Contents
 * [Ubuntu Linux Requirements](#Ubuntu)

@@ -1,6 +1,9 @@
 ---
 title: The SpiNNaker software stack Buffer functionality. 
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This page attempts to describe the functionality used by the SpiNNaker tool chain for buffering data in and out of a SpiNNaker machine during an executing application.
 

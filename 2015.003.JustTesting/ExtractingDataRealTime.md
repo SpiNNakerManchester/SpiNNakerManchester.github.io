@@ -1,8 +1,11 @@
 ---
 title: Extracting data from a simulation on a SpiNNaker machine in real time
 ---
+# The version described here is no longer supported. 
 
-this page describes how to use the SpiNNaker tool chain to support real time data extraction from an application running on a SpiNNaker machine.
+[Home page for current version](/) 
+
+This page describes how to use the SpiNNaker tool chain to support real time data extraction from an application running on a SpiNNaker machine.
 
 # Page Contents
 * [Installation Instructions](#installation)

@@ -1,6 +1,10 @@
 ---
 title: Injecting Data into SpiNNaker Machines
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
+
 This page describes the information required to be able to inject data into SpiNNaker machines.
 
 ## Page Contents
