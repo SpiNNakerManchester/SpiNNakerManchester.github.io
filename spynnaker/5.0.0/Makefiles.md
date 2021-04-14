@@ -2,6 +2,8 @@
 title: Makefiles in sPyNNaker version 5.1.0
 layout: default
 ---
+This page describes an older version. 
+Please see [the latest version](latest/Makefiles.html) or [home page](/)
 
 The way the C code is built was changed in April 2018.
 

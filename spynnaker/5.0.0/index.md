@@ -2,8 +2,8 @@
 title: sPyNNaker version 5.1.0
 layout: default
 ---
-WORK IN PROGRESS
-================
+This page describes an older version. 
+Please see [the latest version](latest/spynnaker.html) or [home page](/)
 
 sPyNNaker version 5.1.0 has been released; we are currently working on the documentation.  If anything here doesn't work, please let the software team know.
 

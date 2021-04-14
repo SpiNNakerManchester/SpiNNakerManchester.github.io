@@ -1,6 +1,8 @@
 ---
 title: sPyNNaker Models, Limitations and Extensions
 ---
+This page describes an older version. 
+Please see [the latest version](latest/SPyNNakerModelsAndLimitations.html) or [home page](/)
 
 This guide will detail the limitations that sPyNNaker imposes on users of PyNN, as well as detailing some extensions to the PyNN language that are supported.
 
