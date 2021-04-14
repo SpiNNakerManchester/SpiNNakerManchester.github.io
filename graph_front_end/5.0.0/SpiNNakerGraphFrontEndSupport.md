@@ -2,7 +2,7 @@
 title: What the SpiNNakerGraphFrontEnd Supports
 ---
 This page describes an older version. 
-Please see [the latest version](latest/SpiNNakerGraphFrontEndSupport.html) or [home page](/) 
+Please see [the latest version](/latest/SpiNNakerGraphFrontEndSupport.html) or [home page](/) 
 
 The SpiNNakerGraphFrontEnd is a interface to the SpiNNaker software stack that is designed with the intention of allowing developers / users to 
 build applications that run on SpiNNaker machines without having to worry about the low level support of:

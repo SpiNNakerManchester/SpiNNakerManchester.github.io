@@ -2,7 +2,7 @@
 title: Affects of some on the Settings on how a Script runs
 ---
 This page describes an older version. 
-Please see [the latest version](latest/SettingEffects.html) or [home page](/) 
+Please see [the latest version](/latest/SettingEffects.html) or [home page](/) 
 
 This page describes the settings that may change how a script is run, but in prinicple not what the script does.
 

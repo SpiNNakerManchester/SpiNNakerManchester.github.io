@@ -2,7 +2,7 @@
 title: C Compiler for SpiNNaker
 ---
 This page describes an older version. 
-Please see [the latest version](latest/Compiler.html) or [home page](/) 
+Please see [the latest version](/latest/Compiler.html) or [home page](/) 
 
 To build programs on SpiNNaker, you will primarily need to install a C compiler that is compatible with SpiNNaker.  At present, we recommend using gcc for this.  Instructions for installing this on your system are below, depending on which platform you are using, as well as instructions for installing Perl, which is used by the development tools to modify the generated binaries to run on SpiNNaker:
 

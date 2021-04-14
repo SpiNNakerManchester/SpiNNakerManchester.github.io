@@ -2,7 +2,7 @@
 title: spinnaker_tools
 ---
 This page describes an older version. 
-Please see [the latest version](latest/spinn_tools.html) or [home page](/) 
+Please see [the latest version](/latest/spinn_tools.html) or [home page](/) 
 
 
 spinnaker_tools contains all the requirements for building C binaries for execution on SpiNNaker, as well as the SpiNNaker boot and monitor processor code.  This includes:

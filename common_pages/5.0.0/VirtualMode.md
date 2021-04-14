@@ -2,7 +2,7 @@
 title: Executing the SpiNNaker software stack in "virtual mode"
 ---
 This page describes an older version. 
-Please see [the latest version](latest/VirtualEnv.html) or [home page](/) 
+Please see [the latest version](/latest/VirtualEnv.html) or [home page](/) 
 
 This guide will detail how to operate either front end (sPyNNaker, or SpiNNakerGraphFrontEnd) to the SpiNNaker software stack in "virtual mode". This results in the end user not needing a board to test the basic operation of their script.
 

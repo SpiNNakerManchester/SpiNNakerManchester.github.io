@@ -2,7 +2,7 @@
 title: Python Dependencies for SpiNNaker
 ---
 This page describes an older version. 
-Please see [the latest version](latest/PythonInstall.html) or [home page](/) 
+Please see [the latest version](/latest/PythonInstall.html) or [home page](/) 
 
 This guide will detail how to install the core Python dependencies for SpiNNaker.
 
