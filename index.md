@@ -15,6 +15,15 @@ To use the _current release_ of the software:
 * [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v6.0** front end interface](/latest/spynnaker.html)
 * [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v6.0** front end interface](/latest/gfe.html)
 
+# Developing
+* [Writing low-level SpiNNaker C code](spinn_tools/3.4.1/index.html)
+* [Writing low-level SpiNNaker Python code](low_level_apis/index.html)
+* [Technical hardware and software documents](docs/)
+* [SpiNNaker workshops](workshops/index.html)
+* [Software development pages](development/index.html)
+
+# Crediting
+* [Software License and how to credit us](/common_pages/6.0.0/LicenseAgreement.html)
 
 ## Previous Releases
 ### Versions 5.1 and 5.0
@@ -30,12 +39,3 @@ Note that version 4.0, while supported, is _not recommended for new work._
 * [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v4.0** (old version) front end interface](/graph_front_end/4.0.0/index.html)
 * [Running simulations through the Human Brain Project Portal](common_pages/4.0.0/how_to_use_spinnaker_HBP_portal_for_dummies.pdf)
 
-# Developing
-* [Writing low-level SpiNNaker C code](spinn_tools/3.4.1/index.html)
-* [Writing low-level SpiNNaker Python code](low_level_apis/index.html)
-* [Technical hardware and software documents](docs/)
-* [SpiNNaker workshops](workshops/index.html)
-* [Software development pages](development/index.html)
-
-# Crediting
-* [Software License and how to credit us](/common_pages/6.0.0/LicenseAgreement.html)
