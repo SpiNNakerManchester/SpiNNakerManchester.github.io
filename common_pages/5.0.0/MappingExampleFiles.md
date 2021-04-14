@@ -1,5 +1,9 @@
 ---
 title: Example Mapping Files
+
+This page describes an older version and its contents may not be correct.
+Please see [home page](/) 
+
 files:
   - name: machine.json
     info: The machine in use

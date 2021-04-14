@@ -1,6 +1,8 @@
 ---
 title: License Agreement and list of contributors across all repositories
 ---
+This page describes an older version. 
+Please see [the latest version](latest/LicenseAgreement.html) or [home page](/) 
 
 The software is currently being released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html).
 
