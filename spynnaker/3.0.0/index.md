@@ -2,6 +2,9 @@
 title: sPyNNaker version 3.0.0
 layout: default
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 * [License Agreement](/common_pages/3.0.0/LicenseAgreement.html)
 * [PyNN on SpiNNaker Installation Guide](PyNNOnSpinnakerInstall.html)

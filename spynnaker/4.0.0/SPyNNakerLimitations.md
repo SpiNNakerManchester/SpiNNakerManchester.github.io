@@ -1,6 +1,9 @@
 ---
 title: sPyNNaker Limitations and Extensions
 ---
+# The version described here is no longer supported. 
+
+[Home page for current version](/) 
 
 This guide will detail the limitations that sPyNNaker imposes on users of PyNN, as well as detailing some extensions to the PyNN language that are supported.
 
