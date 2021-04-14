@@ -5,7 +5,10 @@ layout: default
 
 # Release notes for sPyNNaker v6.0
 
-The software is now tested daily on python versions from 3.6 to 3.9.  We are now using GitHub Actions as well as our own local Jenkins server to perform such tests.
+The software is tested with every update as well as daily against the default branch.
+* We use our own local Jenkins server using python 3.8 running all the integrations tests including most of the examples.
+* We are now using GitHub Actions for unit tests on python versions from 3.6 to 3.9, as well as for code linting and style-checking.
+* Unless specifically capped we always use the latest release of each of our dependencies.
 
 The following is a non-exhaustive list of the changes since v4.0 (some of which were available in v5.0 and v5.1 but have not been mentioned in release notes before):
 

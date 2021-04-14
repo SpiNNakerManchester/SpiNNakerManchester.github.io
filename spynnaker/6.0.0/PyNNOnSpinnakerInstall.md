@@ -10,7 +10,7 @@ This guide details how to install the release version of the tools required to r
 
 You must first install the [Python Dependencies](/common_pages/6.0.0/PythonInstall.html).  Continue to the [Virtualenv Installation](#Virtualenv), [Central Installation](#Central),  or [User-only Installation](#User) to install the remaining requirements, depending on the needs of your working environment.  If you are unsure what to choose, the option that will most likely work is the [Virtualenv Installation](#Virtualenv).
 
-__Note__: sPyNNakerExternalDevicesPlugin and sPyNNakerExtraModelsPlugin are no longer required.  These extra modules have been merged in to the main sPyNNaker module.  You will be asked to uninstall these modules below if you have previously installed them, but will note that there are no instructions for installing a newer version.
+__Note__: sPyNNakerExternalDevicesPlugin, sPyNNakerExtraModelsPlugin and sPyNNaker8 are no longer required.  These extra modules have been merged in to the main sPyNNaker module.  You will be asked to uninstall these modules below if you have previously installed them, but will note that there are no instructions for installing a newer version.
 
 * [Python Dependencies](/common_pages/6.0.0/PythonInstall.html)
 * [Virtualenv Installation](#Virtualenv)
@@ -30,10 +30,11 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        source <name>/bin/activate
 
-1. Uninstall the existing tools
+1. Uninstall the existing tools (if previously installed)
 
        pip uninstall pyNN-SpiNNaker
        pip uninstall sPyNNaker
+       pip uninstall sPyNNaker8
        pip uninstall sPyNNakerExternalDevicesPlugin
        pip uninstall sPyNNakerExtraModelsPlugin
 
@@ -45,11 +46,11 @@ To install the tools, first, activate your virtualenv, `<name>`:
 
        pip install matplotlib
 
-1. Install sPyNNaker8:
+1. Install sPyNNaker(8):
 
        pip install sPyNNaker
 
-1. Install pyNN-SpiNNaker:
+1. Install pyNN-SpiNNaker(8):
 
        python -m spynnaker8.setup_pynn
 
@@ -63,6 +64,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
     [sudo] pip uninstall pyNN-SpiNNaker
     [sudo] pip uninstall sPyNNaker
+    [sudo] pip uninstall sPyNNaker8
     [sudo] pip uninstall sPyNNakerExternalDevicesPlugin
     [sudo] pip uninstall sPyNNakerExtraModelsPlugin
 
@@ -70,7 +72,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        [sudo] pip install matplotlib
 
-1. Install sPyNNaker8:
+1. Install sPyNNaker:
 
        [sudo] pip install sPyNNaker
 
@@ -88,6 +90,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
     pip uninstall pyNN-SpiNNaker
     pip uninstall sPyNNaker
+    pip uninstall sPyNNaker8
     pip uninstall sPyNNakerExternalDevicesPlugin
     pip uninstall sPyNNakerExtraModelsPlugin
 
@@ -95,7 +98,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        pip install matplotlib --user
 
-1. Install sPyNNaker8:
+1. Install sPyNNaker:
 
        pip install sPyNNaker --user
 
@@ -175,6 +178,7 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="Trouble"></a> Troubleshooting
 
+<!--
 1. If on Windows you experience the error:
 
        **UnicodeDecodeError: 'ascii' codec can't decode byte 0xb0 in position 1: ordinal not in range(128)**
@@ -192,20 +196,20 @@ If you get the output above, you have successfully installed your system.
    ```python
    default_encoding = sys.getdefaultencoding()
    ```
-
-2. In OSX, if experiencing the following tkinter error:
+-->
+1. In OSX, if experiencing the following tkinter error:
 
        _tkinter.TclError: no display name and no $DISPLAY environment variable
 
-    it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in `$DEV/lib/python2.7/site-packages/matplotlib/mpl-data/matplotlibrc`
+    it may be solved by setting the backend for matplotlib. This can be done by editing the matplotlibrc file in the current working directory to read to ```backend: TkAgg```. This is usually found in `$DEV/lib/pythonXXX/site-packages/matplotlib/mpl-data/matplotlibrc`
 
     In a virtualenv, create a new file in the root directory ```.matplotlib/matplotlibrc``` that reads ```backend: TkAgg```. ([Sample matplotlibrc file](https://matplotlib.org/_static/matplotlibrc))
 
     If you are still having issues, you may also need to install [XQuartz](https://www.xquartz.org/).
 
-3. In OSX, if you have problems during the installation of the `csa` package (a dependency of sPyNNaker; this problem cascades outwards) within your virtualenv, then use:
+2. In OSX, if you have problems during the installation of the `csa` package (a dependency of sPyNNaker; this problem cascades outwards) within your virtualenv, then use:
 
-        MPLBACKEND=module://matplotlib.backends.backend_agg pip install sPyNNaker8 --user
+        MPLBACKEND=module://matplotlib.backends.backend_agg pip install sPyNNaker --user
 
     This overrides the matplotlib plotting backend _just during the installation phase,_ which is sufficient to get a working installation if you are not actively using matplotlib to do immediate plotting of the data.
 
