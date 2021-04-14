@@ -1,8 +1,15 @@
 ---
-title: C Development for SpiNNaker
+title: DEPRECATED: C Development for SpiNNaker
 ---
 
+# The version described here is no longer supported. 
+
+[Current home page](/) 
+
+# Previous version
+
 This guide is intended to help you set up your development environment so that you can write C code and compile binaries to be run on SpiNNaker.
+
 
 # Contents
 
