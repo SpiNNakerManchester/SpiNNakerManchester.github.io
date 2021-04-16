@@ -19,12 +19,12 @@ Note that once you have completed these instructions, the remainder of the insta
 ## <a name="UbuntuPython"></a> Ubuntu Linux Requirements
 1. If you are on Ubuntu 16 or less, you will need to add a repository to get later versions of Python
 
-       sudo add-apt-repository ppa:jonathonf/python-3.6
+       sudo add-apt-repository ppa:deadsnakes/ppa
        sudo apt-get update
 
 1. Install Python
 
-       sudo apt-get install python3.6
+       sudo apt-get install python3.8
 
 1. Upgrade pip and dependencies (be careful at this point that the version of pip you use here is the Python 3 version; you may need to type "pip3" instead of "pip")
 
@@ -48,9 +48,9 @@ Note that once you have completed these instructions, the remainder of the insta
 
 1. Install python
 
-       sudo port install python36
-       sudo port select --set python python36
-       sudo port select --set pip pip36
+       sudo port install python38
+       sudo port select --set python python38
+       sudo port select --set pip pip38
 
 1. Upgrade pip and dependencies
 
@@ -64,24 +64,9 @@ Users with an up-to-date version of Windows 10 64-bit may want to use the [Linux
 For graphics content, you will also need to install and run [an X-Windows Server](https://sourceforge.net/projects/xming/).
 After installing, you should follow the [Ubuntu installation instructions](#UbuntuPython) and __not__ the instructions below.
 
-1. Download and install [Python 3.6](https://www.python.org/downloads/).
-
-1. Download and install [setuptools](https://github.com/SpiNNakerManchester/github.SpiNNakerManchester.io/releases/download/v1.0-win64/setuptools-5.8.win-amd64-py2.7.exe).
+1. Download and install [Python 3.8](https://www.python.org/downloads/).  It is advised
+to install in a location without spaces e.g. C:\Python38.
 
 1. Update pip and dependencies - from an administrative console, run:
 
        pip install --upgrade pip setuptools wheel
-
-Continue to [edit your PATH](#WindowsPath).
-
-## <a name="WindowsPath"></a> Windows Path Settings
-Edit your PATH environment variable to include the `Python27`, `Python27\Scripts` and (if installed) `gtk\bin` directories.
-  1. Go to "Control Panel"
-  1. Go to "System" (may be under "System and Security")
-  1. Select "Advanced System Settings"
-  1. Select "Environment Variables"
-  1. Select the "Path" in the "System Variables" box at the bottom
-  1. Click on "Edit"
-  1. Add the new directory by putting it before the existing string, followed by a single semi-colon; for example, if you installed the dependencies to the default/recommended locations, prepend `Path` with:
-
-         C:\Python27;C:\Python27\Scripts;
