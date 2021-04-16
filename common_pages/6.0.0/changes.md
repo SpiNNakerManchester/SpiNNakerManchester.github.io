@@ -6,3 +6,4 @@ title: Changes
 
 [CompressibleMallocBasedRoutingInfoAllocator removed](https://github.com/SpiNNakerManchester/PACMAN/pull/366)
 [DestinationBasedRoutingInfoAllocator removed](https://github.com/SpiNNakerManchester/PACMAN/pull/367)
+[setting java_jar_path in cfg](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/pull/783)
