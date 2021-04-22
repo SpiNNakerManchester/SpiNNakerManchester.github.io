@@ -14,6 +14,8 @@ title: Changes
 
 [Cleaup of tags allocation and loading](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/786)
 
-[setting java_jar_path in cfg](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/pull/783)
+[Setting java_jar_path in cfg](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/pull/783)
 
 [Moving configs to pacman and changing how they are accessed](https://github.com/SpiNNakerManchester/PACMAN/pull/371)
+
+[Removing a number of usused inputs](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/pull/791)
