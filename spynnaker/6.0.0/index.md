@@ -17,8 +17,11 @@ sPyNNaker version 6.0.0 has been released; we are currently working on the docum
 * [Extending sPyNNaker with New Neuron and Plasticity Models](PyNNOnSpiNNakerExtensions.html)
 * [Tutorial: Simple interaction with Live PyNN Simulation](SimpleIO-LabManual.pdf)
 * [Tutorial: Connecting External Devices to PyNN Simulations](ExternalDevices-LabManual.pdf)
-* [Adding new mapping algorithms with different front ends](/common_pages/6.0.0/MappingAlgorithms.html)
 * [A guide to how we use Makefiles](Makefiles.html)
+
+<!--
+* [Adding new mapping algorithms with different front ends](/common_pages/6.0.0/MappingAlgorithms.html)
+-->
 
 5.0.0 Documentation
 -------------------

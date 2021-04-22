@@ -1,0 +1,157 @@
+Name| Type| ASB| Input | Output | Injected | Comment |
+:---|:----|:---|:------|:-------|:---------|:--------|
+APPID | int | _app_id | yes | no | no |
+AppProvenanceFilePath |str | _app_provenance_file_path | yes | no | no | globals_variables.py
+AutoDetectBMPFlag| bool | "auto_detect_bmp" / False if virtual| yes | yes | no |  allocators
+AverageCoresOnChip| float| no | no| yes |no | FindApplicationChipsUsed untested
+BMPDetails | str| "bmp_names" / None if virtual | yes| yes | no |   allocators
+BitFieldSummary | BitFieldSummary| no | no| yes | no | BitFieldCompressorReport tested
+BoardVersion | int | "version" | yes | yes | no |  allocators
+BootPortNum| int| "boot_connection_port_num" | yes| yes |no |  allocators
+BufferManager| BufferManager| _buffer_manager | yes| yes |no |
+CompressedSummary| RouterSummary| no | no| yes |no|CompressedRouterSummaryReport triggered via cfg
+CompressionAsFarAsPos| bool|  "router_table_compress_as_far_as_possible" | yes| no |no | config
+CompressionTargetSize| bool| "router_table_compress_as_far_as_possible | yes| no |no | config
+CompressorExecutableTargetsUsed| ExecutableTargets| no | no| yes |no | 3 algorithms
+ConnectionHolders|  dict(tuple(ProjectionApplicationEdge, SynapseInformation), ConnectionHolder| no | 1| 1 |no | 
+CreateAtomToEventIdMapping| bool| "create_routing_info_to_atom_id_mapping" | yes| no |no| config
+DSGTimeMs| float| _dsg_time | 1| 1 |no | FinaliseTimingData?
+DataInMulticastKeyToChipMap| typdict(tuple(int,int),int)| no | no| out |yes | 
+DataInMulticastRoutingTables| MulticastRoutingTables| no | no| yes |yes |
+DataNSteps | int | _max_run_time_steps | no| out |yes | same as  DataNTimeSteps
+DataNTimeSteps| int| _max_run_time_steps | yes| out |yes | 
+DataSpecificationTargets| dict(tuple(int,int,int),str) | no | yes| yes |no | 
+DatabaseFilePath| str| passed | 1| 1 |no | 
+DatabaseInterface| DatabaseInterface| no | no| 1 |no | used for external device interaction including visulisers
+DatabaseSocketAddresses|set(SocketAddress)| _database_socket_addresses | in| no |no |
+DatabaseWaitOnConfirmationFlag| bool| "wait_on_confirmation" | yes| no |no | config
+DisableAdvancedMonitorUsageForDataIn| bool| "disable_advanced_monitor_usage_for_data_in" | yes| no |no | config
+DownedChipsDetails| set(IgnoreChip)| parsed "down_chips"| yes|no|no | config via IgnoreChip
+DownedCoresDetails| set(IgnoreCore)| parsed "down_cores" | yes| no |no | config via IgnoreCore
+DownedLinksDetails| set(IgnoreLink| parsed "down_links"| yes| no |no| config via IgnoreLink 
+EndUserConfigurableSafetyFactorForTDMAAgenda| float| no | yes| no |no | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/788
+ErrorMessages|list(str)| no | no| yes |no |
+ExampleFilePath| n/a| n/a | n/a| n/a |n/a | Tests!
+ExecutableFinder| ExecutableFinder| _executable_finder  | yes| no |no|
+ExecutableTargets| ExecutableTargets| passed | yes| yes |no | 
+ExecutableTypes| dict(ExecutableType,CoreSubsets or None)| to _executable_types | yes| yes |no | 
+ExecuteTimeMs| float| no | 1| 1 |no | FinaliseTimingData?
+ExtractIobufFromBinaryTypes| str| "extract_iobuf_from_binary_types" | yes| no |no | config
+ExtractIobufFromCores| str| "extract_iobuf_from_cores" | yes| no |no | config
+ExtractionTimeMs|float| no| 1| 1 |no | FinaliseTimingData?
+FailedCoresSubsets| CoreSubsets| WEIRD | yes| no |no | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/784
+FirstMachineTimeStep| int| _current_run_timesteps | yes| no |yes | Same as RunUntilTimeSteps?
+FixedRouteDestinationClass| Class type| DataSpeedUpPacketGatherMachineVertex | 1| no |no | should this even be a param?
+GenerateBitFieldReport| bool| "generate_bit_field_report"| 1| no |no | config
+GenerateBitFieldSummaryReport| bool| "write_bit_field_summary_report" | 1| no |no | config
+GraphProvenanceItems| list(ProvenanceDataItem)| used | no| yes |no |
+IPAddress| str| _hostname | yes| yes |no |  allocators
+IgnoreBadEthernets| bool| "ignore_bad_ethernets" | yes| no| no | config
+JavaCaller|  JavaCaller|  JavaCaller(..) | yes| no |no |
+JsonFolder| str (path)| _json_folder | yes| no |no |
+JsonMachine| str (json)| no | no| yes |no | 
+JsonMachineGraphPath| str (path)| no | no| yes |no |
+JsonPartitionNKeysMap|str(path)| no | no| yes |no |
+JsonPlacementsPath| str(path)| no | no| yes |no |
+JsonRoutingTablesPath| str(path)|no| no| yes |no |
+LivePacketRecorderParameters|  dict(LivePacketGatherParameters,
+            list(tuple(AbstractVertex, list(str))))| _live_packet_recorder_params | yes| not |no |
+LivePacketRecorderParametersToVertexMapping| dict(LivePacketGatherParameters,
+            dict(tuple(int,int),LivePacketGatherMachineVertex))| no | 1| 1 |no |
+LoadTimeMs|float| no | 1| 1 |no | FinaliseTimingData?
+MCGathererCoresToAllocate| int| no | yes(optional)| no |no | Never set!
+MachineAllocationController| MachineAllocationController| to _machine_allocation_controller  | yes| yes |no |  allocators
+MachineHeight| int| "height"| yes| no |no | config
+MachineJsonPath| str(path)| "json_path | yes| no |no | config
+MachineTimeStep| int| machine_time_step | yes| no |yes | also as sim.machine_time_step
+MachineWidth| int| "width"| yes| no |no |config
+MappingTimeMs| float| passed | 1| 1 |No | FinaliseTimingData?
+MaxCoresUsedOnChip| int| no | no| yes |no | FindApplicationChipsUsed untested
+MaxMachineCoreReduction| int| "max_machine_core_reduction" | yes| no |no | Better to use Machine.set_max_cores_per_chip
+MaxSDRAMSize| int| "max_sdram_allowed_per_chip" | yes| no |no | config (debug only) 
+MemoryApplicationGraph| ApplicationGraph| _application_graph | yes| no |yes | 
+MemoryCompressedRoutingTables| MulticastRoutingTables| no | yes| yes |no | 
+MemoryExtendedMachine| Machine (with virtual chips)| no | yes| yes |yes |
+MemoryExtendedVirtualMachine| ?type| no | no| yes |no | VirtualMallocBasedChipIDAllocator DEAD?
+MemoryExtraMonitorToChipMapping| dict(tuple(int,int),ExtraMonitorSupportMachineVertex)| param for _locate_receivers_from_projections | yes| yes |no |
+MemoryExtraMonitorVertices| list(ExtraMonitorSupportMachineVertex)| used by methods| yes |yes |no | use MemoryExtraMonitorToChipMapping.items()?
+MemoryFixedRoutes| dict(tuple(int,int),FixedRouteEntry| to _fixed_routes | yes| yes |no | Nuke asb.fixed_route?
+MemoryIpTags| nuked
+MemoryMCGatherVertexToEthernetConnectedChipMapping| dict(tuple(int,int),DataSpeedUpPacketGatherMachineVertex)| used in methods | yes| yest |no |
+MemoryMachine| MachineGraph| to .machine |yes|yes|yes|
+MemoryMachineEdgeNKeysMap| n/a| no| -| no |no | nuked CompressibleMallocBasedRoutingInfoAllocator / nuked DestinationBasedRoutingInfoAllocator
+MemoryMachineGraph| MachineGraph| _machine_graph | yes| yes |yes |
+MemoryMachinePartitionNKeysMap| DictBasedMachinePartitionNKeysMap| no | yes| yes |yes |
+MemoryNumberSamplesPerRecordingEntry| int| "n_samples_per_recording_entry" | yes| no |no | config
+MemoryPlacements| Placements| to _placements | yes|yes|yes |
+MemoryPlacements2| nuked
+MemoryPreAllocatedResources| PreAllocatedResourceContainer| PreAllocatedResourceContainer() | yes| yes |no |
+MemoryReverseIpTags| nuked
+MemoryReverseTags| nuked
+MemoryRoutingInfos| PartitionRoutingInfo| no | yes| yes |yes |
+MemoryRoutingTableByPartition| MulticastRoutingTableByPartition| no | in| out |no |
+MemoryRoutingTables| MulticastRoutingTables| to _router_tables | yes | yes |je |
+MemorySamplingFrequency| int| "sampling_frequency" | yes| no |no | config
+MemoryTags|Tags| to _tags | in| out |yes |
+MemoryTransceiver| Transceiver| to _txrx | yes| yes |no |
+MemoryVirtualMachine| Machine| asb | yes| yes |no |
+MinCoresUsedOnChip| int| no | no| 1 |no | FindApplicationChipsUsed untested
+NBoardsRequired| int| _n_boards_required | yes| no |no |
+NChipsRequired| int| _n_chips_required | yes| yes |no |
+NChipsUsed| int| no | no| 1 |no |  FindApplicationChipsUsed untested
+NPacketsPerTimeWindow| int| no | yes| no |no | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/788
+NSyncSteps| int| __timesteps(sync_time)| yes| no |no |
+NoSyncChanges| int| _no_sync_changes | yes| yes |no |
+NotificationInterface| NotificationProtocol| check to close | yes| yes |no |
+NumberOfCPUCyclesUsedByThePacketReceiveCallback| int| no | yes| no |no | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/788
+NumberOfCpuCyclesByOtherCallbacks| int| no | yes| no |no |https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/788
+PlacementsProvenanceItems| list(ProvenanceDataItem)| used | yes| yes |no |
+PlanNTimeSteps| int| yes | yes| no |no |
+PostSimulationOverrunBeforeError| int| "post_simulation_overrun_before_error" | yes| no |no | config
+PowerProvenanceItems| list(ProvenanceDataItem)| used | no| yes |no |
+PowerUsed| PowerUsed| checked | yes| yes |no |
+ProcessorToAppDataBaseAddress| type| asb | in| out |je |
+ProvenanceItems| type| asb | in| out |je |
+RegionSizes| type| asb | in| out |je |
+RemoteSpinnakerUrl| type| _remote_spinnaker_url/"remote_spinnaker_url" | yes| no |je | config ???
+RepairMachine| bool| "RepairMachine" | yes| no |no | config
+ReportFolder| str| _report_default_directory| in| no |no | global_variables
+ReportWaitingLogsFlag| bool| "report_waiting_logs"| yes| no |no | config
+ResetMachineOnStartupFlag| bool| "reset_machine_on_startup" | yes| yes |no |  allocators
+RouterBitfieldCompressionReport| bool |"write_router_compression_with_bitfield_report" | yes| no |no |config (rename for debug")
+RouterCompressorBitFieldPercentageThreshold| int| "router_table_compression_with_bit_field_retry_count"| yes| no |no | config
+RouterCompressorBitFieldPreAllocSize| int| "router_table_compression_with_bit_field_pre_alloced_sdram" | yes| no |no | config
+RouterCompressorBitFieldRetryCount| int|"router_table_compression_with_bit_field_retry_count" |yes| no |no | config
+RouterCompressorBitFieldTargetLength| int| no| yes (optional)| no |no | never set Nuke?
+RouterCompressorBitFieldTimePerAttempt| int| "router_table_compression_with_bit_field_iteration_time" | yes| no |no | config
+RouterCompressorBitFieldUseCutOff| bool| "router_table_compression_with_bit_field_use_time_cutoff" | yes| no |no | config
+RouterCompressorProvenanceItems| list(ProvenanceDataItem)| no | yes| yes |no |
+RouterProvenanceItems| list(ProvenanceDataItem)| used | yes| yes |no |
+RouterTableEntriesPerRouter| int| "RouterTableEntriesPerRouter" | yes| no |no | config (shouldf it be)
+RunTime| float| param | yes| no |no |
+"RunTimeMachineTimeSteps" ??
+"RunTimeSteps" ??
+RunUntilCompleteFlag| bool| set | yes| no |no |
+RunUntilTimeSteps| int| set | yes| no |no |
+ScampConnectionData| str| "scamp_connections_data" | yes| yes |no |  allocators
+SpallocMachine| str| "spalloc_machine" | yes| no |no | config
+SpallocPort| int| "spalloc_port" | yes| no |no |
+SpallocServer| str| _spalloc_server/ "spalloc_server" | in| no|no | config?
+SpallocUser| str| spalloc_user" | yes| no |no | config
+SynapticExpanderReadIOBuf| bool| "write_expander_iobuf" | yes| no |no |
+SystemMulticastRouterTimeoutKeys| dict(tuple(int,int),int)|no | no| yes|yes |
+SystemProvenanceFilePath| str| _system_provenance_file_path| yes| no |no | global_variable
+TDMAAgenda| nuked
+TimeScaleFactor| int| time_scale_factor/ "time_scale_factor"| yes| no |yes | config? (should be)
+TotalRunTime| float| param | yes| no |no |
+UnCompressedSummary| RouterSummary| no | no| yes |no |
+UserCreateDatabaseFlag| str| "create_database" | yes| no |no | config
+UserDefinedMaxDelay| float | __max_delay | yes| no |no |
+UsingAdvancedMonitorSupport| bool| "enable_advanced_monitor_support"/ read in | yes| no |no | config!
+UsingReinjection| bool| "enable_reinjection" and "enable_advanced_monitor_support" | yes| no |no | config
+WarnMessages| list(str)| no | no| yes |no |
+WriteBitFieldGeneratorIOBUF| bool| "write_bit_field_iobuf" | yes| no |no | config
+WriteCompressorIobuf| bool| "write_bit_field_iobuf" | yes| no |no | config
+WriteDataSpeedUpReportsFlag| bool|"write_data_speed_up_reports" | yes| no |no | config
+WriteTextSpecsFlag| bool| "write_text_specs" |yes| no |no |config
+

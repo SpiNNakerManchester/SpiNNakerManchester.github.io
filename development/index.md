@@ -7,6 +7,7 @@ Instructions on how to set up for development and how we use GitHub for developm
  * [Setting up a Development Environment for SpiNNaker](devenv6.0.html)
  * [Using Git and GitHub with SpiNNaker Software](gituse.html)
  * [Installing from command line using support scripts](gitinstall.html)
+ * [Changes since version 6.0.0](/common_pages/6.0.0/changes.html)
 
 Below are some links to various pages related to the development of the software for SpiNNaker.
 
