@@ -10,11 +10,11 @@ BoardVersion | int | "version" | yes | yes | no |  allocators
 BootPortNum| int| "boot_connection_port_num" | yes| yes |no |  allocators
 BufferManager| BufferManager| _buffer_manager | yes| yes |no |
 CompressedSummary| RouterSummary| no | no| yes |no|CompressedRouterSummaryReport triggered via cfg
-CompressionAsFarAsPos| bool|  "router_table_compress_as_far_as_possible" | yes| no |no | config
-CompressionTargetSize| bool| "router_table_compress_as_far_as_possible | yes| no |no | config
+CompressionAsFarAsPos| n/a
+CompressionTargetSize| n/a
 CompressorExecutableTargetsUsed| ExecutableTargets| no | no| yes |no | 3 algorithms
 ConnectionHolders|  dict(tuple(ProjectionApplicationEdge, SynapseInformation), ConnectionHolder| no | 1| 1 |no | 
-CreateAtomToEventIdMapping| bool| "create_routing_info_to_atom_id_mapping" | yes| no |no| config
+CreateAtomToEventIdMapping| n/a
 DSGTimeMs| float| _dsg_time | 1| 1 |no | FinaliseTimingData?
 DataInMulticastKeyToChipMap| typdict(tuple(int,int),int)| no | no| out |yes | 
 DataInMulticastRoutingTables| MulticastRoutingTables| no | no| yes |yes |
@@ -24,11 +24,11 @@ DataSpecificationTargets| dict(tuple(int,int,int),str) | no | yes| yes |no |
 DatabaseFilePath| str| passed | 1| 1 |no | 
 DatabaseInterface| DatabaseInterface| no | no| 1 |no | used for external device interaction including visulisers
 DatabaseSocketAddresses|set(SocketAddress)| _database_socket_addresses | in| no |no |
-DatabaseWaitOnConfirmationFlag| bool| "wait_on_confirmation" | yes| no |no | config
-DisableAdvancedMonitorUsageForDataIn| bool| "disable_advanced_monitor_usage_for_data_in" | yes| no |no | config
-DownedChipsDetails| set(IgnoreChip)| parsed "down_chips"| yes|no|no | config via IgnoreChip
-DownedCoresDetails| set(IgnoreCore)| parsed "down_cores" | yes| no |no | config via IgnoreCore
-DownedLinksDetails| set(IgnoreLink| parsed "down_links"| yes| no |no| config via IgnoreLink 
+DatabaseWaitOnConfirmationFlag| n/a
+DisableAdvancedMonitorUsageForDataIn|n/a
+DownedChipsDetails| set(IgnoreChip)| parsed "down_chips"| yes|no|no | 
+DownedCoresDetails| set(IgnoreCore)| parsed "down_cores" | yes| no |no | 
+DownedLinksDetails| set(IgnoreLink| parsed "down_links"| yes| no |no|  
 EndUserConfigurableSafetyFactorForTDMAAgenda| float| no | yes| no |no | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/788
 ErrorMessages|list(str)| no | no| yes |no |
 ExampleFilePath| n/a| n/a | n/a| n/a |n/a | Tests!
@@ -36,17 +36,17 @@ ExecutableFinder| ExecutableFinder| _executable_finder  | yes| no |no|
 ExecutableTargets| ExecutableTargets| passed | yes| yes |no | 
 ExecutableTypes| dict(ExecutableType,CoreSubsets or None)| to _executable_types | yes| yes |no | 
 ExecuteTimeMs| float| no | 1| 1 |no | FinaliseTimingData?
-ExtractIobufFromBinaryTypes| str| "extract_iobuf_from_binary_types" | yes| no |no | config
-ExtractIobufFromCores| str| "extract_iobuf_from_cores" | yes| no |no | config
+ExtractIobufFromBinaryTypes| n/a
+ExtractIobufFromCores| n/a
 ExtractionTimeMs|float| no| 1| 1 |no | FinaliseTimingData?
 FailedCoresSubsets| CoreSubsets| WEIRD | yes| no |no | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/784
 FirstMachineTimeStep| int| _current_run_timesteps | yes| no |yes | Same as RunUntilTimeSteps?
 FixedRouteDestinationClass| Class type| DataSpeedUpPacketGatherMachineVertex | 1| no |no | should this even be a param?
-GenerateBitFieldReport| bool| "generate_bit_field_report"| 1| no |no | config
-GenerateBitFieldSummaryReport| bool| "write_bit_field_summary_report" | 1| no |no | config
+GenerateBitFieldReport| n/a
+GenerateBitFieldSummaryReport| n/a
 GraphProvenanceItems| list(ProvenanceDataItem)| used | no| yes |no |
 IPAddress| str| _hostname | yes| yes |no |  allocators
-IgnoreBadEthernets| bool| "ignore_bad_ethernets" | yes| no| no | config
+IgnoreBadEthernets| n/a
 JavaCaller|  JavaCaller|  JavaCaller(..) | yes| no |no |
 JsonFolder| str (path)| _json_folder | yes| no |no |
 JsonMachine| str (json)| no | no| yes |no | 
@@ -61,14 +61,14 @@ LivePacketRecorderParametersToVertexMapping| dict(LivePacketGatherParameters,
 LoadTimeMs|float| no | 1| 1 |no | FinaliseTimingData?
 MCGathererCoresToAllocate| int| no | yes(optional)| no |no | Never set!
 MachineAllocationController| MachineAllocationController| to _machine_allocation_controller  | yes| yes |no |  allocators
-MachineHeight| int| "height"| yes| no |no | config
-MachineJsonPath| str(path)| "json_path | yes| no |no | config
+MachineHeight| n/a
+MachineJsonPath| n/a
 MachineTimeStep| int| machine_time_step | yes| no |yes | also as sim.machine_time_step
-MachineWidth| int| "width"| yes| no |no |config
+MachineWidth| n/a
 MappingTimeMs| float| passed | 1| 1 |No | FinaliseTimingData?
 MaxCoresUsedOnChip| int| no | no| yes |no | FindApplicationChipsUsed untested
 MaxMachineCoreReduction| int| "max_machine_core_reduction" | yes| no |no | Better to use Machine.set_max_cores_per_chip
-MaxSDRAMSize| int| "max_sdram_allowed_per_chip" | yes| no |no | config (debug only) 
+MaxSDRAMSize| n/a
 MemoryApplicationGraph| ApplicationGraph| _application_graph | yes| no |yes | 
 MemoryCompressedRoutingTables| MulticastRoutingTables| no | yes| yes |no | 
 MemoryExtendedMachine| Machine (with virtual chips)| no | yes| yes |yes |
@@ -82,7 +82,7 @@ MemoryMachine| MachineGraph| to .machine |yes|yes|yes|
 MemoryMachineEdgeNKeysMap| n/a| no| -| no |no | nuked CompressibleMallocBasedRoutingInfoAllocator / nuked DestinationBasedRoutingInfoAllocator
 MemoryMachineGraph| MachineGraph| _machine_graph | yes| yes |yes |
 MemoryMachinePartitionNKeysMap| DictBasedMachinePartitionNKeysMap| no | yes| yes |yes |
-MemoryNumberSamplesPerRecordingEntry| int| "n_samples_per_recording_entry" | yes| no |no | config
+MemoryNumberSamplesPerRecordingEntry| n/a
 MemoryPlacements| Placements| to _placements | yes|yes|yes |
 MemoryPlacements2| nuked
 MemoryPreAllocatedResources| PreAllocatedResourceContainer| PreAllocatedResourceContainer() | yes| yes |no |
@@ -91,7 +91,7 @@ MemoryReverseTags| nuked
 MemoryRoutingInfos| PartitionRoutingInfo| no | yes| yes |yes |
 MemoryRoutingTableByPartition| MulticastRoutingTableByPartition| no | in| out |no |
 MemoryRoutingTables| MulticastRoutingTables| to _router_tables | yes | yes |je |
-MemorySamplingFrequency| int| "sampling_frequency" | yes| no |no | config
+MemorySamplingFrequency| n/a
 MemoryTags|Tags| to _tags | in| out |yes |
 MemoryTransceiver| Transceiver| to _txrx | yes| yes |no |
 MemoryVirtualMachine| Machine| asb | yes| yes |no |
@@ -107,27 +107,26 @@ NumberOfCPUCyclesUsedByThePacketReceiveCallback| int| no | yes| no |no | https:/
 NumberOfCpuCyclesByOtherCallbacks| int| no | yes| no |no |https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/issues/788
 PlacementsProvenanceItems| list(ProvenanceDataItem)| used | yes| yes |no |
 PlanNTimeSteps| int| yes | yes| no |no |
-PostSimulationOverrunBeforeError| int| "post_simulation_overrun_before_error" | yes| no |no | config
+PostSimulationOverrunBeforeError| int| conditional set from "post_simulation_overrun_before_error" | yes| no |no |
 PowerProvenanceItems| list(ProvenanceDataItem)| used | no| yes |no |
 PowerUsed| PowerUsed| checked | yes| yes |no |
 ProcessorToAppDataBaseAddress| type| asb | in| out |je |
 ProvenanceItems| type| asb | in| out |je |
 RegionSizes| type| asb | in| out |je |
 RemoteSpinnakerUrl| type| _remote_spinnaker_url/"remote_spinnaker_url" | yes| no |je | config ???
-RepairMachine| bool| "RepairMachine" | yes| no |no | config
+RepairMachine| n/a
 ReportFolder| str| _report_default_directory| in| no |no | global_variables
-ReportWaitingLogsFlag| bool| "report_waiting_logs"| yes| no |no | config
+ReportWaitingLogsFlag| n/a
 ResetMachineOnStartupFlag| bool| "reset_machine_on_startup" | yes| yes |no |  allocators
-RouterBitfieldCompressionReport| bool |"write_router_compression_with_bitfield_report" | yes| no |no |config (rename for debug")
-RouterCompressorBitFieldPercentageThreshold| int| "router_table_compression_with_bit_field_retry_count"| yes| no |no | config
-RouterCompressorBitFieldPreAllocSize| int| "router_table_compression_with_bit_field_pre_alloced_sdram" | yes| no |no | config
-RouterCompressorBitFieldRetryCount| int|"router_table_compression_with_bit_field_retry_count" |yes| no |no | config
-RouterCompressorBitFieldTargetLength| int| no| yes (optional)| no |no | never set Nuke?
-RouterCompressorBitFieldTimePerAttempt| int| "router_table_compression_with_bit_field_iteration_time" | yes| no |no | config
-RouterCompressorBitFieldUseCutOff| bool| "router_table_compression_with_bit_field_use_time_cutoff" | yes| no |no | config
+RouterBitfieldCompressionReport| n/a
+RouterCompressorBitFieldPercentageThreshold| n/a
+RouterCompressorBitFieldPreAllocSize| n/a
+RouterCompressorBitFieldRetryCount| n/a
+RouterCompressorBitFieldTargetLength| nuked
+RouterCompressorBitFieldTimePerAttempt| n/a
+RouterCompressorBitFieldUseCutOff| n/a 
 RouterCompressorProvenanceItems| list(ProvenanceDataItem)| no | yes| yes |no |
 RouterProvenanceItems| list(ProvenanceDataItem)| used | yes| yes |no |
-RouterTableEntriesPerRouter| int| "RouterTableEntriesPerRouter" | yes| no |no | config (shouldf it be)
 RunTime| float| param | yes| no |no |
 "RunTimeMachineTimeSteps" ??
 "RunTimeSteps" ??
@@ -151,7 +150,7 @@ UsingAdvancedMonitorSupport| bool| "enable_advanced_monitor_support"/ read in | 
 UsingReinjection| bool| "enable_reinjection" and "enable_advanced_monitor_support" | yes| no |no | config
 WarnMessages| list(str)| no | no| yes |no |
 WriteBitFieldGeneratorIOBUF| bool| "write_bit_field_iobuf" | yes| no |no | config
-WriteCompressorIobuf| bool| "write_bit_field_iobuf" | yes| no |no | config
+WriteCompressorIobuf| n/a
 WriteDataSpeedUpReportsFlag| bool|"write_data_speed_up_reports" | yes| no |no | config
 WriteTextSpecsFlag| bool| "write_text_specs" |yes| no |no |config
 

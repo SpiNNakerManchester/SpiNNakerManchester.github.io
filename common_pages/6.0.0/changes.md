@@ -19,3 +19,5 @@ title: Changes
 [Moving configs to pacman and changing how they are accessed](https://github.com/SpiNNakerManchester/PACMAN/pull/371)
 
 [Removing a number of usused inputs](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/pull/791)
+
+[Virtual Machines always have default (1023 Router entries](https://github.com/SpiNNakerManchester/SpiNNMachine/pull/159)
