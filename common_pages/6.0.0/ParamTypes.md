@@ -113,7 +113,7 @@ PowerUsed| PowerUsed| checked | yes| yes |no |
 ProcessorToAppDataBaseAddress| type| asb | in| out |je |
 ProvenanceItems| type| asb | in| out |je |
 RegionSizes| type| asb | in| out |je |
-RemoteSpinnakerUrl| type| _remote_spinnaker_url/"remote_spinnaker_url" | yes| no |je | config ???
+RemoteSpinnakerUrl| type| _remote_spinnaker_url/"remote_spinnaker_url" | yes| no |je |
 RepairMachine| n/a
 ReportFolder| str| _report_default_directory| in| no |no | global_variables
 ReportWaitingLogsFlag| n/a
@@ -133,24 +133,24 @@ RunTime| float| param | yes| no |no |
 RunUntilCompleteFlag| bool| set | yes| no |no |
 RunUntilTimeSteps| int| set | yes| no |no |
 ScampConnectionData| str| "scamp_connections_data" | yes| yes |no |  allocators
-SpallocMachine| str| "spalloc_machine" | yes| no |no | config
-SpallocPort| int| "spalloc_port" | yes| no |no |
-SpallocServer| str| _spalloc_server/ "spalloc_server" | in| no|no | config?
-SpallocUser| str| spalloc_user" | yes| no |no | config
+SpallocMachine|n/a
+SpallocPort| n/a
+SpallocServer| str| _spalloc_server/ "spalloc_server" | in| no|no |
+SpallocUser| n/a
 SynapticExpanderReadIOBuf| bool| "write_expander_iobuf" | yes| no |no |
 SystemMulticastRouterTimeoutKeys| dict(tuple(int,int),int)|no | no| yes|yes |
 SystemProvenanceFilePath| str| _system_provenance_file_path| yes| no |no | global_variable
 TDMAAgenda| nuked
-TimeScaleFactor| int| time_scale_factor/ "time_scale_factor"| yes| no |yes | config? (should be)
+TimeScaleFactor| n/a
 TotalRunTime| float| param | yes| no |no |
 UnCompressedSummary| RouterSummary| no | no| yes |no |
-UserCreateDatabaseFlag| str| "create_database" | yes| no |no | config
+UserCreateDatabaseFlag| n/a
 UserDefinedMaxDelay| float | __max_delay | yes| no |no |
-UsingAdvancedMonitorSupport| bool| "enable_advanced_monitor_support"/ read in | yes| no |no | config!
-UsingReinjection| bool| "enable_reinjection" and "enable_advanced_monitor_support" | yes| no |no | config
+UsingAdvancedMonitorSupport| n/a
+UsingReinjection| n/a
 WarnMessages| list(str)| no | no| yes |no |
-WriteBitFieldGeneratorIOBUF| bool| "write_bit_field_iobuf" | yes| no |no | config
+WriteBitFieldGeneratorIOBUF| n/a
 WriteCompressorIobuf| n/a
-WriteDataSpeedUpReportsFlag| bool|"write_data_speed_up_reports" | yes| no |no | config
-WriteTextSpecsFlag| bool| "write_text_specs" |yes| no |no |config
+WriteDataSpeedUpReportsFlag| n/a
+WriteTextSpecsFlag| n/a
 
