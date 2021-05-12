@@ -71,6 +71,15 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
 
+The following table contains (self-contained) repositories which are now tested by the toolchain but are not essential for successfully running scripts in e.g. PyNN8Examples.  If you are changing an API in sPyNNaker or SpiNNFrontEndCommon and wishing to merge into the master version of the tools then you may need to consider how this affects these repositories.
+
+|**Name**|**URL**|**Code Type**|
+|:-------|:------|:------------|
+|`SpiNNGym` | https://github.com/SpiNNakerManchester/SpiNNGym.git|Python and C|
+|`SpiNNaker_PDP2` | https://github.com/SpiNNakerManchester/SpiNNaker_PDP2.git|Python and C|
+|`MarkovChainMonteCarlo` | https://github.com/SpiNNakerManchester/MarkovChainMonteCarlo.git|Python and C|
+
+
 # <a name="java"></a> Java Development kit
 
 A Java JDK will be required in the following conditions
@@ -192,10 +201,14 @@ In a C project, this is done as follows:
 |SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, spalloc|
 |SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
 |sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
-|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, sPyNNaker8, spalloc|
+|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
 |sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, sPyNNaker8, spalloc|
+|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc|
+|:---------|:---------------|
+|SpiNNGym|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|SpiNNaker_PDP2|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, spalloc|
+|MarkovChainMonteCarlo|SpiNNUtils, SpiNNMachine, SpiNNStorageHandlers, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, spalloc|
 
 
 ## <a name="cdependencies"></a> C Dependencies
@@ -209,6 +222,10 @@ Note that include files are generally installed into `spinnaker_tools/include`, 
 |`SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples`|spinnaker_tools/include|
 |`sPyNNaker/neural_modelling`|spinnaker_tools/include|
 |`sPyNNaker8NewModelTemplate/c_models`|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|:----------------|:-----------------------|
+|`SpiNNGym/c_code`|spinnaker_tools/include|
+|`SpiNNaker_PDP2/c_code`|spinnaker_tools/include|
+|`MarkovChainMonteCarlo/c_models`|spinnaker_tools/include|
 
 # <a name="install"></a> Installing Python Modules
 
@@ -243,13 +260,16 @@ The C code to compile is (in order) as follows:
 
 A script is also available [here](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location, and that you have installed and setup the Python modules already (as described in the previous step).  If you haven't done so then this step is likely to fail.
 
-If you have also downloaded the repositories for building new neuron models, then the C code is compiled using the following commands:
+If you have also downloaded the repository for building new neuron models, or any of the optional repositories described earlier, then their C code is compiled using the following commands:
 
 |**Module**|**Sub Folder**|**Commands**|**Clean Command**|
-
+|:-----|:---------|:-------|:------------|
 |`sPyNNaker8NewModelTemplate`|`c_models`|`make`|`make clean`|
+|`SpiNNGym`|`c_code`|`make`|`make clean`|
+|`SpiNNaker_PDP2`|`c_code`|`make`|`make clean`|
+|`MarkovChainMonteCarlo`|`c_models`|`make`|`make clean`|
 
-This compilation is included in the automatic make script.
+These compilations are included in the automatic make script if you have cloned the repositories into the same location as the "central" repositories.
 
 # <a name="Configuration"></a> Configuration
 Run spynnaker.pyNN.setup_pynn.py
@@ -313,9 +333,9 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="sPyNNaker8"></a> Moving away from sPynnaker8
 
-This section only applies if you have previously used sPyNNaker while we where using the sPyNNaker8 repository.
+This section only applies if you have previously used sPyNNaker while we were using the sPyNNaker8 repository.
 
-All [sPynnaker8](https://github.com/SpiNNakerManchester/sPyNNaker8) code has been merged into [sPyNNaker](https://github.com/SpiNNakerManchester/sPyNNaker).
+All [sPyNNaker8](https://github.com/SpiNNakerManchester/sPyNNaker8) code has been merged into [sPyNNaker](https://github.com/SpiNNakerManchester/sPyNNaker).
 
 * Run spynnaker.pyNN.setup_pynn.py
 * Replace any import of just spynnaker8 to spynnaker
@@ -328,7 +348,6 @@ import spynnaker8.XYZ ...
 becomes
 import spynnaker.pyNN.XYZ ....
 
-All
 The integration tests have been moved from
 sPyNNaker8/p8_integration_tests
 to
