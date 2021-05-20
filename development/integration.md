@@ -112,7 +112,7 @@ class MyTestClass(ScriptChecker):
     - `provenance_file_path()`: The path to the directory that holds all provenance files
     - `app_provenance_file_path()`: The path to the directory that holds all app provenance files
     - `system_provenance_file_path()`: The path to the directory that holds all system provenance files
-    - `run_report_directory()`: The path to the directory that holds all the reports for run
+    - `report_default_directory()`: The path to the directory that holds all the reports for run
 
 # <a name="BuildScripts">Testing example scripts automatically</a>
 
@@ -157,7 +157,7 @@ These include:
 - `provenance_file_path`
 - `app_provenance_file_path`
 - `system_provenance_file_path`
-- `run_report_directory`
+- `report_default_directory`
 - `config`
 
 These methods will work from when `setup` is called until the next `setup` or `reset`.
