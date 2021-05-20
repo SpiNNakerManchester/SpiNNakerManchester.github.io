@@ -115,7 +115,7 @@ ProvenanceItems| type| asb | in| out |je |
 RegionSizes| type| asb | in| out |je |
 RemoteSpinnakerUrl| type| _remote_spinnaker_url/"remote_spinnaker_url" | yes| no |je |
 RepairMachine| n/a
-ReportFolder| str| _report_default_directory| in| no |no | global_variables
+ReportFolder| global_variables
 ReportWaitingLogsFlag| n/a
 ResetMachineOnStartupFlag| bool| "reset_machine_on_startup" | yes| yes |no |  allocators
 RouterBitfieldCompressionReport| n/a
