@@ -1,7 +1,7 @@
 Name| Type| ASB| Input | Output | Injected | Comment |
 :---|:----|:---|:------|:-------|:---------|:--------|
 APPID | int | _app_id | yes | no | no |
-AppProvenanceFilePath |str | _app_provenance_file_path | yes | no | no | globals_variables.py
+AppProvenanceFilePath |globals_variables
 AutoDetectBMPFlag| bool | "auto_detect_bmp" / False if virtual| yes | yes | no |  allocators
 AverageCoresOnChip| float| no | no| yes |no | FindApplicationChipsUsed untested
 BMPDetails | str| "bmp_names" / None if virtual | yes| yes | no |   allocators
@@ -63,7 +63,7 @@ MCGathererCoresToAllocate| int| no | yes(optional)| no |no | Never set!
 MachineAllocationController| MachineAllocationController| to _machine_allocation_controller  | yes| yes |no |  allocators
 MachineHeight| n/a
 MachineJsonPath| n/a
-MachineTimeStep| int| machine_time_step | yes| no |yes | also as sim.machine_time_step
+MachineTimeStep| global_variables
 MachineWidth| n/a
 MappingTimeMs| float| passed | 1| 1 |No | FinaliseTimingData?
 MaxCoresUsedOnChip| int| no | no| yes |no | FindApplicationChipsUsed untested
@@ -139,9 +139,9 @@ SpallocServer| str| _spalloc_server/ "spalloc_server" | in| no|no |
 SpallocUser| n/a
 SynapticExpanderReadIOBuf| bool| "write_expander_iobuf" | yes| no |no |
 SystemMulticastRouterTimeoutKeys| dict(tuple(int,int),int)|no | no| yes|yes |
-SystemProvenanceFilePath| str| _system_provenance_file_path| yes| no |no | global_variable
+SystemProvenanceFilePath| global_variables
 TDMAAgenda| nuked
-TimeScaleFactor| n/a
+TimeScaleFactor| global_variables
 TotalRunTime| float| param | yes| no |no |
 UnCompressedSummary| RouterSummary| no | no| yes |no |
 UserCreateDatabaseFlag| n/a
