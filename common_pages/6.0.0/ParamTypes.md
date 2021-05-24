@@ -69,8 +69,8 @@ MappingTimeMs| float| passed | 1| 1 |No | FinaliseTimingData?
 MaxCoresUsedOnChip| int| no | no| yes |no | FindApplicationChipsUsed untested
 MaxMachineCoreReduction| int| "max_machine_core_reduction" | yes| no |no | Better to use Machine.set_max_cores_per_chip
 MaxSDRAMSize| n/a
-MemoryApplicationGraph| ApplicationGraph| _application_graph | yes| no |yes | 
-MemoryCompressedRoutingTables| MulticastRoutingTables| no | yes| yes |no | 
+ApplicationGraph| ApplicationGraph| _application_graph | yes| no |yes | 
+CompressedRoutingTables| MulticastRoutingTables| no | yes| yes |no | 
 MemoryExtendedMachine| Machine (with virtual chips)| no | yes| yes |yes |
 MemoryExtendedVirtualMachine| ?type| no | no| yes |no | VirtualMallocBasedChipIDAllocator DEAD?
 MemoryExtraMonitorToChipMapping| dict(tuple(int,int),ExtraMonitorSupportMachineVertex)| param for _locate_receivers_from_projections | yes| yes |no |
