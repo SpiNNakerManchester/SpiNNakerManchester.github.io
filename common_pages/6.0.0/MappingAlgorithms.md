@@ -25,14 +25,15 @@ use of new mapping algorithms to use with the SpiNNaker tool chain. This functio
 To use this functionality, you must have installed one of the Front Ends supported by the
 software stack. If you have not done so yet, please follow one of the following links:
 
-1. [The sPyNNaker Front end User installation page](/spynnaker/5.0.0/PyNNOnSpinnakerInstall.html)
-1. [The SpiNNaker Graph Front End User installation page](/graph_front_end/5.0.0/SpiNNakerGraphFrontEndInstall.html)
+1. [Developer Install](/development/index.html)
+1. [The sPyNNaker Front end User installation page](/latest/spynnaker.html)
+1. [The SpiNNaker Graph Front End User installation page](/latest/gfe.html)
 
 # <a name="XMLMeta"></a> Algorithm Meta-data XML File
 
 As end users can add any arbitrary number of algorithms to the PACMAN flow,
 this means there is no longer a predefined logic flow between algorithms.
-To rectify this, there is a block of code located in https://github.com/SpiNNakerManchester/PACMAN/blob/5.1.0/pacman/executor/pacman_algorithm_executor.py which takes a description of the inputs, outputs, and executable parameters of the algorithms available to it and a list of algorithms which it needs to execute and deduces the logical order of algorithms.
+To rectify this, there is a block of code located in https://github.com/SpiNNakerManchester/PACMAN/blob/6.0.0/pacman/executor/pacman_algorithm_executor.py which takes a description of the inputs, outputs, and executable parameters of the algorithms available to it and a list of algorithms which it needs to execute and deduces the logical order of algorithms.
 
 Any new algorithm needs to have a XML file which states how to execute the algorithm, its inputs and outputs. Below is an example XML file:
 
