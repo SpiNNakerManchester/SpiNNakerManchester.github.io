@@ -234,9 +234,13 @@ VirtualMachine |  Machine | A machine known to be virtual | [M]
 WarnMessages | |list(str) | Warnings from the Chip Io Buffer Extractor | [O]
 
 [C] Could come from the configs but also from other algorithms| ASB
+
 [D] This value always appears to have the default so may be removed
+
 [I] Also used with @inject_items
+
 [M] In version 6.0.0 and earlier the name of many `<param_type>` started with Memory
+
 [O] Provided as an algorithm output but never used anywhere
 
 
