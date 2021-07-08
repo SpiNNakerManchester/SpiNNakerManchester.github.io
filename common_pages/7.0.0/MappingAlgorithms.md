@@ -179,15 +179,68 @@ FixedRouteDestinationClass | Class | DataSpeedUpPacketGatherMachineVertex |
 FixedRoutes | dict(tuple(int,int),FixedRouteEntry | The fixed route on each chip | [M]
 GraphProvenanceItems | list(ProvenanceDataItem) | Provenance items to be writen out by ASB |
 IPAddress | str | Host Name of the machine | [C]
+JavaCaller | JavaCaller | Helper to call Java |
+JsonMachine | str |  Json represenataion of the Machine | [O]
+JsonMachineGraphPath | str | Path to where json representation of Machine graph is written | [O]
+JsonPartitionNKeysMap | str | Path to where json representation of partition to n keys map is written | [O]
+JsonPlacementsPath | str | Path to where json representation of the Placements is written | [O]
+JsonRoutingTablesPath | str | Path to where the json representation of the Routing Tables is written [O]
+LivePacketRecorderParameters |  dict(LivePacketGatherParameters, list(tuple(AbstractVertex, list(str)))) | Map of paramters to vertex and partition_ids
+LivePacketRecorderParametersToVertexMapping | dict(LivePacketGatherParameters, dict(tuple(int,int),LivePacketGatherMachineVertex)) | Map of Paramteres to chip and vertex |
+LoadTimeMs | float | Duration of load for enegery calculations |
+MCGathererCoresToAllocate | int | number of extra Monitor cores (1) |
+Machine | Machine | Machine possibly without virtual chips added | [M]
+MachineAllocationController | MachineAllocationController | Spalloc |HBP control to create teh Machine |
+MachineGraph | MachineGraph | graph after paritioning (if needed) | [M]
+MachinePartitionNKeysMap | DictBasedMachinePartitionNKeysMap | Maps partitions to the keys required | [M]
+MappingTimeMs | float | Duration of mapping for enegery calculations |
+MaxCoresUsedOnChip | int | Max cores on a chip |[O]
+MinCoresUsedOnChip | int | Min cores on a chip |[O] 
+NBoardsRequired | int | Number of boards need to run job |
+NChipsRequired | int | Number of chips needed to run job |
+NChipsUsed | int | Number of chips used |[O] 
+NSyncSteps | int | Number of timesteps between synchronisations | 
+NoSyncChanges | int | number of sync changes |
+NotificationInterface | NotificationProtocol | protocol for GUI and external device interaction | 
+Placements | Placements | Placements by core and vertex | [M]
+PlacementsProvenanceItems | list(ProvenanceDataItem) | Provenace data from the machine |
+PlanNTimeSteps |int | Minimum number of timesteps partiting must allow |
+PostSimulationOverrunBeforeError | int | timesteps to allow after run | [C]
+PowerProvenanceItems | list(ProvenanceDataItem) | Provenance extracted from PowerUsed | 
+PowerUsed | PowerUsed | Computed Enegery usage |
+PreAllocatedResources | PreAllocatedResourceContainer | core and sdram resevations for all|ethernet chips | [M]
+ProcessorToAppDataBaseAddress | dict(tuple(int,int,int), DsWriteInfo) | core (x,y,P) mapped to Data Sepec info
+ProvenanceItems | list(ProvenanceDataItem) | various provenance combined by ASB |
+RegionSizes | dict(tuple(int,int,int), int) | map of core x,y,p to DataSpec region size |
+RemoteSpinnakerUrl | str | url of the hpb machine | [C]
+ResetMachineOnStartupFlag | bool | indicates if machine need to be restarted | [C] |
+RouterCompressorProvenanceItems | list(ProvenanceDataItem) | provenance from a route compressor |
+RouterProvenanceItems |  list(ProvenanceDataItem) | provenance from a router |
+RoutingInfos | PartitionRoutingInfo | partition to its (keys and masks). | [M]
+RoutingTableByPartition | MulticastRoutingTableByPartition | Routing infos mapped to partitions | [M]
+RoutingTables | MulticastRoutingTable | routing tables | [M]
+RunTime | float| runtime as requested by the user |
+RunUntilCompleteFlag | bool | indatces cores should run as long as they think needed 
+RunUntilTimeSteps | int | timestep to run to |
+ScampConnectionData | str | How to connect to scamp | [C][D]
+SpallocServer| str | url to the spalloc server | [C] |
+SystemMulticastRouterTimeoutKeys | dict(tuple(int,int),int) | core(x,y,p) tp broadcast router timeout keys |
+Tags | Tags | IP tags and reverse IP tags by Vertex| [M][I]
+TotalRunTime | float | runtime possibly rounded up |
+Transceiver |Transceiver | Object which talks to the baords | [m][I]
+UnCompressedSummary | RouterSummary | Details written in the router Summary report  | [O]
+VertexToEthernetConnectedChipMapping | dict(tuple(int,int),DataSpeedUpPacketGatherMachineVertex) |maps Ethernet cores to extra monitors | [M]
+VirtualMachine |  Machine | A machine known to be virtual | [M]
+WarnMessages | |list(str) | Warnings from the Chip Io Buffer Extractor | [O]
 
-
-', 'JavaCaller', 'JsonFolder', 'JsonMachine', 'JsonMachineGraphPath', 'JsonPartitionNKeysMap', 'JsonPlacementsPath', 'JsonRoutingTablesPath', 'LivePacketRecorderParameters', 'LivePacketRecorderParametersToVertexMapping', 'LoadTimeMs', 'MCGathererCoresToAllocate', 'Machine', 'MachineAllocationController', 'MachineGraph', 'MachinePartitionNKeysMap', 'MappingTimeMs', 'MaxCoresUsedOnChip', 'MaxMachineCoreReduction', 'MemoryCompressedRoutingTables', 'MemoryRoutingTables', 'MemorySamplingFrequency', 'MinCoresUsedOnChip', 'NBoardsRequired', 'NChipsRequired', 'NChipsUsed', 'NSyncSteps', 'NoSyncChanges', 'NotificationInterface', 'Placements', 'PlacementsProvenanceItems', 'PlanNTimeSteps', 'PostSimulationOverrunBeforeError', 'PowerProvenanceItems', 'PowerUsed', 'PreAllocatedResources', 'ProcessorToAppDataBaseAddress', 'ProvenanceItems', 'RegionSizes', 'RemoteSpinnakerUrl', 'ResetMachineOnStartupFlag', 'RouterCompressorProvenanceItems', 'RouterProvenanceItems', 'RoutingInfos', 'RoutingTableByPartition', 'RoutingTables', 'RunTime', 'RunUntilCompleteFlag', 'RunUntilTimeSteps', 'ScampConnectionData', 'SpallocMachine', 'SpallocPort', 'SpallocServer', 'SynapticExpanderReadIOBuf', 'SystemMulticastRouterTimeoutKeys', 'SystemProvenanceFilePath', 'Tags', 'TotalRunTime', 'Transceiver', 'UnCompressedSummary', 'VertexToEthernetConnectedChipMapping', 'VirtualMachine', 'WarnMessages']
-
-[C] Could come from the configs but also from other algorithms
+[C] Could come from the configs but also from other algorithms| ASB
 [D] This value always appears to have the default so may be removed
 [I] Also used with @inject_items
 [M] In version 6.0.0 and earlier the name of many `<param_type>` started with Memory
 [O] Provided as an algorithm output but never used anywhere
+
+
+# BEYOND THIS POINT THIS DOCUEMENT IS OUT OF DATE!
 
 The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below:
 
