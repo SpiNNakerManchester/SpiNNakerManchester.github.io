@@ -144,8 +144,8 @@ They will not included in the `<input_definitions>`, but can be in `<required_in
 
 Type| Class|Description|Comment|
 :---|:----|:-------------|:--------|
-APPID | int | The Id of the currently running applaction |
-ApplicationGraph | ApplicationGraph | The Graph before partitioning | [M]
+APPID | int | The Id of the currently running applaction | [M]
+ApplicationGraph | ApplicationGraph | The Graph before partitioning | [M][I]
 AutoDetectBMPFlag | bool | Should the transceivver try to find a bmp | [C]
 AverageCoresOnChip | float | Average number of systems cores per chip | [O]
 BMPDetails | str | ip address(s) of the bmps |
@@ -191,7 +191,7 @@ LoadTimeMs | float | Duration of load for enegery calculations |
 MCGathererCoresToAllocate | int | number of extra Monitor cores (1) |
 Machine | Machine | Machine possibly without virtual chips added | [M]
 MachineAllocationController | MachineAllocationController | Spalloc |HBP control to create teh Machine |
-MachineGraph | MachineGraph | graph after paritioning (if needed) | [M]
+MachineGraph | MachineGraph | graph after paritioning (if needed) | [M][I]
 MachinePartitionNKeysMap | DictBasedMachinePartitionNKeysMap | Maps partitions to the keys required | [M]
 MappingTimeMs | float | Duration of mapping for enegery calculations |
 MaxCoresUsedOnChip | int | Max cores on a chip |[O]
@@ -202,7 +202,7 @@ NChipsUsed | int | Number of chips used |[O]
 NSyncSteps | int | Number of timesteps between synchronisations | 
 NoSyncChanges | int | number of sync changes |
 NotificationInterface | NotificationProtocol | protocol for GUI and external device interaction | 
-Placements | Placements | Placements by core and vertex | [M]
+Placements | Placements | Placements by core and vertex | [M][I]
 PlacementsProvenanceItems | list(ProvenanceDataItem) | Provenace data from the machine |
 PlanNTimeSteps |int | Minimum number of timesteps partiting must allow |
 PostSimulationOverrunBeforeError | int | timesteps to allow after run | [C]
@@ -216,15 +216,15 @@ RemoteSpinnakerUrl | str | url of the hpb machine | [C]
 ResetMachineOnStartupFlag | bool | indicates if machine need to be restarted | [C] |
 RouterCompressorProvenanceItems | list(ProvenanceDataItem) | provenance from a route compressor |
 RouterProvenanceItems |  list(ProvenanceDataItem) | provenance from a router |
-RoutingInfos | PartitionRoutingInfo | partition to its (keys and masks). | [M]
+RoutingInfos | PartitionRoutingInfo | partition to its (keys and masks). | [M][I]
 RoutingTableByPartition | MulticastRoutingTableByPartition | Routing infos mapped to partitions | [M]
 RoutingTables | MulticastRoutingTable | routing tables | [M]
 RunTime | float| runtime as requested by the user |
 RunUntilCompleteFlag | bool | indatces cores should run as long as they think needed 
-RunUntilTimeSteps | int | timestep to run to |
+RunUntilTimeSteps | int | timestep to run to | [I]
 ScampConnectionData | str | How to connect to scamp | [C][D]
 SpallocServer| str | url to the spalloc server | [C] |
-SystemMulticastRouterTimeoutKeys | dict(tuple(int,int),int) | core(x,y,p) tp broadcast router timeout keys |
+SystemMulticastRouterTimeoutKeys | dict(tuple(int,int),int) | core(x,y,p) tp broadcast router timeout keys | [I]
 Tags | Tags | IP tags and reverse IP tags by Vertex| [M][I]
 TotalRunTime | float | runtime possibly rounded up |
 Transceiver |Transceiver | Object which talks to the baords | [m][I]
