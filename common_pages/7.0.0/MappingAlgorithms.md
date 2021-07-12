@@ -246,6 +246,99 @@ WarnMessages | |list(str) | Warnings from the Chip Io Buffer Extractor | [O]
 
 # BEYOND THIS POINT THIS DOCUEMENT IS OUT OF DATE!
 
+# <a name="Algorithms"></a> Algorithms currently supplied
+
+## Algorithms in the simplest run
+
+| Algorithm | Use | Output
+|:---------|:--------|
+MachineGenerator | Reads description of the Machine of the boards | Machine, Transceiver
+MallocBasedChipIDAllocator | Assigns virtual chips to Virtual vertices | ExtendedMachine
+SpynnakerSplitterSelector | Make sure every vertex has a spliiter | token SplitterObjectsAllocated.MAIN
+DelaySupportAdder | Adds any required delay vertices | token SplitterObjectsAllocated.DELAYS
+SpYNNakerSplitterPartitioner | Creates a graph where each node runs on 1 core | MachineGraph NChipsRequired token PartitioningDone
+EdgeToNKeysMapper | Works out the number of keys needed for each edge | MachinePartitionNKeysMap
+LocalTDMABuilder | Configure Time Division Multiple Access | NONE!
+SpreaderPlacer | works out which vertex to run on which core
+2021-07-12 13:19:28 INFO: Time 0:00:00.000260 taken by NerRouteTrafficAware
+2021-07-12 13:19:28 INFO: Time 0:00:00.000470 taken by BasicTagAllocator
+2021-07-12 13:19:28 INFO: Time 0:00:00.000188 taken by ProcessPartitionConstraints
+2021-07-12 13:19:28 INFO: Time 0:00:00.000362 taken by ZonedRoutingInfoAllocator
+2021-07-12 13:19:28 INFO: Time 0:00:00.000262 taken by BasicRoutingTableGenerator
+2021-07-12 13:19:28 INFO: Time 0:00:00.000197 taken by LocateExecutableStartType
+2021-07-12 13:19:28 INFO: Time 0:00:00.001619 taken by BufferManagerCreator
+2021-07-12 13:19:28 INFO: Time 0:00:00.000182 taken by SDRAMOutgoingPartitionAllocator
+2021-07-12 13:19:28 INFO: Time 0:00:00.005974 taken by SpynnakerDataSpecificationWriter
+2021-07-12 13:19:28 INFO: Time 0:00:00.002988 taken by RoutingSetup
+2021-07-12 13:19:28 INFO: Time 0:00:00.000305 taken by GraphBinaryGatherer
+2021-07-12 13:19:32 INFO: Time 0:00:03.689731 taken by PairOnChipRouterCompression
+2021-07-12 13:19:32 INFO: Time 0:00:00.000675 taken by HostExecuteSystemDataSpecification
+2021-07-12 13:19:32 INFO: Time 0:00:00.000861 taken by LoadSystemExecutableImages
+2021-07-12 13:19:32 INFO: Time 0:00:00.003949 taken by TagsLoader
+2021-07-12 13:19:32 INFO: Time 0:00:00.014179 taken by HostExecuteApplicationDataSpecification
+2021-07-12 13:19:33 INFO: Time 0:00:00.513023 taken by SynapseExpander
+2021-07-12 13:19:36 INFO: Time 0:00:03.404279 taken by OnChipBitFieldGenerator
+2021-07-12 13:19:36 INFO: Time 0:00:00.000718 taken by FinishConnectionHolders
+2021-07-12 13:19:44 INFO: Time 0:00:07.881266 taken by LoadApplicationExecutableImages
+2021-07-12 13:19:44 INFO: Time 0:00:00.022663 taken by ChipRuntimeUpdater
+2021-07-12 13:19:47 INFO: Time 0:00:02.742177 taken by DatabaseInterface
+2021-07-12 13:19:47 INFO: Time 0:00:00.000640 taken by CreateNotificationProtocol
+2021-07-12 13:19:47 INFO: Time 0:00:00.173868 taken by ApplicationRunner
+2021-07-12 13:19:47 INFO: Time 0:00:00.006679 taken by BufferExtractor
+
+## Deprecated Algorithm Names
+| Original | Current |
+|:---------|:--------|
+MachineBitFieldUnorderedRouterCompressor | MachineBitFieldOrderedCoveringCompressor |
+MundyOnChipRouterCompression | OrderedCoveringOnChipRouterCompression |
+MundyRouterCompressor | OrderedCoveringRouterCompressor
+SpynnakerMachineBitFieldUnorderedRouterCompressor | SpynnakerMachineBitFieldOrderedCoveringCompressor
+UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression
+
+'ApplicationFinisher', 'ApplicationRunner', 'BasicDijkstraRouting', 'BasicRouteMerger', 
+'BasicRoutingInfoAllocator', 'BasicRoutingTableGenerator', 'BasicSplitterSelector', 
+'BasicTagAllocator', 'BitFieldCompressorReport', 'BoardChipReport', 'BufferExtractor', 
+'BufferManagerCreator', 'ChipIOBufClearer', 'ChipIOBufExtractor', 'ChipProvenanceUpdater', 
+'ChipRuntimeUpdater', 'CompressedRouterSummaryReport', 'ComputeEnergyUsed', 
+'ConnectiveBasedPlacer', 'CreateNotificationProtocol', 'DSGRegionReloader', 'DatabaseInterface', 
+'DelaySupportAdder', 'EdgeToNKeysMapper', 'EnergyProvenanceReporter',
+'FinaliseTimingData', 'FindApplicationChipsUsed', 'FinishConnectionHolders', 
+'FixedRouteFromMachineReport', 'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
+'GraphBinaryGatherer', 'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
+'GraphMeasurer', 'GraphProvenanceGatherer', 'HBPAllocator', 'HBPMaxMachineGenerator', 
+'HostBasedBitFieldRouterCompressor', 'HostExecuteApplicationDataSpecification', 
+'HostExecuteSystemDataSpecification', 'InsertChipPowerMonitorsToGraphs', 
+'InsertEdgesToExtraMonitorFunctionality', 'InsertEdgesToLivePacketGatherers', 
+'InsertExtraMonitorVerticesToGraphs', 'InsertLivePacketGatherersToGraphs', 'KeyConstraintAdder', 
+'LoadApplicationExecutableImages', 'LoadFixedRoutes', 'LoadSystemExecutableImages', 'LocalTDMABuilder', 
+'LocateExecutableStartType', 'MachineBitFieldOrderedCoveringCompressor', 'MachineBitFieldPairRouterCompressor', 
+'MachineGenerator', 'MallocBasedChipIDAllocator', 
+'MallocBasedRouteMerger', 'MallocBasedRoutingInfoAllocator', 'MemoryMapOnHostChipReport', 
+'MemoryMapOnHostReport', 'NerRoute', 'NerRouteTrafficAware', 
+'NetworkSpecificationReport', 'OnChipBitFieldGenerator', 'OneToOnePlacer', 'OrderedCoveringCompressor', 
+'OrderedCoveringOnChipRouterCompression', 'PairCompressor', 'PairOnChipRouterCompression', 
+'PairUnorderedCompressor', 'PartitionerReport', 'PlacementsProvenanceGatherer', 
+'PlacerReportWithApplicationGraph', 'PlacerReportWithoutApplicationGraph', 
+'PreAllocateForBitFieldRouterCompressor', 'PreAllocateResourcesForChipPowerMonitor', 
+'PreAllocateResourcesForExtraMonitorSupport', 'PreAllocateResourcesForLivePacketGatherers', 
+'ProcessPartitionConstraints', 'ProfileDataGatherer', 'ProvenanceJSONWriter', 'ProvenanceSQLWriter', 
+'ProvenanceXMLWriter', 'RadialPlacer', 'ReadRoutingTablesFromMachine', 'RedundantPacketCountReport',
+'RouterCollisionPotentialReport', 'RouterProvenanceGatherer', 'RouterReports', 'RouterSummaryReport',
+'RoutingCompressionChecker', 'RoutingSetup', 'RoutingTableFromMachineReport', 'RoutingTableLoader',
+'SDRAMOutgoingPartitionAllocator', 'SdramUsageReportPerChip',
+'SpYNNakerConnectionHolderGenerator', 'SpYNNakerNeuronGraphNetworkSpecificationReport',
+'SpYNNakerSplitterPartitioner', 'SpallocAllocator', 'SpallocMaxMachineGenerator', 
+'SplitterPartitioner', 'SplitterReset', 'SpreaderPlacer', 'SpynnakerDataSpecificationWriter', 
+'SpynnakerMachineBitFieldOrderedCoveringCompressor', 'SpynnakerMachineBitFieldPairRouterCompressor', 
+'SpynnakerSplitterSelector', 'SynapseExpander', 
+'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 'TagReport', 'TagsFromMachineReport', 'TagsLoader',
+'ValidRoutesChecker', 'VirtualMachineGenerator', 'WriteJsonMachine', 
+'WriteJsonMachineGraph', 'WriteJsonPartitionNKeysMap', 'WriteJsonPlacements', 'WriteJsonRoutingTables', 
+'ZonedRoutingInfoAllocator', 'comparisonOfRoutingTablesReport', 'compressedRoutingTableReports', 
+'routingInfoReports', 'unCompressedRoutingTableReports']
+
+
+
 The tool chain currently supplies a collection of inputs into the PACMAN infrastructure. These are defined below:
 
 |Name|Definition|
