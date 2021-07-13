@@ -8,6 +8,7 @@ This page includes many changes made since the 6.0.0 release.
 * [Usage](#Usage)
 * [Requirements](#Requirements)
 * [Algorithm Meta-data XML File](#XMLMeta)
+* [Algorithms](#Algorithms)  
 * [Configuration](#Configuration)
 * [Running Example](#RigPlacer)
 * [Troubleshooting](#Trouble)
@@ -244,14 +245,12 @@ WarnMessages | |list(str) | Warnings from the Chip Io Buffer Extractor | [O]
 [O] Provided as an algorithm output but never used anywhere
 
 
-# BEYOND THIS POINT THIS DOCUEMENT IS OUT OF DATE!
-
 # <a name="Algorithms"></a> Algorithms currently supplied
 
 ## Algorithms in the simplest run
 
-| Algorithm | Use | Output
-|:---------|:--------|
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
 MachineGenerator | Reads description of the Machine of the boards | Machine, Transceiver
 MallocBasedChipIDAllocator | Assigns virtual chips to Virtual vertices | ExtendedMachine
 SpynnakerSplitterSelector | Make sure every vertex has a spliiter | token SplitterObjectsAllocated.MAIN
@@ -335,6 +334,8 @@ UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression
 'WriteJsonMachineGraph', 'WriteJsonPartitionNKeysMap', 'WriteJsonPlacements', 'WriteJsonRoutingTables', 
 'comparisonOfRoutingTablesReport', 'compressedRoutingTableReports', 
 'routingInfoReports', 'unCompressedRoutingTableReports']
+
+# BEYOND THIS POINT THIS DOCUMENT IS OUT OF DATE!
 
 
 
