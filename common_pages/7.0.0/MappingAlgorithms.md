@@ -88,7 +88,7 @@ Any new algorithm needs to have a XML file which states how to execute the algor
             <param_name>hostname</param_name>
         </required_inputs>
         <optional_inputs>
-            <token part="DSGDataLoaded">DataLoaded</token>
+            <token part="DSGAppDataLoaded">DataLoaded</token>
             <token>ClearedIOBuf</token>
         </optional_inputs>
         <outputs>
@@ -258,83 +258,82 @@ SpynnakerSplitterSelector | Make sure every vertex has a spliiter | token Splitt
 DelaySupportAdder | Adds any required delay vertices | token SplitterObjectsAllocated.DELAYS
 SpYNNakerSplitterPartitioner | Creates a graph where each node runs on 1 core | MachineGraph NChipsRequired token PartitioningDone
 EdgeToNKeysMapper | Works out the number of keys needed for each edge | MachinePartitionNKeysMap
-LocalTDMABuilder | Configure Time Division Multiple Access | NONE!
-SpreaderPlacer | works out which vertex to run on which core
-2021-07-12 13:19:28 INFO: Time 0:00:00.000260 taken by NerRouteTrafficAware
-2021-07-12 13:19:28 INFO: Time 0:00:00.000470 taken by BasicTagAllocator
-2021-07-12 13:19:28 INFO: Time 0:00:00.000188 taken by ProcessPartitionConstraints
-2021-07-12 13:19:28 INFO: Time 0:00:00.000362 taken by ZonedRoutingInfoAllocator
-2021-07-12 13:19:28 INFO: Time 0:00:00.000262 taken by BasicRoutingTableGenerator
-2021-07-12 13:19:28 INFO: Time 0:00:00.000197 taken by LocateExecutableStartType
-2021-07-12 13:19:28 INFO: Time 0:00:00.001619 taken by BufferManagerCreator
-2021-07-12 13:19:28 INFO: Time 0:00:00.000182 taken by SDRAMOutgoingPartitionAllocator
-2021-07-12 13:19:28 INFO: Time 0:00:00.005974 taken by SpynnakerDataSpecificationWriter
-2021-07-12 13:19:28 INFO: Time 0:00:00.002988 taken by RoutingSetup
-2021-07-12 13:19:28 INFO: Time 0:00:00.000305 taken by GraphBinaryGatherer
-2021-07-12 13:19:32 INFO: Time 0:00:03.689731 taken by PairOnChipRouterCompression
-2021-07-12 13:19:32 INFO: Time 0:00:00.000675 taken by HostExecuteSystemDataSpecification
-2021-07-12 13:19:32 INFO: Time 0:00:00.000861 taken by LoadSystemExecutableImages
-2021-07-12 13:19:32 INFO: Time 0:00:00.003949 taken by TagsLoader
-2021-07-12 13:19:32 INFO: Time 0:00:00.014179 taken by HostExecuteApplicationDataSpecification
-2021-07-12 13:19:33 INFO: Time 0:00:00.513023 taken by SynapseExpander
-2021-07-12 13:19:36 INFO: Time 0:00:03.404279 taken by OnChipBitFieldGenerator
-2021-07-12 13:19:36 INFO: Time 0:00:00.000718 taken by FinishConnectionHolders
-2021-07-12 13:19:44 INFO: Time 0:00:07.881266 taken by LoadApplicationExecutableImages
-2021-07-12 13:19:44 INFO: Time 0:00:00.022663 taken by ChipRuntimeUpdater
-2021-07-12 13:19:47 INFO: Time 0:00:02.742177 taken by DatabaseInterface
-2021-07-12 13:19:47 INFO: Time 0:00:00.000640 taken by CreateNotificationProtocol
-2021-07-12 13:19:47 INFO: Time 0:00:00.173868 taken by ApplicationRunner
-2021-07-12 13:19:47 INFO: Time 0:00:00.006679 taken by BufferExtractor
+LocalTDMABuilder | Configure Time Division Multiple Access | token TDMA
+SpreaderPlacer | works out which vertex to run on which core | Placements
+NerRouteTrafficAware | Dettermines where each route must end | RoutingTableByPartition
+BasicTagAllocator | Applies the IP tags and reverse IP tags| Tags
+ProcessPartitionConstraints | Moves Contraint | token PartitionConstraints
+ZonedRoutingInfoAllocator | Assigns keys to each partition | RoutingInfos
+BasicRoutingTableGenerator | Created uncompressed routingtables | RoutingTables token RoutingTablesGenerated.UnCompressedRoutingTablesGenerated
+LocateExecutableStartType | maps application types to cores | ExecutableTypes
+BufferManagerCreator | creates the buffer manager| BufferManager
+SDRAMOutgoingPartitionAllocator | Malloc sdram for Partitions (if needed) | token PartitionsMalloced
+SpynnakerDataSpecificationWriter | prepares the data to write to cores | DataSpecificationTargets RegionSizes
+RoutingSetup | Initialises the routers | token RoutersInitialized
+GraphBinaryGatherer  | Allocates binaries to cores | ExecutableTargets
+PairOnChipRouterCompression | Loads and compresses routing tables | DataLoaded.MulticastRoutesLoaded
+HostExecuteSystemDataSpecification | Loads data for system cores | token DataLoaded.DSGSystemDataLoaded
+LoadSystemExecutableImages | loads system aplx | token BinariesLoaded.SystemBinariesLoaded
+TagsLoader | sends tags to cores | DataLoaded.LoadedIPTags DataLoaded.LoadedReverseIPTags
+HostExecuteApplicationDataSpecification | Loads data for application cores | DataLoaded.DSGAppDataLoaded
+SynapseExpander | Tells core to run expander | DataLoaded.SynapseDataExpanded
+OnChipBitFieldGenerator | Tells cores to create bitfields | token DataLoaded.BitFieldData
+FinishConnectionHolders | writes data for projections that where asked to save before run | token ConnectionsFinished
+LoadApplicationExecutableImages | loads application aplx| token BinariesLoaded.ApplicationBinariesLoaded
+ChipRuntimeUpdater | passes runtil into the application cores | ChipRuntimeUpdated.SimulationBinaries
+DatabaseInterface | Create the database if requested to |  DatabaseInterface DatabaseFilePath
+CreateNotificationProtocol |creates a notification protocol | NotificationInterface
+ApplicationRunner | runs the application once | token ApplicationRun
+BufferExtractor | gets data off the cores | None
 
 ## Deprecated Algorithm Names
 | Original | Current |
 |:---------|:--------|
 MachineBitFieldUnorderedRouterCompressor | MachineBitFieldOrderedCoveringCompressor |
 MundyOnChipRouterCompression | OrderedCoveringOnChipRouterCompression |
-MundyRouterCompressor | OrderedCoveringRouterCompressor
+MundyRouterCompressor | OrderedCoveringCompressor
 SpynnakerMachineBitFieldUnorderedRouterCompressor | SpynnakerMachineBitFieldOrderedCoveringCompressor
 UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression
 
-'ApplicationFinisher', 'ApplicationRunner', 'BasicDijkstraRouting', 'BasicRouteMerger', 
-'BasicRoutingInfoAllocator', 'BasicRoutingTableGenerator', 'BasicSplitterSelector', 
-'BasicTagAllocator', 'BitFieldCompressorReport', 'BoardChipReport', 'BufferExtractor', 
-'BufferManagerCreator', 'ChipIOBufClearer', 'ChipIOBufExtractor', 'ChipProvenanceUpdater', 
-'ChipRuntimeUpdater', 'CompressedRouterSummaryReport', 'ComputeEnergyUsed', 
-'ConnectiveBasedPlacer', 'CreateNotificationProtocol', 'DSGRegionReloader', 'DatabaseInterface', 
-'DelaySupportAdder', 'EdgeToNKeysMapper', 'EnergyProvenanceReporter',
-'FinaliseTimingData', 'FindApplicationChipsUsed', 'FinishConnectionHolders', 
+## TODO 
+'ApplicationFinisher', 'BasicDijkstraRouting', 'BasicRouteMerger', 
+'BasicSplitterSelector', 
+'BitFieldCompressorReport', 'BoardChipReport', 'BufferExtractor', 
+'ChipIOBufClearer', 'ChipIOBufExtractor', 'ChipProvenanceUpdater', 
+'CompressedRouterSummaryReport', 'ComputeEnergyUsed', 
+'ConnectiveBasedPlacer', 'DSGRegionReloader', 
+ 'EnergyProvenanceReporter',
+'FinaliseTimingData', 'FindApplicationChipsUsed'
 'FixedRouteFromMachineReport', 'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
-'GraphBinaryGatherer', 'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
+'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
 'GraphMeasurer', 'GraphProvenanceGatherer', 'HBPAllocator', 'HBPMaxMachineGenerator', 
-'HostBasedBitFieldRouterCompressor', 'HostExecuteApplicationDataSpecification', 
-'HostExecuteSystemDataSpecification', 'InsertChipPowerMonitorsToGraphs', 
+'HostBasedBitFieldRouterCompressor', 
+'InsertChipPowerMonitorsToGraphs', 
 'InsertEdgesToExtraMonitorFunctionality', 'InsertEdgesToLivePacketGatherers', 
 'InsertExtraMonitorVerticesToGraphs', 'InsertLivePacketGatherersToGraphs', 'KeyConstraintAdder', 
-'LoadApplicationExecutableImages', 'LoadFixedRoutes', 'LoadSystemExecutableImages', 'LocalTDMABuilder', 
-'LocateExecutableStartType', 'MachineBitFieldOrderedCoveringCompressor', 'MachineBitFieldPairRouterCompressor', 
-'MachineGenerator', 'MallocBasedChipIDAllocator', 
+'LoadFixedRoutes', 
+'MachineBitFieldOrderedCoveringCompressor', 'MachineBitFieldPairRouterCompressor', 
 'MallocBasedRouteMerger', 'MallocBasedRoutingInfoAllocator', 'MemoryMapOnHostChipReport', 
-'MemoryMapOnHostReport', 'NerRoute', 'NerRouteTrafficAware', 
-'NetworkSpecificationReport', 'OnChipBitFieldGenerator', 'OneToOnePlacer', 'OrderedCoveringCompressor', 
-'OrderedCoveringOnChipRouterCompression', 'PairCompressor', 'PairOnChipRouterCompression', 
+'MemoryMapOnHostReport', 'NerRoute', 
+'NetworkSpecificationReport', 'OneToOnePlacer', 'OrderedCoveringCompressor', 
+'OrderedCoveringOnChipRouterCompression', 'PairCompressor',
 'PairUnorderedCompressor', 'PartitionerReport', 'PlacementsProvenanceGatherer', 
 'PlacerReportWithApplicationGraph', 'PlacerReportWithoutApplicationGraph', 
 'PreAllocateForBitFieldRouterCompressor', 'PreAllocateResourcesForChipPowerMonitor', 
 'PreAllocateResourcesForExtraMonitorSupport', 'PreAllocateResourcesForLivePacketGatherers', 
-'ProcessPartitionConstraints', 'ProfileDataGatherer', 'ProvenanceJSONWriter', 'ProvenanceSQLWriter', 
+'ProfileDataGatherer', 'ProvenanceJSONWriter', 'ProvenanceSQLWriter', 
 'ProvenanceXMLWriter', 'RadialPlacer', 'ReadRoutingTablesFromMachine', 'RedundantPacketCountReport',
 'RouterCollisionPotentialReport', 'RouterProvenanceGatherer', 'RouterReports', 'RouterSummaryReport',
-'RoutingCompressionChecker', 'RoutingSetup', 'RoutingTableFromMachineReport', 'RoutingTableLoader',
-'SDRAMOutgoingPartitionAllocator', 'SdramUsageReportPerChip',
+'RoutingCompressionChecker', 'RoutingTableFromMachineReport', 'RoutingTableLoader',
+'SdramUsageReportPerChip',
 'SpYNNakerConnectionHolderGenerator', 'SpYNNakerNeuronGraphNetworkSpecificationReport',
-'SpYNNakerSplitterPartitioner', 'SpallocAllocator', 'SpallocMaxMachineGenerator', 
-'SplitterPartitioner', 'SplitterReset', 'SpreaderPlacer', 'SpynnakerDataSpecificationWriter', 
+'SpallocAllocator', 'SpallocMaxMachineGenerator', 
+'SplitterPartitioner', 'SplitterReset' 
 'SpynnakerMachineBitFieldOrderedCoveringCompressor', 'SpynnakerMachineBitFieldPairRouterCompressor', 
-'SpynnakerSplitterSelector', 'SynapseExpander', 
-'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 'TagReport', 'TagsFromMachineReport', 'TagsLoader',
+'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 'TagReport', 'TagsFromMachineReport',
 'ValidRoutesChecker', 'VirtualMachineGenerator', 'WriteJsonMachine', 
 'WriteJsonMachineGraph', 'WriteJsonPartitionNKeysMap', 'WriteJsonPlacements', 'WriteJsonRoutingTables', 
-'ZonedRoutingInfoAllocator', 'comparisonOfRoutingTablesReport', 'compressedRoutingTableReports', 
+'comparisonOfRoutingTablesReport', 'compressedRoutingTableReports', 
 'routingInfoReports', 'unCompressedRoutingTableReports']
 
 
