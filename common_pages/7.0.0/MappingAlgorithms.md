@@ -191,7 +191,7 @@ LivePacketRecorderParametersToVertexMapping | dict(LivePacketGatherParameters, d
 LoadTimeMs | float | Duration of load for enegery calculations |
 MCGathererCoresToAllocate | int | number of extra Monitor cores (1) |
 Machine | Machine | Machine possibly without virtual chips added | [M]
-MachineAllocationController | MachineAllocationController | Spalloc |HBP control to create teh Machine |
+MachineAllocationController | MachineAllocationController | Spalloc |HBP control to create the Machine |
 MachineGraph | MachineGraph | graph after paritioning (if needed) | [M][I]
 MachinePartitionNKeysMap | DictBasedMachinePartitionNKeysMap | Maps partitions to the keys required | [M]
 MappingTimeMs | float | Duration of mapping for enegery calculations |
@@ -247,7 +247,7 @@ WarnMessages | |list(str) | Warnings from the Chip Io Buffer Extractor | [O]
 
 # <a name="Algorithms"></a> Algorithms currently supplied
 
-## Algorithms in the simplest run
+## Algorithms in the simplest PyNN run
 
 | Algorithm | Use | new Output
 |:---------|:--------|:--------|
@@ -261,7 +261,7 @@ LocalTDMABuilder | Configure Time Division Multiple Access | token TDMA
 SpreaderPlacer | works out which vertex to run on which core | Placements
 NerRouteTrafficAware | Dettermines where each route must end | RoutingTableByPartition
 BasicTagAllocator | Applies the IP tags and reverse IP tags| Tags
-ProcessPartitionConstraints | Moves Contraint | token PartitionConstraints
+ProcessPartitionConstraints | Copies contraints fro vertices to partitions | token PartitionConstraints
 ZonedRoutingInfoAllocator | Assigns keys to each partition | RoutingInfos
 BasicRoutingTableGenerator | Created uncompressed routingtables | RoutingTables token RoutingTablesGenerated.UnCompressedRoutingTablesGenerated
 LocateExecutableStartType | maps application types to cores | ExecutableTypes
@@ -285,14 +285,81 @@ CreateNotificationProtocol |creates a notification protocol | NotificationInterf
 ApplicationRunner | runs the application once | token ApplicationRun
 BufferExtractor | gets data off the cores | None
 
-## Deprecated Algorithm Names
+## Server algorithms
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
+SpallocAllocator | gets settings to generate a machine using spalloc |  IPAddress ect
+HBPAllocator | get settings to generate a machine using HBP portal |  IPAddress ect
+SpallocMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
+HBPMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
+
+## Provenance algorithms
+When cfg read_provenance_data = True
+
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
+PlacementsProvenanceGatherer | retrieve provenance from the placements | PlacementsProvenanceItems| 
+RouterProvenanceGatherer | Get provenace from the routers| RouterProvenanceItems
+ProfileDataGatherer | Writes vertex provenace data to files | None
+GraphProvenanceGatherer | runs get_local_provenance_data| GraphProvenanceItem
+
+## Report Algorithms
+
+These algorithms are active by cfg settings.  
+If Mode = Debug all will be true else if reports_enabled = False all will be false else depends on the cfg files
+
+| Algorithm | cfg flag
+|:---------|:--------|:
+PreAllocateResourcesForChipPowerMonitor |write_energy_report
+InsertChipPowerMonitorsToGraphs | write_energy_report
+TagReport |write_tag_allocation_reports
+routingInfoReports | write_router_info_report
+RouterReports | write_router_reports
+RouterSummaryReport | write_router_summary_report
+BoardChipReport | write_board_chip_report
+PartitionerReport | write_partitioner_reports
+PlacerReportWithApplicationGraph | write_application_graph_placer_report
+PlacerReportWithoutApplicationGraph | write_machine_graph_placer_report
+WriteJsonMachine | write_json_machine
+WriteJsonMachineGraph | write_json_machine_graph
+WriteJsonPlacements | write_json_placements
+WriteJsonRoutingTables | write_json_routing_tables
+WriteJsonPartitionNKeysMa | write_json_partition_n_keys_map
+RouterCollisionPotentialReport | write_router_collision_potential_report
+NetworkSpecificationReport | write_network_specification_report
+MemoryMapOnHostReport | write_memory_map_report
+MemoryMapOnHostChipReport | write_memory_map_report
+unCompressedRoutingTableReports | write_routing_table_reports
+ReadRoutingTablesFromMachine | write_routing_tables_from_machine_reports
+compressedRoutingTableReports | write_routing_tables_from_machine_reports
+comparisonOfRoutingTablesReport | write_routing_tables_from_machine_reports
+CompressedRouterSummaryReport | write_routing_tables_from_machine_reports
+RoutingTableFromMachineReport | write_routing_tables_from_machine_reports
+BitFieldCompressorReport | write_bit_field_compressor_report
+TagsFromMachineReport | write_tag_allocation_reports
+ProvenanceXMLWriter | write_provenance_data and provenance_format="xml"
+ProvenanceJSONWriter | write_provenance_data and provenance_format="json"
+ProvenanceSQLWriter | write_provenance_data and provenance_format="sql"
+SdramUsageReportPerChip | write_sdram_usage_report_per_chip
+ChipIOBufExtractor | extract_iobuf
+FinaliseTimingData | write_energy_report
+ComputeEnergyUsed | write_energy_report
+EnergyProvenanceReporter | write_energy_report 
+ChipIOBufExtractor | extract_iobuf
+SpYNNakerNeuronGraphNetworkSpecificationReport | write_network_graph
+RedundantPacketCountRepor | write_redundant_packet_count_report
+
+## Removed previous deprecated Algorithm Names
+
 | Original | Current |
 |:---------|:--------|
-MachineBitFieldUnorderedRouterCompressor | MachineBitFieldOrderedCoveringCompressor |
-MundyOnChipRouterCompression | OrderedCoveringOnChipRouterCompression |
-MundyRouterCompressor | OrderedCoveringCompressor
-SpynnakerMachineBitFieldUnorderedRouterCompressor | SpynnakerMachineBitFieldOrderedCoveringCompressor
-UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression
+| MachineBitFieldUnorderedRouterCompressor | MachineBitFieldOrderedCoveringCompressor |
+| MundyOnChipRouterCompression | OrderedCoveringOnChipRouterCompression |
+| MundyRouterCompressor | OrderedCoveringCompressor |
+| SpynnakerMachineBitFieldUnorderedRouterCompressor | SpynnakerMachineBitFieldOrderedCoveringCompressor
+| UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression |
+
+
 
 ## TODO 
 'ApplicationFinisher', 'BasicDijkstraRouting', 'BasicRouteMerger', 
@@ -305,7 +372,7 @@ UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression
 'FinaliseTimingData', 'FindApplicationChipsUsed'
 'FixedRouteFromMachineReport', 'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
 'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
-'GraphMeasurer', 'GraphProvenanceGatherer', 'HBPAllocator', 'HBPMaxMachineGenerator', 
+'GraphMeasurer', 
 'HostBasedBitFieldRouterCompressor', 
 'InsertChipPowerMonitorsToGraphs', 
 'InsertEdgesToExtraMonitorFunctionality', 'InsertEdgesToLivePacketGatherers', 
@@ -316,17 +383,16 @@ UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression
 'MemoryMapOnHostReport', 'NerRoute', 
 'NetworkSpecificationReport', 'OneToOnePlacer', 'OrderedCoveringCompressor', 
 'OrderedCoveringOnChipRouterCompression', 'PairCompressor',
-'PairUnorderedCompressor', 'PartitionerReport', 'PlacementsProvenanceGatherer', 
+'PairUnorderedCompressor', 'PartitionerReport', 
 'PlacerReportWithApplicationGraph', 'PlacerReportWithoutApplicationGraph', 
 'PreAllocateForBitFieldRouterCompressor', 'PreAllocateResourcesForChipPowerMonitor', 
 'PreAllocateResourcesForExtraMonitorSupport', 'PreAllocateResourcesForLivePacketGatherers', 
-'ProfileDataGatherer', 'ProvenanceJSONWriter', 'ProvenanceSQLWriter', 
+ 'ProvenanceJSONWriter', 'ProvenanceSQLWriter', 
 'ProvenanceXMLWriter', 'RadialPlacer', 'ReadRoutingTablesFromMachine', 'RedundantPacketCountReport',
-'RouterCollisionPotentialReport', 'RouterProvenanceGatherer', 'RouterReports', 'RouterSummaryReport',
+'RouterCollisionPotentialReport', 'RouterReports', 'RouterSummaryReport',
 'RoutingCompressionChecker', 'RoutingTableFromMachineReport', 'RoutingTableLoader',
 'SdramUsageReportPerChip',
 'SpYNNakerConnectionHolderGenerator', 'SpYNNakerNeuronGraphNetworkSpecificationReport',
-'SpallocAllocator', 'SpallocMaxMachineGenerator', 
 'SplitterPartitioner', 'SplitterReset' 
 'SpynnakerMachineBitFieldOrderedCoveringCompressor', 'SpynnakerMachineBitFieldPairRouterCompressor', 
 'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 'TagReport', 'TagsFromMachineReport',
