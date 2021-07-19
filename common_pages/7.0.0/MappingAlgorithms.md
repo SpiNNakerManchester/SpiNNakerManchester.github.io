@@ -290,8 +290,18 @@ BufferExtractor | gets data off the cores | None
 |:---------|:--------|:--------|
 SpallocAllocator | gets settings to generate a machine using spalloc |  IPAddress ect
 HBPAllocator | get settings to generate a machine using HBP portal |  IPAddress ect
+
 SpallocMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
 HBPMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
+VirtualMachineGenerator | builds a machine based on cfg settings | Machine
+
+## Multi Run Algorithms
+These algorithms are only run for scripts with multiple runs
+
+| Algorithm | Use | Output
+|:---------|:--------|:--------|
+ChipIOBufClearer | clears previous run from the io buff |  token ClearedIOBuf
+SplitterReset | Resets Splitters before second partitioning | token SplitterObjectsAllocated.RESET
 
 ## Provenance algorithms
 When cfg read_provenance_data = True
@@ -360,6 +370,12 @@ WriteJsonPartitionNKeysMap | write_json_partition_n_keys_map | json | JsonPartit
 WriteJsonPlacements | write_json_placements | json | JsonPlacementsPath
 WriteJsonRoutingTables | write_json_routing_tables | json | JsonRoutingTablesPath
 
+## Other alogirhtms
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
+ApplicationFinisher | added by stop | None
+
+
 ## Removed previous deprecated Algorithm Names
 
 | Original | Current |
@@ -373,16 +389,17 @@ WriteJsonRoutingTables | write_json_routing_tables | json | JsonRoutingTablesPat
 
 
 ## TODO 
-'ApplicationFinisher', 'BasicDijkstraRouting', 'BasicRouteMerger', 
+
+
+, 'BasicDijkstraRouting', 'BasicRouteMerger', 
 'BasicSplitterSelector', 
-'ChipIOBufClearer', 'ChipProvenanceUpdater', 
+'', 'ChipProvenanceUpdater', 
 'ConnectiveBasedPlacer', 'DSGRegionReloader', 
 'FindApplicationChipsUsed'
 'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
 'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
 'GraphMeasurer', 
-'HostBasedBitFieldRouterCompressor', 
-'InsertEdgesToExtraMonitorFunctionality', 'InsertEdgesToLivePacketGatherers', 
+'HostBasedBitFieldRouterCompressor', 'InsertEdgesToLivePacketGatherers', 
 'InsertLivePacketGatherersToGraphs', 'KeyConstraintAdder', 
 'MachineBitFieldOrderedCoveringCompressor', 'MachineBitFieldPairRouterCompressor', 
 'MallocBasedRouteMerger', 'MallocBasedRoutingInfoAllocator', 'MemoryMapOnHostChipReport', 
@@ -399,7 +416,7 @@ WriteJsonRoutingTables | write_json_routing_tables | json | JsonRoutingTablesPat
 'SplitterPartitioner', 'SplitterReset' 
 'SpynnakerMachineBitFieldOrderedCoveringCompressor', 'SpynnakerMachineBitFieldPairRouterCompressor', 
 'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 
-'ValidRoutesChecker', 'VirtualMachineGenerator', 
+'ValidRoutesChecker',
  
 
 # BEYOND THIS POINT THIS DOCUMENT IS OUT OF DATE!
