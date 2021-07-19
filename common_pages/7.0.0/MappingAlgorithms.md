@@ -296,58 +296,69 @@ HBPMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachi
 ## Provenance algorithms
 When cfg read_provenance_data = True
 
-| Algorithm | Use | new Output
+| Algorithm | Use | Output
 |:---------|:--------|:--------|
 PlacementsProvenanceGatherer | retrieve provenance from the placements | PlacementsProvenanceItems| 
 RouterProvenanceGatherer | Get provenace from the routers| RouterProvenanceItems
 ProfileDataGatherer | Writes vertex provenace data to files | None
 GraphProvenanceGatherer | runs get_local_provenance_data| GraphProvenanceItem
 
+## Extra Monitor algorithms
+
+When enable_advanced_monitor_support = True. (Some are also use by enable_reinjection = True but we recommend using these two options in pairs)
+
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
+PreAllocateResourcesForExtraMonitorSupport | reserve space for extra vertices | token GeneratedPreAllocatedResources.ExtraMonitor
+InsertExtraMonitorVerticesToGraphs | Adds extra Vertices| VertexToEthernetConnectedChipMapping ExtraMonitorVertices ExtraMonitorToChipMapping
+InsertEdgesToExtraMonitorFunctionality | Adds edges for the vetices jsut added | None!
+SystemMulticastRoutingGenerator | create routes to the extra vertices | DataInMulticastRoutingTables DataInMulticastKeyToChipMap SystemMulticastRouterTimeoutKeys
+FixedRouteRouter | create fixed routes | FixedRoutes
+LoadFixedRoutes | loads fixed coures to chips |token DataLoaded.FixedRoutesLoaded
+
+
+
 ## Report Algorithms
 
 These algorithms are active by cfg settings.  
 If Mode = Debug all will be true else if reports_enabled = False all will be false else depends on the cfg files
 
-| Algorithm | cfg flag
-|:---------|:--------|:
-PreAllocateResourcesForChipPowerMonitor |write_energy_report
-InsertChipPowerMonitorsToGraphs | write_energy_report
-TagReport |write_tag_allocation_reports
-routingInfoReports | write_router_info_report
+| Algorithm | cfg flag | File |output
+|:---------|:--------|:--------|:--------|
+BitFieldCompressorReport | write_bit_field_compressor_report | report | BitFieldSummary
+BoardChipReport | write_board_chip_report | report 
+ChipIOBufExtractor | extract_iobuf | iobuf | ErrorMessages WarnMessages token ReadIOBuf
+comparisonOfRoutingTablesReport | write_routing_tables_from_machine_reports | report |
+CompressedRouterSummaryReport | write_routing_tables_from_machine_reports | report | CompressedSummary
+compressedRoutingTableReports | write_routing_tables_from_machine_reports | report |
+ComputeEnergyUsed | write_energy_report | None | PowerUsed
+EnergyProvenanceReporter | write_energy_report | report | PowerProvenanceItems
+FinaliseTimingData | write_energy_report | None | MappingTimeMs ...
+FixedRouteFromMachineReport | write_fixed_route_report | report | 
+InsertChipPowerMonitorsToGraphs | write_energy_report | None | NONE!
+MemoryMapOnHostReport | write_memory_map_report |report
+NetworkSpecificationReport | write_network_specification_report | report
+PartitionerReport | write_partitioner_reports | report
+PlacerReportWithApplicationGraph | write_application_graph_placer_report | report
+PlacerReportWithoutApplicationGraph | write_machine_graph_placer_report | report
+PreAllocateResourcesForChipPowerMonitor |write_energy_report | none | token GeneratedPreAllocatedResources.EnergyMonitor
+ReadRoutingTablesFromMachine | write_routing_tables_from_machine_reports | none | CompressedRoutingTables
+RedundantPacketCountReport | write_redundant_packet_count_report | report | 
+RouterCollisionPotentialReport | write_router_collision_potential_report | report
 RouterReports | write_router_reports
-RouterSummaryReport | write_router_summary_report
-BoardChipReport | write_board_chip_report
-PartitionerReport | write_partitioner_reports
-PlacerReportWithApplicationGraph | write_application_graph_placer_report
-PlacerReportWithoutApplicationGraph | write_machine_graph_placer_report
-WriteJsonMachine | write_json_machine
-WriteJsonMachineGraph | write_json_machine_graph
-WriteJsonPlacements | write_json_placements
-WriteJsonRoutingTables | write_json_routing_tables
-WriteJsonPartitionNKeysMa | write_json_partition_n_keys_map
-RouterCollisionPotentialReport | write_router_collision_potential_report
-NetworkSpecificationReport | write_network_specification_report
-MemoryMapOnHostReport | write_memory_map_report
-MemoryMapOnHostChipReport | write_memory_map_report
-unCompressedRoutingTableReports | write_routing_table_reports
-ReadRoutingTablesFromMachine | write_routing_tables_from_machine_reports
-compressedRoutingTableReports | write_routing_tables_from_machine_reports
-comparisonOfRoutingTablesReport | write_routing_tables_from_machine_reports
-CompressedRouterSummaryReport | write_routing_tables_from_machine_reports
-RoutingTableFromMachineReport | write_routing_tables_from_machine_reports
-BitFieldCompressorReport | write_bit_field_compressor_report
-TagsFromMachineReport | write_tag_allocation_reports
-ProvenanceXMLWriter | write_provenance_data and provenance_format="xml"
-ProvenanceJSONWriter | write_provenance_data and provenance_format="json"
-ProvenanceSQLWriter | write_provenance_data and provenance_format="sql"
-SdramUsageReportPerChip | write_sdram_usage_report_per_chip
-ChipIOBufExtractor | extract_iobuf
-FinaliseTimingData | write_energy_report
-ComputeEnergyUsed | write_energy_report
-EnergyProvenanceReporter | write_energy_report 
-ChipIOBufExtractor | extract_iobuf
-SpYNNakerNeuronGraphNetworkSpecificationReport | write_network_graph
-RedundantPacketCountRepor | write_redundant_packet_count_report
+RouterSummaryReport | write_router_summary_report | report | UnCompressedSummary
+routingInfoReports | write_router_info_report | report |
+RoutingTableFromMachineReport | write_routing_tables_from_machine_reports | report
+SdramUsageReportPerChip | write_sdram_usage_report_per_chip | report | 
+SpYNNakerNeuronGraphNetworkSpecificationReport | write_network_graph | report
+TagsFromMachineReport | write_tag_allocation_reports | report |
+TagReport |write_tag_allocation_reports | report | 
+unCompressedRoutingTableReports | write_routing_table_reports | report |
+WriteJsonMachine | write_json_machine | json | JsonMachineGraphPath
+WriteJsonMachineGraph | write_json_machine_graph | json | JsonMachineGraphPath
+WriteJsonPartitionNKeysMap | write_json_partition_n_keys_map | json | JsonPartitionNKeysMap
+WriteJsonPlacements | write_json_placements | json | JsonPlacementsPath
+WriteJsonRoutingTables | write_json_routing_tables | json | JsonRoutingTablesPath
 
 ## Removed previous deprecated Algorithm Names
 
@@ -364,42 +375,32 @@ RedundantPacketCountRepor | write_redundant_packet_count_report
 ## TODO 
 'ApplicationFinisher', 'BasicDijkstraRouting', 'BasicRouteMerger', 
 'BasicSplitterSelector', 
-'BitFieldCompressorReport', 'BoardChipReport', 'BufferExtractor', 
-'ChipIOBufClearer', 'ChipIOBufExtractor', 'ChipProvenanceUpdater', 
-'CompressedRouterSummaryReport', 'ComputeEnergyUsed', 
+'ChipIOBufClearer', 'ChipProvenanceUpdater', 
 'ConnectiveBasedPlacer', 'DSGRegionReloader', 
- 'EnergyProvenanceReporter',
-'FinaliseTimingData', 'FindApplicationChipsUsed'
-'FixedRouteFromMachineReport', 'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
+'FindApplicationChipsUsed'
+'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
 'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
 'GraphMeasurer', 
 'HostBasedBitFieldRouterCompressor', 
-'InsertChipPowerMonitorsToGraphs', 
 'InsertEdgesToExtraMonitorFunctionality', 'InsertEdgesToLivePacketGatherers', 
-'InsertExtraMonitorVerticesToGraphs', 'InsertLivePacketGatherersToGraphs', 'KeyConstraintAdder', 
-'LoadFixedRoutes', 
+'InsertLivePacketGatherersToGraphs', 'KeyConstraintAdder', 
 'MachineBitFieldOrderedCoveringCompressor', 'MachineBitFieldPairRouterCompressor', 
 'MallocBasedRouteMerger', 'MallocBasedRoutingInfoAllocator', 'MemoryMapOnHostChipReport', 
-'MemoryMapOnHostReport', 'NerRoute', 
-'NetworkSpecificationReport', 'OneToOnePlacer', 'OrderedCoveringCompressor', 
+'NerRoute', 
+'OneToOnePlacer', 'OrderedCoveringCompressor', 
 'OrderedCoveringOnChipRouterCompression', 'PairCompressor',
-'PairUnorderedCompressor', 'PartitionerReport', 
-'PlacerReportWithApplicationGraph', 'PlacerReportWithoutApplicationGraph', 
-'PreAllocateForBitFieldRouterCompressor', 'PreAllocateResourcesForChipPowerMonitor', 
-'PreAllocateResourcesForExtraMonitorSupport', 'PreAllocateResourcesForLivePacketGatherers', 
- 'ProvenanceJSONWriter', 'ProvenanceSQLWriter', 
-'ProvenanceXMLWriter', 'RadialPlacer', 'ReadRoutingTablesFromMachine', 'RedundantPacketCountReport',
-'RouterCollisionPotentialReport', 'RouterReports', 'RouterSummaryReport',
-'RoutingCompressionChecker', 'RoutingTableFromMachineReport', 'RoutingTableLoader',
-'SdramUsageReportPerChip',
-'SpYNNakerConnectionHolderGenerator', 'SpYNNakerNeuronGraphNetworkSpecificationReport',
+'PairUnorderedCompressor',  
+'PreAllocateForBitFieldRouterCompressor',
+ 'PreAllocateResourcesForLivePacketGatherers', 
+ RadialPlacer', 
+'RouterReports'
+'RoutingCompressionChecker', 'RoutingTableLoader',
+'SpYNNakerConnectionHolderGenerator',
 'SplitterPartitioner', 'SplitterReset' 
 'SpynnakerMachineBitFieldOrderedCoveringCompressor', 'SpynnakerMachineBitFieldPairRouterCompressor', 
-'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 'TagReport', 'TagsFromMachineReport',
-'ValidRoutesChecker', 'VirtualMachineGenerator', 'WriteJsonMachine', 
-'WriteJsonMachineGraph', 'WriteJsonPartitionNKeysMap', 'WriteJsonPlacements', 'WriteJsonRoutingTables', 
-'comparisonOfRoutingTablesReport', 'compressedRoutingTableReports', 
-'routingInfoReports', 'unCompressedRoutingTableReports']
+'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 
+'ValidRoutesChecker', 'VirtualMachineGenerator', 
+ 
 
 # BEYOND THIS POINT THIS DOCUMENT IS OUT OF DATE!
 
