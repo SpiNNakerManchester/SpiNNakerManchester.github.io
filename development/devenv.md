@@ -66,13 +66,13 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
-| `TestBase` | https://github.com/SpiNNakerManchester/TestBase.get| Optional Python |
-| `IntegrationTests` | https://github.com/SpiNNakerManchester/IntegrationTests | Optional Jenkins |
+| `TestBase` | https://github.com/SpiNNakerManchester/TestBase.git| Optional Python |
+| `IntegrationTests` | https://github.com/SpiNNakerManchester/IntegrationTests.git | Optional Jenkins |
 |`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
 
-# <a name="java"></a> Java Development kit
+# <a name="java"></a> Java Development kitgit save username and password
 
 A Java JDK will be required in the following conditions:
 
