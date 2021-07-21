@@ -285,15 +285,25 @@ CreateNotificationProtocol |creates a notification protocol | NotificationInterf
 ApplicationRunner | runs the application once | token ApplicationRun
 BufferExtractor | gets data off the cores | None
 
-## Server algorithms
+## Alternative/ Additional Machine algorithms
+These algorithms may be needed if not running on a local board 
+
 | Algorithm | Use | new Output
 |:---------|:--------|:--------|
-SpallocAllocator | gets settings to generate a machine using spalloc |  IPAddress ect
-HBPAllocator | get settings to generate a machine using HBP portal |  IPAddress ect
+SpallocAllocator | gets settings to generate a machine using spalloc | IPAddress ect
+HBPAllocator | get settings to generate a machine using HBP portal | IPAddress ect
 
 SpallocMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
 HBPMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
 VirtualMachineGenerator | builds a machine based on cfg settings | Machine
+
+## None Spynnaker alternatives
+| Algorithm | replaces |
+|:---------|:--------
+BasicSplitterSelector | SpynnakerSplitterSelector
+SplitterPartitioner | SpYNNakerSplitterPartitioner
+GraphDataSpecificationWriter | SpynnakerDataSpecificationWriter
+GraphMeasurer | SpYNNakerSplitterPartitioner
 
 ## Multi Run Algorithms
 These algorithms are only run for scripts with multiple runs
@@ -302,6 +312,8 @@ These algorithms are only run for scripts with multiple runs
 |:---------|:--------|:--------|
 ChipIOBufClearer | clears previous run from the io buff |  token ClearedIOBuf
 SplitterReset | Resets Splitters before second partitioning | token SplitterObjectsAllocated.RESET
+DSGRegionReloader | reloads the dsg regions /token DataLoaded.DSGDataReLoaded 
+
 
 ## Provenance algorithms
 When cfg read_provenance_data = True
@@ -326,6 +338,75 @@ SystemMulticastRoutingGenerator | create routes to the extra vertices | DataInMu
 FixedRouteRouter | create fixed routes | FixedRoutes
 LoadFixedRoutes | loads fixed coures to chips |token DataLoaded.FixedRoutesLoaded
 
+# Live Packet Vertices
+When live output is used these extra algorithms are needed.
+
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
+PreAllocateResourcesForLivePacketGatherers | reserve space for extra vertices | token GeneratedPreAllocatedResources.LivePacketGatherer
+InsertLivePacketGatherersToGraphs | Adds extra Vertices | LivePacketRecorderParametersToVertexMapping
+
+## Compressors Algorithms
+There are various alternatives router compressors.
+
+Algorithm | On cores | bitfield  | method | rerun expander | tested
+|:---------|:--------|:--------|:--------|:--------|:--------|
+HostBasedBitFieldRouterCompressor | no | yes | pair | na | yes
+MachineBitFieldOrderedCoveringCompressor | yes | yes | mundy | no | NO!
+MachineBitFieldPairRouterCompressor  | no | yes | pair | no | NO!
+OrderedCoveringCompressor | no | no | mundy | n/a | Yes
+OrderedCoveringOnChipRouterCompression | yes | no |mundy | n/a | Yes
+PairCompressor | no | no | pair | n/a | unit
+PairOnChipRouterCompression | yes | no | pair | n/a | Default
+PairUnorderedCompressor | no / no | pair no order | n/a | unit
+SpynnakerMachineBitFieldOrderedCoveringCompressor |yes | yes | mundy | yes | Yes
+SpynnakerMachineBitFieldPairRouterCompressor | yes| yes | pair | yes | Yes
+
+Many run on the machine/cores and load and compress the tables. 
+The ones that do not will trigger the RoutingTableLoader.
+These are mainly kept for method comparison reasons the code is as similar between the c and pythn versions as possible.
+
+The ordered covering ones use the method delevoped by Mundy as close as possible without using Rig objects.
+
+Some will first split the routes up by bitfields.
+The compressor code that then runs shared with the none bitfield version.  
+
+The "Spynnaker" ones are the same compressor as the none spynnaker ones but they additionally rerun the synapse expander.
+
+| Algorithm | Use | new Output
+|:---------|:--------|:--------|
+RoutingTableLoader | Load precompressed routing tables | token DataLoaded.MulticastRoutesLoaded
+
+## Placer algorithms
+There are several alternative compressor algorithms.
+
+All do constrainded vertices first. 
+Some then look for one to one connected ones and place these on the same chip.
+Alternatively they look for vetices with the mosrt conections and place these on the same chip.
+The rest of the vertices are placed in graph order
+
+The radial ones fill the cores closest to the boot chip, with speader places the vertices equally between all cores.
+
+| Algorithm |  method  | radial | Used by
+|:---------|:--------|:--------|:---------|
+ConnectiveBasedPlacer | by connectivity  | yes| unittest
+OneToOnePlacer | 1 to 1 first | yes | Intergration
+RadialPlacer | simple | yes | GFE 
+SpreaderPlacer | 1 to 1 first | no | Spynnaker
+
+## Routing Info allocators
+
+| Algorithm |  method  |  Used by
+|:---------|:--------|:----------|
+GlobalZonedRoutingInfoAllocator | different part of the key for different zones | unittest
+MallocBasedRoutingInfoAllocator | Allocate as compact as possible | GFE
+ZonedRoutingInfoAllocator | flexible different parts | Spy
+
+## Routing Algorithms 
+
+BasicDijkstraRouting | Dijkstra shortest path | unittest
+NerRoute | Reuse part of other routes where possible| GFE 
+NerRouteTrafficAware | Like Ner but try to avoid heavy used routes | Spy
 
 
 ## Report Algorithms
@@ -346,6 +427,7 @@ EnergyProvenanceReporter | write_energy_report | report | PowerProvenanceItems
 FinaliseTimingData | write_energy_report | None | MappingTimeMs ...
 FixedRouteFromMachineReport | write_fixed_route_report | report | 
 InsertChipPowerMonitorsToGraphs | write_energy_report | None | NONE!
+MemoryMapOnHostChipReport  | write_memory_map_report |report
 MemoryMapOnHostReport | write_memory_map_report |report
 NetworkSpecificationReport | write_network_specification_report | report
 PartitionerReport | write_partitioner_reports | report
@@ -370,10 +452,14 @@ WriteJsonPartitionNKeysMap | write_json_partition_n_keys_map | json | JsonPartit
 WriteJsonPlacements | write_json_placements | json | JsonPlacementsPath
 WriteJsonRoutingTables | write_json_routing_tables | json | JsonRoutingTablesPath
 
+
 ## Other alogirhtms
-| Algorithm | Use | new Output
-|:---------|:--------|:--------|
-ApplicationFinisher | added by stop | None
+
+| Algorithm | Use | new Output | tested
+|:---------|:--------|:--------|:--------|
+ApplicationFinisher | added by stop | None | No
+KeyConstraintAdder | test_master_pop | None | ONLY
+
 
 
 ## Removed previous deprecated Algorithm Names
@@ -387,36 +473,15 @@ ApplicationFinisher | added by stop | None
 | UnorderedOnChipRouterCompression | OrderedCoveringOnChipRouterCompression |
 
 
-
 ## TODO 
-
-
-, 'BasicDijkstraRouting', 'BasicRouteMerger', 
-'BasicSplitterSelector', 
-'', 'ChipProvenanceUpdater', 
-'ConnectiveBasedPlacer', 'DSGRegionReloader', 
-'FindApplicationChipsUsed'
-'FixedRouteRouter', 'GlobalZonedRoutingInfoAllocator', 
-'GraphDataSpecificationWriter', 'GraphEdgeWeightUpdater', 
-'GraphMeasurer', 
-'HostBasedBitFieldRouterCompressor', 'InsertEdgesToLivePacketGatherers', 
-'InsertLivePacketGatherersToGraphs', 'KeyConstraintAdder', 
-'MachineBitFieldOrderedCoveringCompressor', 'MachineBitFieldPairRouterCompressor', 
-'MallocBasedRouteMerger', 'MallocBasedRoutingInfoAllocator', 'MemoryMapOnHostChipReport', 
-'NerRoute', 
-'OneToOnePlacer', 'OrderedCoveringCompressor', 
-'OrderedCoveringOnChipRouterCompression', 'PairCompressor',
-'PairUnorderedCompressor',  
-'PreAllocateForBitFieldRouterCompressor',
- 'PreAllocateResourcesForLivePacketGatherers', 
- RadialPlacer', 
-'RouterReports'
-'RoutingCompressionChecker', 'RoutingTableLoader',
-'SpYNNakerConnectionHolderGenerator',
-'SplitterPartitioner', 'SplitterReset' 
-'SpynnakerMachineBitFieldOrderedCoveringCompressor', 'SpynnakerMachineBitFieldPairRouterCompressor', 
-'SynapticMatrixReport', 'SystemMulticastRoutingGenerator', 
-'ValidRoutesChecker',
+| Algorithm | Difference | new Output | tested
+|:---------|:--------|:--------|:--------|
+FindApplicationChipsUsed || NChipsUsed ... | NO!
+PreAllocateForBitFieldRouterCompressor | | PreAllocatedResources token GeneratedPreAllocatedResources.BitFieldRouterCompressor | No
+RoutingCompressionChecker | | None | NO!
+SpYNNakerConnectionHolderGenerator | | ConnectionHolders | NO!
+SynapticMatrixReport | | None | Broken
+ValidRoutesChecker | | None | No
  
 
 # BEYOND THIS POINT THIS DOCUMENT IS OUT OF DATE!
