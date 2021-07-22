@@ -297,7 +297,8 @@ HBPMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachi
 VirtualMachineGenerator | builds a machine based on cfg settings | Machine
 
 ## None Spynnaker alternatives
-| Algorithm | replaces |
+
+| Algorithm | replaces 
 |:---------|:--------|
 BasicSplitterSelector | SpynnakerSplitterSelector
 SplitterPartitioner | SpYNNakerSplitterPartitioner
@@ -475,6 +476,7 @@ KeyConstraintAdder | test_master_pop | None | Test Aglorithm
 
 
 ## TODO 
+
 | Algorithm |  new Output | Situation
 |:---------|:--------|:--------|
 FindApplicationChipsUsed | NChipsUsed ... | No use found
