@@ -292,14 +292,13 @@ These algorithms may be needed if not running on a local board
 |:---------|:--------|:--------|
 SpallocAllocator | gets settings to generate a machine using spalloc | IPAddress ect
 HBPAllocator | get settings to generate a machine using HBP portal | IPAddress ect
-
 SpallocMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
 HBPMaxMachineGenerator | Get a temproary machine for paritioning  | VirtualMachine
 VirtualMachineGenerator | builds a machine based on cfg settings | Machine
 
 ## None Spynnaker alternatives
 | Algorithm | replaces |
-|:---------|:--------
+|:---------|:--------|
 BasicSplitterSelector | SpynnakerSplitterSelector
 SplitterPartitioner | SpYNNakerSplitterPartitioner
 GraphDataSpecificationWriter | SpynnakerDataSpecificationWriter
@@ -358,7 +357,7 @@ OrderedCoveringCompressor | no | no | mundy | n/a | Yes
 OrderedCoveringOnChipRouterCompression | yes | no |mundy | n/a | Yes
 PairCompressor | no | no | pair | n/a | unit
 PairOnChipRouterCompression | yes | no | pair | n/a | Default
-PairUnorderedCompressor | no / no | pair no order | n/a | unit
+PairUnorderedCompressor | no | no | pair no order | n/a | unit
 SpynnakerMachineBitFieldOrderedCoveringCompressor |yes | yes | mundy | yes | Yes
 SpynnakerMachineBitFieldPairRouterCompressor | yes| yes | pair | yes | Yes
 
@@ -404,6 +403,8 @@ ZonedRoutingInfoAllocator | flexible different parts | Spy
 
 ## Routing Algorithms 
 
+| Algorithm |  method  |  Used by
+|:---------|:--------|:----------|
 BasicDijkstraRouting | Dijkstra shortest path | unittest
 NerRoute | Reuse part of other routes where possible| GFE 
 NerRouteTrafficAware | Like Ner but try to avoid heavy used routes | Spy
@@ -437,7 +438,7 @@ PreAllocateResourcesForChipPowerMonitor |write_energy_report | none | token Gene
 ReadRoutingTablesFromMachine | write_routing_tables_from_machine_reports | none | CompressedRoutingTables
 RedundantPacketCountReport | write_redundant_packet_count_report | report | 
 RouterCollisionPotentialReport | write_router_collision_potential_report | report
-RouterReports | write_router_reports
+RouterReports | write_router_reports | report
 RouterSummaryReport | write_router_summary_report | report | UnCompressedSummary
 routingInfoReports | write_router_info_report | report |
 RoutingTableFromMachineReport | write_routing_tables_from_machine_reports | report
@@ -458,7 +459,7 @@ WriteJsonRoutingTables | write_json_routing_tables | json | JsonRoutingTablesPat
 | Algorithm | Use | new Output | tested
 |:---------|:--------|:--------|:--------|
 ApplicationFinisher | added by stop | None | No
-KeyConstraintAdder | test_master_pop | None | ONLY
+KeyConstraintAdder | test_master_pop | None | Test Aglorithm
 
 
 
@@ -474,14 +475,14 @@ KeyConstraintAdder | test_master_pop | None | ONLY
 
 
 ## TODO 
-| Algorithm | Difference | new Output | tested
-|:---------|:--------|:--------|:--------|
-FindApplicationChipsUsed || NChipsUsed ... | NO!
-PreAllocateForBitFieldRouterCompressor | | PreAllocatedResources token GeneratedPreAllocatedResources.BitFieldRouterCompressor | No
-RoutingCompressionChecker | | None | NO!
-SpYNNakerConnectionHolderGenerator | | ConnectionHolders | NO!
-SynapticMatrixReport | | None | Broken
-ValidRoutesChecker | | None | No
+| Algorithm |  new Output | Situation
+|:---------|:--------|:--------|
+FindApplicationChipsUsed | NChipsUsed ... | No use found
+PreAllocateForBitFieldRouterCompressor | PreAllocatedResources token GeneratedPreAllocatedResources.BitFieldRouterCompressor | No use found
+RoutingCompressionChecker | None | No use found
+SpYNNakerConnectionHolderGenerator | ConnectionHolders | No use found
+SynapticMatrixReport | None | Broken
+ValidRoutesChecker | None | No use found
  
 
 # BEYOND THIS POINT THIS DOCUMENT IS OUT OF DATE!
