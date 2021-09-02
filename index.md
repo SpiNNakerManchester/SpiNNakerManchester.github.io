@@ -11,6 +11,7 @@ If you have any issues with using SpiNNaker machines, please join the [SpiNNaker
 To use the _current release_ of the software:
 
 * [Running simulations using SpiNNaker Jupyter Notebooks](/latest/jupyter.html)
+* [Running simulations through the EBRAINS collaboratory](/latest/ebrains_portal.html)
 * [Running simulations through the Human Brain Project Portal](/latest/hbp_portal.html)
 * [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v6.0** front end interface](/latest/spynnaker.html)
 * [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v6.0** front end interface](/latest/gfe.html)
