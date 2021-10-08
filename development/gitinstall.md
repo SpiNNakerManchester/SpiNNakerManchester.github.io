@@ -16,7 +16,7 @@ Next, run the install script:
 
     bash SupportScripts/install.sh 8 -y
 
-Make sure you have installed the [Python requirements](devenv.html#PythonRequirements), then run the setup script:
+Make sure you have installed the [Python requirements](devenv6.0.html#PythonRequirements), then run the setup script:
 
     bash SupportScripts/setup.sh
 
