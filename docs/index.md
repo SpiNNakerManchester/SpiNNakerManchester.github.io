@@ -39,6 +39,7 @@ This page contains links to various technical documents about SpiNNaker.
 * [SpiNNaker low-level software API](SpiNNapi_docV200.pdf)
 * [Updating BMP Firmware](bmp_note.txt)
 * [Managing Big SpiNNaker Machines](managing_big_SpiNNaker_machines.pdf)
+* [ybug - System Control Tool for SpiNNaker](ybug.pdf)
 
 # Software API Documents
 
