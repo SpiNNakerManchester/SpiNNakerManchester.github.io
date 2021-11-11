@@ -158,6 +158,9 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
  2. sub-mask = `255.255.255.0`
  3. default gateway = `0.0.0.0`
 
+
+Optional: See [Algorithms](/spynnaker/Algorithms.html) for how advanced users change change the algorithms used. 
+
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
 
