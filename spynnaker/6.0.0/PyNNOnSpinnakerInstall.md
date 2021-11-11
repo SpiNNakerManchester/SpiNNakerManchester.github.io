@@ -159,7 +159,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
  3. default gateway = `0.0.0.0`
 
 
-Optional: See [Algorithms](common_pages/Algorithms.html) for how advanced users change change the algorithms used. 
+Optional: See [Algorithms](/common_pages/Algorithms.html) for how advanced users change change the algorithms used. 
 
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
