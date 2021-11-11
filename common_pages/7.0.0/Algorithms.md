@@ -10,8 +10,8 @@ This page describes changes made since the 6.0.0 release.
 * [Mode](#Mode)
 * [Reports](#Reports)
 * [Mapping Stardard Usage](#Standard)
-* [Alternative] Running alternative algorithms
-* [Own] Running your own algorithms
+* [Running alternative algorithms] (#Alternative)
+* [Running your own algorithms] (#Own)
 
 # <a name="Configuration Files"></a> Configuration Files
 The system will read configuration files from various places.
