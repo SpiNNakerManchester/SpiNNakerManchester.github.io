@@ -90,17 +90,17 @@ Unless there is a known specific reason for running a none default algorithm you
 ## placer
 This controls on which board/ chip core each vertex is placed.
 
-### RadialPlacer
+#### RadialPlacer
 This is the simplest of the placers which allocates the chip as close as possible to the starting point,
 typically 0, 0
 
 All the other placers extend this one
 
-### OneToOnePlacer
+#### OneToOnePlacer
 This placer looks for vertices pairs of vertices where the first only sends to the second and the second only receives from the first.
 As far as possible these are then placed on the same Chip.
 
-### SpreaderPlacer
+#### SpreaderPlacer
 This placer attempts to distribute the vertices over as many Chips as possible.
 
 The affect is most noticable if the script requests more boards than it actaully neeeds.
@@ -110,14 +110,14 @@ The current version does not scale well on very large jobs so we recommend using
 ## info_allocator
 This controls which keys are assigned to which vertices.
 
-### ZonedRoutingInfoAllocator
+#### ZonedRoutingInfoAllocator
 This tries to allocate keys by Application vertex/ Population and in such a way that the compressor has the best chance of success.
 
 ## router
 This determins how the spikes and other messages are sent between vertices.
 Ie over which Chips the message passes.
 
-### NerRouteTrafficAware
+#### NerRouteTrafficAware
 This is a nearest neighbour router that takes what it knows about the trafic into consideration.
 
 ## compressor
@@ -144,19 +144,19 @@ However as they can get slow for large networks they are currently not used.
 4. Spynnaker
 For some compressors a specific PyNN version exists which makes use of things only found when using PyNN
 
-### PairOnChipRouterCompression
+#### PairOnChipRouterCompression
 
 An on chip compressor that uses the pair method, but does not take bitfields into consideration.
 The same algorithms work for PyNN and well as none PyNN scipts
 
-### OrderedCoveringOnChipRouterCompression
+#### OrderedCoveringOnChipRouterCompression
 
 An on chip compressor that uses the OrderedCovering method, but does not take bitfields into consideration.
 The same algorithms work for PyNN and well as none PyNN scripts
 
 Previously known by various names including the word Mundy
 
-### SpynnakerMachineBitFieldPairRouterCompressor
+#### SpynnakerMachineBitFieldPairRouterCompressor
 
 An on chip compressor that uses the Pair methods and takes bitfields into consideration.
 The same algorithms work for PyNN scripts
@@ -171,11 +171,11 @@ Only needed if testing compressors or later algorithms that need a compressed ro
 ## delay_support_adder
 This setting is only used for PyNN Scripts
 
-### DelaySupportAdder
+#### DelaySupportAdder
 
 Adds delay supoort vertices where required.
 
-### None
+#### None
 
 Disables the adding of delay support vertices.  
 Note if the receiving vertex/ Population can not handle the requested delay this will cause an exception.
