@@ -2,7 +2,7 @@
 title: Adding new mapping algorithms to the SpiNNaker tool-chain
 published: true
 ---
-This page is under review and may not be correct!
+This page only applies to version 6.0.0 and earlier and even then was very out of date!
 
 # Contents
 * [Usage](#Usage)
