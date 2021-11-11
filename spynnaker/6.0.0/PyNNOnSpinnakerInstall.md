@@ -121,6 +121,7 @@ Run this small script
     sim.end()
 
 Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that sPyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
+Warning some systems consider ".spynnaker.cfg" a hidden file.  
 
 ```
 [Machine]
