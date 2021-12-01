@@ -20,7 +20,7 @@ Make sure you have installed the [Python requirements](devenv6.0.html#PythonRequ
 
     bash SupportScripts/setup.sh
 
-Now you can build the C code
+Now you can build the C code.  Set up the [C environment variables](devenv6.0#cenvironment) appropriately for the location you just installed the repositories into, and then run the automatic make script:
 
     bash SupportScripts/automatic_make.sh
 
