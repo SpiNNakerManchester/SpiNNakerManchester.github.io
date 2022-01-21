@@ -6,7 +6,10 @@ This page details how to use some of the scripts in the [SupportScripts](https:/
 
 # Install
 
-It is recommended that this is done in a [virtual environment](/common_pages/5.0.0/VirtualEnv.html).
+Make sure you have installed the [Python requirements](/common_pages/6.0.0/PythonInstall.html),
+and the [C requirements](/common_pages/6.0.0/Compiler.html).
+
+It is recommended that the remaining steps are done in a [virtual environment](/common_pages/6.0.0/VirtualEnv.html).
 
 First, clone the SupportScripts repository:
 
@@ -16,11 +19,15 @@ Next, run the install script:
 
     bash SupportScripts/install.sh 8 -y
 
-Make sure you have installed the [Python requirements](devenv6.0.html#PythonRequirements), then run the setup script:
+Then run the setup script:
 
     bash SupportScripts/setup.sh
 
-Now you can build the C code.  Set up the [C environment variables](devenv6.0#cenvironment) appropriately for the location you just installed the repositories into, and then run the automatic make script:
+Then ensure that the PyNN SpiNNaker link is set up:
+
+    python -m spynnaker8.setup_pynn
+
+Now you can build the C code by running the automatic make script:
 
     bash SupportScripts/automatic_make.sh
 
