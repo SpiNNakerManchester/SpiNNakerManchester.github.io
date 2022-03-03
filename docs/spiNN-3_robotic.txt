@@ -1,0 +1,21 @@
+The connector J6 is pinned out as below -
+
+VCC3V3   2   1   nc
+VCC3V3   4   3   nc
+VCC3V3   6   5   nc
+VCC3V3   8   7   nc
+VCC5V0  10   9   TXP
+VCC5V0  12  11   TXN
+VCC5V0  14  13   nc
+nc      16  15   nc
+VSS     18  17   RXP
+VSS     20  19   RXN
+
+nc = not connected. Pin 1 is indicated by the 45 degree chamfer on the
+silkscreen of J6. Note the 'odd' layout of this connector. Pin 1 is
+at the top RHS, not the top LHS as is more usual. I don't know why!
+
+One thing to perhaps note is that the signals TXP,TXN,RXP,RXN are straight from
+the Ethernet PHY and not via any magnetics. These are not the same signals that
+appear on the output of the Ethernet RJ45 connector, J9 which go through magnetics
+contained within the RJ45.

@@ -31,6 +31,7 @@ This page contains links to various technical documents about SpiNNaker.
 * [Pushbot](push_bot/)
 * [SpiNN-5 FPGA SATA Links](spin5-links.pdf)
 * [Safe connection of external devices to SpiNN-5 boards](spiNN-5_fpgas.txt)
+* [SpiNN-3 J6 Robotic Connector](spiNN-3_robotic.txt)
 
 # Low-Level Software Documents
 
