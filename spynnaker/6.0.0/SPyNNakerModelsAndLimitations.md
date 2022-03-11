@@ -37,9 +37,9 @@ sPyNNaker currently supports two models for injecting spikes into a PyNN model:
 1. `SpikeSourceArray`: Input of a predefined set of spikes.  The spikes to be input can be changed between calls to run.
 1. `SpikeSourcePoisson`: Input of randomly generated spikes at a predefined mean rate generated from a Poisson distribution.
 
-Currently, only the `i_offset` parameter of the neural models can be used to inject current directly; there is no support for noisy or step-based current input.  Step-based current input can be achieved by updating `i_offset` between calls to `run()`.
+Currently, in the release versions and on the master github branch, only the `i_offset` parameter of the neural models can be used to inject current directly; there is no support here for noisy or step-based current input.  However, support for these inputs and also DC/AC input as [described in the PyNN documentation](http://neuralensemble.org/docs/PyNN/reference/electrodes.html) can be found on the current_sources branches of sPyNNaker and PyNN8Examples.  Step-based current input can also be achieved by updating `i_offset` between calls to `run()`.
 
-A third (non-standard PyNN) way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device (e.g., a robot). A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
+Another (non-standard PyNN) way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device (e.g., a robot). A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
 
 # Connectors
 
