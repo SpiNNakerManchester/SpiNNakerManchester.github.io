@@ -36,7 +36,7 @@ Note that versions 5.0 and 5.1, while supported, is _not recommended for new wor
 * [Running simulations through the Human Brain Project Portal](common_pages/5.0.0/how_to_use_spinnaker_HBP_portal_for_dummies.pdf)
 
 ### Version 4.0
-Note that version 4.0, while supported, is _not recommended for new work._
+Note that version 4.0 is no longer supported.
 
 * [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v4.0** (old version) front end interface](/spynnaker/4.0.0/index.html)
 * [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v4.0** (old version) front end interface](/graph_front_end/4.0.0/index.html)
