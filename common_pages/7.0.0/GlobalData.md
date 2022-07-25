@@ -203,7 +203,6 @@ Instead the following semantic sugar methods are directly available in the Views
 - get_n_vertices
 - iterate_partitions
 - get_n_partitions 
-- get_edges_ending_at_vertex
 - get_outgoing_edge_partitions_starting_at_vertex
 - get_edges
 - get_n_machine_vertices
