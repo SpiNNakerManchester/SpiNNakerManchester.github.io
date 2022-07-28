@@ -182,30 +182,31 @@ These are for internal (within Views and Writers only).
 
 If they are needed elsewhere they should be converted to normal methods.
 
-Data Renamed
-============
-(OriginalApplication/Machine)Graph
-----------------------------------
-As long term plans in other branches are to remove cloned graphs used during runtime,
-the methods that access the "Original" or user graphs no longer have the word Original in the name.
+Data Hidden
+===========
+Graphs
+------
+There is no longer any [MachineGraph](https://github.com/SpiNNakerManchester/PACMAN/pull/436).
 
-As long term plans in other branches are to remove the MachineGraph,
-the methods that access the Application graph no longer have the term "Application".
+There is now only a [single ApplicationGraph](https://github.com/SpiNNakerManchester/PACMAN/pull/449).
 
-These graph objects are not directly accessible. Instead use the iterate and get methods to
-access the graph's data and the add method to change the graph.
+This graph is directly created by the View so there is no need for anywhere else to create or clone a graph.
 
-Application/MachineGraph
-------------------------
-The cloned graphs that the Algorithms accessed are temporarily available through
-get_runtime_graph and get_runtime_machine_graph.
-As well as get_runtime_best_graph for methods that need a graph but don't mind which one.
+This graph is now a projected object within the View so all methods to obtain a graph object have been removed.
 
-These graphs remain directly accessible due to the long term plans to remove them,
-which would then mean the removal of these methods.
+Instead the following semantic sugar methods are directly available in the Views
 
-In the unlikely case that the work to remove the cloned graphs does not make it in,
-we reserve the right to replace the get_runtime_(machine)_graph methods with iterators and add methods.
+- add_vertex
+- add_edge
+- iterate_vertices
+- get_vertices_by_type
+- get_n_vertices
+- iterate_partitions
+- get_n_partitions 
+- get_outgoing_edge_partitions_starting_at_vertex
+- get_edges
+- get_n_machine_vertices
+- iterate_machine_vertices
 
 Placements
 ----------
@@ -230,6 +231,8 @@ removed as all use cases where better handled with the new
 iterate_placements_on_core and iterate_placements_with_vertex_type method.
 It can be reinstated if needed.
 
+Data Renamed
+============
 machine_time_step
 -----------------
 machine_time_step has been renamed simulation_time_step to highlight that it
