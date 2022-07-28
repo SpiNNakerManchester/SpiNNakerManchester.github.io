@@ -207,6 +207,29 @@ which would then mean the removal of these methods.
 In the unlikely case that the work to remove the cloned graphs does not make it in,
 we reserve the right to replace the get_runtime_(machine)_graph methods with iterators and add methods.
 
+Placements
+----------
+The Placements object is now protected by the views and no longer directly available.
+This protects it from any changes.
+Algorithm that add placements are passed in a Placements object to fill.
+
+Instead the following Placements methods are exposed by the Views.
+
+- iterate_placemements
+- iterate_placements_on_core(x, y)
+- iterate_placements_with_vertex_type(cls, x, y, vertex_type
+- get_n_placements 
+- get_placement_of_vertex
+- get_vertex_on_processor(cls, x, y, p)
+
+The remaining Placements methods where only used in Insert/Placer algorithms that are give a Placements object.
+They can/should be added to the View if useful.
+
+Note: Placements method is_processor_occupied(x, y, p) has been completely 
+removed as all use cases where better handled with the new 
+iterate_placements_on_core and iterate_placements_with_vertex_type method.
+It can be reinstated if needed.
+
 machine_time_step
 -----------------
 machine_time_step has been renamed simulation_time_step to highlight that it
