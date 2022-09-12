@@ -4,19 +4,8 @@ title: Using spif with sPyNNaker
 
 The spif interface is connected to an FPGA on SpiNNaker and allows high-bandwidth input from spiking retina devices.  It is assumed that it is connected to FPGA 0 via the J5 SATA connector on a 48-node board.  It is possible to connect multiple spif interfaces on a multi-board system; the ID of the Ethernet chip on the board that each interface is connected to must be known.  Note that the SpiNNaker board FPGAs may also need to be updated with the latest firmware for this to work.
 
-The SpiNNaker software current supports spif on the extdev_fpgas branches of the git repositories.  These can be used by following the instructions [here](gitinstall.html) and then switching the following branches to extdev_fpgas (e.g. ``cd <module>; git checkout extdev_fpgas``):
+The SpiNNaker software current supports spif on the master branches of the git repositories.  These can be used by following the instructions [here](gitinstall.html).
 
- - SpiNNMachine
- - PACMAN
- - SpiNNFrontEndCommon
- - sPyNNaker
- - JavaSpiNNaker (optional: only if you have use_java=True in your config file)
-
-Once the branches are on the correct version of the software run the following:
-
- - ``SupportScripts/automatic_make.sh``
- - ``mvn -f JavaSpiNNaker -DskipTests=True clean package``
-    
 Once the software is up-to-date, the spif board can be used with a retina device using the external device ``p.external_devices.SPIFRetinaDevice``, which has the following arguments:
 
     SPIFRetinaDevice(pipe, width, height, sub_width, sub_height,

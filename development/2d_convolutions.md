@@ -6,19 +6,8 @@ Populations in PyNN on SpiNNaker are typically 1-dimensional.  This can make han
 
 In addition to the better routing of spike packets, the software updates also include better handling of the convolution processing itself.  In particular, the core hold the kernel weights in local memory and applies them to the incoming data dynamically.  This avoids the need to transfer data from SDRAM, and so speeds up the processing significantly.
 
-The SpiNNaker software current supports 2D representations and convolutions on the extdev_fpgas branches of the git repositories.  These can be used by following the instructions [here](gitinstall.html) and then switching the following branches to extdev_fpgas (e.g. ``cd <module>; git checkout extdev_fpgas``):
+The SpiNNaker software current supports 2D representations and convolutions on the master branches of the git repositories.  These can be used by following the instructions [here](gitinstall.html).
 
- - SpiNNMachine
- - PACMAN
- - SpiNNFrontEndCommon
- - sPyNNaker
- - JavaSpiNNaker (optional: only if you have use_java=True in your config file)
-
-Once the branches are on the correct version of the software run the following:
-
- - ``SupportScripts/automatic_make.sh``
- - ``mvn -f JavaSpiNNaker -DskipTests=True clean package``
-    
 Once support is in place, 2D Populations can be used as in the following example:
     
     import spynnaker8 as p
