@@ -221,7 +221,7 @@ Instead the following Placements methods are exposed by the Views.
 - iterate_placements_with_vertex_type(cls, x, y, vertex_type
 - get_n_placements 
 - get_placement_of_vertex
-- get_vertex_on_processor(cls, x, y, p)
+- get_placement_on_processor(cls, x, y, p)
 
 The remaining Placements methods where only used in Insert/Placer algorithms that are give a Placements object.
 They can/should be added to the View if useful.
