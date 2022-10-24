@@ -6,7 +6,7 @@ Populations in PyNN on SpiNNaker are typically 1-dimensional.  This can make han
 
 In addition to the better routing of spike packets, the software updates also include better handling of the convolution processing itself.  In particular, the cores hold the kernel weights in local memory and apply them to the incoming data dynamically.  This avoids the need to transfer data from SDRAM, and so speeds up the processing significantly.
 
-The SpiNNaker software current supports 2D representations and convolutions on the master branches of the git repositories.  These can be used if you have a local SpiNNaker board from the command line by following the instructions [here](gitinstall.html), or by using the sPyNNakerGit kernel on Jupyter [here][https://spinn-20.cs.man.ac.uk].
+The SpiNNaker software current supports 2D representations and convolutions on the master branches of the git repositories.  These can be used if you have a local SpiNNaker board from the command line by following the instructions [here](gitinstall.html), or by using the sPyNNakerGit kernel on Jupyter [here](https://spinn-20.cs.man.ac.uk).
 
 Once support is in place, 2D Populations can be used as in the following example:
 
