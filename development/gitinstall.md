@@ -25,7 +25,7 @@ Then run the setup script:
 
 Then ensure that the PyNN SpiNNaker link is set up:
 
-    python -m spynnaker8.setup_pynn
+    python -m spynnaker.pyNN.setup_pynn
 
 Now you can build the C code by running the automatic make script:
 
