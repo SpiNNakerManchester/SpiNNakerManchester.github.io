@@ -6,9 +6,9 @@ layout: default
  * [Sixth SpiNNaker Workshop](sixth.html), Manchester, UK, 5th - 9th August 2016
  * [Seventh SpiNNaker Workshop](seventh.html), Manchester Conference Centre, Manchester, UK, 3rd - 6th October 2017
  * [Eighth SpiNNaker Workshop](eighth.html), School of Computer Science, Manchester, UK, 11th - 14th September 2018
+ * [Ninth SpiNNaker Workshop: From Virtual to Real Robotics using SpiNNaker](ninth.html), Manchester, UK, 9th - 13th September 2019.
 
 # Current Workshops
- * [Ninth SpiNNaker Workshop: From Virtual to Real Robotics using SpiNNaker](ninth.html), Manchester, UK, 9th - 13th September 2019.
 
 If you have any questions, or for information on future workshops, please contact:
 [simon.davidson@manchester.ac.uk](mailto:simon.davidson@manchester.ac.uk)
