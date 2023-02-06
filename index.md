@@ -25,7 +25,6 @@ To use the _last release_ of the software:
 * [Technical hardware and software documents](docs/)
 * [SpiNNaker workshops](workshops/index.html)
 * [Software development pages](development/index.html)
-* [Changes since version 6.0.0](/common_pages/6.0.0/changes.html)
 
 # Crediting
 * [Software License and how to credit us](/latest/LicenseAgreement.html)
