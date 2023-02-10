@@ -66,3 +66,5 @@ As of January 2023 the contributors included (names in alphabetical order of the
 * [Steve Temple](https://github.com/Steve-Temple)
 *  (https://github.com/tophensen)
 * Cameron Patterson
+* Thomas Nowotny
+* James Turner
