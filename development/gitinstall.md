@@ -27,6 +27,8 @@ Then ensure that the PyNN SpiNNaker link is set up:
 
     python -m spynnaker.pyNN.setup_pynn
 
+Make sure the [C environment variables](devenv6.0.html#cenvironment) are set correctly, particularly if you are in a new virtual environment and you had an older SpiNNaker software install with different values for the environment variables.
+
 Now you can build the C code by running the automatic make script:
 
     bash SupportScripts/automatic_make.sh
