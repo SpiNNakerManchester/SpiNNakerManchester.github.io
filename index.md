@@ -7,8 +7,11 @@ This page details the latest version of various software for the SpiNNaker Neuro
 ## Support
 If you have any issues with using SpiNNaker machines, please join the [SpiNNaker users group](https://groups.google.com/u/0/g/spinnakerusers) and ask for help there (please say who you are and who you are working with when applying to join to speed up the process).
 
+## Master (to become 7.0.0)
+To use the _lastest version_ of the software:
+
 ## Version 6.0
-To use the _current release_ of the software:
+To use the _last release_ of the software:
 
 * [Running simulations using SpiNNaker Jupyter Notebooks](/latest/jupyter.html)
 * [Running simulations through the EBRAINS collaboratory](/latest/ebrains_portal.html)
@@ -22,14 +25,13 @@ To use the _current release_ of the software:
 * [Technical hardware and software documents](docs/)
 * [SpiNNaker workshops](workshops/index.html)
 * [Software development pages](development/index.html)
-* [Changes since version 6.0.0](/common_pages/6.0.0/changes.html)
 
 # Crediting
-* [Software License and how to credit us](/common_pages/6.0.0/LicenseAgreement.html)
+* [Software License and how to credit us](/latest/LicenseAgreement.html)
 
 ## Previous Releases
 ### Versions 5.1 and 5.0
-Note that versions 5.0 and 5.1, while supported, is _not recommended for new work._
+Note that versions 5.0 and 5.1 are no longer supported.
 
 * [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v5.1** (old version) front end interface](/spynnaker/5.0.0/index.html)
 * [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v5.1** (old version) front end interface](/graph_front_end/5.0.0/index.html)
