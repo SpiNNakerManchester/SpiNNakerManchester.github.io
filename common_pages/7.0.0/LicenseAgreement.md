@@ -1,10 +1,12 @@
 ---
-title: License Agreement (older release) and list of contributors across all repositories
+title: License Agreement and list of contributors across all repositories
 ---
-This page describes an older version. 
-Please see [the latest version](/latest/LicenseAgreement.html) or [home page](/) 
+Version 6 of the software was released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html).
 
-The software is currently being released under the GPL version 3 license listed [here](http://www.gnu.org/copyleft/gpl.html).
+In Version 7 the main code base will be released under the Apache 2.0 license listed [here](https://www.apache.org/licenses/LICENSE-2.0).
+These will be the ones that users depend on.
+
+Research repositories, including a lot of the work done by our PhD students, which demonstrates the use of Spinnaker will remain under the GPL version 3 license.  
 
 # Citation
 
@@ -20,31 +22,40 @@ If you have made any modifications which you believe to be useful to the tool ch
 
 We request a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute any contributions and such derivative works.
 
+PRs to the Apache 2.0 license repositories will automatically be licensed as Apache 2.0.
+
 # Contributors
 
 For up to date information on Contributors see the graphs/contributors pages on each project (bearing in mind that some older code predates being transferred to Github). For example [SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors](https://github.com/SpiNNakerManchester/SpiNNakerManchester.github.io/graphs/contributors).
 
-As of September 2019 the contributors included (names in alphabetical order of their GitHub id):
+As of January 2023 the contributors included (names in alphabetical order of their GitHub id):
 
+* [Adam Perrett](https://github.com/adamgoodtime)
 * [Alan Stokes](https://github.com/alan-stokes)
 * [Alex Rast](https://github.com/AlexRast)
 * [Andrew Gait](https://github.com/andrewgait)
 * [Andrew Davison](https://github.com/apdavison)
 * [Andreas Stöckel](https://github.com/astoeckel)
+* [Garibaldi Pineda-Garcia](https://github.com/chanokin)
 * [Christian Y. Brenninkmeijer](https://github.com/Christian-B)
 * [Donal K. Fellows](https://github.com/dkfellows)
 * [David Lester](https://github.com/dr-david-lester)
+* [Felix Schneider](https://github.com/felix-schneider)
 * [Arthur Ceccotti](https://github.com/gmtuca)
 * [Michael Hopkins](https://github.com/hopper333)
 * [Basabdatta Sen Bhattacharya](https://github.com/iambasab)
 * [Joanna Moy](https://github.com/joannavioletmoy)
+* [Jens Egholm](https://github.com/Jegp)
+* [Jonas Fassbender](https://github.com/jofas)
 * [Luis A. Plana](https://github.com/lplana)
+* [Luca peres](https://github.com/lucaperes)
 * [Mantas Mikaitis](https://github.com/mmikaitis)
 * [Jonathan Heathcote](https://github.com/mossblaser)
 * [Andrew Mundy](https://github.com/mundya)
 * [James Knight](https://github.com/neworderofjamie)
 * [Oliver Rhodes](https://github.com/oliverrhodes)
 * [Petrut Antoniu Bogdan](https://github.com/pabogdan)
+* [Patrick Camilleri](https://github.com/patrickcamilleri)
 * [Paul Gafton](https://github.com/Paul92)
 * [Robert James](https://github.com/rjames91)
 * [Andrew Rowley](https://github.com/rowleya)
@@ -53,5 +64,7 @@ As of September 2019 the contributors included (names in alphabetical order of t
 * [Stephen Furber](https://github.com/sfurber)
 * [Simon Davidson](https://github.com/SimonDavidson)
 * [Steve Temple](https://github.com/Steve-Temple)
-* [Adam Perrett](https://github.com/such-a-git)
+*  (https://github.com/tophensen)
 * Cameron Patterson
+* Thomas Nowotny
+* James Turner
