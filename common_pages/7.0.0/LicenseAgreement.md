@@ -67,5 +67,4 @@ As of January 2023 the contributors included (names in alphabetical order of the
 *  (https://github.com/tophensen)
 * Cameron Patterson
 * Thomas Nowotny
-* Paul Solt
 * James Turner
