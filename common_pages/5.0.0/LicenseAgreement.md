@@ -1,5 +1,5 @@
 ---
-title: License Agreement and list of contributors across all repositories
+title: License Agreement (older release) and list of contributors across all repositories
 ---
 This page describes an older version. 
 Please see [the latest version](/latest/LicenseAgreement.html) or [home page](/) 
