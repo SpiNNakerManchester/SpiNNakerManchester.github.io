@@ -224,9 +224,11 @@ Installing the Python modules in developer mode allows you to use the modules fr
 
 For each of the python modules, go into the root directory of the module and run:
 
-    [sudo] python setup.py develop --no-deps [--user]
+    [sudo] pip install -e .[Test][--user]
 
-Where `sudo` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and `--user` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.  If you have installed Python 3 then make sure that the version of "python" is the correct one before continuing.
+Where `sudo` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and `--user` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.  
+
+[Test] including the square brackets is optional but will install the extra requirements to run unittests.
 
 This step can be performed for every Python repository you have — assuming you have put them all into the same location — by using the `setup.sh` or `setup_sudo.sh` scripts in the SupportScripts repository.
 
