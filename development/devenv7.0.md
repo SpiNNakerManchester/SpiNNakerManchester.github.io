@@ -1,11 +1,11 @@
 ---
-title: Setting up a Software Development Environment for SpiNNaker
+title: Setting up a Software Development Environment for SpiNNaker, v7.0
 ---
 
 # Installation
 
  1. [Install Python requirements](#PythonRequirements).
- 1. [Install the C development requirements](/common_pages/5.0.0/Compiler.html).
+ 1. [Install the C development requirements](/common_pages/6.0.0/Compiler.html).
  1. [Java](#java).
  1. [Install an IDE](#ide) — optional but recommended for ease of use.
  1. [Clone the git repositories](#git).
@@ -15,29 +15,28 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Set up the PyNN links](#PyNNInstall).
  1. [Configure the environment](#Configuration).
  1. [Run some examples](#Examples).
- 1. [Integration Test tools](integration.html)
+ 1. [Moving away from sPynnaker8](#sPyNNaker8).
+
 
 # <a name="PythonRequirements"></a> Python Requirements
-1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html); note that _we do not support any version of Python before 3.6._
-1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/5.0.0/VirtualEnv.html) to set up the dependencies.
+1. [Install the general platform requirements](/common_pages/6.0.0/PythonInstall.html)
+1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/6.0.0/VirtualEnv.html) to set up the dependencies.
 1. Install other general dependencies via pip:
 
-       pip install "numpy>=1.13,<1.9999" "scipy>=0.16.0" matplotlib
-       pip install "appdirs>=1.4.2,<2.0.0" "pylru>=1" lxml jsonschema sortedcollections futures pytz tzlocal "requests>=2.4.1"
-       pip install csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
+       pip install "appdirs>=1.4.2,<2.0.0" future "numpy>=1.12,<1.9999"  "scipy>=0.16.0" "six>=1.8.0" "pylru>=1" enum34 future lxml jsonschema sortedcollections
 
-   Optionally, you can also install `rig` though this is not normally needed:
+       pip install  "rig>=2.0.0,<3.0.0" futures enum-compat pytz tzlocal "requests>=2.4.1" matplotlib
 
-       pip install "rig>=2.0.0,<3.0.0"
+       pip install  csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.9.0" graphviz
 
-You may need to install `python3-tk`; this cannot be installed via pip due to the way it interacts with the base Python installation. If you do install this, it must be done _before_ you create any virtualenv.
+You may need to install python3-tk.
 
-We _strongly_ recommend the use of virtualenv for development work.
+We recommend the use of virtualenv for development work.
 
-The remainder of these installation instructions assume that the command "`python`" corresponds to the Python version you have installed here (version 3.6 or later); please ensure that this is the case.
+The remainder of these installation instructions assume that the command "python" corresponds to the Python version you have installed here (recommended 3.7 or later); please ensure that this is the case.
 
 # <a name="CRequirements"></a> C Development Requirements
-[Install a C compiler](/common_pages/5.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
+[Install a C compiler](/common_pages/6.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
 
 # <a name="git"></a> Git Cloning
 
@@ -66,20 +65,27 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
-| `TestBase` | https://github.com/SpiNNakerManchester/TestBase.git| Optional Python |
-| `IntegrationTests` | https://github.com/SpiNNakerManchester/IntegrationTests.git | Optional Jenkins |
 |`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
 
-# <a name="java"></a> Java Development kitgit save username and password
+The following table contains (self-contained) repositories which are now tested by the toolchain but are not essential for successfully running scripts in e.g. PyNN8Examples.  If you are changing an API in sPyNNaker or SpiNNFrontEndCommon and wishing to merge into the master version of the tools then you may need to consider how this affects these repositories.
 
-A Java JDK will be required in the following conditions:
+|**Name**|**URL**|**Code Type**|
+|:-------|:------|:------------|
+|`SpiNNGym` | https://github.com/SpiNNakerManchester/SpiNNGym.git|Python and C|
+|`SpiNNaker_PDP2` | https://github.com/SpiNNakerManchester/SpiNNaker_PDP2.git|Python and C|
+|`MarkovChainMonteCarlo` | https://github.com/SpiNNakerManchester/MarkovChainMonteCarlo.git|Python and C|
+
+
+# <a name="java"></a> Java Development kit
+
+A Java JDK will be required in the following conditions
 
 1. If modifying or even just using the Java versions of the tools
 1. If modifying the Remote Access software for the Human Brain Project portal
 
-A Java JRE may also be required:
+A Java JRE will be required
 1. If you are going to use an IDE (which requires Java and does not have one with it)
 
 We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -87,29 +93,24 @@ We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/dow
 The tools require at least Java 8 but there is no known reason that a more up to date version cannot be used.  We have regularly tested OpenJDK 8 and OpenJDK 11 with no problems.
 
 ## Java version of the tools
-Java version is optional and off by default.
+Part of the toolchain can be run using Java (this is optional and off by default).
 
-Requires the `JavaSpiNNaker` repository.
-
-**NB:** You still need the Python tools to use this.
-
-### Current situation
-You will be required to build the jar file required.
+To use it you need the JavaSpiNNaker repository, and you will be required to build the jar file required.
 
 Open JavaSpiNNaker in an IDE which supports maven.
 
-Build "SpiNNaker Java Host" with dependencies.  This will create the `spinnaker-exe.jar` file in `SpiNNaker-front-end/target`
+Build "SpiNNaker Java Host" with dependencies.  This will create the SpiNNaker-comms-0.0.1-SNAPSHOT.jar file in SpiNNaker-comms/target
 
-It is also possible to [install maven](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html) and run "`mvn package`" on the command line from the `JavaSpiNNaker` directory.
+It is also possible to [install maven](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html) and run "mvn package" on the command line from the JavaSpiNNaker directory.
 
-See [Configure the environment](#Configuration) for how to active these.
+See [Configure the environment](#Configuration) for how to activate Java.
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we highly recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and an IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
 
  * [PyCharm](https://www.jetbrains.com/pycharm/) — Version 4.5.3 has been tested but other versions should also work. This is very good for Python development and supports C development as well to some degree.  Java development is not supported in this client.  PyCharm is good at working out the links between Python code.
 
- * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Oxygen has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
+ * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Oxygen has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  A non-exhaustive list of plugins required are:
     * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for `pydev`.
     * CDT — This is required for C Development.  This has to be installed from the Help → Install New Software… menu option.  Here, paste in this URL: CDT — `http://download.eclipse.org/tools/cdt/releases/9.0`.  You can then select to install "C/C++ Development Tools" as well as "C/C++ GCC Cross Compiler Support", "C/C++ Autotools Support" and "C/C++ GDB Hardware Debugging".
     * AnyEditTools — This optional plugin enables useful features like converting tabs to spaces and removing trailing spaces on save.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for `AnyEditTools`.
@@ -120,9 +121,7 @@ To clone using git on the command line, run:
 
     git clone <url>
 
-where `<url>` is one of the URLs from above.  It is strongly recommended that all modules be installed into the same directory.
-
-You may also find some of the scripts in the SupportScripts repository useful for this purpose; see for example [installing using git](gitinstall.html).
+where `<url>` is one of the URLs from above.  It is strongly recommended that all modules be installed into the same directory, and that this is done in a virtual environment. Please see [these instructions](gitinstall.html) for more details.
 
 ## PyCharm
 
@@ -197,14 +196,17 @@ In a C project, this is done as follows:
 |PACMAN|SpiNNUtils, SpiNNMachine|
 |DataSpecification|SpiNNUtils, SpiNNMachine|
 |SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, spalloc|
-|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc, TestBase*|
-|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc, TestBase*|
-|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
-|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
+|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
+|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
 |sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc, TestBase*|
+|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc|
+|:---------|:---------------|
+|SpiNNGym|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc|
+|SpiNNaker_PDP2|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, spalloc|
+|MarkovChainMonteCarlo|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, spalloc|
 
-* TestBase is only required to run IntergationTests
 
 ## <a name="cdependencies"></a> C Dependencies
 
@@ -217,6 +219,10 @@ Note that include files are generally installed into `spinnaker_tools/include`, 
 |`SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples`|spinnaker_tools/include|
 |`sPyNNaker/neural_modelling`|spinnaker_tools/include|
 |`sPyNNaker8NewModelTemplate/c_models`|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|:----------------|:-----------------------|
+|`SpiNNGym/c_code`|spinnaker_tools/include|
+|`SpiNNaker_PDP2/c_code`|spinnaker_tools/include|
+|`MarkovChainMonteCarlo/c_models`|spinnaker_tools/include|
 
 # <a name="install"></a> Installing Python Modules
 
@@ -224,9 +230,11 @@ Installing the Python modules in developer mode allows you to use the modules fr
 
 For each of the python modules, go into the root directory of the module and run:
 
-    [sudo] python setup.py develop --no-deps [--user]
+    [sudo] pip install -e .[Test][--user]
 
-Where `sudo` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and `--user` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.  If you have installed Python 3 then make sure that the version of "python" is the correct one before continuing.
+Where `sudo` is required if you are on Linux or OS X and would like to install the dependencies as root (on windows you would need to open a console as Administrator); and `--user` is required if you would like to install the modules under your user.  Neither are required if you are using a virtualenv.
+
+[Test] including the square brackets is optional but will install the extra requirements to run unittests.
 
 This step can be performed for every Python repository you have — assuming you have put them all into the same location — by using the `setup.sh` or `setup_sudo.sh` scripts in the SupportScripts repository.
 
@@ -251,16 +259,19 @@ The C code to compile is (in order) as follows:
 
 A script is also available [here](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh), or in the SupportScripts repository called `automatic_make.sh` which performs the appropriate steps for you.  Note that it will clean and build everything every time it is run; this may take some time depending on your machine.  Note also that this assumes that you have checked out the git code into a single location, and that you have installed and setup the Python modules already (as described in the previous step).  If you haven't done so then this step is likely to fail.
 
-If you have also downloaded the repositories for building new neuron models, then the C code is compiled using the following commands:
+If you have also downloaded the repository for building new neuron models, or any of the optional repositories described earlier, then their C code is compiled using the following commands:
 
 |**Module**|**Sub Folder**|**Commands**|**Clean Command**|
-
+|:-----|:---------|:-------|:------------|
 |`sPyNNaker8NewModelTemplate`|`c_models`|`make`|`make clean`|
+|`SpiNNGym`|`c_code`|`make`|`make clean`|
+|`SpiNNaker_PDP2`|`c_code`|`make`|`make clean`|
+|`MarkovChainMonteCarlo`|`c_models`|`make`|`make clean`|
 
-This compilation is included in the automatic make script.
+These compilations are included in the automatic make script if you have cloned the repositories into the same location as the "central" repositories.
 
 # <a name="Configuration"></a> Configuration
-Run spynnaker8.setup_pynn.py
+Run spynnaker.pyNN.setup_pynn.py
 
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
 
@@ -281,21 +292,7 @@ There are plenty of other configuration options that you may wish to edit too; p
 
 [Note: if you are running using SpiNNakerGraphFrontEnd then the file in your home directory you need to edit will be called "`.spiNNakerGraphFrontEnd.cfg`".]
 
-If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).
-
-If you do not have a SpiNNaker board, then you have two options:
-
-1) If you can directly access a local machine that uses spalloc (for example, you are in Manchester and wish to use the million-core machine), then you need to set the following parameters in the ".spynnaker.cfg" you just created (e.g.):
-
-```
-[Machine]
-spalloc_server = spinnaker.cs.man.ac.uk
-spalloc_user = user.name@email.address
-```
-
-where you edit spalloc_server if you are using a different spalloc_server; editing spalloc_user is helpful for administrators of the machine to contact you if there are any problems, which is why we suggest using an email address.
-
-OR 2) To run in virtual mode, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/3.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).  If you do not have a SpiNNaker board, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/5.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
 
@@ -328,7 +325,33 @@ Copy and change the ones required from spinn_front_end_common\interface\spinnake
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph that will look something like this:
 
-   ![VA8BenchmarkSpikes](vabenchmark8_v5.png)
+   ![VA8BenchmarkSpikes](vabenchmark8_v6.png)
 
 If you get the output above, you have successfully installed your system.
+
+
+# <a name="sPyNNaker8"></a> Moving away from sPynnaker8
+
+This section only applies if you have previously used sPyNNaker while we were using the sPyNNaker8 repository.
+
+All [sPyNNaker8](https://github.com/SpiNNakerManchester/sPyNNaker8) code has been merged into [sPyNNaker](https://github.com/SpiNNakerManchester/sPyNNaker).
+
+* Run spynnaker.pyNN.setup_pynn.py
+* Replace any import of just spynnaker8 to spynnaker
+import spynnaker8 as ....
+    becomes
+import spynnaker as ...
+
+* Replace all other spynnaker8 imports with spynnaker.pyNN
+import spynnaker8.XYZ ...
+becomes
+import spynnaker.pyNN.XYZ ....
+
+The integration tests have been moved from
+sPyNNaker8/p8_integration_tests
+to
+sPyNNaker/spynnaker_integration_tests
+
+
+Note: In the near future the PyNN8Examples and sPyNNaker8NewModelTemplate repositories and directories will be renamed to remove the 8.
 
