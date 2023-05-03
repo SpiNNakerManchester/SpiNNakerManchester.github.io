@@ -10,7 +10,7 @@ The SpiNNaker software current supports 2D representations and convolutions on t
 
 Once support is in place, 2D Populations can be used as in the following example:
 
-    import spynnaker8 as p
+    import pyNN.spiNNaker as p
     import numpy
     from pyNN.space import Grid2D
 
@@ -54,4 +54,7 @@ Once support is in place, 2D Populations can be used as in the following example
     # of the synapse_type to ensure fast convolutional processing is
     # done
     p.Projection(src, output, conn, p.Convolution())
+
+    p.run(10)
+
 
