@@ -47,7 +47,6 @@ This page contains links to various technical documents about SpiNNaker.
 * [SpiNNMachine](https://spinnmachine.readthedocs.org)
 * [SpiNNMan](https://spinnman.readthedocs.org)
 * [PACMAN](https://pacman.readthedocs.org)
-* [DataSpecification](https://dataspecification.readthedocs.org)
 
 # Videos and Photos
 
