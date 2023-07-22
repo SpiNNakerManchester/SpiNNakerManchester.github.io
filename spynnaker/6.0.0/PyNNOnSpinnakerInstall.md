@@ -4,7 +4,7 @@ layout: default
 published: true
 ---
 
-This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.  If you wish to run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter.md) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal.md) instead.
+This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.  If you wish to run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal) instead.
 
 # Installation
 
@@ -121,7 +121,7 @@ Run this small script
     sim.end()
 
 Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that sPyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
-Warning some systems consider ".spynnaker.cfg" a hidden file.  
+Warning some systems consider ".spynnaker.cfg" a hidden file.
 
 ```
 [Machine]
@@ -160,7 +160,7 @@ Go to the network settings for your computer and add or set an IPv4 entry with t
  3. default gateway = `0.0.0.0`
 
 
-Optional: See [Algorithms](/common_pages/Algorithms.html) for how advanced users change change the algorithms used. 
+Optional: See [Algorithms](/common_pages/Algorithms.html) for how advanced users change change the algorithms used.
 
 # <a name="Examples"></a> Running some examples
 1. Download the examples:
