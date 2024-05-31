@@ -194,14 +194,13 @@ In a C project, this is done as follows:
 |SpiNNMachine|SpiNNUtils|
 |SpiNNMan|SpiNNUtils, SpiNNMachine|
 |PACMAN|SpiNNUtils, SpiNNMachine|
-|DataSpecification|SpiNNUtils, SpiNNMachine|
-|SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, spalloc|
-|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc, TestBase*|
-|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc, TestBase*|
-|sPyNNaker8NewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
-|PyNN8Examples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
-|sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, spalloc|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, DataSpecification, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc, TestBase*|
+|SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, spalloc|
+|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc, TestBase*|
+|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc, TestBase*|
+|sPyNNakerNewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
+|PyNNExamples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
+|sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc|
+|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc, TestBase*|
 
 * TestBase is only required to run IntergationTests
 
@@ -215,7 +214,7 @@ Note that include files are generally installed into `spinnaker_tools/include`, 
 |`SpiNNFrontEndCommon/c_common`|spinnaker_tools/include|
 |`SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples`|spinnaker_tools/include|
 |`sPyNNaker/neural_modelling`|spinnaker_tools/include|
-|`sPyNNaker8NewModelTemplate/c_models`|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
+|`sPyNNakerNewModelTemplate/c_models`|spinnaker_tools/include, sPyNNaker/neural_modelling/src|
 
 # <a name="install"></a> Installing Python Modules
 
@@ -254,12 +253,12 @@ If you have also downloaded the repositories for building new neuron models, the
 
 |**Module**|**Sub Folder**|**Commands**|**Clean Command**|
 
-|`sPyNNaker8NewModelTemplate`|`c_models`|`make`|`make clean`|
+|`sPyNNakerNewModelTemplate`|`c_models`|`make`|`make clean`|
 
 This compilation is included in the automatic make script.
 
 # <a name="Configuration"></a> Configuration
-Run spynnaker8.setup_pynn.py
+Run spynnaker.setup_pynn.py
 
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask SpyNNaker to do this before you run your first simulation as follows:
 
@@ -322,7 +321,7 @@ Copy and change the ones required from spinn_front_end_common\interface\spinnake
 
 # <a name="Examples"></a> Running some examples
 
- * Go to the "examples" folder in Pynn8Examples
+ * Go to the "examples" folder in PynnExamples
  * Run: `va_benchmark.py`
  * You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
  * Once the example has finished, you should see a graph that will look something like this:
