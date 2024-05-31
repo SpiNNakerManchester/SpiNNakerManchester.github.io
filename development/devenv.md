@@ -57,12 +57,11 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`spalloc_server` | https://github.com/SpiNNakerManchester/spalloc_server.git|Python|
 |`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
 |`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan.git|Python|
-|`DataSpecification` | https://github.com/SpiNNakerManchester/DataSpecification.git|Python|
 |`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
 |`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
 |`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
-|`sPyNNaker8NewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNaker8NewModelTemplate.git|Python and C|
-|`PyNN8Examples` | https://github.com/SpiNNakerManchester/PyNN8Examples.git|Python|
+|`sPyNNakerNewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git|Python and C|
+|`PyNNExamples` | https://github.com/SpiNNakerManchester/PyNNExamples.git|Python|
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
 |`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
