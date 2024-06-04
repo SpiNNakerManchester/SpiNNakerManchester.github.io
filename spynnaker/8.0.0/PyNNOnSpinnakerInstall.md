@@ -8,11 +8,11 @@ This guide details how to install the release version of the tools required to r
 
 # Installation
 
-You must first install the [Python Dependencies](/common_pages/6.0.0/PythonInstall.html).  Continue to the [Virtualenv Installation](#Virtualenv), [Central Installation](#Central),  or [User-only Installation](#User) to install the remaining requirements, depending on the needs of your working environment.  If you are unsure what to choose, the option that will most likely work is the [Virtualenv Installation](#Virtualenv).
+You must first install the Python.  Continue to the [Virtualenv Installation](#Virtualenv), [Central Installation](#Central),  or [User-only Installation](#User) to install the remaining requirements, depending on the needs of your working environment.  If you are unsure what to choose, the option that will most likely work is the [Virtualenv Installation](#Virtualenv).
 
 __Note__: sPyNNakerExternalDevicesPlugin, sPyNNakerExtraModelsPlugin and sPyNNaker8 are no longer required.  These extra modules have been merged in to the main sPyNNaker module.  You will be asked to uninstall these modules below if you have previously installed them, but will note that there are no instructions for installing a newer version.
 
-* [Python Dependencies](/common_pages/6.0.0/PythonInstall.html)
+* [Operating Systems and Python](#Python)
 * [Virtualenv Installation](#Virtualenv)
 * [Standard Central Installation](#Central)
 * [User-Only Installation](#User)
@@ -20,9 +20,20 @@ __Note__: sPyNNakerExternalDevicesPlugin, sPyNNakerExtraModelsPlugin and sPyNNak
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
 
+# <a name="Python"></a> Operating Systems and Python
+To the best of our knowledge the spinnaker code runs on all current Linux, Windows and macOS 11systems as well as all current Python 3 version.
+
+Full testing is done using Ununtu 22.04 and Python 3.12 so these are our recommendations.
+
+Limited testing is done using Ubuntu-24.04, Ubuntu-20.04, Windows 10, Windows 11, macOS 11 and macOS 14 as well as Python versions 3.8, 3.9, 3.10, 3.11.
+
+As the time of writing Python 3.13 could not be supported.
+
+We always test using the latest version of our Python dependecies so recommend keeping all python packages up to date.
+
 # <a name="Virtualenv"></a> Virtualenv Installation
 
-Follow [these instructions](/common_pages/6.0.0/VirtualEnv.html) to install the dependencies in a virtual environment.
+These instuctions assume you have installed a [virtual environment](https://virtualenv.pypa.io/en/latest/).
 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
 
@@ -89,7 +100,7 @@ These instructions will install the required packages only for the current user 
 If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
 
     pip uninstall pyNN-SpiNNaker
-    pip uninstall sPyNNaker
+    pip uninstall sPyNNaker8
     pip uninstall sPyNNaker
     pip uninstall sPyNNakerExternalDevicesPlugin
     pip uninstall sPyNNakerExtraModelsPlugin
@@ -143,7 +154,7 @@ spalloc_user = user.name@email.address
 
 where you edit spalloc_server if you are using a different spalloc_server; editing spalloc_user is helpful for administrators of the machine to contact you if there are any problems, which is why we suggest using an email address.
 
-OR 2) To run in virtual mode, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](/common_pages/6.0.0/VirtualMode.html) and then go to [Running some examples](#Examples).
+OR 2) To run in virtual mode, please follow the instructions in [Instructions on how to use the different front ends in virtual mode](https://spinnakermanchester.github.io) and then go to [Running some examples](#Examples).
 
 ## <a name="LocalBoard"></a> Local Board
 
@@ -175,7 +186,7 @@ Optional: See [Algorithms](/common_pages/Algorithms.html) for how advanced users
 1. You will see the system go through a series of processes from partitioning, to placement, to routing and finally to loading and running.
 1. Once the example has finished, you should see a graph that will look something like this:
 
-   ![VABenchmarkSpikes](vabenchmark8_v6.png)
+   ![VABenchmarkSpikes](spynnaker/6.0.0/vabenchmark8_v6.png)
 
 If you get the output above, you have successfully installed your system.
 
@@ -218,5 +229,5 @@ If you get the output above, you have successfully installed your system.
 
 # <a name="Links"></a> Other Links
 
-Follow [SpiNNaker Extensions](PyNNOnSpiNNakerExtensions.html) to install extensions for building new neuron models.
+Follow [SpiNNaker Extensions](/latest/PyNNOnSpiNNakerExtensions.html) to install extensions for building new neuron models.
 
