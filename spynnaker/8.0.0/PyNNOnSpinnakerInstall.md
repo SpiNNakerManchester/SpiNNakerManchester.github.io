@@ -21,7 +21,7 @@ __Note__: sPyNNakerExternalDevicesPlugin, sPyNNakerExtraModelsPlugin and sPyNNak
 * [Troubleshooting](#Trouble)
 
 # <a name="Python"></a> Operating Systems and Python
-To the best of our knowledge the spinnaker code runs on all current Linux, Windows and macOS 11systems as well as all current Python 3 version.
+To the best of our knowledge the spinnaker code runs on all current Linux, Windows and macOS systems as well as all current Python 3 version.
 
 Full testing is done using Ununtu 22.04 and Python 3.12 so these are our recommendations.
 
