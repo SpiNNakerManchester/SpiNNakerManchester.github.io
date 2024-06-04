@@ -13,8 +13,8 @@ To use the _last release_ of the software:
 * [Running simulations using SpiNNaker Jupyter Notebooks](/latest/jupyter.html)
 * [Running simulations through the EBRAINS collaboratory](/latest/ebrains_portal.html)
 * [Running simulations through the Human Brain Project Portal](/latest/hbp_portal.html)
-* [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v6.0** front end interface](/latest/spynnaker.html)
-* [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v6.0** front end interface](/latest/gfe.html)
+* [Running PyNN scripts on local SpiNNaker machines through the **sPyNNaker v8.0** front end interface](/latest/spynnaker.html)
+* [Running general graph-based problems on local SpiNNaker machines through the **SpiNNakerGraphFrontEnd v8.0** front end interface](/latest/gfe.html)
 
 # Developing
 * [Writing low-level SpiNNaker C code](spinn_tools/3.4.1/index.html)

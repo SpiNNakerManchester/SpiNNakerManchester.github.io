@@ -21,6 +21,7 @@ sPyNNaker version 8.0.0 has been released; we are currently working on the docum
 <!--
 * [Adding new mapping algorithms with different front ends](/common_pages/6.0.0/MappingAlgorithms.html)
 -->
+
 6.0.0 Documentation
 -------------------
 * [6.0.0 Index](http://spinnakermanchester.github.io/spynnaker/6.0.0/)

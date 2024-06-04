@@ -1,3 +1,3 @@
 ---
-redirect_to: /graph_front_end/6.0.0/index.html
+redirect_to: /graph_front_end/8.0.0/index.html
 ---
