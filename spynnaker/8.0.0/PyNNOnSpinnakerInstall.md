@@ -13,9 +13,7 @@ You must first install the Python.  Continue to the [Virtualenv Installation](#V
 __Note__: sPyNNakerExternalDevicesPlugin, sPyNNakerExtraModelsPlugin and sPyNNaker8 are no longer required.  These extra modules have been merged in to the main sPyNNaker module.  You will be asked to uninstall these modules below if you have previously installed them, but will note that there are no instructions for installing a newer version.
 
 * [Operating Systems and Python](#Python)
-* [Virtualenv Installation](#Virtualenv)
-* [Standard Central Installation](#Central)
-* [User-Only Installation](#User)
+* [Installation](#Installation)
 * [Configuration](#Configuration)
 * [Running some examples](#Examples)
 * [Troubleshooting](#Trouble)
@@ -31,11 +29,10 @@ As the time of writing Python 3.13 could not be supported.
 
 We always test using the latest version of our Python dependecies so recommend keeping all python packages up to date.
 
-# <a name="Virtualenv"></a> Virtualenv Installation
+# <a name="Installation"></a> Installation
+We recommend using a [virtual environment](https://virtualenv.pypa.io/en/latest/) as that makes is much easier to redo the installation later if things go wrong, and avoids conflicts with other python installations.
 
-These instuctions assume you have installed a [virtual environment](https://virtualenv.pypa.io/en/latest/).
-
-If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
+If you have not ready installed [virtual environment](https://virtualenv.pypa.io/en/latest/) please follow their installations instructions.
 
 1. Activate your virtualenv, `<name>`
 
@@ -43,76 +40,21 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
 1. Uninstall the existing tools (if previously installed)
 
+If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
+
        pip uninstall pyNN-SpiNNaker
        pip uninstall sPyNNaker
        pip uninstall sPyNNaker8
        pip uninstall sPyNNakerExternalDevicesPlugin
        pip uninstall sPyNNakerExtraModelsPlugin
 
-To install the tools, first, activate your virtualenv, `<name>`:
-
-    source <name>/bin/activate
-
 1. Install Matplotlib:
 
        pip install matplotlib
 
-1. Install sPyNNaker(8):
+1. Install sPyNNaker:
 
        pip install sPyNNaker
-
-1. Install pyNN-SpiNNaker(8):
-
-       python -m spynnaker.setup_pynn
-
-You can now [configure](#Configuration) your environment.
-
-
-# <a name="Central"></a> Central Installation
-These instructions will install the required packages in a central location.  If you are installing on Linux, you must have root access to do this (or prepend each command with `sudo`), and Windows users should run these commands from a command prompt run as Administrator (right-click the shortcut for the command prompt and select "Run as administrator", but do not use the `sudo` in the commands below).
-
-If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
-
-    [sudo] pip uninstall pyNN-SpiNNaker
-    [sudo] pip uninstall sPyNNaker
-    [sudo] pip uninstall sPyNNaker8
-    [sudo] pip uninstall sPyNNakerExternalDevicesPlugin
-    [sudo] pip uninstall sPyNNakerExtraModelsPlugin
-
-1. Install Matplotlib:
-
-       [sudo] pip install matplotlib
-
-1. Install sPyNNaker:
-
-       [sudo] pip install sPyNNaker
-
-1. Install pyNN-SpiNNaker:
-
-       [sudo] python -m spynnaker.setup_pynn
-
-You can now [configure](#Configuration) your environment.
-
-# <a name="User"></a> User-only Installation
-
-These instructions will install the required packages only for the current user (in your home directory).  This can avoid issues where you don't have root access to the machine you are installing on, or on a shared machine where the dependencies might otherwise conflict with those of other users.
-
-If you already have installed sPyNNaker previously (and the optional sPyNNakerExternalDevicesPlugin and/or sPyNNakerExtraModelsPlugin), you will need to uninstall it:
-
-    pip uninstall pyNN-SpiNNaker
-    pip uninstall sPyNNaker8
-    pip uninstall sPyNNaker
-    pip uninstall sPyNNakerExternalDevicesPlugin
-    pip uninstall sPyNNakerExtraModelsPlugin
-
-1. Install Matplotlib:
-
-       pip install matplotlib --user
-
-1. Install sPyNNaker:
-
-       pip install sPyNNaker --user
-
 
 1. Install pyNN-SpiNNaker:
 
@@ -144,7 +86,7 @@ If you have a SpiNNaker board, then go to [Local Board](#LocalBoard).
 
 If you do not have a SpiNNaker board, then you have two options:
 
-1) If you can directly access a local machine that uses spalloc (for example, you are in Manchester and wish to use the million-core machine), then you need to set the following parameters in the ".spynnaker.cfg" you just created (e.g.):
+1) If you can directly access a local machine that uses spalloc (for example, at Manchester University and wish to use the million-core machine), then you need to set the following parameters in the ".spynnaker.cfg" you just created (e.g.):
 
 ```
 [Machine]
