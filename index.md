@@ -7,10 +7,7 @@ This page details the latest version of various software for the SpiNNaker Neuro
 ## Support
 If you have any issues with using SpiNNaker machines, please join the [SpiNNaker users group](https://groups.google.com/u/0/g/spinnakerusers) and ask for help there (please say who you are and who you are working with when applying to join to speed up the process).
 
-## Master (to become 7.0.0)
-To use the _lastest version_ of the software:
-
-## Version 6.0
+## Release 8.0.0
 To use the _last release_ of the software:
 
 * [Running simulations using SpiNNaker Jupyter Notebooks](/latest/jupyter.html)
