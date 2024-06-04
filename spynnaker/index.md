@@ -1,3 +1,3 @@
 ---
-redirect_to: /spynnaker/6.0.0/index.html
+redirect_to: /spynnaker/8.0.0/index.html
 ---
