@@ -1,11 +1,11 @@
 ---
-title: sPyNNaker version 6.0.0
+title: sPyNNaker version 8
 layout: default
 ---
 WORK IN PROGRESS
 ================
 
-sPyNNaker version 8.0.0 has been released; we are currently working on the documentation.  If anything here doesn't work, please let the software team know.
+sPyNNaker version 8 has been released; We are currently working on the documentation.  If anything here doesn't work, please let the software team know.
 
 * [License Agreement](/latest/LicenseAgreement.html)
 * [PyNN on SpiNNaker Installation Guide](/latest/PyNNOnSpinnakerInstall.html)
