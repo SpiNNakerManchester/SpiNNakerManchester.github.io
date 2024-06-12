@@ -15,7 +15,7 @@ sPyNNaker version 8 has been released; We are currently working on the documenta
 * [Extending sPyNNaker with New Neuron and Plasticity Models](/latest/PyNNOnSpiNNakerExtensions.html)
 * [Tutorial: Simple interaction with Live PyNN Simulation](/latest/spynnaker_external_io.html)
 * [Tutorial: Connecting External Devices to PyNN Simulations](ExternalDevices-LabManual.pdf)
-* [A guide to how we use Makefiles](latest/Makefiles.html)
+* [A guide to how we use Makefiles](/latest/Makefiles.html)
 * [User doc: Using neuromodulated STDP on SpiNNaker](UsingNeuromodulatedSTDPOnSpiNNaker.pdf)
 
 <!--
