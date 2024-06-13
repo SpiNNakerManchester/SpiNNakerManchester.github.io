@@ -4,13 +4,8 @@ layout: default
 published: true
 ---
 
-This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.  If you wish to run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal) instead.
-
-# Installation
-
-You must first install the Python.  Continue to the [Virtualenv Installation](#Virtualenv), [Central Installation](#Central),  or [User-only Installation](#User) to install the remaining requirements, depending on the needs of your working environment.  If you are unsure what to choose, the option that will most likely work is the [Virtualenv Installation](#Virtualenv).
-
-__Note__: sPyNNakerExternalDevicesPlugin, sPyNNakerExtraModelsPlugin and sPyNNaker8 are no longer required.  These extra modules have been merged in to the main sPyNNaker module.  You will be asked to uninstall these modules below if you have previously installed them, but will note that there are no instructions for installing a newer version.
+This guide details how to install the release version of the tools required to run simulations on SpiNNaker using the PyNN scripting language, if you have a local SpiNNaker machine.
+If you wish to run jobs on the million-core SpiNNaker machine in Manchester, then we suggest you use our [Jupyter Notebook](/latest/jupyter) instructions, or submit jobs via the [HBP Portal](/latest/hbp_portal) instead.
 
 * [Operating Systems and Python](#Python)
 * [Installation](#Installation)
@@ -27,7 +22,7 @@ Limited testing is done using Ubuntu-24.04, Ubuntu-20.04, Windows 10, Windows 11
 
 As the time of writing Python 3.13 could not be supported.
 
-We always test using the latest version of our Python dependecies so recommend keeping all python packages up to date.
+We always test using the latest version of our Python dependencies so recommend keeping all python packages up to date.
 
 # <a name="Installation"></a> Installation
 We recommend using a [virtual environment](https://virtualenv.pypa.io/en/latest/) as that makes is much easier to redo the installation later if things go wrong, and avoids conflicts with other python installations.
@@ -44,9 +39,6 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        pip uninstall pyNN-SpiNNaker
        pip uninstall sPyNNaker
-       pip uninstall sPyNNaker8
-       pip uninstall sPyNNakerExternalDevicesPlugin
-       pip uninstall sPyNNakerExtraModelsPlugin
 
 1. Install Matplotlib:
 
@@ -60,12 +52,10 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
        python -m spynnaker.setup_pynn
 
-You can now [configure](#Configuration) your environment.
-
-
 # <a name="Configuration"></a> Configuration
 
-When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.  It is possible to ask sPyNNaker to do this before you run your first simulation as follows:
+When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.
+It is possible to ask sPyNNaker to do this before you run your first simulation as follows:
 
 Run this small script
 
@@ -73,7 +63,9 @@ Run this small script
     sim.setup()
     sim.end()
 
-Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  You must edit this file to ensure that sPyNNaker can access your SpiNNaker machine.  Upon opening this file, the part to alter will look like the following:
+Unless one already exists a new file called ".spynnaker.cfg" will be created in your home directory.  
+You must edit this file to ensure that sPyNNaker can access your SpiNNaker machine.  
+Upon opening this file, the part to alter will look like the following:
 Warning some systems consider ".spynnaker.cfg" a hidden file.
 
 ```
