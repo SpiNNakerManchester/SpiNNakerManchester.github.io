@@ -1,5 +1,5 @@
 ---
-title: sPyNNaker Models, Limitations and Extensions
+title: sPyNNaker Models, Connectors, Limitations and Extensions
 ---
 
 This guide will detail the limitations that sPyNNaker imposes on users of PyNN, as well as detailing some extensions to the PyNN language that are supported.
@@ -13,26 +13,15 @@ sPyNNaker implements a subset of the [PyNN 0.12 API](http://neuralensemble.org/d
 
 # Neuron Models
 
-sPyNNaker currently supports the following model types:
+sPyNNaker currently supports the following standard PyNN model types:
 
 1. `IF_cond_exp`: Conductance based leaky integrate and fire, with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. `IF_curr_alpha`: Current based leaky integrate and fire, with 1 excitatory and 1 inhibitory alpha-function shaped synaptic input per neuron
 1. `IF_curr_delta`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory delta synaptic input per neuron
 1. `IF_curr_exp`: Current based leaky integrate and fire, with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
 1. `Izhikevich`: Current based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
-1. `extra_models.IFCondExpStoc`: Conductance-based leaky intergate and fire with a stochastic Maass threshold.
-1. `extra_models.IFCurDelta`:  Leaky integrate and fire neuron with an instantaneous current input.
-1. `extra_models.IF_curr_dual_exp`: Current based, Leaky integrate and fire, with 2 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
-1. `extra_models.IFCurrExpCa2Adaptive`: Spike-frequency adaptation of a generalized leaky integrate-and-fire model neuron
-1. `extra_models.Izhikevich_cond`: Conductance based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
-1. `extra_models.IFCurrExpCa2Adaptive`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory exponentially decaying, calcium-adaptive synaptic input per neuron
-1. `extra_models.IF_curr_exp_sEMD`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron where the inhibitory input is scaled by a multiplicative factor defined by the user.
 
-Note that there are further restrictions on what plasticity types are supported when used with the above models.
-
-All of our neural models have a limitation of 256 neurons per core.  Depending on which SpiNNaker board you are using, this will limit the number of neurons that can be supported in any simulation.
-
-# External Input
+## External Input
 
 sPyNNaker currently supports two models for injecting spikes into a PyNN model:
 
@@ -41,7 +30,48 @@ sPyNNaker currently supports two models for injecting spikes into a PyNN model:
 
 Currently, in the release versions and on the master github branch, only the `i_offset` parameter of the neural models can be used to inject current directly; there is no support here for noisy or step-based current input.  However, support for these inputs and also DC/AC input as [described in the PyNN documentation](http://neuralensemble.org/docs/PyNN/reference/electrodes.html) can be found on the current_sources branches of sPyNNaker and PyNN8Examples.  Step-based current input can also be achieved by updating `i_offset` between calls to `run()`.
 
+## Extra Neuron Models
+We also support extra model. These are found in pyNN.spiNNaker.extra_models
+
+1. `IF_curr_exp_sEMD`: Current based leaky integrate and fire with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron where the inhibitory input is scaled by a multiplicative factor defined by the user.
+1. `IFCondExpStoc`: Conductance-based leaky intergate and fire with a stochastic Maass threshold.
+1. `IFCurDelta`:  Leaky integrate and fire neuron with an instantaneous current input.
+1. `IFCurrDeltaCa2Adaptive`:  Spike-frequency adaptation of a generalized leaky integrate-and-fire model neuron.
+1. `IFCurrDeltaFixedProb`:  Leaky integrate and fire neuron with an instantaneous current input, and
+    fixed probability of spiking once a threshold is reached.
+1. `IF_curr_dual_exp`: Current based, Leaky integrate and fire, with 2 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
+1. `IFTruncDelta`: Non-leaky Integrate and fire neuron with an instantaneous current input,
+    and truncation of membrane voltage so that it never goes below V_reset.
+1. `Izhikevich_cond`: Conductance based Izhikevich with 1 excitatory and 1 inhibitory exponentially decaying synaptic input per neuron
+1. `Izhikevich_cond_dual`: Leaky integrate and fire neuron with two exponentially decaying
+    excitatory current inputs, and one exponentially decaying inhibitory
+    current input.
+1. `SpikeSourcePoissonVariable`:  Model to create a Spike Source Poisson Vertex.
+1. `StocExp`:  Stochastic neuron model exponential threshold and instantaneous
+        synapses, and voltage which is reset each time step.
+1. `StocExpStable`: Stochastic neuron model with exponential threshold and instantaneous
+1. `StocSigma`: Stochastic model with sigma threshold and instantaneous synapses.
+
+## External Device Models
 Another (non-standard PyNN) way of injecting current into a PyNN simulation executing on the hardware is through live injection from an external device (e.g., a robot). A description on how to use this functionality can be found [here](SimpleIO-LabManual.pdf).
+
+the model currently implemented are. These are found in spynnaker/pyNN/external_devices
+1. ArbitraryFPGADevic
+1. ExternalFPGARetinaDevice
+1. ExternalCochleaDevice
+1. ICUBRetinaDevice
+1. MunichMotorDevice
+1. MunichRetinaDevice
+1. PushBotLifEthernet
+1. PushBotLifSpinnakerLink
+1. SPIFRetinaDevice
+
+
+## Limitations
+
+Note that there are further restrictions on what plasticity types are supported when used with the above models.
+
+All of our neural models have a limitation of 256 neurons per core.  Depending on which SpiNNaker board you are using, this will limit the number of neurons that can be supported in any simulation.
 
 # Connectors
 
@@ -61,6 +91,8 @@ sPyNNaker currently supports the following connector types:
 1. `KernelConnector`: The pre- and post-populations are considered as a 2D array, and every post(row, col) neuron connects to many pre(row, col, kernel) using a (kernel) set of weights and/or delays.
 1. `OneToOneConnector`: The neuron with index _i_ in the pre-population is connected to the neuron with index _i_ in the post-population.
 1. `SmallWorldConnector`: Connect cells so as to create a small-world network.
+1. `ConvolutionConnector`: A 2D connector that centers on a post neuron.
+1. `PoolDenseConnector`: A multidimensional connector based on weight and pool shope and stride. 
 
 # Plasticity
 
@@ -69,10 +101,11 @@ sPyNNaker currently only supports plasticity described by an `STDPMechanism` whi
 sPyNNaker supports the following STDP timing dependence rules:
 
 1. `SpikePairRule`: The amount of potentiation or depression decays exponentially with the time between each pair of pre and post spikes.
-1. `extra_models.SpikeNearestPair`: Similar to the SpikePairRule, but only the nearest pair of pre and post spikes are considered i.e. the pre-spike that immediately follows a post spike or the post spike that immediately follows a pre-spike
+1. `extra_models.SpikeNearestPairRule`: Similar to the SpikePairRule, but only the nearest pair of pre and post spikes are considered i.e. the pre-spike that immediately follows a post spike or the post spike that immediately follows a pre-spike
 1. `extra_models.PfisterSpikeTripletRule`:
 1. `extra_models.Vogels2011Rule`:
 1. `extra_models.RecurrentRule`:
+2. `extra_models.PfisterSpikeTriplet`: 
 
 and the following STDP weight dependence rules:
 
