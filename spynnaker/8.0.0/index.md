@@ -2,10 +2,14 @@
 title: sPyNNaker version 8
 layout: default
 ---
-WORK IN PROGRESS
-================
+Version 8 
+=========
 
-sPyNNaker version 8 has been released; We are currently working on the documentation.  If anything here doesn't work, please let the software team know.
+sPyNNaker version 8 has been released; 
+
+We are currently working on the documentation. 
+However, due to the reduced size of the software team we may not be able to update everything. 
+If anything here doesn't work, or is of particular interest please the software team know.
 
 * [License Agreement](/latest/LicenseAgreement.html)
 * [PyNN on SpiNNaker Installation Guide](/latest/PyNNOnSpinnakerInstall.html)
@@ -16,7 +20,7 @@ sPyNNaker version 8 has been released; We are currently working on the documenta
 * [Tutorial: Simple interaction with Live PyNN Simulation](/latest/spynnaker_external_io.html)
 * [Tutorial: Connecting External Devices to PyNN Simulations](ExternalDevices-LabManual.pdf)
 * [A guide to how we use Makefiles](/latest/Makefiles.html)
-* [User doc: Using neuromodulated STDP on SpiNNaker](UsingNeuromodulatedSTDPOnSpiNNaker.pdf)
+* [User doc: Using neuromodulated STDP on SpiNNaker](/spynnaker/6.0.0/UsingNeuromodulatedSTDPOnSpiNNaker.pdf
 
 <!--
 * [Adding new mapping algorithms with different front ends](/common_pages/6.0.0/MappingAlgorithms.html)
