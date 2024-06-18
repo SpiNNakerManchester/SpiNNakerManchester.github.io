@@ -34,20 +34,39 @@ It is possible to ask spinnaker to do this before you run your first simulation 
     front_end.end()
 
 ## Other cfg files.
+Before reading the cfg in your home directory Spinnaker will load the default cfg files.
 
+Any values in your cfg overwrite the default values.
+
+Then if looks for a spynnaker.cfg/spinnakerGraphFrontEnd.cfg (No period) in the directory from which you run the script.
+Values here overwrite the ones in your home cfg.
+These are for values specific to the script(s).
 
 # Default values
-For nearly all values the system comes with working default values 
-so the best is to remove these in your cfg.  
+For all values the system comes with working default values.
+So only include values where the default does not work.  
 
-The only required cfg settings are the ones related to accessing spinnaker.
+The only required cfg settings are the ones related to accessing spinnaker, as by default no access is defined.
+
+The default values come from cfg files in each repository.
+- [spinn_utilities.cfg](https://github.com/SpiNNakerManchester/SpiNNUtils/blob/master/spinn_utilities/spinn_utilities.cfg)
+- [spinn_machine.cfg](https://github.com/SpiNNakerManchester/SpiNNMachine/blob/master/spinn_machine/spinn_machine.cfg)
+- [spinnman.cfg](https://github.com/SpiNNakerManchester/SpiNNMan/blob/master/spinnman/spinnman.cfg)
+- [pacman.cfg](https://github.com/SpiNNakerManchester/PACMAN/blob/master/pacman/pacman.cfg)
+- [spinnaker.cfg](https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon/blob/master/spinn_front_end_common/interface/spinnaker.cfg)
+- [spynnaker.cfg](https://github.com/SpiNNakerManchester/sPyNNaker/blob/master/spynnaker/pyNN/spynnaker.cfg) / [spiNNakerGraphFrontEnd.cfg](https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd/blob/master/spinnaker_graph_front_end/spiNNakerGraphFrontEnd.cfg)
+
+All cfg values used by the Spinnaker system are in these files.
+The option maes are case insensitive and slash
+Do not edit these files. Instead add the values you want to change to the cfg file in your home or run directory.
+
 
 # Specifying how to access spinnaker
 
 1. Open either your `.spynnaker.cfg` (when using SpyNNaker) or `.spinnakerGraphFrontEnd.cfg` (when using the SpiNNakerGraphFrontEnd).
 1. Modify the parameters within the `[Machine]` section.
 
-## version
+## Version
 The system needs to know what version/type of board(s) is being used and how to access it.
 
 Modify/ Add 'version' to one of these values
@@ -125,27 +144,17 @@ version = x
 virtual_board = True
 ``````
 
+Optional (mainly to simulate a wrap around machine)
+   1. Modify "`width = None`" to state the size of your virtual SpiNNaker machine in the _x_ dimension.
+   1. Modify "`height = None`" to state the size of your virtual SpiNNaker machine in the _y_ dimension.
 
-1. Open either your `.spynnaker.cfg` (when using SpyNNaker) or `.spinnakerGraphFrontEnd.cfg` (when using the SpiNNakerGraphFrontEnd).
-1. Modify the parameters within the `[Machine]` section.
-1. Modify "`virtual_board = False`" to state "`virtual_board = True`".
-1. Modify/ Add "version = 5" to state you are simulating a spin1 48 chip board
-   1. Use 3 to simulate a spin1 4 chip 
-   1. Use 201  to simulate a spin2 single chip board
-   1. Use 248 to simulate a spin2 48 chip board
-1. Width and height of the virtual machine
-   1. For versions 3 and 201 this is fixed and unchangable
-   1. Like with Spalloc the system will calculate the number of board needed
-      1. Use "`width = None`"
-      1. Use "`height = None`"
-   1. Optional (mainly to simulate a wrap around machine)
-      1. Modify "`width = None`" to state the size of your virtual SpiNNaker machine in the _x_ dimension.
-      1. Modify "`height = None`" to state the size of your virtual SpiNNaker machine in the _y_ dimension.
-1. Advanced Machine settings
-   1.`requires_wrap_arounds` No longer needed. A Width or Height which is a multiple of 12 causes wrap arround.
+For example: To simulate a three board wrapped setup.
+```
+[Machine]
+version = 5
+virtual_board = True
+width = 12
+height = 12
+``````
 
-# Now what?
-
-Run your scripts as normal, and either front end will generate a SpiNNaker machine with the dimensions you have defined and will execute all of its mapping processes as if it were running on a real machine.
-
-When your script has reached the state where, when running on a real SpiNNaker machine, it would be loading data onto the SpiNNaker machine, it will now return immediately.  When used with PyNN scripts, you will be able to request data from the simulation, but this data will be empty.  When used with the Graph Front End, the results will depend on the user implementation.
+Other cfg settings
