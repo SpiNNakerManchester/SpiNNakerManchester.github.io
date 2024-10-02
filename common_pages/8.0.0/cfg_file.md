@@ -17,6 +17,8 @@ This file will be found in your home directory.
 
 Warning some systems consider these a hidden file.
 
+In Jupyter this can be edited using nano ~/.spynnaker
+
 ## Creating a new cfg file
 When SpyNNaker is first called, if a configuration file is not found, it will create one in your home directory and exit.
 It is possible to ask spinnaker to do this before you run your first simulation as follows:
@@ -36,15 +38,15 @@ It is possible to ask spinnaker to do this before you run your first simulation 
 ## Other cfg files.
 Before reading the cfg in your home directory Spinnaker will load the default cfg files.
 
-Any values in your cfg overwrite the default values.
+Any values in your cfg overwrites the default values.
 
-Then if looks for a spynnaker.cfg/spinnakerGraphFrontEnd.cfg (No period) in the directory from which you run the script.
+Then it looks for a spynnaker.cfg/spinnakerGraphFrontEnd.cfg (No period) in the directory from which you run the script.
 Values here overwrite the ones in your home cfg.
-These are for values specific to the script(s).
+These are for values specific to the(se) script(s).
 
-# Default values
+#  <a name="defaults"> Default values</a>
 For all values the system comes with working default values.
-So only include values where the default does not work.  
+So only include values where the default does not work for you. 
 
 The only required cfg settings are the ones related to accessing spinnaker, as by default no access is defined.
 
@@ -57,9 +59,8 @@ The default values come from cfg files in each repository.
 - [spynnaker.cfg](https://github.com/SpiNNakerManchester/sPyNNaker/blob/master/spynnaker/pyNN/spynnaker.cfg) / [spiNNakerGraphFrontEnd.cfg](https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd/blob/master/spinnaker_graph_front_end/spiNNakerGraphFrontEnd.cfg)
 
 All cfg values used by the Spinnaker system are in these files.
-The option maes are case insensitive and slash
-Do not edit these files. Instead add the values you want to change to the cfg file in your home or run directory.
-
+The option names are case-insensitive and slashes are removed.
+Do not edit these files. Instead, add the values you want to change to the cfg file in your home or run directory.
 
 # Specifying how to access spinnaker
 
@@ -90,9 +91,19 @@ spalloc_server = spinnaker.cs.man.ac.uk
 spalloc_user = user.name@email.address
 ```
 
-Where you edit spalloc_server if you are using a different spalloc_server; editing spalloc_user is helpful for administrators of the machine to contact you if there are any problems, which is why we suggest using an email address.
-
 In this case spalloc_server is without the `http`/`https`.
+
+On https://spinn-20.cs.man.ac.uk/ (Our JupyterLab)
+```
+[Machine]
+version = 5
+spalloc_server = 10.11.192.11
+spalloc_user=Jupyter(your id)
+```
+
+Where you edit spalloc_server if you are using a different spalloc_server; 
+Editing spalloc_user is helpful for administrators of the machine to contact you if there are any problems, which is why we suggest using an email address.
+
 
 ### Spalloc Proxy Server
 
@@ -103,14 +114,15 @@ To use this option you must have an account setup by the spinnaker team.
 version = 5
 spalloc_server = https://user_id:password@spinnaker.cs.man.ac.uk/spalloc/
 ``````
-Where 'user_id' and 'password' should be the ones setup and that workto log into the [server](pinnaker.cs.man.ac.uk/spalloc/).
+Where 'user_id' and 'password' should be the ones setup and that work to log into the [server](spinnaker.cs.man.ac.uk/spalloc/).
 
 To avoid exposing user_id and password in a clear text file 
 set the evironment variables "SPALLOC_USER" and "SPALLOC_PASSWORD".   
 
 ### Local Board
 
-Within the file, you should set `machineName` to the IP address or hostname of your SpiNNaker machine, and `version` to the version of your SpiNNaker board; this will almost certainly be "`3`" for a 4-chip board or "`5`" on a 48-chip board. The default IP address for a spinn-3 board is `192.168.240.253` and the default IP address for a spinn-5 board is `192.168.240.1`.
+Within the file, you should set `machineName` to the IP address or hostname of your SpiNNaker machine, and `version` to the version of your SpiNNaker board; this will almost certainly be "`3`" for a 4-chip board or "`5`" on a 48-chip board.
+The default IP address for a spinn-3 board is `192.168.240.253` and the default IP address for a spinn-5 board is `192.168.240.1`.
 
 ```
 [Machine]
@@ -157,4 +169,45 @@ width = 12
 height = 12
 ``````
 
-Other cfg settings
+# <a name="mode">Mode</a>
+The cfg files include a lot of flags to say which reports should be run, what data to extract and what to delete at the end of a run.
+
+To make it easier to turn these on the cfg includes an option
+
+````
+[Mode]
+mode=Production
+````
+
+Mode supports 4 values Production, Info, Debug, All
+
+These working by changing the values of some individual cfg settings.
+(Note this is done after reading all cfg files so where the mode and indiviaul settings are define is irrelevant here)
+
+The individual csf settings can start with four values True, Info, Debug and False.
+These are then converted to True or False depending on the mode.
+
+- Production: Info and Debug converted to False
+- Info: Info converted to True and Debug to False
+- Debug: Info and Debug are converted to True
+- All: All processed cfg settings changed to True
+
+By defualt none of the cfg settings are True and only a small subset are Info.
+All the rest except those that change the placements or compression are Debug.
+The ones False by default are:
+- write_energy_report: Adds Engery monitor vertices so changes what is placed where
+- router_table_compress_as_far_as_possible: Causes the compressor to run longer than needed, Does not improve run preformance.
+
+## Seeing the cfg settings
+There are three ways tio disciver what all the changable cfg settings are:
+- Mode=Debug: There will be logs of all the cfg flags changed
+- skipped as logs: Whenever something is not done there is a log message like Extract IO buff skipped as cfg Reports:extract_iobuf is False
+  (Note this is False after the changes made by mode)
+- Looking at the [default](#defaults) cfg files
+
+## Prior to version 7.3.0 
+There were only two 
+- Production (acted like the current Info)
+- Debug (acted like the current All)
+
+cfg Flags can only be True or false

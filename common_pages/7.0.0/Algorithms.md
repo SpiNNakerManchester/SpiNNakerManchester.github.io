@@ -45,6 +45,8 @@ The value Production will run just those reports requested
 The value Debug will turn on all reports.  
 It will also list the cfg settings changed so you can pick the ones that match the reports you are interested in.
 
+For versions 7.3.0 or later see [cfg_file](common_pages/cfg_file.md#mode)
+
 # <a name="Reports"></a> Reports
 
 This section contains the flags for turning on or off specific reports.
