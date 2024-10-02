@@ -12,7 +12,7 @@ https://docs.google.com/presentation/d/15XWZL-aAIJlN-Ixa_uJuEjxjqnn3yvarXBkWiHcW
 1. [Getting Started](#getting-started)
    1. [SpiNNaker Machine](#spinnaker-machine)
    2. [Software Limitations](#software-limitations)
-   3. [Updating to the Lastest Version](#Updating-to-the-Lastest-Version)
+   3. [Updating to the Lastest Version](#updating-to-the-lastest-version)
 2. [Running a PyNN script using a Jupyter Notebook / Lab](#running-running-a-pynn-script-using-a-jupyter-notebook--lab)
    1. [Logging in](#logging-in)
    2. [Using a pre-prepared notebook](#using-a-pre-prepared-notebook)
@@ -81,7 +81,7 @@ Where xyz is some path likely ending with /SpiNNaker-front-end/target/
 - cd into the directory
 - delete any existing spinnaker-exe.jar file
 - copy in the spinnaker-exe.jar from the latest JavaSpinnaker release (may be higher than 7.3.0)
-  - see https://github.com/SpiNNakerManchester/JavaSpiNNaker/releases
+  - [Find latest release](https://github.com/SpiNNakerManchester/JavaSpiNNaker/releases)
   - wget https://github.com/SpiNNakerManchester/JavaSpiNNaker/releases/download/7.3.0/spinnaker-exe.jar
 
 #### update the cfg file
