@@ -52,7 +52,7 @@ https://spinnakermanchester.github.io/latest/spynnaker_limitations.html
 We always recommend user use the lastest versions of the Spynnaker software
 
 These steps are for anyone using the preinstalled Spynnaker software.
-Anyone using git versions should follow standard gut update methods.
+Anyone using git versions should follow standard git update methods.
 
 - pip install --upgrade pip
   - always a good idea before using pip
