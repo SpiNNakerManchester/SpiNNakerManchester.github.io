@@ -12,11 +12,13 @@ https://docs.google.com/presentation/d/15XWZL-aAIJlN-Ixa_uJuEjxjqnn3yvarXBkWiHcW
 1. [Getting Started](#getting-started)
    1. [SpiNNaker Machine](#spinnaker-machine)
    2. [Software Limitations](#software-limitations)
+   3. [Updating to the Lastest Version](#Updating-to-the-Lastest-Version)
 2. [Running a PyNN script using a Jupyter Notebook / Lab](#running-running-a-pynn-script-using-a-jupyter-notebook--lab)
    1. [Logging in](#logging-in)
    2. [Using a pre-prepared notebook](#using-a-pre-prepared-notebook)
    3. [Running your own script](#running-your-own-script)
    4. [Closing notebooks and logging out]( #closing-notebooks-and-logging-out)
+   5. [cfg_file](/common_pages/cfg_file.html)
 3. [Using the Neurorobotics Platform (NRP) with Jupyter](#using-the-neurorobotics-platform-nrp-with-jupyter)
    1. [Setting up](#setting-up)
    2. [Running a job](#running-a-job)
@@ -46,6 +48,58 @@ This section describes some basic limitations that the PyNN script can experienc
 A PyNN script running on the SpiNNaker backend needs to adhere to the subset of PyNN that is supported by sPyNNaker, a list of what is not implemented can be found here:
 https://spinnakermanchester.github.io/latest/spynnaker_limitations.html
 
+## Updating to the Lastest Version
+We always recommend user use the lastest versions of the Spynnaker software
+
+These steps are for anyone using the preinstalled Spynnaker software.
+Anyone using git versions should follow standard gut update methods.
+
+- pip install --upgrade pip
+  - always a good idea before using pip
+- pip install --upgrade numpy
+  - many be needed depending on how old the current numpy is
+- pip install --upgrade sPyNNaker
+  - Will automatically install the spinnaker dependecies too
+
+Please clean up the reports folder found at $HOME/reports
+Delete all directories you don't need.
+
+Run a small script.
+
+#### If you see an error referencing spynnaker8
+```
+from spynnaker.pyNN.setup_pynn import setup_pynn
+setup_pynn()
+```
+
+#### If you get a Java error
+- No jar file at xyz/spinnaker-exe.jar
+- subprocess.CalledProcessError: Command '['java', '-jar', 'xyz/spinnaker-exe.jar'
+
+Where xyz is some path likely ending with /SpiNNaker-front-end/target/
+
+- cd into the directory
+- delete any existing spinnaker-exe.jar file
+- copy in the spinnaker-exe.jar from the latest JavaSpinnaker release (may be higher than 7.3.0)
+  - see https://github.com/SpiNNakerManchester/JavaSpiNNaker/releases
+  - wget https://github.com/SpiNNakerManchester/JavaSpiNNaker/releases/download/7.3.0/spinnaker-exe.jar
+
+#### update the cfg file
+nano ~/.spynnaker.cfg
+
+Add these cfg settings as needed (Remember there can only be one of each section)
+```
+[Machine]
+version=5
+
+[Mode]
+mode=Production
+```
+
+For alternative values to mode as well as individual cfg flags you can set to turn on reports 
+see: [cfg_file](/common_pages/cfg_file.html#mode)
+
+  
 # Running a PyNN script using a Jupyter Notebook / Lab
 This section describes how an end user starts a PyNN simulation using a Jupyter Notebook.
 
