@@ -50,7 +50,7 @@ If you already have installed sPyNNaker previously (and the optional sPyNNakerEx
 
 1. Install pyNN-SpiNNaker:
 
-       python -m spynnaker.setup_pynn
+       python -m spynnaker.pyNN.setup_pynn
 
 # <a name="Configuration"></a> Configuration
 
