@@ -16,7 +16,7 @@ This guide covers the cfg settings and the reports created
   * [Java](#Java)
   * [Simulation](#Simulation)
   * [Recording](#Recording)
-* [Report Files](#report_files})
+* [Report Files](#report_files)
 # <a name="Logging"></a> Logging
 This section controls the logger
 * [default](#default)
@@ -331,6 +331,11 @@ While designed for Machine settings can include any cfg setting. (Except another
 #### Trigger
 * key: write_application_graph_placer_report 
 * value: Info
+#### Paths
+* key: path_application_graph_placer_report_vertex 
+  * value: placement_by_vertex_using_graph.rpt
+* key: path_application_graph_placer_report_core 
+  * value: placement_by_core_using_graph.rpt
 ### <a name="bit_field_compressor_report"></a> bit_field_compressor_report
 #### Trigger
 * key: write_bit_field_compressor_report 
@@ -383,6 +388,11 @@ While designed for Machine settings can include any cfg setting. (Except another
 #### Trigger
 * key: write_data_speed_up_reports 
 * value: Debug
+#### Paths
+* key: path_data_speed_up_reports_speeds 
+  * value: speeds_gained_in_speed_up_process.rpt
+* key: path_data_speed_up_reports_routers 
+  * value: routers_used_in_speed_up_process.rpt
 ### <a name="dataspec_database"></a> dataspec_database
 #### Trigger
 * key: keep_dataspec_database 
@@ -422,6 +432,11 @@ While designed for Machine settings can include any cfg setting. (Except another
 #### Trigger
 * key: extract_iobuf 
 * value: Debug
+#### Paths
+* key: path_iobuf_app 
+  * value: provenance_data\app_provenance_data
+* key: path_iobuf_system 
+  * value: provenance_data\system_provenance_data
 ### <a name="extract_iobuf_from_binary_types"></a> extract_iobuf_from_binary_types
 * key: extract_iobuf_from_binary_types 
 * value: None
@@ -485,6 +500,11 @@ always written if there is a down core, chip or link declared
 #### Trigger
 * key: write_memory_map_report 
 * value: Debug
+#### Paths
+* key: path_memory_map_report_map 
+  * value: memory_map_from_processor_to_address_space
+* key: path_memory_map_reports 
+  * value: memory_map_reports
 ### <a name="n_profile_samples"></a> n_profile_samples
 * key: n_profile_samples 
 * value: 0
@@ -597,6 +617,11 @@ Always run if needed
 #### Trigger
 * key: write_tag_allocation_reports 
 * value: Debug
+#### Paths
+* key: path_tag_allocation_reports_host 
+  * value: tags.rpt
+* key: path_tag_allocation_reports_machine 
+  * value: tags_on_machine.txt
 ### <a name="text_specs"></a> text_specs
 #### Trigger
 * key: write_text_specs 
