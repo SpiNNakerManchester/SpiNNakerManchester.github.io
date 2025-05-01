@@ -26,11 +26,13 @@ This guide covers the cfg settings and the reports created.
   * [Recording](#Recording)
 * [Report Files](#report_files)
 * [Notes for Developers](#notes)
+
 # <a name="Logging"></a> Logging
 This section controls the logger
 
 * [default](#default)
 * [instantiate](#instantiate)
+
 ### <a name="default"></a> default
 Default: __info__
 
@@ -80,6 +82,7 @@ This section controls getting a spinnaker machine
 * [versions](#versions)
 * [virtual_board](#virtual_board)
 * [width](#width)
+
 ### <a name="auto_detect_bmp"></a> auto_detect_bmp
 Default: __False__
 
@@ -342,6 +345,7 @@ This section covers the settings for the various databases used.
 * [notify_port](#notify_port)
 * [wait_on_confirmation](#wait_on_confirmation)
 * [wait_on_confirmation_timeout](#wait_on_confirmation_timeout)
+
 ### <a name="create_database"></a> create_database
 Default: __None__
 
@@ -396,6 +400,7 @@ Mapping options particularly which algorithms to run and how.
 * [validate_json](#validate_json)
 * [validate_routes_uncompressed](#validate_routes_uncompressed)
 * [virtual_compressor](#virtual_compressor)
+
 ### <a name="compressor"></a> compressor
 Default: __PairOnChipRouterCompression__
 
@@ -553,6 +558,7 @@ This section controls the reports being run and written.
 * [write_tag_allocation_reports](#write_tag_allocation_reports)
 * [write_text_specs](#write_text_specs)
 * [write_uncompressed](#write_uncompressed)
+
 ### <a name="clear_iobuf_during_run"></a> clear_iobuf_during_run
 Default: __True__
 
@@ -997,6 +1003,7 @@ This section control if runs are divided into smaller runs and how.
 
 * [minimum_auto_time_steps](#minimum_auto_time_steps)
 * [use_auto_pause_and_resume](#use_auto_pause_and_resume)
+
 ### <a name="minimum_auto_time_steps"></a> minimum_auto_time_steps
 Default: __1000__
 
@@ -1017,6 +1024,7 @@ Semantic sugar for enabling lots of reports at once.
 
 * [mode](#mode)
 * [violate_1ms_wall_clock_restriction](#violate_1ms_wall_clock_restriction)
+
 ### <a name="mode"></a> mode
 Default: __Production__
 
@@ -1051,6 +1059,7 @@ Setting for the [Energy Monitor](#energy_report)
 
 * [n_samples_per_recording_entry](#n_samples_per_recording_entry)
 * [sampling_frequency](#sampling_frequency)
+
 ### <a name="n_samples_per_recording_entry"></a> n_samples_per_recording_entry
 Default: __100__
 
@@ -1070,6 +1079,7 @@ This section controls the seetting to active the use of Java
 * [java_spinnaker_path](#java_spinnaker_path)
 * [path_json_java_placements](#path_json_java_placements)
 * [use_java](#use_java)
+
 ### <a name="java_call"></a> java_call
 Default: __java__
 
@@ -1139,6 +1149,7 @@ The section covers settings which control how the models behave.
 * [ring_buffer_sigma](#ring_buffer_sigma)
 * [spikes_per_second](#spikes_per_second)
 * [transfer_overhead_clocks](#transfer_overhead_clocks)
+
 ### <a name="drop_late_spikes"></a> drop_late_spikes
 Default: __False__
 
@@ -1184,6 +1195,7 @@ Section for the sending of live spikes.
 
 * [live_spike_host](#live_spike_host)
 * [live_spike_port](#live_spike_port)
+
 ### <a name="live_spike_host"></a> live_spike_host
 Default: __0.0.0.0__
 
