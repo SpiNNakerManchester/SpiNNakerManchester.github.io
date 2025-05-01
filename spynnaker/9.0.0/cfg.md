@@ -131,22 +131,24 @@ Testng Option to remove some cores from the Machine.
 
 Syntax for specifying a Chip, Core or Link in cfg values
 
+```
 format is:
-* down_cores = <down_core_id>[:<down_core_id]*
-* <down_core_id> = <chip_x>,<chip_y>,(<core_id>|<core_range>)[,<ip>]
-* <core_range> = <core_id>-<core_id>]*
-* down_chips = <down_chip_id>[:<down_chip_id]*
-* <down_chip_id> = <chip_x>,<chip_y>[,<ip>]
-* down_links = <down_link_id>:[:<down_link_id>]*
-* <down_link_id> = <chip_x>,<chip_y>,<link_id>[,<ip>]
+down_cores = <down_core_id>[:<down_core_id]*
+<down_core_id> = <chip_x>,<chip_y>,(<core_id>|<core_range>)[,<ip>]
+<core_range> = <core_id>-<core_id>]*
+down_chips = <down_chip_id>[:<down_chip_id]*
+<down_chip_id> = <chip_x>,<chip_y>[,<ip>]
+down_links = <down_link_id>:[:<down_link_id>]*
+<down_link_id> = <chip_x>,<chip_y>,<link_id>[,<ip>]
 
 where:
-* <chip_x> is the x-coordinate of a down chip
-* <chip_x> is the y-coordinate of a down chip
-* <core_id> is the virtual core ID of a core if > 0 or the physical core if <= 0
-* <link_id> is the link ID of a link between 0 and 5
-* <ip> is an OPTIONAL ip address in the 127.0.0.0 format.
-* If provided the <chip_x> <chip_y> will be considered local to the board with this ip address
+<chip_x> is the x-coordinate of a down chip
+<chip_x> is the y-coordinate of a down chip
+<core_id> is the virtual core ID of a core if > 0 or the physical core if <= 0
+<link_id> is the link ID of a link between 0 and 5
+<ip> is an OPTIONAL ip address in the 127.0.0.0 format.
+If provided the <chip_x> <chip_y> will be considered local to the board with this ip address
+```
 
 ### <a name="down_links"></a> down_links
 Default: __None__
