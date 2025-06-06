@@ -8,7 +8,8 @@ The original Jupyter service is now out-of-date and has a number of security iss
 # Important Information
 Useful information about the new service on https://sands.cs.man.ac.uk:
  
- - Only files in ``work`` or ``drive`` will be persisted.  All other files will be deleted when you log out (or when inactive sessions time out - timing of this is to be determined).
+ - Inactive sessions will time out after 2 weeks.  Inactive means that you haven't visited your Jupyter service in that time.
+ - Only files in ``work`` or ``drive`` will be persisted.  All other files will be deleted when you log out, or when inactive sessions time out.
  - You can install things as before, but these are not persisted between sessions.  It is therefore recommended to install additional libraries via [ipython magics](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-pip), so that they will be reinstalled on next execution.
  - Your workspace will be restored on execution to the extent that open files that are in persistent storage will be reopened.
  - The new Jupyter has been set up with 3 Kernels:
