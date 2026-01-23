@@ -1,3 +1,3 @@
 ---
-redirect_to: /development/devenv7.0.html
+redirect_to: /development/devenv.html
 ---
