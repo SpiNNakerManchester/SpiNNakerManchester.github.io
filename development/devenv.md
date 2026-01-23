@@ -63,7 +63,6 @@ If you are using an IDE, it is recommended that all modules are cloned so that a
 |`sPyNNakerNewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git|Python and C|
 |`PyNNExamples` | https://github.com/SpiNNakerManchester/PyNNExamples.git|Python|
 |`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
-|`IntroLab` | https://github.com/SpiNNakerManchester/IntroLab.git|Python|
 |`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
 | `TestBase` | https://github.com/SpiNNakerManchester/TestBase.git| Optional Python |
 | `IntegrationTests` | https://github.com/SpiNNakerManchester/IntegrationTests.git | Optional Jenkins |
