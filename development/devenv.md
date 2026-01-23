@@ -18,23 +18,11 @@ title: Setting up a Software Development Environment for SpiNNaker
  1. [Integration Test tools](integration.html)
 
 # <a name="PythonRequirements"></a> Python Requirements
-1. [Install the general platform requirements](/common_pages/5.0.0/PythonInstall.html); note that _we do not support any version of Python before 3.6._
-1. If you would prefer to use a virtualenv, [follow these instructions](/common_pages/5.0.0/VirtualEnv.html) to set up the dependencies.
-1. Install other general dependencies via pip:
+Please see https://pypi.org/project/sPyNNaker/ for the python versions we currently support.
 
-       pip install "numpy>=1.13,<1.9999" "scipy>=0.16.0" matplotlib
-       pip install "appdirs>=1.4.2,<2.0.0" "pylru>=1" lxml jsonschema sortedcollections futures pytz tzlocal "requests>=2.4.1"
-       pip install csa "quantities>=0.12.1" "pynn>=0.9.2,<0.10" "lazyarray>=0.2.9,<=0.4.0" "neo>=0.5.2,< 0.7.0"
+If we do not support the latest version this is likely due to dependencies not supporting it.
 
-   Optionally, you can also install `rig` though this is not normally needed:
-
-       pip install "rig>=2.0.0,<3.0.0"
-
-You may need to install `python3-tk`; this cannot be installed via pip due to the way it interacts with the base Python installation. If you do install this, it must be done _before_ you create any virtualenv.
-
-We _strongly_ recommend the use of virtualenv for development work.
-
-The remainder of these installation instructions assume that the command "`python`" corresponds to the Python version you have installed here (version 3.6 or later); please ensure that this is the case.
+Please visit https://www.python.org for instructions on how to install python on your platform.
 
 # <a name="CRequirements"></a> C Development Requirements
 [Install a C compiler](/common_pages/5.0.0/Compiler.html) that is compatible with SpiNNaker and dependencies.
@@ -47,65 +35,41 @@ We recommend that all repositories are cloned into the same parent directory as 
 
 If you are using an IDE, it is recommended that all modules are cloned so that any changes made are automatically reflected across the entirety of the software.
 
-|**Name**|**URL**|**Code Type**|
-|:-------|:------|:------------|
-|`spinnaker_tools` | https://github.com/SpiNNakerManchester/spinnaker_tools.git|C|
-|`spinn_common` | https://github.com/SpiNNakerManchester/spinn_common.git|C|
-|`SpiNNUtils` | https://github.com/SpiNNakerManchester/SpiNNUtils.git|Python|
-|`SpiNNMachine` | https://github.com/SpiNNakerManchester/SpiNNMachine.git|Python|
-|`spalloc` | https://github.com/SpiNNakerManchester/spalloc.git|Python|
-|`spalloc_server` | https://github.com/SpiNNakerManchester/spalloc_server.git|Python|
-|`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN.git|Python|
-|`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan.git|Python|
-|`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git|Python and C|
-|`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git|Python and C|
-|`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git|Python and C|
-|`sPyNNakerNewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git|Python and C|
-|`PyNNExamples` | https://github.com/SpiNNakerManchester/PyNNExamples.git|Python|
-|`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git|Python|
-|`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java|
-| `TestBase` | https://github.com/SpiNNakerManchester/TestBase.git| Optional Python |
-| `IntegrationTests` | https://github.com/SpiNNakerManchester/IntegrationTests.git | Optional Jenkins |
-|`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git|Python and scripting|
+|**Name**|**URL**| **Code Type**                             |
+|:-------|:------|:------------------------------------------|
+|`spinnaker_tools` | https://github.com/SpiNNakerManchester/spinnaker_tools.git| C                                         |
+|`spinn_common` | https://github.com/SpiNNakerManchester/spinn_common.git| C                                         |
+|`SpiNNUtils` | https://github.com/SpiNNakerManchester/SpiNNUtils.git| Python                                    |
+|`SpiNNMachine` | https://github.com/SpiNNakerManchester/SpiNNMachine.git| Python                                    |
+|`spalloc` | https://github.com/SpiNNakerManchester/spalloc.git| Python                                    |
+|`PACMAN` | https://github.com/SpiNNakerManchester/PACMAN.git| Python                                    |
+|`SpiNNMan` | https://github.com/SpiNNakerManchester/SpiNNMan.git| Python                                    |
+|`SpiNNFrontEndCommon` | https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git| Python and C                              |
+|`SpiNNakerGraphFrontEnd` | https://github.com/SpiNNakerManchester/SpiNNakerGraphFrontEnd.git| (Needed if not using PyNN) Python and C   |
+|`sPyNNaker` | https://github.com/SpiNNakerManchester/sPyNNaker.git| (needed is using PyNN) Python and C       |
+|`sPyNNakerNewModelTemplate` | https://github.com/SpiNNakerManchester/sPyNNakerNewModelTemplate.git| (suggested if adding models) Python and C |
+|`PyNNExamples` | https://github.com/SpiNNakerManchester/PyNNExamples.git| Optional Python                           |
+|`sPyNNakerVisualisers` | https://github.com/SpiNNakerManchester/sPyNNakerVisualisers.git| Optional Python                           |
+|`JavaSpiNNaker` | https://github.com/SpiNNakerManchester/JavaSpiNNaker.git| Optional Java                             |
+| `TestBase` | https://github.com/SpiNNakerManchester/TestBase.git| Optional Python                           |
+| `IntegrationTests` | https://github.com/SpiNNakerManchester/IntegrationTests.git | Optional Jenkins                          |
+|`SupportScripts` | https://github.com/SpiNNakerManchester/SupportScripts.git| Python and scripting           |
 
 The last of these repositories contains a useful selection of scripts for semi-automatically building the toolchain.
 
-# <a name="java"></a> Java Development kitgit save username and password
+# <a name="java"></a> Java 
 
-A Java JDK will be required in the following conditions:
+Java is optional and only benefits users with large (multi board) Jobs.
 
-1. If modifying or even just using the Java versions of the tools
-1. If modifying the Remote Access software for the Human Brain Project portal
+Even for large Jobs Java is not required but may speed up loading and unloading.
 
-A Java JRE may also be required:
-1. If you are going to use an IDE (which requires Java and does not have one with it)
-
-We recommend the [Oracle Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-The tools require at least Java 8 but there is no known reason that a more up to date version cannot be used.  We have regularly tested OpenJDK 8 and OpenJDK 11 with no problems.
-
-## Java version of the tools
-Java version is optional and off by default.
-
-Requires the `JavaSpiNNaker` repository.
-
-**NB:** You still need the Python tools to use this.
-
-### Current situation
-You will be required to build the jar file required.
-
-Open JavaSpiNNaker in an IDE which supports maven.
-
-Build "SpiNNaker Java Host" with dependencies.  This will create the `spinnaker-exe.jar` file in `SpiNNaker-front-end/target`
-
-It is also possible to [install maven](https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html) and run "`mvn package`" on the command line from the `JavaSpiNNaker` directory.
-
-See [Configure the environment](#Configuration) for how to active these.
+See https://github.com/SpiNNakerManchester/JavaSpiNNaker for more details.
 
 # <a name="ide"></a> Integrated Development Environment
 Although optional, we highly recommend the use of an Integrated Development Environment (IDE).  The code-base is large and complex and an IDE helps to simplify the development process.  Within the team at Manchester, we use two IDEs with different benefits and issues.  The installation of these is detailed below.
 
- * [PyCharm](https://www.jetbrains.com/pycharm/) — Version 4.5.3 has been tested but other versions should also work. This is very good for Python development and supports C development as well to some degree.  Java development is not supported in this client.  PyCharm is good at working out the links between Python code.
+ * [PyCharm](https://www.jetbrains.com/pycharm/) — Version 2025.2.5 has been tested but other versions should also work. This is very good for Python development and supports C development as well to some degree.  Java development is not supported in this client.  PyCharm is good at working out the links between Python code.
+
 
  * [Eclipse](https://eclipse.org/downloads/eclipse-packages/) — Eclipse Oxygen has been thoroughly tested, but other versions should also work.  So far, we have been downloading the "Eclipse IDE for Java Developers" as the starting point, and then adding the packages as detailed below.  Eclipse supports development in multiple languages through the addition of plugins.  Several plugins exist for doing a wide variety of development tasks, including Python, C and Java; Eclipse is the way to go if you are planning on developing in Java.  However, Eclipse is known to require quite a lot of memory (around 1GB just for eclipse).  Plugins required are:
     * PyDev — This is required for Python Development.  This can be installed from the Eclipse Marketplace (Help → Eclipse MarketPlace…) by searching for `pydev`.
@@ -188,20 +152,30 @@ In a C project, this is done as follows:
 
 ## <a name="pythondependencies"></a> Python Dependencies
 
-|**Module**|**Dependencies**|
-|:---------|:---------------|
-|SpiNNMachine|SpiNNUtils|
-|SpiNNMan|SpiNNUtils, SpiNNMachine|
-|PACMAN|SpiNNUtils, SpiNNMachine|
-|SpiNNFrontEndCommon|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, spalloc|
-|SpiNNakerGraphFrontEnd|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc, TestBase*|
-|sPyNNaker|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc, TestBase*|
-|sPyNNakerNewModelTemplate|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
-|PyNNExamples|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
-|sPyNNakerVisualisers|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc|
-|IntroLab|SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, SpiNNakerGraphFrontEnd, sPyNNaker, spalloc, TestBase*|
+| **Module**                |**Dependencies**|
+|:--------------------------|:---------------|
+| SpiNNMachine              |SpiNNUtils|
+| SpiNNMan                  |SpiNNUtils, SpiNNMachine|
+| spalloc                   |SpiNNUtils|
+| PACMAN                    |SpiNNUtils, SpiNNMachine|
+| SpiNNFrontEndCommon       |SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, spalloc|
+| SpiNNakerGraphFrontEnd    |SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc, TestBase*|
+| sPyNNaker                 |SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc, TestBase*|
+| sPyNNakerNewModelTemplate |SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
+| PyNNExamples              |SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, sPyNNaker, spalloc, TestBase*|
+| sPyNNakerVisualisers      |SpiNNUtils, SpiNNMachine, SpiNNMan, PACMAN, SpiNNFrontEndCommon, spalloc|
 
 * TestBase is only required to run IntergationTests
+
+### <a name="externalpythondependencies"></a> External Python Dependencies
+
+Please see setup.cfg in each repository for the external python dependencies.
+
+The ones in install_requires are needed to run.
+
+Additional options.extras_require test ones are needed for testing.
+
+Unless the version is limited in setup.cfg we always test against the latest version of each dependency.
 
 ## <a name="cdependencies"></a> C Dependencies
 

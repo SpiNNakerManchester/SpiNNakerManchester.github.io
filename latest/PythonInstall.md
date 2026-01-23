@@ -1,3 +1,3 @@
 ---
-redirect_to: /common_pages/6.0.0/PythonInstall.html
+redirect_to: /common_pages/8.0.0/PythonInstall.html
 ---
