@@ -16,8 +16,8 @@ This guide covers the cfg settings and the reports created.
   * [Logging](#Logging)
   * [Machine](#Machine)
   * [Database](#Database)
-  * [Mapping](#Mapping)
   * [Reports](#Reports)
+  * [Mapping](#Mapping)
   * [Buffers](#Buffers)
   * [Mode](#Mode)
   * [EnergyMonitor](#EnergyMonitor)
@@ -71,15 +71,22 @@ This section controls getting a spinnaker machine
 * [simulation_time_step](#simulation_time_step)
 * [spalloc_avoid_boards](#spalloc_avoid_boards)
 * [spalloc_group](#spalloc_group)
+* [spalloc_height](#spalloc_height)
+* [spalloc_ip_address](#spalloc_ip_address)
 * [spalloc_machine](#spalloc_machine)
+* [spalloc_max_dead_boards](#spalloc_max_dead_boards)
+* [spalloc_physical](#spalloc_physical)
 * [spalloc_port](#spalloc_port)
+* [spalloc_queue_time](#spalloc_queue_time)
+* [spalloc_retry](#spalloc_retry)
 * [spalloc_server](#spalloc_server)
+* [spalloc_triad](#spalloc_triad)
 * [spalloc_use_proxy](#spalloc_use_proxy)
 * [spalloc_user](#spalloc_user)
+* [spalloc_width](#spalloc_width)
 * [time_scale_factor](#time_scale_factor)
 * [turn_off_machine](#turn_off_machine)
 * [version](#version)
-* [versions](#versions)
 * [virtual_board](#virtual_board)
 * [width](#width)
 
@@ -87,7 +94,7 @@ This section controls getting a spinnaker machine
 Default: __False__
 
 Only needed for [physical board(s)](#machine_name) with both am Ethernet and BMP cable connected.
-If True the assumption is the BMP ip addresss is one less than the [Ethernet](#machine_name)
+If True the assumption is the BMP IP addresss is one less than the [Ethernet](#machine_name)
 
 ### <a name="bmp_names"></a> bmp_names
 Default: __None__
@@ -230,7 +237,7 @@ Used by HPAllocator. Will be a url
 Default: __False__
 
 Allows for temporary repair/hiding of hardware faults.
-This setting should always be False unless an error has been reported on spinnakerusers@googlegroups.com
+This setting should always be False unless an error has been reported on spinnakerusers@googlegroups.com or to info@spinncloud.com
 
 ### <a name="report_waiting_logs"></a> report_waiting_logs
 Default: __False__
@@ -253,7 +260,7 @@ Ignored if setup is called with a timestep.
 ### <a name="spalloc_avoid_boards"></a> spalloc_avoid_boards
 Default: __None__
 
-An (optional) comma seperated list of ip addresses to avoid.
+An (optional) comma seperated list of IP addresses to avoid.
 This is a mainly for temporarily disabling boards that need to be blacklisted/ repaired.
 
 ### <a name="spalloc_group"></a> spalloc_group
@@ -263,21 +270,98 @@ The group to allocate the [spalloc](#spalloc_server) usage too.
 Ignored if the environment variable NMPI_JOB_ID (and optionaly) NMPI_USER are set.
 Also ignored if the current director points to a collab.
 
+### <a name="spalloc_height"></a> spalloc_height
+Default: __None__
+
+Testing Option. Height in triads when using new spalloc.
+Must be used in connection with spalloc_width.
+
+Warning. If set (or defaulted) boards/chip required will be ignored
+
+Warning. If set spalloc_triad, spalloc_physical or spalloc_ip_address
+will point to the board with the 0,0 Chip.
+So must point to lower left board of a triad.
+
+### <a name="spalloc_ip_address"></a> spalloc_ip_address
+Default: __None__
+
+Testing Option.
+IP address of the base baord for a spalloc job
+Ignored if spalloc_triad or spalloc_physical are not None
+
+Warning. If set boards/chip required will be ignored.
+spalloc_height and spalloc_width can be used.
+
+Warning. This option will cause the spalloc to error if IP Address is not available
+
 ### <a name="spalloc_machine"></a> spalloc_machine
 Default: __None__
 
 Name of the Spalloc Machine to be used.
-Optional unless the [URL](#spalloc_server) points to multiple spalloc manchines.
+Optional unless the [URL](#spalloc_server) points to multiple spalloc machines.
+
+### <a name="spalloc_max_dead_boards"></a> spalloc_max_dead_boards
+Default: __None__
+
+Testing Option.
+The number of dead boards that can be in the requested area.
+
+If not set when spalloc_height is set the server will default to 0
+
+Warning. Not recommended when spalloc_height is not set as it may allow
+spalloc to return a job/Machine with less than the requested boards reachable.
+
+### <a name="spalloc_physical"></a> spalloc_physical
+Default: __None__
+
+Testing Option.
+Cabinet, Frame, Board the physical coordinate of the board to request.
+A single string of three comma seperated ints
+Ignored if spalloc_triad is not None
+
+Warning. If set boards/chip required will be ignored.
+spalloc_height and spalloc_width can be used.
+
+Warning. This option will cause the spalloc to error if physical is not available
 
 ### <a name="spalloc_port"></a> spalloc_port
 Default: __22244__
 
 The port for the [spalloc server](#spalloc_server) if used.
 
+### <a name="spalloc_queue_time"></a> spalloc_queue_time
+Default: __300__
+
+Time in seconds that the spalloc client will wait for a job to leave the QUEUE state.
+Ignored if spalloc_height, spalloc_triad, spalloc_physical or spalloc_ip_address is not None
+A setting of less than 15 seconds is not recommened.
+Setting this to None will allow this job to wait forever.
+Warning the spalloc block for all users until the job leaves QUEUED (ready or destroied)
+
+### <a name="spalloc_retry"></a> spalloc_retry
+Default: __3__
+
+Maximum number of times to retry getting a machine,
+including getting a new spalloc job and a new transceiver
+
 ### <a name="spalloc_server"></a> spalloc_server
 Default: __None__
 
 Url of the spalloc server.
+If the spalloc_server does not contained required username and password
+The environment variables SPALLOC_USER and SPALLOC_PASSWORD are used
+
+### <a name="spalloc_triad"></a> spalloc_triad
+Default: __None__
+
+Testing Option.
+X, Y, Z of the logical coordinate of the board to request.
+A single string of three comma seperated ints
+
+Warning. If set boards/chip required will be ignored.
+spalloc_height and spalloc_width can be used.
+
+Warning. This option will cause the spalloc to error if the traid is not available
 
 ### <a name="spalloc_use_proxy"></a> spalloc_use_proxy
 Default: __True__
@@ -293,6 +377,12 @@ The user for the [spalloc server](#spalloc_server) if used.
 Used if not part of the [URL](#spalloc_server).
 If neither provided the environment variable SPALLOC_USERS will be tried.
 The matching password can only come from the [URL](#spalloc_server) or the environment variable SPALLOC_PASSWORD.
+
+### <a name="spalloc_width"></a> spalloc_width
+Default: __None__
+
+Testing Option. Width in triads when using new spalloc.
+Ignored if spalloc_height is None.
 
 ### <a name="time_scale_factor"></a> time_scale_factor
 Default: __None__
@@ -317,11 +407,6 @@ The hardware version of the spinnaker board being used
    * 248: Fot a 48 chip spinnaker 2 board
 * This replaces deprecated "width" and "height" options
 * "versions" option is for testing only and picks a version based on python version
-
-### <a name="versions"></a> versions
-Default: __None__
-
-Testing Option. Picks a valid version based on python version. Requires [virtual_board](#virtual_board)
 
 ### <a name="virtual_board"></a> virtual_board
 Default: __False__
@@ -384,121 +469,6 @@ Default: __10__
 
 Time in seconds for the NotificationProtocol to [wait](#wait_on_confirmation).
 
-# <a name="Mapping"></a> Mapping
-Mapping options particularly which algorithms to run and how.
-
-* [compressor](#compressor)
-* [delay_support_adder](#delay_support_adder)
-* [external_binaries](#external_binaries)
-* [info_allocator](#info_allocator)
-* [placer](#placer)
-* [precompressor](#precompressor)
-* [router](#router)
-* [router_table_compress_as_far_as_possible](#router_table_compress_as_far_as_possible)
-* [routing_table_generator](#routing_table_generator)
-* [run_compression_checker](#run_compression_checker)
-* [validate_json](#validate_json)
-* [validate_routes_uncompressed](#validate_routes_uncompressed)
-* [virtual_compressor](#virtual_compressor)
-
-### <a name="compressor"></a> compressor
-Default: __PairOnChipRouterCompression__
-
-Which algorithm to use to generate the routing tables.</br>
-Supported values are:
-* PairOnChipRouterCompression: Recommended!
-Looks for pairs with the same destination and tries to merge them.
-Make use of the order so late later merges may overlap with earlier ones.
-* PairCompressor: On host/ virtual version
-* PairUnorderedCompressor: Testing Option which does not make use of the order.
-* OrderedCoveringOnChipRouterCompression: Older compressor which attempts to merge all routes with the ame desination at the same time
-Rarely more efficient that the Pair compressor.
-This is currently tested but not supported
-* OrderedCoveringCompressor:
-On host version/ virtual version
-
-[Compression may not be needed.](router_table_compress_as_far_as_possible)
-
-### <a name="delay_support_adder"></a> delay_support_adder
-Default: __DelaySupportAdder__
-
-Algorthm for adding Delay verteices.</br>
-Currently supported options:
-* DelaySupportAdder: Adds the standard Delays Vertcies if needed
-* None: will skip the adder (Not Recommended) </br></br>
-
-### <a name="external_binaries"></a> external_binaries
-Default: __None__
-
-Absolutele path to where user created and combined binaries are located.
-
-### <a name="info_allocator"></a> info_allocator
-Default: __ZonedRoutingInfoAllocator__
-
-Which Key and mask allocator to use.</br>
-Supported values are:
-* GlobalZonedRoutingInfoAllocator: Recommenned for most cases as produces the best results for compression.
-* ZonedRoutingInfoAllocator: Less optimized so only use if the global one fails.</br></br>
-
-### <a name="placer"></a> placer
-Default: __ApplicationPlacer__
-
-Currently only ApplicationPlacer supported.
-
-### <a name="precompressor"></a> precompressor
-Default: __None__
-
-Testing option to add a second compressor before the name one.
-Only supported options are None and Ranged.
-No known case where compression only works with precompression.
-
-### <a name="router"></a> router
-Default: __ApplicationRouter__
-
-Currently only ApplicationRouter supported
-
-### <a name="router_table_compress_as_far_as_possible"></a> router_table_compress_as_far_as_possible
-Default: __False__
-
-Testing option. Will request the compressor to run/continue even if the tables are already small enough.
-
-### <a name="routing_table_generator"></a> routing_table_generator
-Default: __MergedRoutingTableGenerator__
-
-Which algorithm to use to generate the routing tables</br>
-Supported values are:
-* MergedRoutingTableGenerator:  Recommenned as usually produces the best results.
-* BasicRoutingTableGenerator: Less optimized so only use if the merged one fails.</br></br>
-
-### <a name="compression_checker"></a> run_compression_checker
-* key: run_compression_checker 
-  * value: [Debug](#mode)
-* key: path_compression_checker 
-  * value: routing_compression_checker_report.rpt
-
-Runs a check that the compressors worked and repors the results.
-Mainly used for testing changes to the algorithms or bugs.
-
-### <a name="validate_json"></a> validate_json
-Default: __[Debug](#mode)__
-
-Runs schema validation on json files created.
-Mainly used for testing changes to the algorithms or bugs.
-
-### <a name="validate_routes_uncompressed"></a> validate_routes_uncompressed
-Default: __False__
-
-Runs a check that the routing tables are correct before compresssion.
-Mainly used for testing changes to the algorithms or bugs.
-
-### <a name="virtual_compressor"></a> virtual_compressor
-Default: __PairCompressor__
-
-Which compressor to use when using a [virtual_board](#virtual_board)
-As the "OnChip" version will fail!
-See [compressor](#compressor) for legal values.
-If None the [compressor](#compressor) option is used.
-
 # <a name="Reports"></a> Reports
 This section controls the reports being run and written.
 
@@ -532,7 +502,7 @@ This section controls the reports being run and written.
 * [tpath_global_provenance](#tpath_global_provenance)
 * [write_algorithm_timings](#write_algorithm_timings)
 * [write_application_graph_placer_report](#write_application_graph_placer_report)
-* [write_bit_field_compressor_report](#write_bit_field_compressor_report)
+* [write_binaries_report](#write_binaries_report)
 * [write_board_chip_report](#write_board_chip_report)
 * [write_compressed](#write_compressed)
 * [write_compression_comparison](#write_compression_comparison)
@@ -777,14 +747,13 @@ They may also be [logged](#display_algorithm_timings).
 
 Writes both placement reports
 
-### <a name="bit_field_compressor_report"></a> write_bit_field_compressor_report
-* key: write_bit_field_compressor_report 
+### <a name="binaries_report"></a> write_binaries_report
+* key: write_binaries_report 
   * value: [Debug](#mode)
-* key: path_bit_field_compressor_report 
-  * value: bit_field_compressed_summary.rpt
+* key: path_binaries_report 
+  * value: binaries_report.txt
 
-writes the bit rield compressor report.
-Run even without bitfield compression.
+Writes a report of the binaires used
 
 ### <a name="board_chip_report"></a> write_board_chip_report
 * key: write_board_chip_report 
@@ -844,7 +813,7 @@ In small runs advance monitors may not be used even if enabled in which case the
 * key: write_energy_report 
   * value: False
 * key: path_energy_report 
-  * value: energy_report_(n_run).rpt
+  * value: energy_report(reset_str).rpt
 
 Runs the energy reports.
 This includes adding energy monitor cores which will change placements.
@@ -998,6 +967,112 @@ Note: The [database](#data_database) is what is actually used for loading the da
 
 Writes the uncompressed routing tables.
 
+# <a name="Mapping"></a> Mapping
+Mapping options particularly which algorithms to run and how.
+
+* [compressor](#compressor)
+* [external_binaries](#external_binaries)
+* [info_allocator](#info_allocator)
+* [placer](#placer)
+* [precompressor](#precompressor)
+* [router](#router)
+* [router_table_compress_as_far_as_possible](#router_table_compress_as_far_as_possible)
+* [routing_table_generator](#routing_table_generator)
+* [run_compression_checker](#run_compression_checker)
+* [validate_json](#validate_json)
+* [validate_routes_uncompressed](#validate_routes_uncompressed)
+* [virtual_compressor](#virtual_compressor)
+
+### <a name="compressor"></a> compressor
+Default: __PairOnChipRouterCompression__
+
+Which algorithm to use to generate the routing tables.</br>
+Supported values are:
+* PairOnChipRouterCompression: Recommended!
+Looks for pairs with the same destination and tries to merge them.
+Make use of the order so late later merges may overlap with earlier ones.
+* PairCompressor: On host/ virtual version
+* PairUnorderedCompressor: Testing Option which does not make use of the order.
+* OrderedCoveringOnChipRouterCompression: Older compressor which attempts to merge all routes with the ame desination at the same time
+Rarely more efficient that the Pair compressor.
+This is currently tested but not supported
+* OrderedCoveringCompressor:
+On host version/ virtual version
+
+[Compression may not be needed.](router_table_compress_as_far_as_possible)
+
+### <a name="external_binaries"></a> external_binaries
+Default: __None__
+
+Absolute path to where user created and combined binaries are located.
+
+### <a name="info_allocator"></a> info_allocator
+Default: __ZonedRoutingInfoAllocator__
+
+Which Key and mask allocator to use.</br>
+Supported values are:
+* GlobalZonedRoutingInfoAllocator: Recommenned for most cases as produces the best results for compression.
+* ZonedRoutingInfoAllocator: Less optimized so only use if the global one fails.</br></br>
+
+### <a name="placer"></a> placer
+Default: __ApplicationPlacer__
+
+Currently only ApplicationPlacer supported.
+
+### <a name="precompressor"></a> precompressor
+Default: __None__
+
+Testing option to add a second compressor before the name one.
+Only supported options are None and Ranged.
+No known case where compression only works with precompression.
+
+### <a name="router"></a> router
+Default: __ApplicationRouter__
+
+Currently only ApplicationRouter supported
+
+### <a name="router_table_compress_as_far_as_possible"></a> router_table_compress_as_far_as_possible
+Default: __False__
+
+Testing option. Will request the compressor to run/continue even if the tables are already small enough.
+
+### <a name="routing_table_generator"></a> routing_table_generator
+Default: __MergedRoutingTableGenerator__
+
+Which algorithm to use to generate the routing tables</br>
+Supported values are:
+* MergedRoutingTableGenerator:  Recommenned as usually produces the best results.
+* BasicRoutingTableGenerator: Less optimized so only use if the merged one fails.</br></br>
+
+### <a name="compression_checker"></a> run_compression_checker
+* key: run_compression_checker 
+  * value: [Debug](#mode)
+* key: path_compression_checker 
+  * value: routing_compression_checker_report.rpt
+
+Runs a check that the compressors worked and repors the results.
+Mainly used for testing changes to the algorithms or bugs.
+
+### <a name="validate_json"></a> validate_json
+Default: __[Debug](#mode)__
+
+Runs schema validation on json files created.
+Mainly used for testing changes to the algorithms or bugs.
+
+### <a name="validate_routes_uncompressed"></a> validate_routes_uncompressed
+Default: __[Debug](#mode)__
+
+Runs a check that the routing tables are correct before compresssion.
+Mainly used for testing changes to the algorithms or bugs.
+
+### <a name="virtual_compressor"></a> virtual_compressor
+Default: __PairCompressor__
+
+Which compressor to use when using a [virtual_board](#virtual_board)
+As the "OnChip" version will fail!
+See [compressor](#compressor) for legal values.
+If None the [compressor](#compressor) option is used.
+
 # <a name="Buffers"></a> Buffers
 This section control if runs are divided into smaller runs and how.
 
@@ -1023,7 +1098,6 @@ As no affect for runs that do not need this.
 Semantic sugar for enabling lots of reports at once.
 
 * [mode](#mode)
-* [violate_1ms_wall_clock_restriction](#violate_1ms_wall_clock_restriction)
 
 ### <a name="mode"></a> mode
 Default: __Production__
@@ -1048,11 +1122,6 @@ This is the value used by some tests.
    * All: Testing option. Likely to be removed.
 * To change what is included in each mode change the values True, Info or Debug
 * Warning changing these values to False may break some tests.
-
-### <a name="violate_1ms_wall_clock_restriction"></a> violate_1ms_wall_clock_restriction
-Default: __False__
-
-Used if [time_step](#simulation_time_step) * (timescale)[time_scale_factor] < 1000 as this may result in errors.
 
 # <a name="EnergyMonitor"></a> EnergyMonitor
 Setting for the [Energy Monitor](#energy_report)
@@ -1199,17 +1268,17 @@ Section for the sending of live spikes.
 ### <a name="live_spike_host"></a> live_spike_host
 Default: __0.0.0.0__
 
-Host for the Live Packe tGather
+Host for the Live Packet Gather
 
 ### <a name="live_spike_port"></a> live_spike_port
 Default: __17895__
 
-Port for the Live Packe tGather
+Port for the Live Packet Gather
 
 # <a name="report_files"></a> Report Files
   * [Ignores_report.rpt](##ignores_report)
   * [algorithm_timings.rpt](##algorithm_timings)
-  * [bit_field_compressed_summary.rpt](##bit_field_compressor_report)
+  * [binaries_report.txt](##binaries_report)
   * [board_chip_report.txt](##board_chip_report)
   * [chip_sdram_usage_by_core.rpt](##sdram_usage_report_per_chip)
   * [clock_drift.csv](##drift_report)
@@ -1220,7 +1289,7 @@ Port for the Live Packe tGather
   * [data_spec_text_files](##text_specs)
   * [ds(reset_str).sqlite3](##dataspec_database)
   * [edge_routing_info.rpt](##router_reports)
-  * [energy_report_(n_run).rpt](##energy_report)
+  * [energy_report(reset_str).rpt](##energy_report)
   * [fixed_route_routers](##fixed_routes_report)
   * [global_provenance.sqlite3](##global_provenance)
   * [input_output_database.sqlite3](##input_output_database)
