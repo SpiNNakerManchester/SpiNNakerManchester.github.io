@@ -21,6 +21,7 @@ This guide covers the cfg settings and the reports created.
   * [Buffers](#Buffers)
   * [Mode](#Mode)
   * [EnergyMonitor](#EnergyMonitor)
+  * [SampleMonitor](#SampleMonitor)
   * [Java](#Java)
   * [Simulation](#Simulation)
   * [Recording](#Recording)
@@ -515,7 +516,8 @@ This section controls the reports being run and written.
 * [write_json_machine](#write_json_machine)
 * [write_json_placements](#write_json_placements)
 * [write_json_routing_tables](#write_json_routing_tables)
-* [write_memory_map_report](#write_memory_map_report)
+* [write_memory_map_report_detailed](#write_memory_map_report_detailed)
+* [write_memory_map_report_summary](#write_memory_map_report_summary)
 * [write_network_graph](#write_network_graph)
 * [write_network_specification_report](#write_network_specification_report)
 * [write_partitioner_reports](#write_partitioner_reports)
@@ -524,6 +526,7 @@ This section controls the reports being run and written.
 * [write_router_info_report](#write_router_info_report)
 * [write_router_reports](#write_router_reports)
 * [write_router_summary_report](#write_router_summary_report)
+* [write_sample_profile_report](#write_sample_profile_report)
 * [write_sdram_usage_report_per_chip](#write_sdram_usage_report_per_chip)
 * [write_tag_allocation_reports](#write_tag_allocation_reports)
 * [write_text_specs](#write_text_specs)
@@ -816,8 +819,15 @@ In small runs advance monitors may not be used even if enabled in which case the
   * value: energy_report(reset_str).rpt
 
 Runs the energy reports.
+This will generate a report that estimates the energy used using previous
+measurements of idle and active SpiNNaker boards of various sizes.  The core
+idle and active times will be sampled using values in the [EnergyMonitor]
+section, which controls the frequency and pooling of sample values to avoid
+over-recording, but also overflowing the space for each sample.
 This includes adding energy monitor cores which will change placements.
-Therefor the default value is not [Info or Debug](#Mode)
+Therefore the default value is not [Info or Debug](#Mode).
+Note this is compatible with write_sample_profile_report, however the highest sample
+frequency and lowest sample count will be used in this case.
 
 ### <a name="expander_iobuf"></a> write_expander_iobuf
 Default: __[Debug](#mode)__
@@ -861,15 +871,21 @@ May be [Deleted at the end of the run].(keep_json_files)
 Writes a description of the routing tables in json format
 May be [Deleted at the end of the run].(keep_json_files)
 
-### <a name="memory_map_report"></a> write_memory_map_report
-* key: write_memory_map_report 
+### <a name="memory_map_report_detailed"></a> write_memory_map_report_detailed
+* key: write_memory_map_report_detailed 
   * value: [Debug](#mode)
-* key: path_memory_map_report_map 
-  * value: memory_map_from_processor_to_address_space
-* key: path_memory_map_reports 
+* key: path_memory_map_report_detailed 
   * value: memory_map_reports
 
-Writes all the memry map reports. the summary and one per Core..
+Writes the per core memory map report
+
+### <a name="memory_map_report_summary"></a> write_memory_map_report_summary
+* key: write_memory_map_report_summary 
+  * value: [Debug](#mode)
+* key: path_memory_map_report_summary 
+  * value: memory_map_from_processor_to_address_space.txt
+
+Writes the summary memory map report
 
 ### <a name="network_graph"></a> write_network_graph
 * key: write_network_graph 
@@ -931,6 +947,24 @@ Reports the routes used for each partition.
   * value: routing_summary.rpt
 
 Writes a summary of the routes used per Chip
+
+### <a name="sample_profile_report"></a> write_sample_profile_report
+* key: write_sample_profile_report 
+  * value: False
+* key: path_sample_profile_report 
+  * value: sample_profile(reset_str).json
+
+Runs the profile report.
+This will generate a JSON report that profiles each core over the duration of
+the simulation by sampling the awake or sleep time of each core.  The sample
+frequency and pooling is controlled by values in the [SampleMonitor] section.
+Additionally it is possible to limit the SDRAM used by the reporting
+measurement, at the cost that later samples will then not be recorded and so
+will not factor into the statistics.
+This includes adding profile monitor cores which will change placements.
+Therefore the default value is not [Info or Debug](#Mode).
+Note this is compatible with write_energy_report, however the highest sample
+frequency and lowest sample count will be used in this case.
 
 ### <a name="sdram_usage_report_per_chip"></a> write_sdram_usage_report_per_chip
 * key: write_sdram_usage_report_per_chip 
@@ -1132,12 +1166,31 @@ Setting for the [Energy Monitor](#energy_report)
 ### <a name="n_samples_per_recording_entry"></a> n_samples_per_recording_entry
 Default: __100__
 
-The number of smaples taken in each recording of the [Energy Monitor](#energy_report).
+The number of samples taken in each recording of the [Energy Monitor](#energy_report).
 
 ### <a name="sampling_frequency"></a> sampling_frequency
 Default: __10__
 
 How often [Energy Monitor](#energy_report) will sample, in microseconds
+
+# <a name="SampleMonitor"></a> SampleMonitor
+Setting for the [Sample Monitor](#sample_profile_report)
+
+* [profile_n_samples_per_recording_entry](#profile_n_samples_per_recording_entry)
+* [profile_sampling_frequency](#profile_sampling_frequency)
+
+### <a name="profile_n_samples_per_recording_entry"></a> profile_n_samples_per_recording_entry
+Default: __@timestep__
+
+The number of samples taken in each recording of the [Sample Monitor](#sample_profile_report).
+By default this is @timestep, meaning that there is one sum of times per timestep.
+
+### <a name="profile_sampling_frequency"></a> profile_sampling_frequency
+Default: __4__
+
+How often [Sample Monitor](#sample_profile_report) will sample, in microseconds.
+By default this is 4 to sample as fast as possible (we can't hope to sample
+once per clock cycle as we would have no time to store anything)
 
 # <a name="Java"></a> Java
 This section controls the seetting to active the use of Java
@@ -1298,8 +1351,8 @@ Port for the Live Packet Gather
   * [json_files\placements.json](##json_placements)
   * [json_files\routing_tables.json](##json_routing_tables)
   * [jspin.log](##java_log)
-  * [memory_map_from_processor_to_address_space](##memory_map_report)
-  * [memory_map_reports](##memory_map_report)
+  * [memory_map_from_processor_to_address_space.txt](##memory_map_report_summary)
+  * [memory_map_reports](##memory_map_report_detailed)
   * [network_graph.gv](##network_graph)
   * [network_specification.rpt](##network_specification_report)
   * [partitioned_by_vertex.rpt](##partitioner_reports)
@@ -1315,6 +1368,7 @@ Port for the Live Packet Gather
   * [routing_compression_checker_report.rpt](##compression_checker)
   * [routing_summary.rpt](##router_summary_report)
   * [routing_tables_generated](##uncompressed)
+  * [sample_profile(reset_str).json](##sample_profile_report)
   * [speeds_gained_in_speed_up_process.rpt](##data_speed_up_reports)
   * [stack_trace](##stack_trace)
   * [tags.rpt](##tag_allocation_reports)
